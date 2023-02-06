@@ -3,14 +3,14 @@ const model = require('../models/uzivatelModel');
 exports.registrace = (request, response) => {
     response.render('uzivatel/registrace', {
         hlaska: undefined,
-        titulek: 'Registrace',
+        //titulek: 'Registrace',
     });
 }
 
 exports.prihlaseni = (request, response) => {
     response.render('uzivatel/prihlaseni', {
         hlaska: undefined,
-        titulek: 'Přihlášení',
+        //titulek: 'Přihlášení',
     });
 }
 
@@ -75,7 +75,7 @@ exports.profil = (request, response) => {
 
     response.render('uzivatel/profil', {
         jmeno: request.session.prihlasenyUzivatel,
-        titulek: 'Profil',
+        //titulek: 'Profil',
     });
 }
 
