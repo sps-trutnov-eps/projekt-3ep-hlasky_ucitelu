@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quiz Application</title>
+</head>
+<body>
+'To už jdeme opravdu do vážna.'<br>
+<input type="radio" name="question1" id="correct1">Blanka Pallovvá<br>
+<input type="radio" name="question1">Jakub Šenkýř<br>
+<input type="radio" name="question1">Kmail Žďárský<br>
+<input type="radio" name="question1">Miloslava Jonová<br>
+
+<br>
+
+'Neoprávněné reklamace testu se, hodnotí stupněm dolů, děkuji za pochopení'<br>
+<input type="radio" name="question2" >Pavel Bárta<br>
+<input type="radio" name="question2">Jan Nymš<br>
+<input type="radio" name="question2" id="correct2">Petr Košátko<br>
+<input type="radio" name="question2">Šárka Fibikarová<br>
+
+<br>
+
+'Konfigurace éteher šanelů.'<br>
+<input type="radio" name="question3" >Nikola Šandová<br>
+<input type="radio" name="question3" id="correct3">Jan Nymš<br>
+<input type="radio" name="question3">Jakub Šenkýř<br>
+<input type="radio" name="question3">Marek Šváb<br>
+
+<br>
+
+<input type="submit" name="submit" value="SubmitQuiz" onClick="result()">
+<script type="text/javascript">
+function result()
+{
+	var score=0;
+	if(document.getElementById('correct1').checked)
+		{	score++;
+		}
+	if(document.getElementById('correct2').checked)
+		{	score++;
+		}
+	if(document.getElementById('correct3').checked)
+		{	score++;
+		}
+ alert("Tvé skóre: "+score);
+}
+</script>
+</body>
+</html>
