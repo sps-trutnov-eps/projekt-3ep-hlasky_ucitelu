@@ -2,7 +2,7 @@ const session = require('express-session');
 const express = require('express');
 const app = express();
 const sass = require('sass');
-const result = sass.compile("../www/style.scss");
+const result = sass.compile("./www/css/style.scss");
 
 
 // jaky templatovaci jazyk pouzivam
