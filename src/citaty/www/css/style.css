@@ -1,3 +1,47 @@
-body{
-    background-color: aqua;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;800&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+:root {
+  --bg: #1b2028;
+  --bg2: #cccccc;
+  --primary: #490065;
+  --secondary: #263b7c;
+  --tertiary: #4a8992;
+  font-family: "Roboto", sans-serif;
 }
+
+body {
+  margin: 0;
+}
+body header {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: #490065;
+  width: 100vw;
+  height: 5vh;
+  display: inline-flex;
+}
+body header #navigace {
+  width: 60%;
+  padding-left: 20%;
+  display: inline-flex;
+  justify-content: center;
+}
+body header #profil {
+  width: 20%;
+  display: inline-flex;
+  justify-content: center;
+  background-color: #4a8992;
+}
+body header a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  line-height: 5vh;
+  font-size: 0.9em;
+  padding: 0px 10px;
+  transition: color 0.1s;
+}
+body header a:hover {
+  color: #cccccc;
+}/*# sourceMappingURL=style.css.map */
