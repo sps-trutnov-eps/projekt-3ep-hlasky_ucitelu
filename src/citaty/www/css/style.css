@@ -1,1 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;800&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+:root {
+  --bg: #161b22;
+  --bg2: #cccccc;
+  --primary: #490065;
+  --secondary: #263b7c;
+  --tertiary: #4a8992;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
 
+p {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: var(--bg);
+}
+body header {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: var(--primary);
+  width: 100vw;
+  height: 5vh;
+  display: inline-flex;
+}
+body header #navigace {
+  width: 60%;
+  padding-left: 20%;
+  display: inline-flex;
+  justify-content: center;
+}
+body header #profil {
+  width: 20%;
+  display: inline-flex;
+  justify-content: center;
+}
+body header a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  line-height: 5vh;
+  font-size: 0.9em;
+  padding: 0px 10px;
+  transition: color 0.1s;
+}
+body header a:hover {
+  color: var(--bg2);
+}
+body main {
+  height: 85vh;
+}
+body footer {
+  background-color: #490065;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
