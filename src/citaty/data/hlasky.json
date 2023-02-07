@@ -50,7 +50,7 @@
 
     "Petr Košátko":{
         "hlasky":["'Moje angličtina být špatná, jak se říka.'",
-        "'Neoprávněné reklamace testu se, hodnotí stupněm dolů, děkuji za pochopení'"
+        "'Neoprávněné reklamace testu se hodnotí stupněm dolů, děkuji za pochopení'"
     ]
     },
 
@@ -58,7 +58,8 @@
     "Libor Kotek":{
         "hlasky":["'Saláti.'",
         "'Pat a Mat znělka.'",
-        "'Černé kafe z automatu, to je moje.'"
+        "'Černé kafe z automatu, to je moje.'",
+        "''"
     ]
     },
 
@@ -92,7 +93,10 @@
         "'Jestli mě budete takhle dál míchat!'",
         "'Za rok a půl důchod, klid klid klid.'",
         "'Konfigurace éteher šanelů.'",
-        "'V linuxích je to tak, a ve vidlćh je to úplně šumák!'"
+        "'Béééndvič'",
+        "'V linuxích je to tak, a ve vidlćh je to úplně šumák!'",
+        "'Kdo mě chce zabít zimou?!'",
+        "'Dezignated port...'"
     ]
     },
 
@@ -105,7 +109,8 @@
         "'Já myslím, že víte, jak se máte chovat.'",
         "'Fakt na to pořád čekat nebudu.'",
         "'Dejvídééé, co jsi nám tu teď dělal?'",
-        "'Američtina...'"
+        "'Američtina...'",
+        "'Co mi vyprávěla dlaební kostka."
     ]
     },
 
@@ -139,9 +144,8 @@
         "'Dneska je to jedna píčovina vedle druhý...'",
         "'Budeme doufat, že uživatelé co mají rádi počasí, nebudou fašisti.'",
         "'Jsi největší blbec na zeměkouli, ve třídě!'",
-        "'Tři minuty! Celý kurva den to tu dělám!'",
+        "'Tři minuty! Celý kurva den!'",
         "''"
-
 
     ]
     },
@@ -283,7 +287,16 @@
         "''",
         "''"
     ]
+    },
+
+
+    "Luděk Dušek":{
+        "hlasky":["'Pusťíme sem zimu!'",
+        "''",
+        "''"
+    ]
     }
+
 
 
 
