@@ -1,0 +1,11 @@
+<%- include('../_layout/header') %>
+    <p>Uhodněte kdo řekl tuto hlášku:</p>
+    <b><%= hlaska %> </b>
+    <p>Vyberte:</p>
+    <a href=""><b><%= spravny %></b></a> <br>
+    <% spatny.forEach(ucitel => { %>
+        <a href=""> <b><%= ucitel %></b> </a> <br>
+    <% }); %>
+
+
+<%- include('../_layout/footer') %>

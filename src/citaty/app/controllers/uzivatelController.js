@@ -2,14 +2,14 @@ const model = require('../models/uzivatelModel');
 
 exports.registrace = (request, response) => {
     response.render('uzivatel/registrace', {
-        hlaska: undefined,
+        error: undefined,
         //titulek: 'Registrace',
     });
 }
 
 exports.prihlaseni = (request, response) => {
     response.render('uzivatel/prihlaseni', {
-        hlaska: undefined,
+        error: undefined,
         //titulek: 'Přihlášení',
     });
 }
@@ -21,22 +21,22 @@ exports.registrovat = (request, response) => {
 
     if(jmeno.length == 0) {
         return response.render('uzivatel/registrace', {
-            hlaska: 'Jméno není vyplněné!',
+            error: 'Jméno není vyplněné!',
         });
     }
     if(heslo.length == 0) {
         return response.render('uzivatel/registrace', {
-            hlaska: 'Heslo není vyplněné!',
+            error: 'Heslo není vyplněné!',
         });
     }
     if(heslo != hesloZnovu) {
         return response.render('uzivatel/registrace', {
-            hlaska: 'Hesla se neshodují!',
+            error: 'Hesla se neshodují!',
         });
     }
     if(model.existujeUzivatel(jmeno)) {
         return response.render('uzivatel/registrace', {
-            hlaska: 'Uživatel již existuje!',
+            error: 'Uživatel již existuje!',
         });
     }
 
@@ -53,13 +53,13 @@ exports.prihlasit = (request, response) => {
 
     if(!model.existujeUzivatel(jmeno)) {
         return response.render('uzivatel/prihlaseni', {
-            hlaska: 'Uživatel neexistuje!',
+            error: 'Uživatel neexistuje!',
         });
     }
 
     if(!model.spravneHeslo(jmeno, heslo)) {
         return response.render('uzivatel/prihlaseni', {
-            hlaska: 'Chybné heslo!',
+            error: 'Chybné heslo!',
         });
     }
 
