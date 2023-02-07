@@ -1,28 +1,30 @@
 {
-    "barta":{
+    "Pavel Bárta":{
         "hlasky":["'Mějte se jak chcete.'",
         "'O třináctce si ještě něco řekneme příště.' (myslel číslo pinu)'",
         "'Kdo by nechtěl 1800 tmpéček jen za 1800kč. Si je můžete dat třeba ke snídani místo cereálií'",
-        "'Barta: Buďte ready na to jako.'"
+        "'Barta: Buďte ready na to jako.'",
+        "'Asi si pojedu nechat opravit brzdy.'"
+        
     ]
     },
 
 
-    "fibikarova":{
+    "Šárka Fibikarová":{
         "hlasky":["'Odložte ty mobilní telefony!'",
         "'Honzo nestříkejte na toho Martina! On se ráno určitě myl.'"
     ]
     },
 
 
-    "jandera":{
+    "Milan Jandera":{
         "hlasky":["'Odpoledne si budu must koupit něco tvrdšího...'",
         "'On se mě tak lekl, že se mu vlasy postavily.'"
     ]
     },
 
 
-    "jonova":{
+    "Miloslava Jonová":{
         "hlasky":["'To už jdeme opravdu do vážna.'",
         "'Satanismus.. v dobrém slova smyslu.'",
         "'Vy jste nějací osplí, že já na vás pošlu okna.'",
@@ -38,7 +40,7 @@
     },
 
 
-    "kadrle":{
+    "Martin Kádrle":{
         "hlasky":[
         "'Tady máte baloný, hrajte si.'",
         "'Ty máš asi doopravdy rád nějakou formu prdelního tríznění co?'"
@@ -46,28 +48,29 @@
     },
 
 
-    "kosatko":{
+    "Petr Košátko":{
         "hlasky":["'Moje angličtina být špatná, jak se říka.'",
-        "'Neoprávněné reklamace testu se, hodnotí stupněm dolů, děkuji za pochopení'"
+        "'Neoprávněné reklamace testu se hodnotí stupněm dolů, děkuji za pochopení'"
     ]
     },
 
 
-    "kotek":{
+    "Libor Kotek":{
         "hlasky":["'Saláti.'",
         "'Pat a Mat znělka.'",
-        "'Černé kafe z automatu, to je moje.'"
+        "'Černé kafe z automatu, to je moje.'",
+        "''"
     ]
     },
 
 
-    "lattenberg":{
+    "Jakub Lattenberg":{
         "hlasky":["'Dnes je 12.11 2022 a chleba...'"
     ]
     },
 
 
-    "nyms":{
+    "Jan Nymš":{
         "hlasky":["'No nazdar...'",
         "'Pézetka...'",
         "'Tohle dělá Košťátko.'",
@@ -90,24 +93,29 @@
         "'Jestli mě budete takhle dál míchat!'",
         "'Za rok a půl důchod, klid klid klid.'",
         "'Konfigurace éteher šanelů.'",
-        "'V linuxích je to tak, a ve vidlćh je to úplně šumák!'"
+        "'Béééndvič'",
+        "'V linuxích je to tak, a ve vidlćh je to úplně šumák!'",
+        "'Kdo mě chce zabít zimou?!'",
+        "'Dezignated port...'"
     ]
     },
 
 
-    "pallova":{
+    "Blanka Pallová":{
         "hlasky":["'Hoši!!! (říka to pořád)'",
         "'Já tady rostu.'",
         "'Projev je ekonomika jazyka.'",
         "'Pokud je vztah žák/učitel vzájemný, tak co tu tedy dnes děláme? Já si tu připadám úplně zbytečně...'",
         "'Já myslím, že víte, jak se máte chovat.'",
         "'Fakt na to pořád čekat nebudu.'",
-        "'Dejvídééé, co jsi nám tu teď dělal?'"
+        "'Dejvídééé, co jsi nám tu teď dělal?'",
+        "'Američtina...'",
+        "'Co mi vyprávěla dlaební kostka."
     ]
     },
 
 
-    "sandova":{
+    "Nikola Šandová":{
         "hlasky":["'To si ze mě děláš humor?'",
         "'Jak by jsi chtě létat na ptákovi Marku?!'",
         "'Říkám vypněte si ty reproduktory! (myslel/a mikrofony)'",
@@ -130,30 +138,31 @@
     },
 
 
-    "senkyr":{
+    "Jakub Šenkyr":{
         "hlasky":["'Udělejte to tak, aby to fungovalo!'",
         "'Uživatelé jsou to největší zlo.'",
         "'Dneska je to jedna píčovina vedle druhý...'",
         "'Budeme doufat, že uživatelé co mají rádi počasí, nebudou fašisti.'",
         "'Jsi největší blbec na zeměkouli, ve třídě!'",
-        "'Tři minuty! Celý kurva den to tu dělám!'",
+        "'Tři minuty! Celý kurva den!'",
         "''"
-
 
     ]
     },
 
-    "senkyrova":{
+    "Jitka Šenkýřová":{
         "hlasky":["'Kapacitu obchoďáku určuje pokladna.'",
         "'Třeba dítě když si hraje s telefonem a stahuje tam internety.'",
         "'My už budem končit, tak já zhasnu'",
         "'Vklad mastného majetku.'",
-        "'Ekonomické statistiky praví.'"
+        "'Ekonomické statistiky praví.'",
+        "'Až si zkusíš tahat kovový kolečko tak mluv.'",
+        "'Teď si představte, taková Šenkýřová potřebuje bílej perník?'"
     ]
     },
 
 
-    "svab":{
+    "Marek Šváb":{
         "hlasky":["''",
         "''",
         "''"
@@ -162,7 +171,7 @@
 
 
 
-    "zdarsky":{
+    "Kamil Žďárský":{
         "hlasky":["'Pánové tam v zadu, nechtějte abych někoho z vás musel pokárat.'",
         "'Co známená kárání? To si nedokážete představit.'",
         "'Pánové pokud nejste in the middle of something, dejte si přestávku.'",
@@ -176,7 +185,15 @@
     },
 
 
-    "beran":{
+    "Jaroslav Beran":{
+        "hlasky":["'Tak se pozdravíme.'",
+        "''",
+        "''"
+    ]
+    },
+
+
+    "Vladimír Beránek":{
         "hlasky":["''",
         "''",
         "''"
@@ -184,7 +201,7 @@
     },
 
 
-    "beranek":{
+    "Ondřej Michalička":{
         "hlasky":["''",
         "''",
         "''"
@@ -192,15 +209,7 @@
     },
 
 
-    "michalicka":{
-        "hlasky":["''",
-        "''",
-        "''"
-    ]
-    },
-
-
-    "jindova":{
+    "Simona Jindová":{
         "hlasky":["'Nepozdravila jsem a šla jsem na kobereček před ředitele.'",
         "''",
         "''"
@@ -209,15 +218,86 @@
 
 
 
-    "lukackova":{
+    "Andrea Lukáčková":{
         "hlasky":["'Luboši jak to je, ja už nevím.'",
+        "'Já jsem si na VŠ studentský život moc neužívala. S tím jsem začala až teď.'",
+        "'Čeština- s tou se u nás nepočítá.'"
+    ]
+    },
+
+
+    "Jaroslav Mareš":{
+        "hlasky":["'tev Nivi'",
+        "''",
+        "''"
+    ]
+    },
+
+
+    "Jan Šimešek":{
+        "hlasky":["'Cívka je jak dívka, nejdříve napětí, poté proud.'",
+        "''",
+        "''"
+    ]
+    },
+
+
+    "Tomáš Vaněk":{
+        "hlasky":["'Chlapi jsou špatné matky.'",
+        "'Nejhorší úlohy na vizualizaci jsou ty geometrické'",
+        "'Já to vidím jinak, ale to je tvoje volba'"
+    ]
+    },
+
+
+    "Martin Marcinčín":{
+        "hlasky":["'Fyzika- to je vlastně takovej reverse engineering'",
+        "''",
+        "''"
+    ]
+    },
+
+
+    "Jakub Klázar":{
+        "hlasky":["'To je furt nějakej den... každej den.'",
+        "'Historie je minulost.'",
+        "''"
+    ]
+    },
+
+
+    "Dagmar Čurdová":{
+        "hlasky":["'Tos tam napsal teda fakt chcípáka'",
+        "'Pan Nymš mi říká PraSe, což znamená pracující senior'",
+        "'A oni si to nedoplní, SMRADI!'",
+        "'Vy jste fakt IQ bublající bahno.'",
+        "'Miláčku, v boolově algebře mínus neexustuje.'",
+        "'Nemám čas na to být naštvaná.'",
+        "'Co se dá dělat, dětma nezatopíš.'",
+        "'To nebylo na tebe, to tenhle neandrtálec.'",
+        "'Já jsem zamilovaná celej rok kromě Valentýna'",
+        "'Já se některých z vás zbavím až na konci roku, to je na tom to nejhorší.'",
+        "'Jaké zvíře má službu? VÁCLAVE KMITEJ!'"
+
+    ]
+    },
+
+    "Milan Fink":{
+        "hlasky":["''",
+        "''",
+        "''"
+    ]
+    },
+
+
+    "Luděk Dušek":{
+        "hlasky":["'Pusťíme sem zimu!'",
         "''",
         "''"
     ]
     }
 
-    
 
 
-   
+
 }
