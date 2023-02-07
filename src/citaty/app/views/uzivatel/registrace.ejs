@@ -1,0 +1,11 @@
+<%- include('../_layout/header') %>
+    <form method="post" script="/uzivatel/registrovat">
+        <input type="text" name="jmeno" placeholder="Jméno..." /><br />
+        <input type="password" name="heslo" placeholder="Heslo..." /><br />
+        <input type="password" name="hesloZnovu" placeholder="Heslo znovu..." /><br />
+        <% if(hlaska) { %>
+            <span style="color: red"><%= hlaska %></span><br />
+        <% } %>
+        <input type="submit" value="Registrovat" />
+    </form>
+<%- include('../_layout/footer') %>
