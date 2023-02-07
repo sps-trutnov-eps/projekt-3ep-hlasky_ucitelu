@@ -1,6 +1,9 @@
 const session = require('express-session');
 const express = require('express');
 const app = express();
+const sass = require('sass');
+const result = sass.compile("../www/style.scss");
+
 
 // jaky templatovaci jazyk pouzivam
 app.set('view engine', 'ejs');
