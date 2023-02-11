@@ -12,7 +12,12 @@ exports.randomUcitel = () => {
     let spravnyUcitel = Object.keys(hlasky)[randomCislo];
     
     let spravnaHlaska = hlasky[spravnyUcitel]["hlasky"][Math.round(Math.random() * (hlasky[spravnyUcitel]["hlasky"].length - 1))];
-    console.log(spravnyUcitel);
+    console.log(spravnaHlaska);
+
+    while (spravnaHlaska == "''"){
+        spravnaHlaska = hlasky[spravnyUcitel]["hlasky"][Math.round(Math.random() * (hlasky[spravnyUcitel]["hlasky"].length - 1))];
+    }
+
     console.log(spravnaHlaska);
     
 
