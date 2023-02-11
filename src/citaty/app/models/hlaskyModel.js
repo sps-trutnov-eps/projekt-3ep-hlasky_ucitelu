@@ -31,3 +31,15 @@ exports.randomUcitel = () => {
     
     return [spravnaHlaska, spatneUcitele, spravnyUcitel];
 }
+
+//koukne se jestli zadaná odpověď je správná
+exports.checkOdpoved = (ucitel, hlaska) => {
+    const hlasky = db.JSON();
+    const length = Object.keys(hlasky).length - 1;
+
+    console.log("odpověď: ");
+    console.log(hlasky[ucitel]["hlasky"].includes(hlaska));
+    return hlasky[ucitel]["hlasky"].includes(hlaska);
+
+
+}

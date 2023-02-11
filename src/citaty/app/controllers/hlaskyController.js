@@ -1,13 +1,37 @@
 const model = require('../models/hlaskyModel');
 
-exports.randomUcitel = (request, response) => {
-    let randomSeznamUcitelu = model.randomUcitel();
-    response.render('hlasky/random', {
-        // spravnaHlaska, spatneUcitele, ucitel
-        hlaska: randomSeznamUcitelu[0],
-        spravny: randomSeznamUcitelu[2],
-        spatny: randomSeznamUcitelu[1],
+let randomSeznamUcitelu = model.randomUcitel();
 
-        //titulek: 'Registrace',
-    });
+exports.randomUcitel = (req, res) => {
+    if (req.query.ucitel == undefined || req.query.hlaska == undefined){
+        randomSeznamUcitelu = model.randomUcitel();
+        return res.render('hlasky/random', {
+            // spravnaHlaska, spatneUcitele, ucitel
+            hlaska: randomSeznamUcitelu[0],
+            spravny: randomSeznamUcitelu[2],
+            spatny: randomSeznamUcitelu[1],
+            odpoved: "",
+        });
+    }
+    
+    if (model.checkOdpoved(req.query.ucitel, req.query.hlaska)){ //pokud zodpověděl zprávně:
+        randomSeznamUcitelu = model.randomUcitel();
+        return res.render('hlasky/random', {
+            // spravnaHlaska, spatneUcitele, ucitel
+            hlaska: randomSeznamUcitelu[0],
+            spravny: randomSeznamUcitelu[2],
+            spatny: randomSeznamUcitelu[1],
+            odpoved: "Správně",
+        });
+    }
+    else{
+        return res.render('hlasky/random', {
+            // spravnaHlaska, spatneUcitele, ucitel
+            hlaska: randomSeznamUcitelu[0],
+            spravny: randomSeznamUcitelu[2],
+            spatny: randomSeznamUcitelu[1],
+            odpoved: "Špatně",
+        });
+    }
+
 }
