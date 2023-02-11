@@ -12,10 +12,9 @@ exports.randomUcitel = (req, res) => {
     if (req.query.ucitel == undefined || req.query.hlaska == undefined){
         randomSeznamUcitelu = model.randomUcitel();
         return res.render('hlasky/random', {
-            // spravnaHlaska, spatneUcitele, ucitel
+            // spravnaHlaska, listOdpovedi
             hlaska: randomSeznamUcitelu[0],
-            spravny: randomSeznamUcitelu[2],
-            spatny: randomSeznamUcitelu[1],
+            odpovedi: randomSeznamUcitelu[1],
             odpoved: "",
             score: score,
         });
@@ -27,10 +26,9 @@ exports.randomUcitel = (req, res) => {
         score += 1;
 
         return res.render('hlasky/random', {
-            // spravnaHlaska, spatneUcitele, ucitel
+            // spravnaHlaska, listOdpovedi
             hlaska: randomSeznamUcitelu[0],
-            spravny: randomSeznamUcitelu[2],
-            spatny: randomSeznamUcitelu[1],
+            odpovedi: randomSeznamUcitelu[1],
             score: score,
             odpoved: "Správně",
         });
@@ -43,10 +41,9 @@ exports.randomUcitel = (req, res) => {
         score = 0;
 
         return res.render('hlasky/random', { // pokud nezodpověděl zprávně:
-            // spravnaHlaska, spatneUcitele, ucitel
+            // spravnaHlaska, listOdpovedi
             hlaska: randomSeznamUcitelu[0],
-            spravny: randomSeznamUcitelu[2],
-            spatny: randomSeznamUcitelu[1],
+            odpovedi: randomSeznamUcitelu[1],
             score: score,
             odpoved: "Špatně",
         });

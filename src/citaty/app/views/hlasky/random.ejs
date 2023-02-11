@@ -1,13 +1,12 @@
 <%- include('../_layout/header') %>
+
     <p><%= score %></p>
     <p><%= odpoved %></p>
     <p>Uhodněte kdo řekl tuto hlášku:</p>
     <b><%= hlaska %></b>
     <p>Vyberte:</p>
-    <a href="/hlasky/random?ucitel=<%= spravny %>&hlaska=<%= hlaska %>">Správná odpověď: <b><%= spravny %></b></a> <br>
-    <% spatny.forEach(ucitel => { %>
+    <% odpovedi.forEach(ucitel => { %>
         <a href="/hlasky/random?ucitel=<%= ucitel %>&hlaska=<%= hlaska %>"> <b><%= ucitel %></b> </a> <br>
     <% }); %>
-
 
 <%- include('../_layout/footer') %>
