@@ -12,7 +12,11 @@
 
     "Šárka Fibikarová":{
         "hlasky":["'Odložte ty mobilní telefony!'",
-        "'Honzo nestříkejte na toho Martina! On se ráno určitě myl.'"
+        "'Honzo nestříkejte na toho Martina! On se ráno určitě myl.'",
+        "'Jeden se tu obléká jako kočička'",
+        "'Je tu někdo normální?'",
+        "'Když jste chytrej jak rádio, pojďte mi to spočítat'"
+
     ]
     },
 
@@ -43,7 +47,8 @@
     "Martin Kádrle":{
         "hlasky":[
         "'Tady máte baloný, hrajte si.'",
-        "'Ty máš asi doopravdy rád nějakou formu prdelního tríznění co?'"
+        "'Ty máš asi doopravdy rád nějakou formu prdelního tríznění co?'",
+        "'Ty jsi si ten válec ale nějak zamiloval, půjč si ho domů a vyřádi se na něm tam.'"
     ]
     },
 
@@ -59,13 +64,14 @@
         "hlasky":["'Saláti.'",
         "'Pat a Mat znělka.'",
         "'Černé kafe z automatu, to je moje.'",
-        "''"
+        "'Řízkové jedni!'"
     ]
     },
 
 
     "Jakub Lattenberg":{
-        "hlasky":["'Dnes je 12.11 2022 a chleba...'"
+        "hlasky":["'Dnes je 12.11 2022 a chleba...'",
+        "'To je jako kdyby jsi si chtěl koupit jednu tyčinku buena, ale stejně musíš koupit blaení, ve kterém jsou 2.'"
     ]
     },
 
@@ -102,7 +108,7 @@
 
 
     "Blanka Pallová":{
-        "hlasky":["'Hoši!!! (říka to pořád)'",
+        "hlasky":[
         "'Já tady rostu.'",
         "'Projev je ekonomika jazyka.'",
         "'Pokud je vztah žák/učitel vzájemný, tak co tu tedy dnes děláme? Já si tu připadám úplně zbytečně...'",
@@ -110,7 +116,8 @@
         "'Fakt na to pořád čekat nebudu.'",
         "'Dejvídééé, co jsi nám tu teď dělal?'",
         "'Američtina...'",
-        "'Co mi vyprávěla dlaební kostka."
+        "'Co mi vyprávěla dlaební kostka.",
+        "'Musíš se to naučit, nebo to nebudeš umět'"
     ]
     },
 
@@ -133,7 +140,9 @@
         "'Nefunguje to, tak to přečteme očima a pusou'",
         "'Davide, zamysli se něco ze sebe vydav!'",
         "'How many many (many money) you have?'",
-        "'Udělejte světlo!'"
+        "'Udělejte světlo!'",
+        "'On mě tady naschvál mistikuje'",
+        "'Foltýne, můžeš si laskavě ten telefon strčit do prdele?'"
     ]
     },
 
@@ -144,9 +153,7 @@
         "'Dneska je to jedna píčovina vedle druhý...'",
         "'Budeme doufat, že uživatelé co mají rádi počasí, nebudou fašisti.'",
         "'Jsi největší blbec na zeměkouli, ve třídě!'",
-        "'Tři minuty! Celý kurva den!'",
-        "''"
-
+        "'Tři minuty! Celý kurva den!'"
     ]
     },
 
@@ -180,7 +187,9 @@
         "'Který je Jan, a který je Jaroslav? Ale joo nějaký rozdíl tam vidím.'",
         "'TO JÓ! (byla to poznámka k chytré dpovědi v testu)'",
         "'Ták děti musím vás pochaválit, že jste si to nakreslili.'",
-        "'Doplňte si k té zenerově diodě toho Capouška, taková ta tyčka...'"
+        "'Doplňte si k té zenerově diodě toho Capouška, taková ta tyčka...'",
+        "'Těžce to chápu...'"
+
     ]
     },
 
