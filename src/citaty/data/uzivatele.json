@@ -1,8 +1,10 @@
 {
     "Karel": {
-        "heslo": "$2a$10$FETaNRgiH1Y.QYXeK02ImeAHWuV50YiSu6GorDTEJZz/e9ib5iOXG"
+        "heslo": "$2a$10$FETaNRgiH1Y.QYXeK02ImeAHWuV50YiSu6GorDTEJZz/e9ib5iOXG",
+        "score": 3
     },
     "Honza": {
-        "heslo": "$2a$10$FETaNRgiH1Y.QYXeK02ImeAHWuV50YiSu6GorDTEJZz/e9ib5iOXG"
+        "heslo": "$2a$10$FETaNRgiH1Y.QYXeK02ImeAHWuV50YiSu6GorDTEJZz/e9ib5iOXG",
+        "score": 9
     }
 }

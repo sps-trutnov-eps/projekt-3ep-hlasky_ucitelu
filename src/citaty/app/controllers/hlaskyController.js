@@ -24,6 +24,10 @@ exports.randomKviz = (req, res) => {
 }
 
 exports.odpovedNaRandomKviz = (req, res) => {
+    if (req.session.prihlasenyUzivatel == undefined){
+        return res.redirect('/uzivatel/prihlasit');
+    }
+
     let randomSeznamUcitelu = req.session.randomSeznamUcitelu;
 
     let ucitel = req.body.ucitel;
@@ -35,7 +39,7 @@ exports.odpovedNaRandomKviz = (req, res) => {
     else{
         score = 0;
     }
-
+    uzivatelModel.ulozitHighScore(req.session.prihlasenyUzivatel, score);
 
     randomSeznamUcitelu = model.randomUcitel();
     req.session.randomSeznamUcitelu = randomSeznamUcitelu;

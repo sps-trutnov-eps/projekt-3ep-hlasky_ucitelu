@@ -47,3 +47,19 @@ exports.spravneHeslo = (jmeno, heslo) => {
 //     console.log("Hlaska: " + data["posledniHlaska"] + "Ulozena");
 //     console.log("Uzivateli: "+ jmeno);
 // }
+exports.ulozitHighScore = (jmeno, score) => {
+    let data = db.JSON()[jmeno];
+    //test
+    console.log(data.score);
+    //konec test
+
+    if (data.score == undefined){
+        data.score = 0;
+        db.set(jmeno, data);
+    }
+
+    if (data.score < score){
+        data.score = score;
+        db.set(jmeno, data);
+    }
+} 
