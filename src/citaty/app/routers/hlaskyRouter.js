@@ -3,7 +3,10 @@ const router = express.Router();
 
 const controller = require('../controllers/hlaskyController');
 
-router.get('/random', controller.randomUcitel);
+router.get('/random', controller.randomKviz);
+router.post('/random', controller.odpovedNaRandomKviz);
+
+
 
 
 

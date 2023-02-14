@@ -1,52 +1,51 @@
 const model = require('../models/hlaskyModel');
+const uzivatelModel = require('../models/uzivatelModel');
 
-let randomSeznamUcitelu = model.randomUcitel();
 let score = 0;
 
-exports.randomUcitel = (req, res) => {
+exports.randomKviz = (req, res) => {
+    score = 0;
 
-    if (req.query.new == true){
-        score = 0;
+    if (req.session.prihlasenyUzivatel == undefined){
+        return res.redirect('/uzivatel/prihlasit');
     }
 
-    if (req.query.ucitel == undefined || req.query.hlaska == undefined){
-        randomSeznamUcitelu = model.randomUcitel();
-        return res.render('hlasky/random', {
-            // spravnaHlaska, listOdpovedi
-            hlaska: randomSeznamUcitelu[0],
-            odpovedi: randomSeznamUcitelu[1],
-            odpoved: "",
-            score: score,
-        });
-    }
+    let randomSeznamUcitelu = model.randomUcitel();
+    req.session.randomSeznamUcitelu = randomSeznamUcitelu;
     
-    if (model.checkOdpoved(req.query.ucitel, req.query.hlaska)){ // pokud zodpověděl zprávně:
+    return res.render('hlasky/random', {
+        // spravnaHlaska, listOdpovedi
+        hlaska: randomSeznamUcitelu[0],
+        odpovedi: randomSeznamUcitelu[1],
+        odpoved: "",
+        score: score,
+    });
+     
+}
 
-        randomSeznamUcitelu = model.randomUcitel();
+exports.odpovedNaRandomKviz = (req, res) => {
+    let randomSeznamUcitelu = req.session.randomSeznamUcitelu;
+
+    let ucitel = req.body.ucitel;
+    let hlaska = randomSeznamUcitelu[0];
+
+    if (model.checkOdpoved(ucitel, hlaska)){
         score += 1;
-
-        return res.render('hlasky/random', {
-            // spravnaHlaska, listOdpovedi
-            hlaska: randomSeznamUcitelu[0],
-            odpovedi: randomSeznamUcitelu[1],
-            score: score,
-            odpoved: "Správně",
-        });
     }
     else{
-
-        // sem příjde logika pro ukládání nejvyžšího score
-        // až budou hotové profily.
-        
         score = 0;
-
-        return res.render('hlasky/random', { // pokud nezodpověděl zprávně:
-            // spravnaHlaska, listOdpovedi
-            hlaska: randomSeznamUcitelu[0],
-            odpovedi: randomSeznamUcitelu[1],
-            score: score,
-            odpoved: "Špatně",
-        });
     }
 
+
+    randomSeznamUcitelu = model.randomUcitel();
+    req.session.randomSeznamUcitelu = randomSeznamUcitelu;
+
+    return res.render('hlasky/random', {
+        // spravnaHlaska, listOdpovedi
+        hlaska: randomSeznamUcitelu[0],
+        odpovedi: randomSeznamUcitelu[1],
+        odpoved: "",
+        score: score,
+    });
+     
 }

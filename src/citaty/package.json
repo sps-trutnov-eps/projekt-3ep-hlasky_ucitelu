@@ -25,5 +25,11 @@
   "bugs": {
     "url": "https://github.com/sps-trutnov/projekt-3ep-t09/issues"
   },
-  "homepage": "https://github.com/sps-trutnov/projekt-3ep-t09#readme"
+  "homepage": "https://github.com/sps-trutnov/projekt-3ep-t09#readme",
+  
+  "nodemonConfig": {
+    "ignore": [
+      "/data/*"
+    ]
+  }
 }

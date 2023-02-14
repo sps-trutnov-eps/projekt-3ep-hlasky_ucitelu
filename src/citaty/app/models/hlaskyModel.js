@@ -47,7 +47,6 @@ exports.randomUcitel = () => {
         spatneUcitele.push(spatnyUcitel);
         
     }
-    console.log(spatneUcitele);
 
     let listOdpovedi = [];
 
@@ -56,13 +55,10 @@ exports.randomUcitel = () => {
     });
 
     listOdpovedi.push(spravnyUcitel);
+    console.log(spravnyUcitel); // pro debugování
 
 
     listOdpovedi = shuffle_(listOdpovedi);
-
-    console.log(listOdpovedi);
-
-
 
     return [spravnaHlaska, listOdpovedi];
 }
@@ -72,8 +68,6 @@ exports.checkOdpoved = (ucitel, hlaska) => {
     const hlasky = db.JSON();
     const length = Object.keys(hlasky).length - 1;
 
-    console.log("odpověď: ");
-    console.log(hlasky[ucitel]["hlasky"].includes(hlaska));
     return hlasky[ucitel]["hlasky"].includes(hlaska);
 
 }
