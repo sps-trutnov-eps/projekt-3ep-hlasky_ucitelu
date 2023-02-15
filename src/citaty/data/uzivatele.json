@@ -5,6 +5,10 @@
     },
     "Honza": {
         "heslo": "$2a$10$FETaNRgiH1Y.QYXeK02ImeAHWuV50YiSu6GorDTEJZz/e9ib5iOXG",
-        "score": 9
+        "score": 11
+    },
+    "senkyr": {
+        "heslo": "$2a$10$Jw6vKaiB3NrLJ7tdkKsTaObVcoJIBGvqfMJrkeYj5zyVlLIWRT7my",
+        "score": 3
     }
 }
