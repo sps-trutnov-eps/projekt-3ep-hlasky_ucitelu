@@ -55,7 +55,7 @@ exports.ulozitHighScore = (jmeno, score) => {
 
     if (data.score == undefined){
         data.score = 0;
-        db.set(jmeno, data);
+        db.set(jmeno, data); //ukládání do DB
     }
 
     if (data.score < score){
@@ -63,3 +63,32 @@ exports.ulozitHighScore = (jmeno, score) => {
         db.set(jmeno, data);
     }
 } 
+
+exports.ulozitOblibenouHlasku = (jmeno, hlaska) => {
+    let data = db.JSON()[jmeno];
+
+    if (data.oblibeneHlasky == undefined){
+        data.oblibeneHlasky = [];
+        db.set(jmeno, data);
+    }
+    if (!data.oblibeneHlasky.includes(hlaska)){
+        data.oblibeneHlasky.push(hlaska);
+        db.set(jmeno, data);
+        console.log("Hláška: " + data.oblibeneHlasky[data.oblibeneHlasky.length - 1] + " Byla uložena.");
+    }
+
+}
+
+exports.getOblibenyHlasky = (jmeno) => {
+    let data = db.JSON()[jmeno];
+    let hlasky;
+
+    if (data.oblibeneHlasky == undefined){
+        hlasky = ["Nemáte uloženné žádné hlášky!"];
+    }
+    else{
+        hlasky = data.oblibeneHlasky;
+    }
+
+    return hlasky;
+}

@@ -5,10 +5,20 @@
     },
     "Honza": {
         "heslo": "$2a$10$FETaNRgiH1Y.QYXeK02ImeAHWuV50YiSu6GorDTEJZz/e9ib5iOXG",
-        "score": 11
+        "score": 11,
+        "oblibeneHlasky": [
+            "'To je jako kdyby jsi si chtěl koupit jednu tyčinku buena, ale stejně musíš koupit blaení, ve kterém jsou 2.'",
+            "'Chceš čůrat? A máš povolení od rodičů, že můžeš chodit o hodině?'"
+        ]
     },
     "senkyr": {
         "heslo": "$2a$10$Jw6vKaiB3NrLJ7tdkKsTaObVcoJIBGvqfMJrkeYj5zyVlLIWRT7my",
-        "score": 3
+        "score": 4,
+        "oblibeneHlasky": [
+            "'Dnes je 12.11 2022 a chleba...'",
+            "'Přijít později než já!? No to je vrchol hulvátství…'",
+            "'Pusťíme sem zimu!'",
+            "'Nedělal jsi nic? Tak to musíme náležitě oznámkovat.'"
+        ]
     }
 }
