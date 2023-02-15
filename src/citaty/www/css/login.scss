@@ -1,0 +1,32 @@
+.login-cont{
+    $width: 40vw;
+    $height: 50vh;
+
+    width: $width;
+    height: $height;
+    margin: 0 auto;
+    position: absolute;
+    top: 50vh - $height/2;
+    left: 50vw - $width/2;
+
+    text-align: center;
+
+    background-color: var(--bg2);
+
+    border-radius: 30px;
+
+    .login-nadpis{
+        height: 15%;
+    }
+
+    .login-form-cont{
+        height: 85%;
+    }
+
+    h3{
+        border-bottom: solid white 2px;
+        width: 50%;
+        margin: 0 auto;
+        padding: 10px 0px 10px 0px;
+    }
+}

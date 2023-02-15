@@ -1,0 +1,23 @@
+.login-cont {
+  width: 40vw;
+  height: 50vh;
+  margin: 0 auto;
+  position: absolute;
+  top: 25vh;
+  left: 30vw;
+  text-align: center;
+  background-color: var(--bg2);
+  border-radius: 30px;
+}
+.login-cont .login-nadpis {
+  height: 15%;
+}
+.login-cont .login-form-cont {
+  height: 85%;
+}
+.login-cont h3 {
+  border-bottom: solid white 2px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px 0px 10px 0px;
+}/*# sourceMappingURL=login.css.map */
