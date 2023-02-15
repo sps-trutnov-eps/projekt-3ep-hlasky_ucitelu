@@ -33,6 +33,8 @@ app.get('/json', (req, res) => res.json({pozdrav: 'Hello World'}));
 app.use('/web', require('./routers/webRouter'));
 // obsluha uzivatelu
 app.use('/uzivatel', require('./routers/uzivatelRouter'));
+// obslua hlasek
+app.use('/hlasky', require('./routers/hlaskyRouter'));
 
 // nastaveni defaultniho view
 app.get('/', (req, res) => res.redirect('/web/index'));

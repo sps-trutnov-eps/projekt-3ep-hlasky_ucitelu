@@ -1,19 +1,12 @@
 <%- include('../_layout/header') %>
-<div class="login">
-    <p class="loginadpis">Přihlásit se</p>
-    <div>
-        <form method="post" script="/uzivatel/prihlasit">
-            <input class="txtfld" type="text" name="jmeno" placeholder="Jméno..." required /><br />
-            <input class="txtfld" type="password" name="heslo" placeholder="Heslo..." required /><br />
-            <% if(hlaska) { %>
-                <p style="color: red; margin-bottom: 0px;  margin-top: 5px;"><%= hlaska %></p><br />
-                <% } %>
-                <input class="loginbtn" type="submit" value="Přihlásit" />
-            </form>
-            <p>Nemáš účet?</p>
-            <a href="/uzivatel/registrovat">Registruj se!</a>
-        </div>
-</div>
+    <form method="post" script="/uzivatel/prihlasit">
+        <input type="text" name="jmeno" placeholder="Jméno..." /><br />
+        <input type="password" name="heslo" placeholder="Heslo..." /><br />
+        <% if(error) { %>
+            <span style="color: red"><%= error %></span><br />
+        <% } %>
+        <input type="submit" value="Přihlásit" />
+    </form>
 <%- include('../_layout/footer') %>
 
 

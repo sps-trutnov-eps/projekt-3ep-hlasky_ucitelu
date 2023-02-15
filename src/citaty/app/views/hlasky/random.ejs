@@ -1,0 +1,14 @@
+<%- include('../_layout/header') %>
+
+    <p><%= score %></p>
+    <p><%= odpoved %></p>
+    <p>Uhodněte kdo řekl tuto hlášku:</p>
+    <b><%= hlaska %></b>
+    <p>Vyberte:</p>
+    <form method="post" script="/hlasky/random" >
+        <% odpovedi.forEach(ucitel => { %>
+            <a href="/hlasky/random?hlaska=<%= hlaska %>"> <input type="submit" name="ucitel" value="<%= ucitel %>" /> </a><br>
+        <% }); %>
+    </form>
+
+<%- include('../_layout/footer') %>
