@@ -17,7 +17,7 @@ p{
 }
 
 body{
-    margin: 0; //ez
+    margin: 0;
     height: 100vh;
     background-color: var(--bg);
 
@@ -68,4 +68,65 @@ body{
         justify-content: space-around;
         text-align: center;
     }
+}
+
+.login{
+    margin: 0 auto;
+    position: absolute;
+    top: 40vh;
+    left: 40vw;
+    transform: translate(-50%, -50%);
+    padding: calc(5vh - 10px) 5vw 5vh 5vw;
+    background-color: var(--tertiary);
+    border-radius: 15px;
+    box-shadow: 3px 3px 30px 3px #000000;
+
+    .loginadpis{
+        text-align: center;
+        font-weight: 600;
+        font-size: 2em;
+        margin: 0;
+        margin-bottom: 45px;
+        border-bottom: white solid 1px;
+    }
+
+    div{
+        text-align: center;
+
+        form{
+            width: 90%;
+            margin: 0 auto;
+
+            .txtfld{
+                width: calc(100% - 20px);
+                margin: 0;
+                border: solid white 1px;
+                background-color: var(--primary);
+                border-radius: 5px;
+                padding: 10px;
+                margin-bottom: 10px;
+                color: white;
+            }
+
+            .loginbtn{
+                background-color: var(--secondary);
+                border: solid white 1px;
+                border-radius: 5px;
+                padding: 5px 15px 5px 15px;
+                color: white;
+                font-weight: 600;
+                margin-top: 10px;
+            }
+        }
+
+        p{
+            margin: 30px 0px 0px 0px;
+        }
+        
+        a{
+            text-decoration: underline;
+            color: white;
+            font-weight: 600;
+        }
+    }    
 }
