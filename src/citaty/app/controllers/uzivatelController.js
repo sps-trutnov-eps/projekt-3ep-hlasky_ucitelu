@@ -75,12 +75,12 @@ exports.profil = (request, response) => {
 
     response.render('uzivatel/profil', {
         jmeno: request.session.prihlasenyUzivatel,
+        hlasky: model.getOblibenyHlasky(request.session.prihlasenyUzivatel),
         //titulek: 'Profil',
     });
 }
 
 exports.odhlasit = (request, response) => {
     request.session.destroy();
-
     response.redirect('/web/index');
 }

@@ -4,20 +4,26 @@ const uzivatelModel = require('../models/uzivatelModel');
 let score = 0;
 
 exports.randomKviz = (req, res) => {
-    score = 0;
+    //score = 0;
 
     if (req.session.prihlasenyUzivatel == undefined){
         return res.redirect('/uzivatel/prihlasit');
     }
 
-    let randomSeznamUcitelu = model.randomUcitel();
-    req.session.randomSeznamUcitelu = randomSeznamUcitelu;
-    
+    if(req.query.like){
+        console.log("CUMPISSSS");
+        let hlaska = req.session.randomSeznamUcitelu[0];
+        uzivatelModel.ulozitOblibenouHlasku(req.session.prihlasenyUzivatel, hlaska);
+    }
+    else{
+        score = 0;
+        req.session.randomSeznamUcitelu = model.randomUcitel();
+    }
+
     return res.render('hlasky/random', {
         // spravnaHlaska, listOdpovedi
-        hlaska: randomSeznamUcitelu[0],
-        odpovedi: randomSeznamUcitelu[1],
-        odpoved: "",
+        hlaska: req.session.randomSeznamUcitelu[0],
+        odpovedi: req.session.randomSeznamUcitelu[1],
         score: score,
     });
      
@@ -48,7 +54,6 @@ exports.odpovedNaRandomKviz = (req, res) => {
         // spravnaHlaska, listOdpovedi
         hlaska: randomSeznamUcitelu[0],
         odpovedi: randomSeznamUcitelu[1],
-        odpoved: "",
         score: score,
     });
      
