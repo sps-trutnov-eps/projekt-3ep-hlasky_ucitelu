@@ -3,12 +3,29 @@
     <p><%= score %></p>
     <p><%= odpoved %></p>
     <p>Uhodněte kdo řekl tuto hlášku:</p>
-    <b><%= hlaska %></b>
+    <p class="hlaska"><%= hlaska %></p>
     <p>Vyberte:</p>
     <form method="post" script="/hlasky/random" >
         <% odpovedi.forEach(ucitel => { %>
-            <a href="/hlasky/random?hlaska=<%= hlaska %>"> <input type="submit" name="ucitel" value="<%= ucitel %>" /> </a><br>
+
+
+
+            <div class="odpovedi">
+                <input class="odpoved" type="submit" name="ucitel" value="<%= ucitel %>" /><br>
+            </div>
+
+
+
+
+                
+                
         <% }); %>
     </form>
+
+
+
+    <a href="">
+
+
 
 <%- include('../_layout/footer') %>

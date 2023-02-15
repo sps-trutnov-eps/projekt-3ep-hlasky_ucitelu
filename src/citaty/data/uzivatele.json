@@ -6,5 +6,9 @@
     "Honza": {
         "heslo": "$2a$10$FETaNRgiH1Y.QYXeK02ImeAHWuV50YiSu6GorDTEJZz/e9ib5iOXG",
         "score": 9
+    },
+    "admin": {
+        "heslo": "$2a$10$SbCKtiprXpJ5/hGOeK6t6eNUM.WkCIB/czX5hdIrAtCu7cUo24kfO",
+        "score": 20
     }
 }
