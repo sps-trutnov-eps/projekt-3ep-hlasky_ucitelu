@@ -153,7 +153,9 @@
         "'Dneska je to jedna píčovina vedle druhý...'",
         "'Budeme doufat, že uživatelé co mají rádi počasí, nebudou fašisti.'",
         "'Jsi největší blbec na zeměkouli, ve třídě!'",
-        "'Tři minuty! Celý kurva den!'"
+        "'Tři minuty! Celý kurva den!'",
+        "'Tomu říkám dělba práce! Nebudeš dělat nic!'"
+
     ]
     },
 
@@ -241,7 +243,7 @@
     },
 
 
-    "Jan Šimešek":{
+    "Jan Šimeček":{
         "hlasky":["'Cívka je jak dívka, nejdříve napětí, poté proud.'",
         "''",
         "''"
@@ -303,8 +305,4 @@
         "''"
     ]
     }
-
-
-
-
 }

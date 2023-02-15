@@ -139,4 +139,12 @@ body footer {
   border: white 2px solid;
   border-radius: 15px;
   margin: 0.5em;
+}
+
+.score {
+  top: 50px;
+  right: 10px;
+  position: absolute;
+  font-size: 2.5vw;
+  font-weight: bolder;
 }/*# sourceMappingURL=style.css.map */
