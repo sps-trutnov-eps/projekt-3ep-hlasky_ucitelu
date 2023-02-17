@@ -1,4 +1,5 @@
 const model = require('../models/uzivatelModel');
+const nodemailer = require("nodemailer");
 
 exports.registrace = (request, response) => {
     response.render('uzivatel/registrace', {
@@ -58,6 +59,34 @@ exports.registrovat = (request, response) => {
     if(!model.pridatUzivatele(jmeno, email, heslo)) {
         return response.redirect('/web/error');
     }
+
+    //kód pro posílání emailů:
+
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+           user: "hlaskyspstrutnov@gmail.com",
+           pass: "fkmavpsvlubwpuxu"
+        },
+        tls:{rejectUnauthorized: false}
+     });
+     
+     const mailOptions = {
+        from: "hlaskyspstrutnov@gmail.com",
+        to: "furlong@spstrutnov.cz",
+        subject: "Nodemailer Test",
+        html: "Test Gmail using Node JS"
+     };
+     
+     transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+           console.log(error);
+        }else{
+           console.log("Email sent: " + info.response);
+        }
+     });
+
+    //konec kódu pro emaily
 
     return response.redirect('/uzivatel/prihlasit');
 }
