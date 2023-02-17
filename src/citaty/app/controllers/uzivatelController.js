@@ -16,8 +16,15 @@ exports.prihlaseni = (request, response) => {
 
 exports.registrovat = (request, response) => {
     const jmeno = request.body.jmeno.trim();
+    const email = request.body.email.trim();
     const heslo = request.body.heslo.trim();
     const hesloZnovu = request.body.hesloZnovu.trim();
+
+    if (email.length == 0){
+        return response.render('uzivatel/registrace', {
+            error: 'Email není vyplněný!',
+        });
+    }
 
     if(jmeno.length == 0) {
         return response.render('uzivatel/registrace', {
@@ -29,18 +36,26 @@ exports.registrovat = (request, response) => {
             error: 'Heslo není vyplněné!',
         });
     }
+
     if(heslo != hesloZnovu) {
         return response.render('uzivatel/registrace', {
             error: 'Hesla se neshodují!',
         });
     }
+
+    if (!email.includes("@spstrutnov.cz")){
+        return response.render('uzivatel/registrace', {
+            error: 'Email není školní email!',
+        });
+    }
+
     if(model.existujeUzivatel(jmeno)) {
         return response.render('uzivatel/registrace', {
             error: 'Uživatel již existuje!',
         });
     }
 
-    if(!model.pridatUzivatele(jmeno, heslo)) {
+    if(!model.pridatUzivatele(jmeno, email, heslo)) {
         return response.redirect('/web/error');
     }
 
