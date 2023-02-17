@@ -13,12 +13,21 @@
     },
     "senkyr": {
         "heslo": "$2a$10$Jw6vKaiB3NrLJ7tdkKsTaObVcoJIBGvqfMJrkeYj5zyVlLIWRT7my",
-        "score": 4,
+        "score": 6,
         "oblibeneHlasky": [
             "'Dnes je 12.11 2022 a chleba...'",
             "'Přijít později než já!? No to je vrchol hulvátství…'",
             "'Pusťíme sem zimu!'",
             "'Nedělal jsi nic? Tak to musíme náležitě oznámkovat.'"
         ]
+    },
+    "Idk": {
+        "heslo": "$2a$10$wdzwkvDANG1v2CjyDxvkPOanJ9tgZ4xGIWV1FHHCnFcLxi756VuFO",
+        "score": 4
+    },
+    "idk": {
+        "heslo": "$2a$10$wdzwkvDANG1v2CjyDxvkPOanJ9tgZ4xGIWV1FHHCnFcLxi756VuFO",
+        "email": "mail@spstrutnov.cz",
+        "score": 3
     }
 }

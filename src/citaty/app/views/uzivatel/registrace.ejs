@@ -1,6 +1,7 @@
 <%- include('../_layout/header') %>
     <form method="post" script="/uzivatel/registrovat">
         <input type="text" name="jmeno" placeholder="Jméno..." /><br />
+        <input type="email" name="email" placeholder="Email..." /><br />
         <input type="password" name="heslo" placeholder="Heslo..." /><br />
         <input type="password" name="hesloZnovu" placeholder="Heslo znovu..." /><br />
         <% if(error) { %>

@@ -3,13 +3,14 @@ const { request } = require('express');
 const jsondb = require('simple-json-db');
 const db = new jsondb('./data/uzivatele.json');
 
-exports.pridatUzivatele = (jmeno, heslo) => {
+exports.pridatUzivatele = (jmeno, email, heslo) => {
     if(db.has(jmeno)) {
         return false;
     }
 
     db.set(jmeno, {
         heslo: bcrypt.hashSync(heslo, 10),
+        email: email,
     });
 
     if(!db.has(jmeno)) {
@@ -37,21 +38,8 @@ exports.spravneHeslo = (jmeno, heslo) => {
     return bcrypt.compareSync(heslo, uzivatel.heslo);
 }
 
-
-// exports.pridatHlaskuUzivateli = (jmeno, hlaska) => {
-//     let data = db.JSON()[jmeno];
-//     data.posledniHlaska = hlaska;
-    
-//     db.set(jmeno, data);
-
-//     console.log("Hlaska: " + data["posledniHlaska"] + "Ulozena");
-//     console.log("Uzivateli: "+ jmeno);
-// }
 exports.ulozitHighScore = (jmeno, score) => {
     let data = db.JSON()[jmeno];
-    //test
-    console.log(data.score);
-    //konec test
 
     if (data.score == undefined){
         data.score = 0;
@@ -65,6 +53,9 @@ exports.ulozitHighScore = (jmeno, score) => {
 } 
 
 exports.ulozitOblibenouHlasku = (jmeno, hlaska) => {
+    if (jmeno==undefined||hlaska==undefined){
+    console.log("nedostatek argumentů.");} // chybová hláška
+
     let data = db.JSON()[jmeno];
 
     if (data.oblibeneHlasky == undefined){
@@ -74,7 +65,6 @@ exports.ulozitOblibenouHlasku = (jmeno, hlaska) => {
     if (!data.oblibeneHlasky.includes(hlaska)){
         data.oblibeneHlasky.push(hlaska);
         db.set(jmeno, data);
-        console.log("Hláška: " + data.oblibeneHlasky[data.oblibeneHlasky.length - 1] + " Byla uložena.");
     }
 
 }
