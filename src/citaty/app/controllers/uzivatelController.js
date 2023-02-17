@@ -107,10 +107,20 @@ exports.registrovat = (request, response) => {
     request.session.uzivatel = [jmeno, email, bcrypt.hashSync(heslo, 10)];
 
     setTimeout(function(){
-        request.session.expired = 1;
+        if (request.session.prihlasenyUzivatel == undefined){
+            request.session.destroy();
+            console.log("KÓD DESTROYED");
+        }
+        else{
+            if (request.session.prihlasenyUzivatel != request.session.uzivatel[0]){
+                request.session.destroy();
+                console.log("KÓD DESTROYED");
+            }
+        }
+        
         console.log("KÓD EXPIRED");
     
-    }, 0.125 * 60000); // za jak dlouho vyprší kód. (v minutách)
+    }, 1 * 60000); // za jak dlouho vyprší kód. (v minutách)
 
     return response.redirect('/uzivatel/overeni');
 }
@@ -118,12 +128,6 @@ exports.registrovat = (request, response) => {
 exports.overit = (request, response) => {
     const kod = request.body.kod;
 
-    if (request.session.expired == 1){
-        request.session.uzivatel = undefined;
-        request.session.kod = undefined;
-    }
-
-    console.log("Overit expired: " + request.session.expired);
     console.log("Overit kod: " + request.session.kod);
     if (request.session.uzivatel == undefined || request.session.kod == undefined){
         return response.render("uzivatel/overeni", {
@@ -137,9 +141,10 @@ exports.overit = (request, response) => {
         });
     }
 
-    if(!model.pridatUzivatele(request.session.uzivatel[0], request.session.uzivatel[1], request.session.uzivatel[2])) {
-        return response.redirect('/web/error');
-    }
+    // if(model.pridatUzivatele(request.session.uzivatel[0], request.session.uzivatel[1], request.session.uzivatel[2]) == false) {
+    //     return response.redirect('/web/error');
+    // }
+    model.pridatUzivatele(request.session.uzivatel[0], request.session.uzivatel[1], request.session.uzivatel[2]);
 
     request.session.uzivatel = undefined;
     request.session.kod = undefined;
