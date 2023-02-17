@@ -1,5 +1,10 @@
 const model = require('../models/uzivatelModel');
 const nodemailer = require("nodemailer");
+const bcrypt = require('bcryptjs');
+
+const randBetween = (min, max) => {
+	return Math.round(Math.random() * (max - min)) + min;
+}
 
 exports.registrace = (request, response) => {
     response.render('uzivatel/registrace', {
@@ -13,6 +18,12 @@ exports.prihlaseni = (request, response) => {
         error: undefined,
         //titulek: 'Přihlášení',
     });
+}
+
+exports.overeni = (req, res) => {
+    res.render('uzivatel/overeni', {
+        error: undefined,
+    })
 }
 
 exports.registrovat = (request, response) => {
@@ -56,12 +67,10 @@ exports.registrovat = (request, response) => {
         });
     }
 
-    if(!model.pridatUzivatele(jmeno, email, heslo)) {
-        return response.redirect('/web/error');
-    }
-
     //kód pro posílání emailů:
 
+    const kod = randBetween(1000000, 9999999); //7-digit code pro ověření
+    
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -73,14 +82,18 @@ exports.registrovat = (request, response) => {
      
      const mailOptions = {
         from: "hlaskyspstrutnov@gmail.com",
-        to: "furlong@spstrutnov.cz",
+        to: email,
         subject: "Nodemailer Test",
-        html: "Test Gmail using Node JS"
+        text: "Váš ověřovací kód je: " + kod
      };
      
      transporter.sendMail(mailOptions, function(error, info){
         if(error){
            console.log(error);
+
+           return response.render('uzivatel/registrace', {
+            error: 'Email neexistuje!',
+            });
         }else{
            console.log("Email sent: " + info.response);
         }
@@ -88,7 +101,52 @@ exports.registrovat = (request, response) => {
 
     //konec kódu pro emaily
 
-    return response.redirect('/uzivatel/prihlasit');
+    //request.session.kod = bcrypt.hashSync(kod.toString(), 10); // doubble encryption
+    request.session.kod = kod;
+
+    request.session.uzivatel = [jmeno, email, bcrypt.hashSync(heslo, 10)];
+
+    setTimeout(function(){
+        request.session.expired = 1;
+        console.log("KÓD EXPIRED");
+    
+    }, 0.125 * 60000); // za jak dlouho vyprší kód. (v minutách)
+
+    return response.redirect('/uzivatel/overeni');
+}
+
+exports.overit = (request, response) => {
+    const kod = request.body.kod;
+
+    if (request.session.expired == 1){
+        request.session.uzivatel = undefined;
+        request.session.kod = undefined;
+    }
+
+    console.log("Overit expired: " + request.session.expired);
+    console.log("Overit kod: " + request.session.kod);
+    if (request.session.uzivatel == undefined || request.session.kod == undefined){
+        return response.render("uzivatel/overeni", {
+            error: "Kód vypršel!",
+        });
+    }
+
+    if (request.session.kod != kod){
+        return response.render("uzivatel/overeni", {
+            error: "Špatný kód!",
+        });
+    }
+
+    if(!model.pridatUzivatele(request.session.uzivatel[0], request.session.uzivatel[1], request.session.uzivatel[2])) {
+        return response.redirect('/web/error');
+    }
+
+    request.session.uzivatel = undefined;
+    request.session.kod = undefined;
+
+    return response.redirect('/uzivatel/prihlaseni');
+
+    // přidat uživatele do db
 }
 
 exports.prihlasit = (request, response) => {

@@ -31,24 +31,20 @@
         "email": "furlong@spstrutnov.cz",
         "score": 1
     },
-    "Pepa": {
-        "heslo": "$2a$10$AbQaHKGDpHDV6K7Nif2eUulvcYtCHEG.6wSj.iNUoOfU0GM88VQ5a",
-        "email": "pepa@spstrutnov.cz"
-    },
     "pepa": {
-        "heslo": "$2a$10$rNHl.xVt3W4x6fTnk8B4JupNLda9PpBhdokoJmpYaac8umEhzG/4S",
-        "email": "idk@spstrutnov.cz"
+        "heslo": "$2a$10$tOH5UQlk2NxwfyhZTW/C5ujrUirnhJHOM99SWzjoKadTnQPpygFti",
+        "email": "furlong@spstrutnov.cz"
     },
-    "pepanaro": {
-        "heslo": "$2a$10$V6KBKY9MHyl9asu.3m1ebOZbMNwtEqbMmugEO44PaWKCB6.o8M.CC",
-        "email": "idk@spstrutnov.cz"
+    "ligma": {
+        "heslo": "$2a$10$X5PaDdc2u0lPyUjqA2hjCu6UjUJYFy6KozD/ZDxdChY.R5UHFwzDi",
+        "email": "furlong@spstrutnov.cz"
     },
-    "pepakarel": {
-        "heslo": "$2a$10$nVgk9gWIPQl4DXdVazek8uTtWbuPxCTgFCI4spt7w1jDM/NlABy5G",
-        "email": "idk@spstrutnov.cz"
+    "ligmus": {
+        "heslo": "$2a$10$zm2pwydpND5fmEv3baAGXu2V762E8d1FB5eNqzU0SOaHUeKXQA/wS",
+        "email": "furlong@spstrutnov.cz"
     },
-    "petrfakt": {
-        "heslo": "$2a$10$KRKsG8BYavDn4qT1RctVnuKJP9hs9RBvStiSaE1JbjSrh3plufAIm",
-        "email": "idk@spstrutnov.cz"
+    "ligmaballz": {
+        "heslo": "$2a$10$JfZ4rlSJfWqLVAPfeNDFnenpsVxb5NUxBjF/lvHoGclyInOjNpR5y",
+        "email": "furlong@spstrutnov.cz"
     }
 }
