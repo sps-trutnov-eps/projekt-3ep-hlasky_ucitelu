@@ -148,8 +148,10 @@ body{
     text-align: center;
     
 
+    
+
     .odpoved {
-        font-weight: 700;
+        font-weight: 500;
         color:white;
         background-color: var(--primary);
         text-align: center;
@@ -159,8 +161,21 @@ body{
         padding: 1em;
         border: white 2px solid;
         border-radius: 15px;
-        margin: 0.5em;
+        margin: 0.4em;
+        opacity:1;
+        text-shadow: 0px 0px 8px rgba(255,255,255,0.7);
+        
     }
+
+    
+    .odpoved:hover
+    {
+        text-shadow: 0px 0px 8px rgba(255,255,255,2);
+        border: white 3px solid;
+        font-size: 1.1vw;
+        transition:font-size 0.2s;
+    }
+    
 }
 
 .score {
