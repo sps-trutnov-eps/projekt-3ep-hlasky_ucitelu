@@ -9,5 +9,8 @@ router.get('/prihlasit', controller.prihlaseni);
 router.post('/prihlasit', controller.prihlasit);
 router.get('/odhlasit', controller.odhlasit);
 router.get('/profil', controller.profil);
+router.get('/overeni', controller.overeni);
+router.post('/overeni', controller.overit);
+
 
 module.exports = router;

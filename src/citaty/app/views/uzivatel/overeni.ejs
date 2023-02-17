@@ -1,0 +1,9 @@
+<%- include('../_layout/header') %>
+    <p>Prosím ověřte kód který vám přišel na Email který jste zadali.</p>
+    <b>TIP: Koukněte do spamu.</b>
+    <form method="post" script="/uzivatel/prihlasit">
+        <input type="text" name="kod" placeholder="Kód..." /><br />
+        <input type="submit" value="Odeslat" />
+    </form>
+    <b style="color: red;"><%= error %></b>
+<%- include('../_layout/footer') %>

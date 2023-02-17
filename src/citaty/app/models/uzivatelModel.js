@@ -3,13 +3,13 @@ const { request } = require('express');
 const jsondb = require('simple-json-db');
 const db = new jsondb('./data/uzivatele.json');
 
-exports.pridatUzivatele = (jmeno, email, heslo) => {
+exports.pridatUzivatele = (jmeno, email, hashleHeslo) => {
     if(db.has(jmeno)) {
         return false;
     }
 
     db.set(jmeno, {
-        heslo: bcrypt.hashSync(heslo, 10),
+        heslo: hashleHeslo,
         email: email,
     });
 
@@ -19,6 +19,7 @@ exports.pridatUzivatele = (jmeno, email, heslo) => {
 
     return true;
 }
+
 
 exports.existujeUzivatel = (jmeno) => {
     return db.has(jmeno);
