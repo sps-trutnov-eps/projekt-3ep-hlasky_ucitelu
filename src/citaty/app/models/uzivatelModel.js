@@ -39,6 +39,9 @@ exports.spravneHeslo = (jmeno, heslo) => {
 }
 
 exports.ulozitHighScore = (jmeno, score) => {
+    if (jmeno==undefined||score==undefined){
+        console.log("nedostatek argumentů.");} // chybová hláška
+
     let data = db.JSON()[jmeno];
 
     if (data.score == undefined){
@@ -50,7 +53,19 @@ exports.ulozitHighScore = (jmeno, score) => {
         data.score = score;
         db.set(jmeno, data);
     }
-} 
+}
+exports.getHighScore = (jmeno) => {
+    if (jmeno==undefined){
+    console.log("nedostatek argumentů.");} // chybová hláška
+
+    let data = db.JSON()[jmeno];
+
+    if (data.score == undefined){
+        return 0;
+    }
+    
+    return data.score;
+}
 
 exports.ulozitOblibenouHlasku = (jmeno, hlaska) => {
     if (jmeno==undefined||hlaska==undefined){

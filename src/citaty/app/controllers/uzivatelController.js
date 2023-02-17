@@ -87,11 +87,11 @@ exports.profil = (request, response) => {
     if(!request.session.prihlasenyUzivatel) {
         return response.redirect('/uzivatel/prihlasit');
     }
-
+    
     response.render('uzivatel/profil', {
         jmeno: request.session.prihlasenyUzivatel,
         hlasky: model.getOblibenyHlasky(request.session.prihlasenyUzivatel),
-        //titulek: 'Profil',
+        highScore: model.getHighScore(request.session.prihlasenyUzivatel),
     });
 }
 
