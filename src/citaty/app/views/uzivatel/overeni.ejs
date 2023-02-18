@@ -1,6 +1,13 @@
 <%- include('../_layout/header') %>
     <p>Prosím ověřte kód který vám přišel na Email který jste zadali.</p>
     <b>TIP: Koukněte do spamu.</b>
+<!-- Display the countdown timer in an element -->
+<p id="demo"></p>
+
+<!-- Bruh -->
+<p style="color: crimson;" id="time">V: <%= time %> Vám vyprší kód.</p>
+
+
     <form method="post" script="/uzivatel/prihlasit">
         <input type="text" name="kod" placeholder="Kód..." /><br />
         <input type="submit" value="Odeslat" />
