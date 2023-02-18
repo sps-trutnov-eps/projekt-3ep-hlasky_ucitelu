@@ -7,7 +7,9 @@
     --primary: #490065;
     --secondary: #263b7c;
     --tertiary: #4a8992;
+    --glow:rgba(255,255,255,0.7);
     font-family: 'Roboto', sans-serif;
+
     // font-family: 'Roboto Slab', serif;
     color: white;
 }
@@ -70,9 +72,13 @@ body{
     }
 }
 
-
-
-
+.score {
+    top:50px;
+    right:10px;
+    position: absolute;
+    font-size: 2.5vw;
+    font-weight: bolder;
+}
 
 
 .hlaska {
@@ -83,47 +89,68 @@ body{
 }
 
 
-.odpovedi {
-    margin: 0 auto;
+.odpoved {
+    font-weight: 500;
+    color:white;
     text-align: center;
-    
-
-    
-
-    .odpoved {
-        font-weight: 500;
-        color:white;
-        background-color: var(--primary);
-        text-align: center;
-        border-radius: 3px;
-        width: 15vw;
-        font-size: 1vw;
-        padding: 1em;
-        border: white 2px solid;
-        border-radius: 15px;
-        margin: 0.4em;
-        opacity:1;
-        text-shadow: 0px 0px 8px rgba(255,255,255,0.7);
-        
-    }
-
-    
-    .odpoved:hover
-    {
-        text-shadow: 0px 0px 8px rgba(255,255,255,2);
-        border: white 3px solid;
-        font-size: 1.1vw;
-        transition:font-size 0.2s;
-    }
-    
+    border-radius: 3px;
+    font-size: 1vw;
+    text-shadow: 0px 0px 8px rgba(255,255,255,0.7);
+    background-color: transparent;
+    border: none;
+    padding: 2em;
+    width: 16vw;
+    margin-bottom: 1em; //chyba!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
 }
 
-.score {
-    top:50px;
-    right:10px;
-    position: absolute;
-    font-size: 2.5vw;
-    font-weight: bolder;
+
+.efekt {
+    width: 16vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    will-change: transform;
+    background-color: var(--primary);
+    margin: 0 auto;
+}
+
+  
+.tlacitko::before,
+.tlacitko::after {
+position: absolute;
+top: 0;
+left: 0;
+content: '';
+display: block;
+background-color: var(--glow);
+transition: all 250ms ease-in-out;
+
+}
+  
+.tlacitko::before {
+width: 2px;
+height: 100px;
+box-shadow: 298px 0 var(--glow);
+
+}
+  
+.tlacitko::after {
+height: 2px;
+width: 300px;
+box-shadow: 0 98px var(--glow);
+
+}
+  
+.tlacitko:hover::before {
+left: -5px;
+box-shadow: 310px 0 var(--glow);
+}
+  
+.tlacitko:hover::after {
+top: -5px;
+box-shadow: 0 105px var(--glow);
 }
 
 

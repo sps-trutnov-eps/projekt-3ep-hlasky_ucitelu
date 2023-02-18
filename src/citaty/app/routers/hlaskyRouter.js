@@ -5,7 +5,7 @@ const controller = require('../controllers/hlaskyController');
 
 router.get('/random', controller.randomKviz);
 router.post('/random', controller.odpovedNaRandomKviz);
-
+router.get('/uspesnost', controller.uspesnost);
 
 
 

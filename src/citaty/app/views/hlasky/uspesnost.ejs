@@ -1,13 +1,16 @@
 <%- include('../_layout/header') %>
 <div class="container">
     <p>Uhodněte kdo řekl tuto hlášku:</p>
-    <p class="score"><%= score %></p>
     <p class="hlaska"><%= hlaska %></p>
-    <form method="post" script="/hlasky/random" >
+    <form method="post" script="/hlasky/uspesnost" >
         <% odpovedi.forEach(ucitel => { %>
             <div class="efekt tlacitko"><input class="odpoved" type="submit" name="ucitel" value="<%= ucitel %>" /><br></div>
         <% }); %>
     </form>
+
+
+
+     
     
 </div>
 <%- include('../_layout/footer') %>

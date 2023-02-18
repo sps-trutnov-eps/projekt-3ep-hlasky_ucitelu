@@ -51,5 +51,33 @@ exports.odpovedNaRandomKviz = (req, res) => {
         odpoved: "",
         score: score,
     });
+
+
+
+
+
+
      
 }
+
+
+
+exports.uspesnost = (req, res) => {
+    const hlaska = model.randomUcitel()[0];
+    const list = model.randomUcitel()[1];
+
+
+
+
+    return res.render("hlasky/uspesnost",{
+        hlaska: hlaska,
+        odpovedi: list,
+    });
+
+
+
+
+
+}
+
+

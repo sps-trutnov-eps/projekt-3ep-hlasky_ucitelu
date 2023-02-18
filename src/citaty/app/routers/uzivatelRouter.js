@@ -9,5 +9,6 @@ router.get('/prihlasit', controller.prihlaseni);
 router.post('/prihlasit', controller.prihlasit);
 router.get('/odhlasit', controller.odhlasit);
 router.get('/profil', controller.profil);
+router.get('/sinslavy', controller.sinslavy);
 
 module.exports = router;
