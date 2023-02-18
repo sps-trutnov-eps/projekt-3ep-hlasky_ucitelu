@@ -79,33 +79,33 @@ exports.registrovat = (request, response) => {
 
     const kod = randBetween(1000000, 9999999); //7-digit code pro ověření
     
-    // const transporter = nodemailer.createTransport({
-    //     service: "gmail",
-    //     auth: {
-    //        user: "hlaskyspstrutnov@gmail.com",
-    //        pass: "fkmavpsvlubwpuxu"
-    //     },
-    //     tls:{rejectUnauthorized: false}
-    //  });
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+           user: "hlaskyspstrutnov@gmail.com",
+           pass: "fkmavpsvlubwpuxu"
+        },
+        tls:{rejectUnauthorized: false}
+     });
      
-    //  const mailOptions = {
-    //     from: "hlaskyspstrutnov@gmail.com",
-    //     to: email,
-    //     subject: "Ověřovací kód",
-    //     text: "Váš ověřovací kód je: " + kod
-    //  };
+     const mailOptions = {
+        from: "hlaskyspstrutnov@gmail.com",
+        to: email,
+        subject: "Ověřovací kód",
+        text: "Váš ověřovací kód je: " + kod
+     };
      
-    //  transporter.sendMail(mailOptions, function(error, info){
-    //     if(error){
-    //        console.log(error);
+     transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+           console.log(error);
 
-    //        return response.render('uzivatel/registrace', {
-    //         error: 'Email neexistuje!',
-    //         });
-    //     }else{
-    //        console.log("Email sent: " + info.response);
-    //     }
-    //  });
+           return response.render('uzivatel/registrace', {
+            error: 'Email neexistuje!',
+            });
+        }else{
+           console.log("Email sent: " + info.response);
+        }
+    });
 
     //konec kódu pro emaily
 
