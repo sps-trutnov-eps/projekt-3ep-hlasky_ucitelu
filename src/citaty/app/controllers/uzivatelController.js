@@ -16,11 +16,14 @@ exports.registrace = (request, response) => {
 exports.prihlaseni = (request, response) => {
     response.render('uzivatel/prihlaseni', {
         error: undefined,
-        //titulek: 'Přihlášení',
     });
 }
 
 exports.overeni = (req, res) => {
+    // if (req.session.kod == undefined){
+    //     return res.redirect('/web/error');
+    // }
+
     res.render('uzivatel/overeni', {
         error: undefined,
     })
@@ -83,7 +86,7 @@ exports.registrovat = (request, response) => {
      const mailOptions = {
         from: "hlaskyspstrutnov@gmail.com",
         to: email,
-        subject: "Nodemailer Test",
+        subject: "Ověřovací kód",
         text: "Váš ověřovací kód je: " + kod
      };
      
@@ -109,12 +112,12 @@ exports.registrovat = (request, response) => {
     setTimeout(function(){
         if (request.session.prihlasenyUzivatel == undefined){
             request.session.destroy();
-            console.log("KÓD DESTROYED");
+            console.log("KÓD DESTROYED 1");
         }
         else{
             if (request.session.prihlasenyUzivatel != request.session.uzivatel[0]){
                 request.session.destroy();
-                console.log("KÓD DESTROYED");
+                console.log("KÓD DESTROYED 2");
             }
         }
         
@@ -146,12 +149,8 @@ exports.overit = (request, response) => {
     // }
     model.pridatUzivatele(request.session.uzivatel[0], request.session.uzivatel[1], request.session.uzivatel[2]);
 
-    request.session.uzivatel = undefined;
-    request.session.kod = undefined;
 
-    return response.redirect('/uzivatel/prihlaseni');
-
-    // přidat uživatele do db
+    return response.redirect('/uzivatel/profil'); // pro nějáký důvod když sem dám redirect na přihlášení tak to hodí error stránku???
 }
 
 exports.prihlasit = (request, response) => {
