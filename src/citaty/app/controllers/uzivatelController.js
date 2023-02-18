@@ -6,6 +6,10 @@ const randBetween = (min, max) => {
 	return Math.round(Math.random() * (max - min)) + min;
 }
 
+function addMinutes(date, minutes) {
+    return new Date(date + minutes*60000);
+}
+
 exports.registrace = (request, response) => {
     response.render('uzivatel/registrace', {
         error: undefined,
@@ -20,12 +24,13 @@ exports.prihlaseni = (request, response) => {
 }
 
 exports.overeni = (req, res) => {
-    if (req.session.kod == undefined){
+    if (req.session.kod == undefined || req.session.uzivatel == undefined){
         return res.redirect('/web/error');
     }
 
     res.render('uzivatel/overeni', {
         error: undefined,
+        time: req.session.uzivatel[3],
     })
 }
 
@@ -74,40 +79,42 @@ exports.registrovat = (request, response) => {
 
     const kod = randBetween(1000000, 9999999); //7-digit code pro ověření
     
-    const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-           user: "hlaskyspstrutnov@gmail.com",
-           pass: "fkmavpsvlubwpuxu"
-        },
-        tls:{rejectUnauthorized: false}
-     });
+    // const transporter = nodemailer.createTransport({
+    //     service: "gmail",
+    //     auth: {
+    //        user: "hlaskyspstrutnov@gmail.com",
+    //        pass: "fkmavpsvlubwpuxu"
+    //     },
+    //     tls:{rejectUnauthorized: false}
+    //  });
      
-     const mailOptions = {
-        from: "hlaskyspstrutnov@gmail.com",
-        to: email,
-        subject: "Ověřovací kód",
-        text: "Váš ověřovací kód je: " + kod
-     };
+    //  const mailOptions = {
+    //     from: "hlaskyspstrutnov@gmail.com",
+    //     to: email,
+    //     subject: "Ověřovací kód",
+    //     text: "Váš ověřovací kód je: " + kod
+    //  };
      
-     transporter.sendMail(mailOptions, function(error, info){
-        if(error){
-           console.log(error);
+    //  transporter.sendMail(mailOptions, function(error, info){
+    //     if(error){
+    //        console.log(error);
 
-           return response.render('uzivatel/registrace', {
-            error: 'Email neexistuje!',
-            });
-        }else{
-           console.log("Email sent: " + info.response);
-        }
-     });
+    //        return response.render('uzivatel/registrace', {
+    //         error: 'Email neexistuje!',
+    //         });
+    //     }else{
+    //        console.log("Email sent: " + info.response);
+    //     }
+    //  });
 
     //konec kódu pro emaily
 
     //request.session.kod = bcrypt.hashSync(kod.toString(), 10); // doubble encryption
     request.session.kod = kod;
 
-    request.session.uzivatel = [jmeno, email, bcrypt.hashSync(heslo, 10)];
+    request.session.uzivatel = [jmeno, email, bcrypt.hashSync(heslo, 10), addMinutes(Date.now(), 1).toTimeString("HH:MM:SS")];
+    console.log(request.session.uzivatel[3]);
+    console.log(addMinutes(Date.now(), 1));
 
     setTimeout(function(){
         if (request.session.prihlasenyUzivatel == undefined){
@@ -131,16 +138,19 @@ exports.registrovat = (request, response) => {
 exports.overit = (request, response) => {
     const kod = request.body.kod;
 
-    console.log("Overit kod: " + request.session.kod);
     if (request.session.uzivatel == undefined || request.session.kod == undefined){
         return response.render("uzivatel/overeni", {
             error: "Kód vypršel!",
+            time: Date.now(), // zbývá 0 sekund.
         });
     }
+    console.log("Overit kod: " + request.session.kod);
+
 
     if (request.session.kod != kod){
         return response.render("uzivatel/overeni", {
             error: "Špatný kód!",
+            time: request.session.uzivatel[3],
         });
     }
 
