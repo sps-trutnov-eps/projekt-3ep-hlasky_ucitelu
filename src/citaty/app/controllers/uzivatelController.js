@@ -20,9 +20,9 @@ exports.prihlaseni = (request, response) => {
 }
 
 exports.overeni = (req, res) => {
-    // if (req.session.kod == undefined){
-    //     return res.redirect('/web/error');
-    // }
+    if (req.session.kod == undefined){
+        return res.redirect('/web/error');
+    }
 
     res.render('uzivatel/overeni', {
         error: undefined,
@@ -150,7 +150,7 @@ exports.overit = (request, response) => {
     model.pridatUzivatele(request.session.uzivatel[0], request.session.uzivatel[1], request.session.uzivatel[2]);
 
 
-    return response.redirect('/uzivatel/profil'); // pro nějáký důvod když sem dám redirect na přihlášení tak to hodí error stránku???
+    return response.redirect('/uzivatel/prihlasit');
 }
 
 exports.prihlasit = (request, response) => {

@@ -35,5 +35,9 @@
     "pepa": {
         "heslo": "$2a$10$IB4rRq4pSLs4DdcEdKhP9.BD2NeL3He0hRh.a7w5BUPEGibHPawBq",
         "email": "cumpiss@spstrutnov.cz"
+    },
+    "regdit": {
+        "heslo": "$2a$10$kc2WhxeH8C0EZQGwm75Z/uRVZoHMS6ajaX6au3TQqzvt/5yo4B58q",
+        "email": "cumpiss@spstrutnov.cz"
     }
 }
