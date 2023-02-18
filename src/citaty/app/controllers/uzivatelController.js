@@ -91,3 +91,4 @@ exports.sinslavy = (req, res) => {
     return res.render("uzivatel/sinslavy",{
     });
 }
+

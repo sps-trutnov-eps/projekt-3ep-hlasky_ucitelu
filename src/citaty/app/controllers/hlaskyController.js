@@ -65,6 +65,18 @@ exports.odpovedNaRandomKviz = (req, res) => {
 exports.uspesnost = (req, res) => {
     const hlaska = model.randomUcitel()[0];
     const list = model.randomUcitel()[1];
+    return res.render("hlasky/uspesnost",{
+        hlaska: hlaska,
+        odpovedi: list,
+    });
+}
+
+exports.procentaUspesnosti = (req, res) => {
+    const hlaska = model.randomUcitel()[0];
+    const list = model.randomUcitel()[1];
+    let skore = 0;
+    const otazky = 10;
+    
 
 
 
@@ -73,10 +85,6 @@ exports.uspesnost = (req, res) => {
         hlaska: hlaska,
         odpovedi: list,
     });
-
-
-
-
 
 }
 
