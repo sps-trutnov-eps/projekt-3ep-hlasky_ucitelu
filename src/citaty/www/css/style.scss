@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;800&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "login.scss";
 
 :root{
     // barvisky
     --bg: #161b22; 
-    --bg2: #cccccc;
-    --primary: #490065;
-    --secondary: #263b7c;
+    --bg2: #252c35;
+    --bg3: #cccccc;
+    --primary: #8b5cb4;
+    --secondary: #9d6f9b;
     --tertiary: #4a8992;
+    --hvr: #ccc;
     font-family: 'Roboto', sans-serif;
     // font-family: 'Roboto Slab', serif;
     color: white;
@@ -23,7 +26,7 @@ body{
 
     header{
         user-select: none;
-        background-color: var(--primary);
+        background-color: var(--bg2);
         width: 100vw;
         height: 5vh;
         display: inline-flex;
@@ -52,81 +55,59 @@ body{
         }
 
         a:hover{
-            color: var(--bg2);
+            color: var(--bg3);
         }
     }
 
     main{
         height: 85vh;
+
+        .container{
+            width: 80vw;
+            margin: 0 auto;
+            height: 100%;
+        }
     }
 
     footer{
-        background-color: #490065;
+        background-color: var(--bg2);
         height: 10vh;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         text-align: center;
-    }
-}
-
-.login{
-    margin: 0 auto;
-    position: absolute;
-    top: 40vh;
-    left: 40vw;
-    transform: translate(-50%, -50%);
-    padding: calc(5vh - 10px) 5vw 5vh 5vw;
-    background-color: var(--tertiary);
-    border-radius: 15px;
-    box-shadow: 3px 3px 30px 3px #000000;
-
-    .loginadpis{
-        text-align: center;
         font-weight: 600;
-        font-size: 2em;
-        margin: 0;
-        margin-bottom: 45px;
-        border-bottom: white solid 1px;
+    }
+}
+
+.bg{ //bg (no way) ((pozadí)) ((( o_o )))
+    $bg_height: 50vh;
+    width: 100vw;
+    height: $bg_height;
+    position: absolute;
+    left: 0;
+
+    .bg_img{
+        height: $bg_height;
+        width: 100%;
+        object-fit: cover;
+        user-select: none;
     }
 
-    div{
-        text-align: center;
-
-        form{
-            width: 90%;
-            margin: 0 auto;
-
-            .txtfld{
-                width: calc(100% - 20px);
-                margin: 0;
-                border: solid white 1px;
-                background-color: var(--primary);
-                border-radius: 5px;
-                padding: 10px;
-                margin-bottom: 10px;
-                color: white;
-            }
-
-            .loginbtn{
-                background-color: var(--secondary);
-                border: solid white 1px;
-                border-radius: 5px;
-                padding: 5px 15px 5px 15px;
-                color: white;
-                font-weight: 600;
-                margin-top: 10px;
-            }
-        }
-
-        p{
-            margin: 30px 0px 0px 0px;
-        }
-        
-        a{
-            text-decoration: underline;
-            color: white;
-            font-weight: 600;
-        }
-    }    
+    .grad{
+        position: absolute;
+        width: 100%;
+        height: $bg_height;
+        background: linear-gradient(
+            rgba(22, 27, 34, 0) 0%,
+            rgba(22, 27, 34, 0.65) 50%,
+            rgba(22, 27, 34, 0.75) 65%,
+            rgba(22, 27, 34, 0.85) 75.5%,
+            rgba(22, 27, 34, 0.89) 82.85%,
+            rgba(22, 27, 34, 0.95) 88%,
+            rgba(22, 27, 34) 100%
+        );
+        background-color: rgba(22, 27, 34, .25);
+    }
 }
+

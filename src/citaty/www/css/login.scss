@@ -1,0 +1,121 @@
+.login-cont{
+    $width: 20vw;
+    $height: 50vh;
+
+    width: $width;
+    min-width: 400px;
+    height: $height;
+    margin: 0 auto;
+    position: absolute;
+    top: 50vh - $height/2;
+    left: 50vw - $width/2;
+
+    text-align: center;
+
+    background-color: var(--bg2);
+
+    border-radius: 30px;
+
+    .login-nadpis{
+        height: 15%;
+    }
+
+    .login-form-cont{
+        height: 85%;
+
+        form{
+
+            input:not(.btn){ // řádky
+                border: none;
+                outline: none;
+                border-bottom: white solid 2px;
+                background-color: transparent;
+                width: 70%;
+                padding: 10px 0px 10px 0px;
+                margin-bottom: 20px;
+                color: white;
+                border-bottom: 2px solid var(--hvr);
+                transition: all 0.2s ease-in-out;
+
+                &:focus {
+                    outline: none;
+                    border-color: #666;
+                    }
+            }
+
+            input:not(.btn):first-of-type{
+                margin-top: 10%;
+            }
+
+            input:not(.btn):focus{
+                outline: none;
+            }
+
+            .btn{
+                width: 70%;
+                padding: 20px 0px 20px 0px;
+                border-radius: 10px;
+                margin-top: 5%;
+                position: absolute;
+                border-color: white;
+                color: white;
+                font-weight: 600;
+                font-size: 1.1em;
+                left: 15%;
+                top: 65%;
+                background: linear-gradient( 45deg,
+                    var(--primary) 0%,
+                    var(--secondary) 100%
+                );
+            }
+
+            .btn:hover{
+                opacity: .9;
+            }
+        }
+
+        .err{
+            background-color: rgba(184, 22, 22, .7);
+            border: solid 1px red;
+            width: 70%;
+            margin: 0 auto;
+            padding: 5px 0px 5px 0px;
+            border-radius: 10px;
+            position: relative;
+            margin-top: 2.5%;
+
+            p:not(:first-of-type){
+                position: absolute;
+                top: 20%;
+                left: 5%;
+                font-weight: 1000;
+                border-right: solid 1px white;
+                padding-right: 10px;
+            }
+        }
+    }
+
+    h3{
+        font-size: 2em;
+        width: 50%;
+        margin: 0 auto;
+        padding: 30px 0px 10px 0px;
+    }
+
+    .reg-text{
+        position: absolute;
+        top: 90%;
+        width: 100%;
+        text-align: center;
+
+        a{
+            color: white;
+            margin-left: 3px;
+            text-decoration: underline;
+        }
+
+        a:hover{
+            color: var(--hvr);
+        }
+    }
+}
