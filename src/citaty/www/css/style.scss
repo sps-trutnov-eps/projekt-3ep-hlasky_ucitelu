@@ -64,6 +64,7 @@ body{
         .container{
             width: 80vw;
             margin: 0 auto;
+            height: 100%;
         }
     }
 
@@ -80,22 +81,32 @@ body{
 
 .bg{ //bg (no way) ((pozadí)) ((( o_o )))
     $bg_height: 50vh;
-    width: 100%;
+    width: 100vw;
     height: $bg_height;
+    position: absolute;
+    left: 0;
 
     .bg_img{
         height: $bg_height;
         width: 100%;
         object-fit: cover;
+        user-select: none;
     }
 
     .grad{
         position: absolute;
         width: 100%;
         height: $bg_height;
-        background: rgb(0,0,0);
-        background: linear-gradient(0deg, var(--bg) 0%, rgba(77, 77, 77, 0.301) 100%);
-        backdrop-filter: blur(3px);
+        background: linear-gradient(
+            rgba(22, 27, 34, 0) 0%,
+            rgba(22, 27, 34, 0.65) 50%,
+            rgba(22, 27, 34, 0.75) 65%,
+            rgba(22, 27, 34, 0.85) 75.5%,
+            rgba(22, 27, 34, 0.89) 82.85%,
+            rgba(22, 27, 34, 0.95) 88%,
+            rgba(22, 27, 34, 1) 100%
+        );
+        background-color: rgba(22, 27, 34, .2);
     }
 }
 

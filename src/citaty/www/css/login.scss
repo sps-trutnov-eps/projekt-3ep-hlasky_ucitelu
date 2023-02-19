@@ -1,8 +1,9 @@
 .login-cont{
-    $width: 40vw;
+    $width: 20vw;
     $height: 50vh;
 
     width: $width;
+    min-width: 400px;
     height: $height;
     margin: 0 auto;
     position: absolute;
@@ -24,9 +25,9 @@
     }
 
     h3{
-        border-bottom: solid white 2px;
+        font-size: 2em;
         width: 50%;
         margin: 0 auto;
-        padding: 10px 0px 10px 0px;
+        padding: 30px 0px 10px 0px;
     }
 }
