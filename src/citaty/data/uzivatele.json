@@ -4,28 +4,10 @@
         "email": "capousek@spstrutnov.cz",
         "score": 3
     },
-    "Honza": {
-        "heslo": "$2a$10$FETaNRgiH1Y.QYXeK02ImeAHWuV50YiSu6GorDTEJZz/e9ib5iOXG",
-        "score": 11,
-        "oblibeneHlasky": [
-            "'To je jako kdyby jsi si chtěl koupit jednu tyčinku buena, ale stejně musíš koupit blaení, ve kterém jsou 2.'",
-            "'Chceš čůrat? A máš povolení od rodičů, že můžeš chodit o hodině?'",
-            "'Řízkové jedni!'"
-        ]
-    },
-    "senkyr": {
-        "heslo": "$2a$10$Jw6vKaiB3NrLJ7tdkKsTaObVcoJIBGvqfMJrkeYj5zyVlLIWRT7my",
-        "score": 6,
-        "oblibeneHlasky": [
-            "'Dnes je 12.11 2022 a chleba...'",
-            "'Přijít později než já!? No to je vrchol hulvátství…'",
-            "'Pusťíme sem zimu!'",
-            "'Nedělal jsi nic? Tak to musíme náležitě oznámkovat.'"
-        ]
-    },
     "Idk": {
         "heslo": "$2a$10$wdzwkvDANG1v2CjyDxvkPOanJ9tgZ4xGIWV1FHHCnFcLxi756VuFO",
-        "score": 4
+        "score": 4,
+        "email": "idk@spstrutnov.cz"
     },
     "idk": {
         "heslo": "$2a$10$nR3taUBRDBRCCadrNsdje.d6tdcaVYfVt3FbbR2p45FjKHjDMUH3m",
@@ -43,5 +25,9 @@
     "c": {
         "heslo": "$2a$10$ZlseLRbr6iowWs7d0tMC5u6y.WEmmL6xHjiqc7Xz0WS4mKIur5LEK",
         "email": "cumpiss@spstrutnov.cz"
+    },
+    "ligma": {
+        "heslo": "$2a$10$.Cpl5LsaBWGRPM3ArWgL9.zPyJuqW1laMI4KcWFJy8tuCDwHDFmMG",
+        "email": "c@spstrutnov.cz"
     }
 }
