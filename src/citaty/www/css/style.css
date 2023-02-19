@@ -89,7 +89,8 @@ body footer {
   border: none;
   padding: 2em;
   width: 16vw;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
+  background-color: var(--primary);
 }
 
 .efekt {
@@ -99,8 +100,8 @@ body footer {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background-color: var(--primary);
   margin: 0 auto;
+  margin-top: 2em;
 }
 
 .tlacitko::before,
