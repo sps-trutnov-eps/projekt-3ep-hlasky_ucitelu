@@ -63,9 +63,15 @@ exports.registrovat = (request, response) => {
         });
     }
 
-    if (!email.includes("@spstrutnov.cz")){
+    if (!email.endsWith("@spstrutnov.cz")){
         return response.render('uzivatel/registrace', {
             error: 'Email není školní email!',
+        });
+    }
+
+    if (model.existujeEmail(email)){
+        return response.render('uzivatel/registrace', {
+            error: 'Email už někdo používá!',
         });
     }
 

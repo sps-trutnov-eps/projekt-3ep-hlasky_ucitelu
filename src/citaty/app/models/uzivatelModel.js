@@ -7,7 +7,7 @@ exports.pridatUzivatele = (jmeno, email, hashleHeslo) => {
     if(db.has(jmeno)) {
         return false;
     }
-
+    
     db.set(jmeno, {
         heslo: hashleHeslo,
         email: email,
@@ -18,6 +18,26 @@ exports.pridatUzivatele = (jmeno, email, hashleHeslo) => {
     }
 
     return true;
+}
+
+exports.existujeEmail = (zadanyEmail) => {
+    const data = db.JSON();
+    const uzivatele = Object.keys(data);
+
+    let existuje = false;
+
+    uzivatele.forEach(uzivatel => {
+        email = data[uzivatel]["email"];
+        console.log(email);
+
+        if (email.includes(zadanyEmail)){
+            console.log("INCLUDES");
+            existuje = true; // chtěl jsem sem dát return true aby search byl rychlejší ale to prý nejde -_-
+        }
+
+    });
+
+    return existuje;
 }
 
 
