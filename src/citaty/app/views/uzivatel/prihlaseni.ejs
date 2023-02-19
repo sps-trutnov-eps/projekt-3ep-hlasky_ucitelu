@@ -11,16 +11,26 @@
             </div>
             <div class="login-form-cont">
                 <form method="post" script="/uzivatel/prihlasit">
-                    <input type="text" name="jmeno" placeholder="Jméno..." /><br />
-                    <input type="password" name="heslo" placeholder="Heslo..." /><br />
+                    <div class="login-input">
+                        <input type="text" name="jmeno" placeholder="Uživatelské jméno" /><br />
+                    </div>
+
+                    <div class="login-input">
+                        <input type="password" name="heslo" placeholder="Heslo" /><br />
+                    </div>
+
                     <% if(error) { %>
-                        <span style="color: red"><%= error %></span><br />
-                    <% } %>
-                    <input type="submit" value="Přihlásit" />
+                        <div class="err">
+                            <p><%= error %></p>
+                            <p>!</p>
+                        </div>
+                        <% } %>
+                    <input class="btn" type="submit" value="Přihlásit" />
             </form>
             </div>
+            <p class="reg-text">Nemáš ještě účet?, <a href=""> zaregistruj se!</a></p>
         </div>
-        
+
     </div>
 <%- include('../_layout/footer') %>
 

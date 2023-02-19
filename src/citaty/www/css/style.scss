@@ -6,9 +6,10 @@
     --bg: #161b22; 
     --bg2: #252c35;
     --bg3: #cccccc;
-    --primary: #490065;
-    --secondary: #263b7c;
+    --primary: #8b5cb4;
+    --secondary: #9d6f9b;
     --tertiary: #4a8992;
+    --hvr: #ccc;
     font-family: 'Roboto', sans-serif;
     // font-family: 'Roboto Slab', serif;
     color: white;
@@ -104,9 +105,9 @@ body{
             rgba(22, 27, 34, 0.85) 75.5%,
             rgba(22, 27, 34, 0.89) 82.85%,
             rgba(22, 27, 34, 0.95) 88%,
-            rgba(22, 27, 34, 1) 100%
+            rgba(22, 27, 34) 100%
         );
-        background-color: rgba(22, 27, 34, .2);
+        background-color: rgba(22, 27, 34, .25);
     }
 }
 
