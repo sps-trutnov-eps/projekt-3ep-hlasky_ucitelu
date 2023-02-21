@@ -26,16 +26,21 @@ exports.existujeEmail = (zadanyEmail) => {
 
     let existuje = false;
 
-    uzivatele.forEach(uzivatel => {
+    uzivatele.every(uzivatel => { // every se chová stejně jako forEach ale běží jenom dokuď se returnuje true.
+                                  // tohle dělám abych nemusel prohledá vat celý list abych našel dublikat.
+                                  // pry nejde z forEach se breaknout.
         email = data[uzivatel]["email"];
         console.log(email);
 
         if (email.includes(zadanyEmail)){
             console.log("INCLUDES");
             existuje = true; // chtěl jsem sem dát return true aby search byl rychlejší ale to prý nejde -_-
+            return false //break
         }
 
+        return true; // aby se nezastavil po 1 iteraci
     });
+
 
     return existuje;
 }
