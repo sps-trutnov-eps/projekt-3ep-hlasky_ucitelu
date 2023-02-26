@@ -6,5 +6,9 @@
     "Honza": {
         "heslo": "$2a$10$FETaNRgiH1Y.QYXeK02ImeAHWuV50YiSu6GorDTEJZz/e9ib5iOXG",
         "score": 9
+    },
+    "Jirka": {
+        "heslo": "$2a$12$Ap5QX0r.X02PCSK8on.WRe.rzJLGMtp8unrmxduyXUW54/tAlwO6G",
+        "score": 6
     }
 }
