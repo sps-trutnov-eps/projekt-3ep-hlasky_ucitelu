@@ -1,12 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;800&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .login-cont {
   width: 20vw;
   min-width: 400px;
   height: 50vh;
   margin: 0 auto;
-  position: absolute;
-  top: 25vh;
-  left: 40vw;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   background-color: var(--bg2);
   border-radius: 30px;
@@ -44,13 +49,10 @@
   padding: 20px 0px 20px 0px;
   border-radius: 10px;
   margin-top: 2.5%;
-  position: absolute;
   border-color: white;
   color: white;
   font-weight: 600;
   font-size: 1.1em;
-  left: 15%;
-  top: 65%;
   background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
 }
 .login-cont .login-form-cont form .btn:hover {
@@ -81,9 +83,6 @@
   padding: 30px 0px 10px 0px;
 }
 .login-cont .reg-text {
-  position: absolute;
-  top: 85%;
-  width: 100%;
   text-align: center;
 }
 .login-cont .reg-text a {
@@ -119,6 +118,7 @@ body {
 body header {
   -webkit-user-select: none;
      -moz-user-select: none;
+      -ms-user-select: none;
           user-select: none;
   background-color: var(--bg2);
   width: 100vw;
@@ -169,8 +169,10 @@ body footer {
 .bg {
   width: 100vw;
   height: 85vh;
-  position: absolute;
   left: 0;
+  top: 5vh;
+  z-index: 0;
+  position: absolute;
 }
 .bg .bg_img {
   height: 100%;
@@ -179,12 +181,15 @@ body footer {
      object-fit: cover;
   -webkit-user-select: none;
      -moz-user-select: none;
+      -ms-user-select: none;
           user-select: none;
 }
 .bg .grad {
-  position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(22, 27, 34, 0) 0%, rgba(22, 27, 34, 0.65) 50%, rgba(22, 27, 34, 0.75) 65%, rgba(22, 27, 34, 0.85) 75.5%, rgba(22, 27, 34, 0.89) 82.85%, rgba(22, 27, 34, 0.95) 88%, rgb(22, 27, 34) 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(22, 27, 34, 0) 0%, rgba(22, 27, 34, 0.75) 50%, rgba(22, 27, 34, 0.85) 65%, rgba(22, 27, 34, 0.9) 75.5%, rgba(22, 27, 34, 0.95) 82.85%, rgba(22, 27, 34, 0.97) 88%, rgb(22, 27, 34) 100%);
   background-color: rgba(22, 27, 34, 0.25);
 }/*# sourceMappingURL=style.css.map */

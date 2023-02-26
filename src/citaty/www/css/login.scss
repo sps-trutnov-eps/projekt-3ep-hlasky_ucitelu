@@ -1,3 +1,9 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .login-cont{
     $width: 20vw;
     $height: 50vh;
@@ -6,9 +12,8 @@
     min-width: 400px;
     height: $height;
     margin: 0 auto;
-    position: absolute;
-    top: 50vh - calc($height / 2);
-    left: 50vw - calc($width / 2);
+    display: flex;
+    flex-direction: column;
 
     text-align: center;
 
@@ -56,13 +61,10 @@
                 padding: 20px 0px 20px 0px;
                 border-radius: 10px;
                 margin-top: 2.5%;
-                position: absolute;
                 border-color: white;
                 color: white;
                 font-weight: 600;
                 font-size: 1.1em;
-                left: 15%;
-                top: 65%;
                 background: linear-gradient( 45deg,
                     var(--primary) 0%,
                     var(--secondary) 100%
@@ -103,9 +105,6 @@
     }
 
     .reg-text{
-        position: absolute;
-        top: 85%;
-        width: 100%;
         text-align: center;
 
         a{
