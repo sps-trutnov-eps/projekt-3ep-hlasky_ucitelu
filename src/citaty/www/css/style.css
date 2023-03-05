@@ -88,51 +88,15 @@ body footer {
   background-color: transparent;
   border: none;
   padding: 2em;
-  width: 16vw;
+  width: 15.55vw;
   margin-bottom: 2em;
   background-color: var(--primary);
+  border: 3px solid var(--glow);
+  border-radius: 5px;
 }
 
-.efekt {
-  width: 16vw;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+.tlacitko {
+  text-align: center;
   margin: 0 auto;
-  margin-top: 2em;
-}
-
-.tlacitko::before,
-.tlacitko::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  display: block;
-  background-color: var(--glow);
-  transition: all 250ms ease-in-out;
-}
-
-.tlacitko::before {
-  width: 2px;
-  height: 100px;
-  box-shadow: 298px 0 var(--glow);
-}
-
-.tlacitko::after {
-  height: 2px;
-  width: 300px;
-  box-shadow: 0 98px var(--glow);
-}
-
-.tlacitko:hover::before {
-  left: -5px;
-  box-shadow: 310px 0 var(--glow);
-}
-
-.tlacitko:hover::after {
-  top: -5px;
-  box-shadow: 0 105px var(--glow);
+  margin-top: 1em;
 }/*# sourceMappingURL=style.css.map */
