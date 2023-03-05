@@ -1,11 +1,39 @@
 <%- include('../_layout/header') %>
-    <form method="post" script="/uzivatel/registrovat">
-        <input type="text" name="jmeno" placeholder="Jméno..." /><br />
-        <input type="password" name="heslo" placeholder="Heslo..." /><br />
-        <input type="password" name="hesloZnovu" placeholder="Heslo znovu..." /><br />
-        <% if(error) { %>
-            <span style="color: red"><%= error %></span><br />
-        <% } %>
-        <input type="submit" value="Registrovat" />
-    </form>
+<div class="wrapper">
+    <div class="bg">
+        <div class="grad"></div>
+        <img class="bg_img" src="/data_web/bg1.png" alt="">
+    </div>
+
+    <div class="container" style="display: flex; z-index: 10;align-items: center;">
+        <div class="login-cont">
+            <div class="login-nadpis">
+                <h3>Registrovat se</h3>
+            </div>
+            
+            <div class="login-form-cont">
+                <form method="post" script="/uzivatel/registrovat">
+                    <div class="login-input">
+                        <input type="text" name="jmeno" placeholder="Uživatelské jméno" /><br />
+                    </div>
+                    <div class="login-input">
+                        <input type="password" name="heslo" placeholder="Heslo" /><br />
+                    </div>
+                    <div class="login-input">
+                        <input type="password" name="hesloZnovu" placeholder="Heslo znovu" /><br />
+                    </div>
+                    
+                    <% if(error) { %>
+                        <div class="err">
+                            <p><%= error %></p>
+                            <p>!</p>
+                        </div>
+                        <% } %>
+
+                        <input class="btn" type="submit" value="Přihlásit se" />
+                    </div>
+                </div>
+            </div>
+        </div>
+                </form>
 <%- include('../_layout/footer') %>

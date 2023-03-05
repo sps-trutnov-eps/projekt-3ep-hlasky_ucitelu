@@ -17,9 +17,11 @@
 }
 .login-cont .login-nadpis {
   height: 15%;
+  width: 100%;
+  margin: 0;
 }
 .login-cont .login-form-cont {
-  height: 85%;
+  height: 65%;
 }
 .login-cont .login-form-cont form input:not(.btn) {
   border: none;
@@ -43,7 +45,10 @@
 .login-cont .login-form-cont form input:not(.btn):focus {
   outline: none;
 }
-.login-cont .login-form-cont form .btn {
+.login-cont .login-form-cont form .btn:hover {
+  opacity: 0.9;
+}
+.login-cont .login-form-cont .btn {
   width: 70%;
   padding: 20px 0px 20px 0px;
   border-radius: 10px;
@@ -53,9 +58,6 @@
   font-weight: 600;
   font-size: 1.1em;
   background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
-}
-.login-cont .login-form-cont form .btn:hover {
-  opacity: 0.9;
 }
 .login-cont .login-form-cont .err {
   background-color: rgba(184, 22, 22, 0.7);
@@ -77,7 +79,6 @@
 }
 .login-cont h3 {
   font-size: 2em;
-  width: 50%;
   margin: 0 auto;
   padding: 30px 0px 10px 0px;
 }
