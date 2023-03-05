@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon main.js"
   },
-  "author": "Karel Capoušek",
+  "author": "the boys",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
