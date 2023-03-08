@@ -53,13 +53,6 @@ exports.odpovedNaRandomKviz = (req, res) => {
         odpoved: "",
         score: score,
     });
-
-
-
-
-
-
-     
 }
 
 
@@ -69,8 +62,15 @@ exports.uspesnost = (req, res) => {
         return res.redirect('/uzivatel/prihlasit');
     }
 
-    req.session.zodpovezeno = 0;
-    req.session.scoreuspesnosti = 0;
+    console.log(req.session.zodpovezeno);
+
+    if (req.session.zodpovezeno == undefined){
+        req.session.zodpovezeno = 0;
+    }
+    
+    if (req.session.scoreuspesnosti == undefined){
+        req.session.scoreuspesnosti = 0;
+    }
 
     let randomSeznamUcitelu = model.randomUcitel();
     req.session.randomSeznamUcitelu = randomSeznamUcitelu;
@@ -98,13 +98,15 @@ exports.procentaUspesnosti = (req, res) => {
 
 
     if (model.checkOdpoved(ucitel, hlaska)){
+        console.log("Správně");
         req.session.scoreuspesnosti += 1;
     }
 
     req.session.zodpovezeno +=1;
 
-    if(req.session.zodpovezeno==10){
-        console.log(req.session.zodpovezeno);
+    if(req.session.zodpovezeno >= 10){
+        req.session.zodpovezeno = 0;
+        req.session.scoreuspesnosti = 0;
         return res.redirect("/hlasky/vysledneSkore")
     }
 
@@ -121,6 +123,8 @@ exports.vysledneSkore = (req, res) => {
 
     const pocetDobrych = req.session.scoreuspesnosti;
     const vysledek = (pocetDobrych/10)*100;
+
+    console.log(pocetDobrych);
 
 
 
