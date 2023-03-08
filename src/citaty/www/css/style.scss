@@ -19,16 +19,20 @@ p{
     margin: 0;
 }
 
-body{
+body,html{
+    min-height: 100vh;
     margin: 0;
-    height: 100vh;
+    position: relative;
+}
+
+body{
     background-color: var(--bg);
 
     header{
         user-select: none;
         background-color: var(--bg2);
         width: 100vw;
-        height: 5vh;
+        min-height: 5vh;
         display: inline-flex;
 
         #navigace{
@@ -60,7 +64,7 @@ body{
     }
 
     main{
-        height: 85vh;
+        min-height: 85vh;
 
         .container{
             width: 80vw;
@@ -77,6 +81,9 @@ body{
         justify-content: space-around;
         text-align: center;
         font-weight: 600;
+        position: absolute;
+        bottom: 0;
+        width: 100vw;
     }
 }
 

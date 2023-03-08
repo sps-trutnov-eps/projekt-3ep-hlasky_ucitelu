@@ -6,9 +6,7 @@
 }
 
 .login-cont {
-  width: 20vw;
-  min-width: 400px;
-  min-height: 50vh;
+  padding: 50px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -112,9 +110,13 @@ p {
   margin: 0;
 }
 
-body {
+body, html {
+  min-height: 100vh;
   margin: 0;
-  height: 100vh;
+  position: relative;
+}
+
+body {
   background-color: var(--bg);
 }
 body header {
@@ -124,7 +126,7 @@ body header {
           user-select: none;
   background-color: var(--bg2);
   width: 100vw;
-  height: 5vh;
+  min-height: 5vh;
   display: inline-flex;
 }
 body header #navigace {
@@ -151,7 +153,7 @@ body header a:hover {
   color: var(--bg3);
 }
 body main {
-  height: 85vh;
+  min-height: 85vh;
 }
 body main .container {
   width: 80vw;
@@ -166,6 +168,9 @@ body footer {
   justify-content: space-around;
   text-align: center;
   font-weight: 600;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
 }
 
 .bg {

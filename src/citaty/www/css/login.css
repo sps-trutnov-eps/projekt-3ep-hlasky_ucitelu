@@ -5,9 +5,7 @@
 }
 
 .login-cont {
-  width: 20vw;
-  min-width: 400px;
-  min-height: 50vh;
+  padding: 50px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
