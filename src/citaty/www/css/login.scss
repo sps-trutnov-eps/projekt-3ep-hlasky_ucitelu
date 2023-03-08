@@ -10,7 +10,7 @@
 
     width: $width;
     min-width: 400px;
-    height: $height;
+    min-height: $height;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
