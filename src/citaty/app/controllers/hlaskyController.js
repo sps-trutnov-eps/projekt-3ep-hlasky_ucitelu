@@ -63,6 +63,11 @@ exports.odpovedNaRandomKviz = (req, res) => {
 
 
 exports.uspesnost = (req, res) => {
+    if (req.session.prihlasenyUzivatel == undefined){
+        return res.redirect('/uzivatel/prihlasit');
+    }
+
+
     const hlaska = model.randomUcitel()[0];
     const list = model.randomUcitel()[1];
     return res.render("hlasky/uspesnost",{
@@ -72,13 +77,17 @@ exports.uspesnost = (req, res) => {
 }
 
 exports.procentaUspesnosti = (req, res) => {
+
+
+    if (req.session.prihlasenyUzivatel == undefined){
+        return res.redirect('/uzivatel/prihlasit');
+    }
+
+    
     const hlaska = model.randomUcitel()[0];
     const list = model.randomUcitel()[1];
     let skore = 0;
     const otazky = 10;
-    
-
-
 
 
     return res.render("hlasky/uspesnost",{
