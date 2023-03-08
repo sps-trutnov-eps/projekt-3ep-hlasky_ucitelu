@@ -62,15 +62,8 @@ exports.uspesnost = (req, res) => {
         return res.redirect('/uzivatel/prihlasit');
     }
 
-    console.log(req.session.zodpovezeno);
-
-    if (req.session.zodpovezeno == undefined){
-        req.session.zodpovezeno = 0;
-    }
-    
-    if (req.session.scoreuspesnosti == undefined){
-        req.session.scoreuspesnosti = 0;
-    }
+    req.session.zodpovezeno = 0;
+    req.session.scoreuspesnosti = 0;
 
     let randomSeznamUcitelu = model.randomUcitel();
     req.session.randomSeznamUcitelu = randomSeznamUcitelu;
@@ -82,23 +75,16 @@ exports.uspesnost = (req, res) => {
 }
 
 exports.procentaUspesnosti = (req, res) => {
-
+    const plnypocet = 10;
 
     if (req.session.prihlasenyUzivatel == undefined){
         return res.redirect('/uzivatel/prihlasit');
     }
 
     const ucitel = req.body.ucitel;
-    const hlaska = model.randomUcitel()[0];
-    const list = model.randomUcitel()[1];
-
-    
-    
-    const plnypocet = 10;
-
+    const hlaska = req.session.randomSeznamUcitelu[0];
 
     if (model.checkOdpoved(ucitel, hlaska)){
-        console.log("Správně");
         req.session.scoreuspesnosti += 1;
     }
 
@@ -106,28 +92,22 @@ exports.procentaUspesnosti = (req, res) => {
 
     if(req.session.zodpovezeno >= 10){
         req.session.zodpovezeno = 0;
-        req.session.scoreuspesnosti = 0;
+        //req.session.scoreuspesnosti = 0;
         return res.redirect("/hlasky/vysledneSkore")
     }
 
-
+    req.session.randomSeznamUcitelu = model.randomUcitel();
     return res.render("hlasky/uspesnost",{
-        hlaska: hlaska,
-        odpovedi: list,
+        hlaska: req.session.randomSeznamUcitelu[0],
+        odpovedi: req.session.randomSeznamUcitelu[1],
     });
-
-
 }
 
 exports.vysledneSkore = (req, res) => {
-
     const pocetDobrych = req.session.scoreuspesnosti;
     const vysledek = (pocetDobrych/10)*100;
 
     console.log(pocetDobrych);
-
-
-
 
     return res.render("hlasky/vysledneSkore",{
         vyslednaPorcenta: vysledek,
