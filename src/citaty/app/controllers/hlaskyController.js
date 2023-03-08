@@ -19,6 +19,7 @@ exports.randomKviz = (req, res) => {
         odpovedi: randomSeznamUcitelu[1],
         odpoved: "",
         score: score,
+        jmeno: req.session.prihlasenyUzivatel || undefined,
     });
      
 }
@@ -50,6 +51,7 @@ exports.odpovedNaRandomKviz = (req, res) => {
         odpovedi: randomSeznamUcitelu[1],
         odpoved: "",
         score: score,
+        jmeno: req.session.prihlasenyUzivatel || undefined,
     });
      
 }

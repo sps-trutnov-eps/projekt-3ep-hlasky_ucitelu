@@ -16,7 +16,11 @@
             </div>
 
             <div id="profil">
-                <a href="/uzivatel/profil">hurb</a>
+                <% if(jmeno == undefined){ %>
+                    <a href="/uzivatel/prihlasit">Přihlásit se</a>
+                <% } else{ %>
+                    <a href="/uzivatel/profil"><%= jmeno %></a>
+                <% } %>
             </div>
         </header>
         <main>

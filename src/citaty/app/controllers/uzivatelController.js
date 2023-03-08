@@ -1,42 +1,48 @@
 const model = require('../models/uzivatelModel');
 
-exports.registrace = (request, response) => {
+exports.registrace = (req, response) => {
     response.render('uzivatel/registrace', {
         error: undefined,
+        jmeno: req.session.prihlasenyUzivatel || undefined,
         //titulek: 'Registrace',
     });
 }
 
-exports.prihlaseni = (request, response) => {
+exports.prihlaseni = (req, response) => {
     response.render('uzivatel/prihlaseni', {
         error: undefined,
+        jmeno: req.session.prihlasenyUzivatel || undefined,
         //titulek: 'Přihlášení',
     });
 }
 
-exports.registrovat = (request, response) => {
-    const jmeno = request.body.jmeno.trim();
-    const heslo = request.body.heslo.trim();
-    const hesloZnovu = request.body.hesloZnovu.trim();
+exports.registrovat = (req, response) => {
+    const jmeno = req.body.jmeno.trim();
+    const heslo = req.body.heslo.trim();
+    const hesloZnovu = req.body.hesloZnovu.trim();
 
     if(jmeno.length == 0) {
         return response.render('uzivatel/registrace', {
             error: 'Jméno není vyplněné!',
+            jmeno: req.session.prihlasenyUzivatel || undefined,
         });
     }
     if(heslo.length == 0) {
         return response.render('uzivatel/registrace', {
             error: 'Heslo není vyplněné!',
+            jmeno: req.session.prihlasenyUzivatel || undefined,
         });
     }
     if(heslo != hesloZnovu) {
         return response.render('uzivatel/registrace', {
             error: 'Hesla se neshodují!',
+            jmeno: req.session.prihlasenyUzivatel || undefined,
         });
     }
     if(model.existujeUzivatel(jmeno)) {
         return response.render('uzivatel/registrace', {
             error: 'Uživatel již existuje!',
+            jmeno: req.session.prihlasenyUzivatel || undefined,
         });
     }
 
@@ -47,40 +53,43 @@ exports.registrovat = (request, response) => {
     return response.redirect('/uzivatel/prihlasit');
 }
 
-exports.prihlasit = (request, response) => {
-    const jmeno = request.body.jmeno.trim();
-    const heslo = request.body.heslo.trim();
+exports.prihlasit = (req, response) => {
+    const jmeno = req.body.jmeno.trim();
+    const heslo = req.body.heslo.trim();
 
     if(!model.existujeUzivatel(jmeno)) {
         return response.render('uzivatel/prihlaseni', {
             error: 'Uživatel neexistuje!',
+            jmeno: req.session.prihlasenyUzivatel || undefined,
         });
     }
 
     if(!model.spravneHeslo(jmeno, heslo)) {
         return response.render('uzivatel/prihlaseni', {
             error: 'Chybné heslo!',
+            jmeno: req.session.prihlasenyUzivatel || undefined,
         });
     }
 
-    request.session.prihlasenyUzivatel = jmeno;
+    req.session.prihlasenyUzivatel = jmeno;
 
     return response.redirect('/uzivatel/profil');
 }
 
-exports.profil = (request, response) => {
-    if(!request.session.prihlasenyUzivatel) {
+exports.profil = (req, response) => {
+    if(!req.session.prihlasenyUzivatel) {
         return response.redirect('/uzivatel/prihlasit');
     }
 
     response.render('uzivatel/profil', {
-        jmeno: request.session.prihlasenyUzivatel,
+        jmeno: req.session.prihlasenyUzivatel,
+        jmeno: req.session.prihlasenyUzivatel || undefined,
         //titulek: 'Profil',
     });
 }
 
-exports.odhlasit = (request, response) => {
-    request.session.destroy();
+exports.odhlasit = (req, response) => {
+    req.session.destroy();
 
     response.redirect('/web/index');
 }
