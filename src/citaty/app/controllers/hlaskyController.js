@@ -72,12 +72,12 @@ exports.uspesnost = (req, res) => {
     req.session.zodpovezeno = 0;
     req.session.scoreuspesnosti = 0;
 
+    let randomSeznamUcitelu = model.randomUcitel();
+    req.session.randomSeznamUcitelu = randomSeznamUcitelu;
 
-    const hlaska = model.randomUcitel()[0];
-    const list = model.randomUcitel()[1];
     return res.render("hlasky/uspesnost",{
-        hlaska: hlaska,
-        odpovedi: list,
+        hlaska: randomSeznamUcitelu[0],
+        odpovedi: randomSeznamUcitelu[1],
     });
 }
 
