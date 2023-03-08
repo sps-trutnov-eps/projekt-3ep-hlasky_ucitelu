@@ -5,6 +5,9 @@ const controller = require('../controllers/hlaskyController');
 
 router.get('/random', controller.randomKviz);
 router.post('/random', controller.odpovedNaRandomKviz);
+
+router.get('/vysledneSkore', controller.vysledneSkore);
+
 router.get('/uspesnost', controller.uspesnost);
 router.post('/uspesnost', controller.procentaUspesnosti);
 

@@ -3,6 +3,8 @@ const uzivatelModel = require('../models/uzivatelModel');
 
 let score = 0;
 
+
+
 exports.randomKviz = (req, res) => {
     score = 0;
 
@@ -67,6 +69,8 @@ exports.uspesnost = (req, res) => {
         return res.redirect('/uzivatel/prihlasit');
     }
 
+    req.session.zodpovezeno = 0;
+
 
     const hlaska = model.randomUcitel()[0];
     const list = model.randomUcitel()[1];
@@ -83,16 +87,39 @@ exports.procentaUspesnosti = (req, res) => {
         return res.redirect('/uzivatel/prihlasit');
     }
 
-    
+    const ucitel = req.body.ucitel;
     const hlaska = model.randomUcitel()[0];
     const list = model.randomUcitel()[1];
-    let skore = 0;
-    const otazky = 10;
+
+    let scoreuspesnosti = 0;
+    
+    const plnypocet = 10;
+
+
+    if (model.checkOdpoved(ucitel, hlaska)){
+        scoreuspesnosti += 1;
+    }
+
+    req.session.zodpovezeno +=1;
+
+    if(req.session.zodpovezeno==10){
+        console.log(req.session.zodpovezeno);
+        return res.redirect("/hlasky/vysledneSkore")
+    }
 
 
     return res.render("hlasky/uspesnost",{
         hlaska: hlaska,
         odpovedi: list,
+    });
+
+
+}
+
+exports.vysledneSkore = (req, res) => {
+
+
+    return res.render("hlasky/vysledneSkore",{
     });
 
 }
