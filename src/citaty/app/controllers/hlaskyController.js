@@ -70,6 +70,7 @@ exports.uspesnost = (req, res) => {
     }
 
     req.session.zodpovezeno = 0;
+    req.session.scoreuspesnosti = 0;
 
 
     const hlaska = model.randomUcitel()[0];
@@ -91,13 +92,13 @@ exports.procentaUspesnosti = (req, res) => {
     const hlaska = model.randomUcitel()[0];
     const list = model.randomUcitel()[1];
 
-    let scoreuspesnosti = 0;
+    
     
     const plnypocet = 10;
 
 
     if (model.checkOdpoved(ucitel, hlaska)){
-        scoreuspesnosti += 1;
+        req.session.scoreuspesnosti += 1;
     }
 
     req.session.zodpovezeno +=1;
@@ -118,10 +119,15 @@ exports.procentaUspesnosti = (req, res) => {
 
 exports.vysledneSkore = (req, res) => {
 
+    const pocetDobrych = req.session.scoreuspesnosti;
+    const vysledek = (pocetDobrych/10)*100;
+
+
+
 
     return res.render("hlasky/vysledneSkore",{
+        vyslednaPorcenta: vysledek,
     });
-
 }
 
 
