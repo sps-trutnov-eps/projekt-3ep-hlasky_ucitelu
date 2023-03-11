@@ -12,5 +12,7 @@ router.get('/profil', controller.profil);
 router.get('/overeni', controller.overeni);
 router.post('/overeni', controller.overit);
 
+router.get('/sinslavy', controller.sinslavy);
+
 
 module.exports = router;

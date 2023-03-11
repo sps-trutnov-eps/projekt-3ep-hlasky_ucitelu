@@ -206,3 +206,10 @@ exports.odhlasit = (request, response) => {
     request.session.destroy();
     response.redirect('/web/index');
 }
+
+exports.sinslavy = (req, res) => {
+    
+    return res.render('uzivatel/sinslavy', {
+        error: undefined,
+    })
+}
