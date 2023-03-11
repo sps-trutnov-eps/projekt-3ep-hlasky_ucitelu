@@ -208,8 +208,13 @@ exports.odhlasit = (request, response) => {
 }
 
 exports.sinslavy = (req, res) => {
-    
+    const userData = model.getAllHighScore();
+    const scores = userData[0];
+    const users = userData[1];
+
     return res.render('uzivatel/sinslavy', {
+        scores: scores,
+        users: users,
         error: undefined,
     })
 }

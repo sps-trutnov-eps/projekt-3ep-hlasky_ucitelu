@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 const { request } = require('express');
 const jsondb = require('simple-json-db');
+const { use } = require('../routers/uzivatelRouter');
 const db = new jsondb('./data/uzivatele.json');
 
 exports.pridatUzivatele = (jmeno, email, hashleHeslo) => {
@@ -91,6 +92,24 @@ exports.getHighScore = (jmeno) => {
     }
     
     return data.score;
+}
+
+exports.getAllHighScore = () => {
+    const data = db.JSON();
+    const uzivatele = Object.keys(data);
+
+    let scores = [];
+    let users = [];
+
+    for(let i = 0; i <= uzivatele.length - 1; i++){
+        if (data[uzivatele[i]].score != undefined){
+            scores.push(data[uzivatele[i]].score);
+            users.push(uzivatele[i]);
+        }
+    }
+
+    return [scores, users];
+
 }
 
 exports.ulozitOblibenouHlasku = (jmeno, hlaska) => {
