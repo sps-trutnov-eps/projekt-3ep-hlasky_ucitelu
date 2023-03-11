@@ -1,17 +1,22 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 85vh;
 }
 
 .login-cont {
-  padding: 50px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   text-align: center;
   background-color: var(--bg2);
   border-radius: 30px;
+  width: 400px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 2vh 0px 5vh 0px;
+  margin: 5vh 0px;
+  z-index: 1;
 }
 .login-cont .login-nadpis {
   height: 15%;
