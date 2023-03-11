@@ -81,14 +81,13 @@ body{
 }
 
 .bg{ //bg (no way) ((pozadí)) ((( o_o )))
-    $bg_height: 50vh;
     width: 100vw;
-    height: $bg_height;
+    height: 85vh;
     position: absolute;
     left: 0;
 
     .bg_img{
-        height: $bg_height;
+        height: 100%;
         width: 100%;
         object-fit: cover;
         user-select: none;
@@ -97,14 +96,14 @@ body{
     .grad{
         position: absolute;
         width: 100%;
-        height: $bg_height;
+        height: 100%;
         background: linear-gradient(
             rgba(22, 27, 34, 0) 0%,
-            rgba(22, 27, 34, 0.65) 50%,
-            rgba(22, 27, 34, 0.75) 65%,
-            rgba(22, 27, 34, 0.85) 75.5%,
-            rgba(22, 27, 34, 0.89) 82.85%,
-            rgba(22, 27, 34, 0.95) 88%,
+            rgba(22, 27, 34, 0.75) 50%,
+            rgba(22, 27, 34, 0.85) 65%,
+            rgba(22, 27, 34, 0.9) 75.5%,
+            rgba(22, 27, 34, 0.95) 82.85%,
+            rgba(22, 27, 34, 0.97) 88%,
             rgba(22, 27, 34) 100%
         );
         background-color: rgba(22, 27, 34, .25);
