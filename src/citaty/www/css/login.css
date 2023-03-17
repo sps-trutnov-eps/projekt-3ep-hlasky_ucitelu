@@ -1,20 +1,29 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 85vh;
+}
+
 .login-cont {
-  width: 20vw;
-  min-width: 400px;
-  height: 50vh;
-  margin: 0 auto;
-  position: absolute;
-  top: 25vh;
-  left: 40vw;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   background-color: var(--bg2);
   border-radius: 30px;
+  width: 400px;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 2vh 0px 5vh 0px;
+  margin: 5vh 0px;
+  z-index: 1;
 }
 .login-cont .login-nadpis {
   height: 15%;
+  width: 100%;
+  margin: 0;
 }
 .login-cont .login-form-cont {
-  height: 85%;
+  height: 65%;
 }
 .login-cont .login-form-cont form input:not(.btn) {
   border: none;
@@ -38,22 +47,19 @@
 .login-cont .login-form-cont form input:not(.btn):focus {
   outline: none;
 }
-.login-cont .login-form-cont form .btn {
+.login-cont .login-form-cont form .btn:hover {
+  opacity: 0.9;
+}
+.login-cont .login-form-cont .btn {
   width: 70%;
   padding: 20px 0px 20px 0px;
   border-radius: 10px;
   margin-top: 2.5%;
-  position: absolute;
   border-color: white;
   color: white;
   font-weight: 600;
   font-size: 1.1em;
-  left: 15%;
-  top: 65%;
   background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
-}
-.login-cont .login-form-cont form .btn:hover {
-  opacity: 0.9;
 }
 .login-cont .login-form-cont .err {
   background-color: rgba(184, 22, 22, 0.7);
@@ -75,15 +81,12 @@
 }
 .login-cont h3 {
   font-size: 2em;
-  width: 50%;
   margin: 0 auto;
   padding: 30px 0px 10px 0px;
 }
 .login-cont .reg-text {
-  position: absolute;
-  top: 85%;
-  width: 100%;
   text-align: center;
+  margin-top: 30px;
 }
 .login-cont .reg-text a {
   color: white;

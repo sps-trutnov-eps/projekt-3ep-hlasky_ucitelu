@@ -10,16 +10,18 @@ function addMinutes(date, minutes) {
     return new Date(date + minutes*60000);
 }
 
-exports.registrace = (request, response) => {
+exports.registrace = (req, response) => {
     response.render('uzivatel/registrace', {
         error: undefined,
+        jmeno: req.session.prihlasenyUzivatel || undefined,
         //titulek: 'Registrace',
     });
 }
 
-exports.prihlaseni = (request, response) => {
+exports.prihlaseni = (req, response) => {
     response.render('uzivatel/prihlaseni', {
         error: undefined,
+        jmeno: req.session.prihlasenyUzivatel || undefined,
     });
 }
 
@@ -49,17 +51,20 @@ exports.registrovat = (request, response) => {
     if(jmeno.length == 0) {
         return response.render('uzivatel/registrace', {
             error: 'Jméno není vyplněné!',
+            jmeno: req.session.prihlasenyUzivatel || undefined,
         });
     }
     if(heslo.length == 0) {
         return response.render('uzivatel/registrace', {
             error: 'Heslo není vyplněné!',
+            jmeno: req.session.prihlasenyUzivatel || undefined,
         });
     }
 
     if(heslo != hesloZnovu) {
         return response.render('uzivatel/registrace', {
             error: 'Hesla se neshodují!',
+            jmeno: req.session.prihlasenyUzivatel || undefined,
         });
     }
 
@@ -78,6 +83,7 @@ exports.registrovat = (request, response) => {
     if(model.existujeUzivatel(jmeno)) {
         return response.render('uzivatel/registrace', {
             error: 'Uživatel již existuje!',
+            jmeno: req.session.prihlasenyUzivatel || undefined,
         });
     }
 
@@ -169,34 +175,36 @@ exports.overit = (request, response) => {
     return response.redirect('/uzivatel/prihlasit');
 }
 
-exports.prihlasit = (request, response) => {
-    const jmeno = request.body.jmeno.trim();
-    const heslo = request.body.heslo.trim();
+exports.prihlasit = (req, response) => {
+    const jmeno = req.body.jmeno.trim();
+    const heslo = req.body.heslo.trim();
 
     if(!model.existujeUzivatel(jmeno)) {
         return response.render('uzivatel/prihlaseni', {
             error: 'Uživatel neexistuje!',
+            jmeno: req.session.prihlasenyUzivatel || undefined,
         });
     }
 
     if(!model.spravneHeslo(jmeno, heslo)) {
         return response.render('uzivatel/prihlaseni', {
             error: 'Chybné heslo!',
+            jmeno: req.session.prihlasenyUzivatel || undefined,
         });
     }
 
-    request.session.prihlasenyUzivatel = jmeno;
+    req.session.prihlasenyUzivatel = jmeno;
 
     return response.redirect('/uzivatel/profil');
 }
 
-exports.profil = (request, response) => {
-    if(!request.session.prihlasenyUzivatel) {
+exports.profil = (req, response) => {
+    if(!req.session.prihlasenyUzivatel) {
         return response.redirect('/uzivatel/prihlasit');
     }
     
     response.render('uzivatel/profil', {
-        jmeno: request.session.prihlasenyUzivatel,
+        jmeno: req.session.prihlasenyUzivatel || undefined,
         hlasky: model.getOblibenyHlasky(request.session.prihlasenyUzivatel),
         highScore: model.getHighScore(request.session.prihlasenyUzivatel),
     });

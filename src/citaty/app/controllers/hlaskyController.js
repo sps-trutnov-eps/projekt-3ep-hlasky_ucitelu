@@ -18,6 +18,7 @@ exports.randomKviz = (req, res) => {
 
     return res.render('hlasky/random', {
         // spravnaHlaska, listOdpovedi
+        jmeno: req.session.prihlasenyUzivatel || undefined,
         hlaska: req.session.randomSeznamUcitelu[0],
         odpovedi: req.session.randomSeznamUcitelu[1],
         score: req.session.score,
@@ -53,6 +54,7 @@ exports.odpovedNaRandomKviz = (req, res) => {
         // spravnaHlaska, listOdpovedi
         hlaska: randomSeznamUcitelu[0],
         odpovedi: randomSeznamUcitelu[1],
+        jmeno: req.session.prihlasenyUzivatel || undefined,
         score: req.session.score,
     });
 }
