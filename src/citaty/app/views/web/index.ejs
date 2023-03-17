@@ -1,3 +1,106 @@
 <%- include('../_layout/header') %>
-    <p>Hlášky učitelů SPŠ Trutrnov</p>
+    <div class="container">
+        <% if(jmeno != undefined){ %>
+            <h2 class="welcome-text">Vítej, <%= jmeno %></h2>
+
+            <div class="lb-wrapper">
+                <div class="lb"> <!-- T1 -->
+                    <p class="lb-nadpis">TOP 5 hračů - náhlá smrt</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Uživatelské jméno
+                                </th>
+    
+                                <th>
+                                    Skóre
+                                </th>
+                            </tr>
+                        </thead>
+
+
+
+                        <tbody>
+                            <tr>
+                                <td>a1</td>
+                                <td>b1</td>
+                            </tr>
+    
+                            <tr>
+                                <td>a1</td>
+                                <td>b1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>a1</td>
+                                <td>b1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>a1</td>
+                                <td>b1</td>
+                            </tr>
+    
+                            <tr>
+                                <td>a1</td>
+                                <td>b1</td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+
+                <div class="lb"> <!-- T2 -->
+                    <p class="lb-nadpis">TOP 5 hračů - classic</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Uživatelské jméno
+                                </th>
+    
+                                <th>
+                                    Skóre
+                                </th>
+                            </tr>
+                        </thead>
+
+
+
+                        <tbody>
+                            <tr>
+                                <td>a1</td>
+                                <td>b1</td>
+                            </tr>
+    
+                            <tr>
+                                <td>a1</td>
+                                <td>b1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>a1</td>
+                                <td>b1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>a1</td>
+                                <td>b1</td>
+                            </tr>
+    
+                            <tr>
+                                <td>a1</td>
+                                <td>b1</td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+            </div>
+
+        <% } else { %>
+            <p>kys</p>
+        <% } %>
+    </div>
 <%- include('../_layout/footer') %>

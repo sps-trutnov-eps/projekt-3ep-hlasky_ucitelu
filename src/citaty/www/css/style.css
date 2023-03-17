@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   min-height: 85vh;
+  height: 100%;
+  position: relative;
 }
 
 .login-cont {
@@ -12,6 +14,7 @@
   background-color: var(--bg2);
   border-radius: 30px;
   width: 400px;
+  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   padding: 2vh 0px 5vh 0px;
@@ -101,9 +104,42 @@
   color: var(--hvr);
 }
 
+.welcome-text {
+  margin: 0px 0px 2vh 0px;
+}
+
+.lb-wrapper {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.lb-wrapper .lb {
+  width: 45%;
+  background-color: var(--bg2);
+  padding: 1vh 1vw;
+  border-radius: 0.7vw;
+  position: relative;
+}
+.lb-wrapper .lb table {
+  width: 100%;
+  background-color: var(--primary);
+  border-radius: 0.35vw;
+  padding: 0.5vh 0.5vw;
+}
+.lb-wrapper .lb table thead tr th {
+  text-transform: capitalize;
+  border-bottom: 2px solid white;
+}
+.lb-wrapper .lb .lb-nadpis {
+  font-size: 1.2em;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 1vh;
+}
+
 :root {
-  --bg: #161b22;
-  --bg2: #252c35;
+  --bg: #0b0d0e;
+  --bg2: #1c2224;
   --bg3: #cccccc;
   --primary: #8b5cb4;
   --secondary: #9d6f9b;
@@ -111,6 +147,10 @@
   --hvr: #bbbbbb;
   font-family: "Roboto", sans-serif;
   color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
 }
 
 p {
@@ -146,6 +186,7 @@ body header #nav #nav_center {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   text-align: center;
@@ -165,12 +206,13 @@ body main {
 }
 body main .container {
   width: 80vw;
-  margin: 0 auto;
-  min-height: 85vh;
+  margin: 1vh auto;
+  min-height: 83vh;
 }
 body footer {
   width: 100vw;
   text-align: center;
+  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   display: flex;
@@ -190,7 +232,7 @@ body footer {
 
 .bg {
   width: 100vw;
-  height: 85vh;
+  height: 100%;
   left: 0;
   z-index: 0;
   position: absolute;
@@ -202,6 +244,7 @@ body footer {
      object-fit: cover;
   -webkit-user-select: none;
      -moz-user-select: none;
+      -ms-user-select: none;
           user-select: none;
 }
 .bg .grad {
