@@ -14,7 +14,7 @@ exports.registrace = (req, response) => {
     response.render('uzivatel/registrace', {
         error: undefined,
         jmeno: req.session.prihlasenyUzivatel || undefined,
-        //titulek: 'Registrace',
+        //titulek: 'Registrace',undefined
     });
 }
 
@@ -33,18 +33,20 @@ exports.overeni = (req, res) => {
     res.render('uzivatel/overeni', {
         error: undefined,
         time: req.session.uzivatel[3],
+        jmeno: req.session.prihlasenyUzivatel || undefined
     })
 }
 
-exports.registrovat = (request, response) => {
-    const jmeno = request.body.jmeno.trim();
-    const email = request.body.email.trim();
-    const heslo = request.body.heslo.trim();
-    const hesloZnovu = request.body.hesloZnovu.trim();
+exports.registrovat = (req, response) => {
+    const jmeno = req.body.jmeno.trim();
+    const email = req.body.email.trim();
+    const heslo = req.body.heslo.trim();
+    const hesloZnovu = req.body.hesloZnovu.trim();
 
     if (email.length == 0){
         return response.render('uzivatel/registrace', {
             error: 'Email není vyplněný!',
+            jmeno: req.session.prihlasenyUzivatel || undefined,
         });
     }
 
@@ -71,12 +73,14 @@ exports.registrovat = (request, response) => {
     if (!email.endsWith("@spstrutnov.cz")){
         return response.render('uzivatel/registrace', {
             error: 'Email není školní email!',
+            jmeno: req.session.prihlasenyUzivatel || undefined,
         });
     }
 
     if (model.existujeEmail(email)){
         return response.render('uzivatel/registrace', {
             error: 'Email už někdo používá!',
+            jmeno: req.session.prihlasenyUzivatel || undefined,
         });
     }
 
@@ -121,21 +125,21 @@ exports.registrovat = (request, response) => {
 
     //konec kódu pro emaily
 
-    //request.session.kod = bcrypt.hashSync(kod.toString(), 10); // doubble encryption
-    request.session.kod = kod;
+    //req.session.kod = bcrypt.hashSync(kod.toString(), 10); // doubble encryption
+    req.session.kod = kod;
 
-    request.session.uzivatel = [jmeno, email, bcrypt.hashSync(heslo, 10), addMinutes(Date.now(), 1).toTimeString("HH:MM:SS")];
-    console.log(request.session.uzivatel[3]);
+    req.session.uzivatel = [jmeno, email, bcrypt.hashSync(heslo, 10), addMinutes(Date.now(), 1).toTimeString("HH:MM:SS")];
+    console.log(req.session.uzivatel[3]);
     console.log(addMinutes(Date.now(), 1));
 
     setTimeout(function(){
-        if (request.session.prihlasenyUzivatel == undefined){
-            request.session.destroy();
+        if (req.session.prihlasenyUzivatel == undefined){
+            req.session.destroy();
             console.log("KÓD DESTROYED 1");
         }
         else{
-            if (request.session.prihlasenyUzivatel != request.session.uzivatel[0]){
-                request.session.destroy();
+            if (req.session.prihlasenyUzivatel != req.session.uzivatel[0]){
+                req.session.destroy();
                 console.log("KÓD DESTROYED 2");
             }
         }
@@ -147,29 +151,29 @@ exports.registrovat = (request, response) => {
     return response.redirect('/uzivatel/overeni');
 }
 
-exports.overit = (request, response) => {
-    const kod = request.body.kod;
+exports.overit = (req, response) => {
+    const kod = req.body.kod;
 
-    if (request.session.uzivatel == undefined || request.session.kod == undefined){
+    if (req.session.uzivatel == undefined || req.session.kod == undefined){
         return response.render("uzivatel/overeni", {
             error: "Kód vypršel!",
             time: Date.now(), // zbývá 0 sekund.
         });
     }
-    console.log("Overit kod: " + request.session.kod);
+    console.log("Overit kod: " + req.session.kod);
 
 
-    if (request.session.kod != kod){
+    if (req.session.kod != kod){
         return response.render("uzivatel/overeni", {
             error: "Špatný kód!",
-            time: request.session.uzivatel[3],
+            time: req.session.uzivatel[3],
         });
     }
 
-    // if(model.pridatUzivatele(request.session.uzivatel[0], request.session.uzivatel[1], request.session.uzivatel[2]) == false) {
+    // if(model.pridatUzivatele(req.session.uzivatel[0], req.session.uzivatel[1], req.session.uzivatel[2]) == false) {
     //     return response.redirect('/web/error');
     // }
-    model.pridatUzivatele(request.session.uzivatel[0], request.session.uzivatel[1], request.session.uzivatel[2]);
+    model.pridatUzivatele(req.session.uzivatel[0], req.session.uzivatel[1], req.session.uzivatel[2]);
 
 
     return response.redirect('/uzivatel/prihlasit');
@@ -205,13 +209,13 @@ exports.profil = (req, response) => {
     
     response.render('uzivatel/profil', {
         jmeno: req.session.prihlasenyUzivatel || undefined,
-        hlasky: model.getOblibenyHlasky(request.session.prihlasenyUzivatel),
-        highScore: model.getHighScore(request.session.prihlasenyUzivatel),
+        hlasky: model.getOblibenyHlasky(req.session.prihlasenyUzivatel),
+        highScore: model.getHighScore(req.session.prihlasenyUzivatel),
     });
 }
 
-exports.odhlasit = (request, response) => {
-    request.session.destroy();
+exports.odhlasit = (req, response) => {
+    req.session.destroy();
     response.redirect('/web/index');
 }
 
@@ -224,5 +228,6 @@ exports.sinslavy = (req, res) => {
         scores: scores,
         users: users,
         error: undefined,
+        jmeno: req.session.prihlasenyUzivatel || undefined,
     })
 }

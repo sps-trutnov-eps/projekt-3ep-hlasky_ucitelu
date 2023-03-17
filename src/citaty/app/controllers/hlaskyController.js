@@ -75,6 +75,7 @@ exports.uspesnost = (req, res) => {
     return res.render("hlasky/uspesnost",{
         hlaska: randomSeznamUcitelu[0],
         odpovedi: randomSeznamUcitelu[1],
+        jmeno: req.session.prihlasenyUzivatel || undefined,
     });
 }
 
@@ -104,6 +105,7 @@ exports.procentaUspesnosti = (req, res) => {
     return res.render("hlasky/uspesnost",{
         hlaska: req.session.randomSeznamUcitelu[0],
         odpovedi: req.session.randomSeznamUcitelu[1],
+        jmeno: req.session.prihlasenyUzivatel || undefined,
     });
 }
 
@@ -115,6 +117,7 @@ exports.vysledneSkore = (req, res) => {
 
     return res.render("hlasky/vysledneSkore",{
         vyslednaPorcenta: vysledek,
+        jmeno: req.session.prihlasenyUzivatel || undefined,
     });
 }
 
