@@ -9,8 +9,8 @@
     --primary: #8b5cb4;
     --secondary: #9d6f9b;
     --tertiary: #4a8992;
-    --hvr: #ccc;
     font-family: 'Roboto', sans-serif;
+
     // font-family: 'Roboto Slab', serif;
     color: white;
 }
@@ -89,13 +89,21 @@ body{
     }
 }
 
+.score {
+    top:50px;
+    right:10px;
+    position: absolute;
+    font-size: 2.5vw;
+    font-weight: bolder;
+}
+
 .bg{ //bg (no way) ((pozadí)) ((( o_o )))
     width: 100vw;
     height: 85vh;
     left: 0;
     z-index: 0;
     position: absolute;
-
+    
     .bg_img{
         height: 100%;
         width: 100%;
@@ -121,4 +129,43 @@ body{
         background-color: rgba(22, 27, 34, .25);
     }
 }
+.hlaska {
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 1.5vw;
+}
 
+
+.odpoved {
+    font-weight: 500;
+    color:white;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 1vw;
+    text-shadow: 0px 0px 8px rgba(255,255,255,0.7);
+    background-color: transparent;
+    border: none;
+    padding: 2em;
+    width: 15.55vw;
+    margin-bottom: 2em;
+    background-color: var(--primary);
+    border: 3px solid var(--glow);
+    border-radius: 5px;
+}
+
+
+
+  
+.tlacitko {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+  
+
+
+
+
+
+        

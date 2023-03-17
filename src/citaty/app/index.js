@@ -4,7 +4,6 @@ const app = express();
 const sass = require('sass');
 const result = sass.compile("./www/css/style.scss");
 
-
 // jaky templatovaci jazyk pouzivam
 app.set('view engine', 'ejs');
 // kde se nachazeji moje views

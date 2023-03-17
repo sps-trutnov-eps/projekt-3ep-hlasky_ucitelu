@@ -1,24 +1,3 @@
 {
-    "Karel": {
-        "heslo": "$2a$10$FETaNRgiH1Y.QYXeK02ImeAHWuV50YiSu6GorDTEJZz/e9ib5iOXG",
-        "score": 3
-    },
-    "Honza": {
-        "heslo": "$2a$10$FETaNRgiH1Y.QYXeK02ImeAHWuV50YiSu6GorDTEJZz/e9ib5iOXG",
-        "score": 9
-    },
-    "Jirka": {
-        "heslo": "$2a$12$Ap5QX0r.X02PCSK8on.WRe.rzJLGMtp8unrmxduyXUW54/tAlwO6G",
-        "score": 6
-    },
-    "tekki": {
-        "heslo": "$2a$10$JGhqfyiqURerwpXuwdMloeYjGhyjcuHelAcVvfs6LPVmHPbnpGUc2",
-        "score": 0
-    },
-    "asd": {
-        "heslo": "$2a$10$hTw9KXGLKABvgU.VVsvCsuM0p/aVkQY2.LJQ5rS76jUR2YOsi3l8a"
-    },
-    "tektektek": {
-        "heslo": "$2a$10$SvmbuEYhKDJt1TKGF8gicelUacRpqPUn6QRE3e4ISA1ri9ApXHG3O"
-    }
+    
 }
