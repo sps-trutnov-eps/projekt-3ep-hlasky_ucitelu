@@ -20,6 +20,10 @@
         height: 15%;
         width: 100%;
         margin: 0;
+
+        h3{
+            padding: 5% 0%;
+        }
     }
 
     .login-form-cont{
@@ -34,7 +38,7 @@
                 background-color: transparent;
                 width: 70%;
                 padding: 10px 0px 10px 0px;
-                margin-bottom: 20px;
+                margin-bottom: 2.5%;
                 color: white;
                 border-bottom: 2px solid var(--hvr);
                 transition: all 0.2s ease-in-out;
@@ -102,7 +106,7 @@
 
     .reg-text{
         text-align: center;
-        margin-top: 30px;
+        margin-top: 10%;
 
         a{
             color: white;

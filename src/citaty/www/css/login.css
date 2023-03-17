@@ -22,6 +22,9 @@
   width: 100%;
   margin: 0;
 }
+.login-cont .login-nadpis h3 {
+  padding: 5% 0%;
+}
 .login-cont .login-form-cont {
   height: 65%;
 }
@@ -32,7 +35,7 @@
   background-color: transparent;
   width: 70%;
   padding: 10px 0px 10px 0px;
-  margin-bottom: 20px;
+  margin-bottom: 2.5%;
   color: white;
   border-bottom: 2px solid var(--hvr);
   transition: all 0.2s ease-in-out;
@@ -86,7 +89,7 @@
 }
 .login-cont .reg-text {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 10%;
 }
 .login-cont .reg-text a {
   color: white;
