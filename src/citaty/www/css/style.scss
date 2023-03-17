@@ -27,6 +27,8 @@ body,html{
 
 body{
     background-color: var(--bg);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 
     header{
         width: 100vw;
@@ -77,11 +79,13 @@ body{
 
     footer{
         width: 100vw;
-        background-color: var(--bg2);
-        position: absolute;
-        bottom: 0;
         text-align: center;
-        padding: 3vh 0;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3vh 0vw;
+        background-color: var(--bg2);
     }
 }
 

@@ -12,7 +12,6 @@
   background-color: var(--bg2);
   border-radius: 30px;
   width: 400px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   padding: 2vh 0px 5vh 0px;
@@ -123,6 +122,8 @@ body, html {
 
 body {
   background-color: var(--bg);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 body header {
   width: 100vw;
@@ -165,11 +166,14 @@ body main .container {
 }
 body footer {
   width: 100vw;
-  background-color: var(--bg2);
-  position: absolute;
-  bottom: 0;
   text-align: center;
-  padding: 3vh 0;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3vh 0vw;
+  background-color: var(--bg2);
 }
 
 .bg {
@@ -186,7 +190,6 @@ body footer {
      object-fit: cover;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 .bg .grad {
