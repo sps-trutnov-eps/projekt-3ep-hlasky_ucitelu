@@ -13,7 +13,6 @@
   background-color: var(--bg2);
   border-radius: 30px;
   width: 400px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   padding: 2vh 0px 5vh 0px;

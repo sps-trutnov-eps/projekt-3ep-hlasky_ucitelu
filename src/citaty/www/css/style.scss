@@ -160,13 +160,27 @@ body{
     border-radius: 5px;
 }
 
-
-
-  
 .tlacitko {
     text-align: center;
     margin: 0 auto;
     margin-top: 1em;
+}
+
+
+.oblibene {
+    width: 12em;
+    text-align: center;
+    font-size: 1vw;
+    background-color: #8b5cb4;
+    margin: 4em;
+    border: 2px solid white;
+    border-radius: 3px;
+    color: white;
+    text-shadow: 0px 0px 8px rgba(255,255,255,0.7);
+    text-decoration: none;
+    position:absolute;
+    top: 10px;
+    right: 0px;
 }
   
 
