@@ -2,7 +2,10 @@
     "Karel": {
         "heslo": "$2a$10$FETaNRgiH1Y.QYXeK02ImeAHWuV50YiSu6GorDTEJZz/e9ib5iOXG",
         "email": "capousek@spstrutnov.cz",
-        "score": 3
+        "score": 3,
+        "oblibeneHlasky": [
+            "'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'"
+        ]
     },
     "Idk": {
         "heslo": "$2a$10$wdzwkvDANG1v2CjyDxvkPOanJ9tgZ4xGIWV1FHHCnFcLxi756VuFO",
