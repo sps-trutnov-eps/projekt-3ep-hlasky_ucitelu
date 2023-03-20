@@ -197,9 +197,9 @@ exports.prihlasit = (req, response) => {
         });
     }
 
-    req.session.prihlasenyUzivatel = jmeno;
+    req.session.prihlasenyUzivatel = model.existujeUzivatel(jmeno);
 
-    return response.redirect('/uzivatel/profil');
+    return response.redirect('/web/index');
 }
 
 exports.profil = (req, response) => {

@@ -41,26 +41,33 @@ exports.existujeEmail = (zadanyEmail) => {
 
         return true; // aby se nezastavil po 1 iteraci
     });
-
-
     return existuje;
 }
 
-
 exports.existujeUzivatel = (jmeno) => {
-    return db.has(jmeno);
+    let db_data = db.JSON();
+    let existuje = false;
+    Object.keys(db_data).forEach((entry) => {
+        if(jmeno.toLowerCase() == entry.toLowerCase()){
+            existuje = entry;
+        }
+    })
+    return existuje;
 }
 
 exports.nacistUzivatele = (jmeno) => {
-    const data = db.get(jmeno);
-
-    data.jmeno = jmeno;
-
-    return data;
+    let db_data = db.JSON();
+    let uzivatel = undefined;
+    Object.keys(db_data).forEach((entry) => {
+        if(jmeno.toLowerCase() == entry.toLowerCase()){
+            uzivatel = db_data[entry];
+        }
+    })
+    return uzivatel;
 }
 
 exports.spravneHeslo = (jmeno, heslo) => {
-    const uzivatel = db.get(jmeno);
+    const uzivatel = exports.nacistUzivatele(jmeno);
 
     return bcrypt.compareSync(heslo, uzivatel.heslo);
 }

@@ -144,8 +144,8 @@
 }
 
 :root {
-  --bg: #0b0d0e;
-  --bg2: #1c2224;
+  --bg: #161b22;
+  --bg2: #252c35;
   --bg3: #cccccc;
   --primary: #8b5cb4;
   --secondary: #9d6f9b;
@@ -175,7 +175,7 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 body header {
-  width: 100vw;
+  width: 100%;
   height: 48px;
 }
 body header #nav {
@@ -215,7 +215,7 @@ body main .container {
   min-height: 83vh;
 }
 body footer {
-  width: 100vw;
+  width: 100%;
   text-align: center;
   height: -moz-fit-content;
   height: fit-content;
@@ -235,7 +235,7 @@ body footer {
 }
 
 .bg {
-  width: 100vw;
+  width: 100%;
   height: 100%;
   left: 0;
   z-index: 0;
