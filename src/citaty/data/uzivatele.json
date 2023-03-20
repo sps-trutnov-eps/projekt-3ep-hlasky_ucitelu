@@ -2,6 +2,10 @@
     "Tektek": {
         "heslo": "$2a$10$IluwpueVcjMMAdydpcEL2eZhFp7uEVvazuIIkjZN47rAKrN7YKBGG",
         "email": "hula@spstrutnov.cz",
-        "score": 8
+        "score": 10,
+        "oblibeneHlasky": [
+            "'Saláti.'",
+            "'Části, co nejsou v PITCHI, jsou v PIČI'"
+        ]
     }
 }
