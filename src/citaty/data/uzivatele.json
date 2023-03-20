@@ -1,31 +1,7 @@
 {
-    "Karel": {
-        "heslo": "$2a$10$FETaNRgiH1Y.QYXeK02ImeAHWuV50YiSu6GorDTEJZz/e9ib5iOXG",
-        "email": "capousek@spstrutnov.cz",
-        "score": 3,
-        "oblibeneHlasky": [
-            "'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'"
-        ]
-    },
-    "Idk": {
-        "heslo": "$2a$10$wdzwkvDANG1v2CjyDxvkPOanJ9tgZ4xGIWV1FHHCnFcLxi756VuFO",
-        "score": 4,
-        "email": "idk@spstrutnov.cz"
-    },
-    "pepa": {
-        "heslo": "$2a$10$IB4rRq4pSLs4DdcEdKhP9.BD2NeL3He0hRh.a7w5BUPEGibHPawBq",
-        "email": "cumpiss@spstrutnov.cz"
-    },
-    "regdit": {
-        "heslo": "$2a$10$kc2WhxeH8C0EZQGwm75Z/uRVZoHMS6ajaX6au3TQqzvt/5yo4B58q",
-        "email": "cumpiss@spstrutnov.cz"
-    },
-    "c": {
-        "heslo": "$2a$10$ZlseLRbr6iowWs7d0tMC5u6y.WEmmL6xHjiqc7Xz0WS4mKIur5LEK",
-        "email": "cumpiss@spstrutnov.cz"
-    },
-    "ligma": {
-        "heslo": "$2a$10$.Cpl5LsaBWGRPM3ArWgL9.zPyJuqW1laMI4KcWFJy8tuCDwHDFmMG",
-        "email": "cak@spstrutnov.cz"
+    "Tektek": {
+        "heslo": "$2a$10$IluwpueVcjMMAdydpcEL2eZhFp7uEVvazuIIkjZN47rAKrN7YKBGG",
+        "email": "hula@spstrutnov.cz",
+        "score": 15
     }
 }
