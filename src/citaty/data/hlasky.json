@@ -132,7 +132,7 @@
         "'Dejvídééé, co jsi nám tu teď dělal?'",
         "'Američtina...'",
         "'Co mi vyprávěla dlažební kostka.",
-        "'Musíš se to naučit, nebo to nebudeš umět'",
+        "'Musíš se to naučit, nebo to nebudeš umět.'",
         "'U Slavíků asi mají otevírání dveří na kameru...'"
     ]
     },
@@ -218,8 +218,6 @@
         "'Když tam pustíme proud 50 HZ.'",
         "'Zapni mi prosimtě neoptar.'",
         "'Když se přidá transformátor do toho železa.'"
-
-
     ]
     },
 
@@ -232,20 +230,7 @@
     },
 
 
-    "Vladimír Beránek":{
-        "hlasky":["'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'",
-        "''",
-        "''"
-    ]
-    },
 
-
-    "Ondřej Michalička":{
-        "hlasky":["'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'",
-        "''",
-        "''"
-    ]
-    },
 
 
     "Simona Jindová":{
@@ -318,20 +303,6 @@
         "'Já se některých z vás zbavím až na konci roku, to je na tom to nejhorší.'",
         "'Jaké zvíře má službu? VÁCLAVE KMITEJ!'"
 
-    ]
-    },
-
-    "Milan Fink":{
-        "hlasky":["'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'",
-        "''",
-        "''"
-    ]
-    },
-
-    "Luděk Dušek":{
-        "hlasky":["'Pusťíme sem zimu!'",
-        "''",
-        "''"
     ]
     }
 }
