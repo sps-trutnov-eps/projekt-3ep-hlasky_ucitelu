@@ -5,6 +5,7 @@ const { use } = require('../routers/uzivatelRouter');
 const db = new jsondb('./data/uzivatele.json');
 
 exports.pridatUzivatele = (jmeno, email, hashleHeslo) => {
+    jmeno = jmeno.toLocaleLowerCase();
     if(db.has(jmeno)) {
         return false;
     }
@@ -66,6 +67,7 @@ exports.spravneHeslo = (jmeno, heslo) => {
 }
 
 exports.ulozitHighScore = (jmeno, score) => {
+    jmeno = jmeno.toLocaleLowerCase();
     if (jmeno==undefined||score==undefined){
         console.log("nedostatek argumentů.");} // chybová hláška
 
@@ -113,6 +115,7 @@ exports.getAllHighScore = () => {
 }
 
 exports.ulozitOblibenouHlasku = (jmeno, hlaska) => {
+    jmeno = jmeno.toLocaleLowerCase();
     if (jmeno==undefined||hlaska==undefined){
     console.log("nedostatek argumentů.");} // chybová hláška
 

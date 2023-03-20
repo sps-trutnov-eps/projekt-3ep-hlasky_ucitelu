@@ -38,7 +38,7 @@ exports.overeni = (req, res) => {
 }
 
 exports.registrovat = (req, response) => {
-    const jmeno = req.body.jmeno.trim();
+    const jmeno = req.body.jmeno.trim().toLocaleLowerCase();
     const email = req.body.email.trim();
     const heslo = req.body.heslo.trim();
     const hesloZnovu = req.body.hesloZnovu.trim();
@@ -183,7 +183,7 @@ exports.overit = (req, response) => {
 }
 
 exports.prihlasit = (req, response) => {
-    const jmeno = req.body.jmeno.trim();
+    const jmeno = req.body.jmeno.trim().toLocaleLowerCase();
     const heslo = req.body.heslo.trim();
 
     if(!model.existujeUzivatel(jmeno)) {
