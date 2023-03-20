@@ -1,6 +1,9 @@
+<%- include('../_layout/header') %>
 <p>Sin slávy</p>
 
 <% for (let i = 0; i < users.length; i++) { %>
     <p><%= users[i] %>, <%= scores[i] %></p>
     
 <%} %>
+
+<%- include('../_layout/footer') %>
