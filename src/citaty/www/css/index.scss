@@ -1,0 +1,46 @@
+.welcome-text{
+    margin: 0px 0px 2vh 0px;
+}
+
+.lb-wrapper{
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .lb{
+        width: 45%;
+        background-color: var(--bg2);
+        padding: 1vh 1vw;
+        border-radius: .7vw;
+        position: relative;
+
+        .lb-head{
+            margin-bottom: .5vh;
+            text-transform: capitalize;
+        }
+
+        .lb-body{
+            display: flex;
+            justify-content: space-between;
+
+            div{
+                width: calc(100% / 3);
+                height: 15vh;
+                border-radius: .5vw;
+
+                h2{
+                    text-align: center;
+                    padding: 1vh 1vw;
+                }
+
+                p{
+                    text-align: center;
+                }
+            }
+
+            div:not(:first-of-type):not(:last-of-type){
+                background-color: gold;
+            }
+        }
+    }
+}
