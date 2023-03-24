@@ -2,55 +2,68 @@
   margin: 0px 0px 5vh 0px;
 }
 
-.lb-wrapper {
+.index-wrapper {
+  height: 71vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.index-wrapper .btn-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.index-wrapper .lb-wrapper {
   display: inline-flex;
   justify-content: space-between;
   width: 100%;
 }
-.lb-wrapper .lb {
+.index-wrapper .lb-wrapper .lb {
   width: 100%;
   background-color: var(--bg2);
   padding: 1vh 1vw 2vh 1vw;
   border-radius: 0.7vw;
   position: relative;
 }
-.lb-wrapper .lb .lb-head {
+.index-wrapper .lb-wrapper .lb .lb-head {
   margin-bottom: 2vh;
   text-transform: capitalize;
 }
-.lb-wrapper .lb .lb-body {
+.index-wrapper .lb-wrapper .lb .lb-body {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
-.lb-wrapper .lb .lb-body div {
+.index-wrapper .lb-wrapper .lb .lb-body div {
   width: 33%;
   border-radius: 0.5vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.lb-wrapper .lb .lb-body div div {
+.index-wrapper .lb-wrapper .lb .lb-body div div {
   display: block;
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
 }
-.lb-wrapper .lb .lb-body div div h2 {
+.index-wrapper .lb-wrapper .lb .lb-body div div h2 {
   text-align: center;
 }
-.lb-wrapper .lb .lb-body div div p {
+.index-wrapper .lb-wrapper .lb .lb-body div div p {
   text-align: center;
 }
-.lb-wrapper .lb .lb-body div:not(:first-of-type):not(:last-of-type) {
+.index-wrapper .lb-wrapper .lb .lb-body div:not(:first-of-type):not(:last-of-type) {
   background-color: gold;
   height: 15vh;
 }
-.lb-wrapper .lb .lb-body div:first-of-type:not(:last-of-type) {
+.index-wrapper .lb-wrapper .lb .lb-body div:first-of-type:not(:last-of-type) {
   height: 12vh;
   background-color: silver;
 }
-.lb-wrapper .lb .lb-body div:not(:first-of-type):last-of-type {
+.index-wrapper .lb-wrapper .lb .lb-body div:not(:first-of-type):last-of-type {
   height: 10vh;
   background-color: saddlebrown;
 }/*# sourceMappingURL=index.css.map */

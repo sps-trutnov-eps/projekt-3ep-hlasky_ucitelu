@@ -2,64 +2,79 @@
     margin: 0px 0px 5vh 0px;
 }
 
-.lb-wrapper{
-    display: inline-flex;
-    justify-content: space-between;
-    width: 100%;
+.index-wrapper{
+    height: 71vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
-    .lb{
+    .btn-wrapper{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
         width: 100%;
-        background-color: var(--bg2);
-        padding: 1vh 1vw 2vh 1vw;
-        border-radius: .7vw;
-        position: relative;
-
-        .lb-head{
-            margin-bottom: 2vh;
-            text-transform: capitalize;
-        }
-
-        .lb-body{
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-
-            div{
-                width: 33%;
-                border-radius: .5vw;
+    }
+    
+    .lb-wrapper{
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
+    
+        .lb{
+            width: 100%;
+            background-color: var(--bg2);
+            padding: 1vh 1vw 2vh 1vw;
+            border-radius: .7vw;
+            position: relative;
+    
+            .lb-head{
+                margin-bottom: 2vh;
+                text-transform: capitalize;
+            }
+    
+            .lb-body{
                 display: flex;
-                align-items: center;
-                justify-content: center;
-
+                justify-content: space-between;
+                align-items: flex-end;
+    
                 div{
-                    display: block;
-                    width: 100%;
-                    height: fit-content;
-
-                    h2{
-                        text-align: center;
+                    width: 33%;
+                    border-radius: .5vw;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+    
+                    div{
+                        display: block;
+                        width: 100%;
+                        height: fit-content;
+    
+                        h2{
+                            text-align: center;
+                        }
+        
+                        p{
+                            text-align: center;
+                        }
                     }
     
-                    p{
-                        text-align: center;
-                    }
                 }
-
-            }
-
-            div:not(:first-of-type):not(:last-of-type){
-                background-color: gold;
-                height: 15vh;
-            }
-
-            div:first-of-type:not(:last-of-type){
-                height: 12vh;
-                background-color: silver;
-            }
-
-            div:not(:first-of-type):last-of-type{
-                height: 10vh;
-                background-color: saddlebrown;
+    
+                div:not(:first-of-type):not(:last-of-type){
+                    background-color: gold;
+                    height: 15vh;
+                }
+    
+                div:first-of-type:not(:last-of-type){
+                    height: 12vh;
+                    background-color: silver;
+                }
+    
+                div:not(:first-of-type):last-of-type{
+                    height: 10vh;
+                    background-color: saddlebrown;
+                }
             }
         }
     }
