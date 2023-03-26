@@ -3,11 +3,12 @@
         <% if(jmeno != undefined){ %>
             <h2 class="welcome-text">Vítej, <%= jmeno %></h2>
 
-
-            <div><h1>tady asi budou 2 tlačítka na hraní kvízů</h1></br></br></div>
-
-
-
+            <div class="lb-wrapper" style="flex-direction: row;">
+                <div class="lb">
+                    <a href="/hlasky/uspesnost" class="btn">Bodovaný Kvíz</a>
+                    <a href="/hlasky/random?new=true" class="btn">Náhlá Smrt</a>
+                </div>
+            </div>
 
             <div class="lb-wrapper">
                 <div class="lb"> <!-- T1 -->

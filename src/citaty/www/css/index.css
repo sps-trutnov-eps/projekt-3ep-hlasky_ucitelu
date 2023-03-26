@@ -7,12 +7,25 @@
   justify-content: space-between;
   width: 100%;
 }
+.lb-wrapper .lb:first-of-type {
+  margin-bottom: 5vh;
+}
 .lb-wrapper .lb {
   width: 100%;
   background-color: var(--bg2);
   padding: 1vh 1vw 2vh 1vw;
   border-radius: 0.7vw;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+}
+.lb-wrapper .lb .btn {
+  background-color: aqua;
+  padding: 1vh 1vw;
+}
+.lb-wrapper .lb .btn:hover {
+  background-color: var(--bg);
 }
 .lb-wrapper .lb .lb-head {
   margin-bottom: 2vh;

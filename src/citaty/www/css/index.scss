@@ -7,12 +7,29 @@
     justify-content: space-between;
     width: 100%;
 
+    .lb:first-of-type{
+        margin-bottom: 5vh;
+    }
+    
     .lb{
         width: 100%;
         background-color: var(--bg2);
         padding: 1vh 1vw 2vh 1vw;
         border-radius: .7vw;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        transition: .2s;
+
+        .btn{
+            background-color: aqua;
+            padding: 1vh 1vw;
+            
+
+            &:hover{
+                background-color: var(--bg);
+            }
+        }
 
         .lb-head{
             margin-bottom: 2vh;
