@@ -38,7 +38,7 @@ exports.overeni = (req, res) => {
 }
 
 exports.registrovat = (req, response) => {
-    const jmeno = req.body.jmeno.trim().toLocaleLowerCase();
+    const jmeno = req.body.jmeno.trim();
     const email = req.body.email.trim();
     const heslo = req.body.heslo.trim();
     const hesloZnovu = req.body.hesloZnovu.trim();

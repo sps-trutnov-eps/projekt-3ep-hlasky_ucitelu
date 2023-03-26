@@ -2,14 +2,20 @@
     "tektek": {
         "heslo": "$2a$10$IluwpueVcjMMAdydpcEL2eZhFp7uEVvazuIIkjZN47rAKrN7YKBGG",
         "email": "hula@spstrutnov.cz",
-        "score": 15
+        "score": 2
     },
     "ligma": {
         "heslo": "$2a$10$XS1xm41k2okI5G6SIDrZxOsyZoWR8PDl7ZVakmCfjFP568XEoW2g2",
-        "email": "joucker@spstrutnov.cz"
+        "email": "joucker@spstrutnov.cz",
+        "score": 30
     },
     "sigma": {
         "heslo": "$2a$10$AKtJY9Ck9rixz4zPgG6uduTW1.WlK.z0Tl0HbLKCQdmK5GuNG0Q.m",
         "email": "sigma@spstrutnov.cz"
+    },
+    "figma": {
+        "heslo": "$2a$10$AKtJY9Ck9rixz4zPgG6uduTW1.WlK.z0Tl0HbLKCQdmK5GuNG0Q.m",
+        "email": "sigma@spstrutnov.cz",
+        "score": 23
     }
 }

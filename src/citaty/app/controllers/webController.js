@@ -1,3 +1,5 @@
+const model = require('../models/uzivatelModel');
+
 exports.about = (req, res) => {
     res.render('web/about', {
         titulek: 'O aplikaci',
@@ -17,5 +19,6 @@ exports.index = (req, res)=> {
     res.render('web/index', {
         titulek: 'Cvičná aplikace',
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
+        top: model.getTopScore(3), // [[score, jmeno]]
     });
 }
