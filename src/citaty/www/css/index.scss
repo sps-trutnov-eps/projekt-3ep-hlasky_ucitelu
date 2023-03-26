@@ -2,11 +2,10 @@
     margin: 0px 0px 5vh 0px;
 }
 
-.index-wrapper{
-    height: 71vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.lb-wrapper{
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
 
     .lb:first-of-type{
         margin-bottom: 5vh;
@@ -46,46 +45,38 @@
                 width: 33%;
                 border-radius: .5vw;
                 display: flex;
-                justify-content: space-between;
-                align-items: flex-end;
-    
+                align-items: center;
+                justify-content: center;
+
                 div{
-                    width: 33%;
-                    border-radius: .5vw;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-    
-                    div{
-                        display: block;
-                        width: 100%;
-                        height: fit-content;
-    
-                        h2{
-                            text-align: center;
-                        }
-        
-                        p{
-                            text-align: center;
-                        }
+                    display: block;
+                    width: 100%;
+                    height: fit-content;
+
+                    h2{
+                        text-align: center;
                     }
     
+                    p{
+                        text-align: center;
+                    }
                 }
-    
-                div:not(:first-of-type):not(:last-of-type){
-                    background-color: gold;
-                    height: 15vh;
-                }
-    
-                div:first-of-type:not(:last-of-type){
-                    height: 12vh;
-                    background-color: silver;
-                }
-    
-                div:not(:first-of-type):last-of-type{
-                    height: 10vh;
-                    background-color: saddlebrown;
-                }
+
+            }
+
+            div:not(:first-of-type):not(:last-of-type){
+                background-color: gold;
+                height: 15vh;
+            }
+
+            div:first-of-type:not(:last-of-type){
+                height: 12vh;
+                background-color: silver;
+            }
+
+            div:not(:first-of-type):last-of-type{
+                height: 10vh;
+                background-color: saddlebrown;
             }
         }
     }
