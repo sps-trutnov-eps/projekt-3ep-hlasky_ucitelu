@@ -2,6 +2,11 @@ const bcrypt = require('bcryptjs');
 const jsondb = require('simple-json-db');
 const db = new jsondb('./data/hlasky.json');
 
+
+function hasDuplicates(array) {
+    return (new Set(array)).size !== array.length;
+}
+
 // někdy internet nepomůže :(
 function shuffle_(arr) { // ta funkce se nemůže jmenovat shuffle přezto že shuffle funce prý neexistuje
     let newArr = [];    // miluju javaSctipt
@@ -17,19 +22,41 @@ function shuffle_(arr) { // ta funkce se nemůže jmenovat shuffle přezto že s
     return newArr;
 }
 
-exports.randomUcitel = () => {
+exports.randomUcitel = (seznamProslychHlasek = []) => {
+    if (seznamProslychHlasek != []){
+        if (seznamProslychHlasek.length > 10){
+            seznamProslychHlasek = seznamProslychHlasek.slice(-10);
+        }
+    }
+    
     const hlasky = db.JSON();
     const length = Object.keys(hlasky).length - 1;
 
-    let randomCislo = Math.round(Math.random() * length);
+    let spravnaHlaska;
 
-    let spravnyUcitel = Object.keys(hlasky)[randomCislo];
-    
-    let spravnaHlaska = hlasky[spravnyUcitel]["hlasky"][Math.round(Math.random() * (hlasky[spravnyUcitel]["hlasky"].length - 1))];
+    let contans = true;
+    if (seznamProslychHlasek != []){
+        while (contans){
+            spravnyUcitel = Object.keys(hlasky)[Math.round(Math.random() * length)];
 
+            spravnaHlaska = hlasky[spravnyUcitel]["hlasky"][Math.round(Math.random() * (hlasky[spravnyUcitel]["hlasky"].length - 1))];
 
-    while (spravnaHlaska == "''"){
+            while (spravnaHlaska == "''"){
+                spravnaHlaska = hlasky[spravnyUcitel]["hlasky"][Math.round(Math.random() * (hlasky[spravnyUcitel]["hlasky"].length - 1))];
+            }
+
+            contans = seznamProslychHlasek.includes(spravnaHlaska);
+        }
+
+    }
+    else{
+        spravnyUcitel = Object.keys(hlasky)[Math.round(Math.random() * length)];
         spravnaHlaska = hlasky[spravnyUcitel]["hlasky"][Math.round(Math.random() * (hlasky[spravnyUcitel]["hlasky"].length - 1))];
+        
+        
+        while (spravnaHlaska == "''"){
+            spravnaHlaska = hlasky[spravnyUcitel]["hlasky"][Math.round(Math.random() * (hlasky[spravnyUcitel]["hlasky"].length - 1))];
+        }
     }
 
     console.log(spravnaHlaska);

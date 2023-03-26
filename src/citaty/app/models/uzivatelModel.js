@@ -81,6 +81,7 @@ exports.ulozitHighScore = (jmeno, score) => {
         db.set(jmeno, data);
     }
 }
+
 exports.getHighScore = (jmeno) => {
     if (jmeno==undefined){
     console.log("nedostatek argumentů.");} // chybová hláška
@@ -115,7 +116,7 @@ exports.getTopScore = (top = 3) => {
 
     let topPlayers = sorted.slice(0, top);
 
-    // returne top počet hráču s nejlepším score. (napš top 3 hráčů s nejlepčím score)
+    // returne top počet hráču s nejlepším score. (např:. top 3 hráčy s nejlepším score)
     // list vypadá takhle: [ [ 30, 'ligma' ], [ 23, 'figma' ], [ 2, 'tektek' ] ]
     // [[score, jmeno]]
     return topPlayers;

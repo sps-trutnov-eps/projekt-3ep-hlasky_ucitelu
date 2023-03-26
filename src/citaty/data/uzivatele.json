@@ -7,11 +7,15 @@
     "ligma": {
         "heslo": "$2a$10$XS1xm41k2okI5G6SIDrZxOsyZoWR8PDl7ZVakmCfjFP568XEoW2g2",
         "email": "joucker@spstrutnov.cz",
-        "score": 30
+        "score": 30,
+        "oblibeneHlasky": [
+            "'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'"
+        ]
     },
-    "sigma": {
-        "heslo": "$2a$10$AKtJY9Ck9rixz4zPgG6uduTW1.WlK.z0Tl0HbLKCQdmK5GuNG0Q.m",
-        "email": "sigma@spstrutnov.cz"
+    "honza": {
+        "heslo": "$2a$10$XS1xm41k2okI5G6SIDrZxOsyZoWR8PDl7ZVakmCfjFP568XEoW2g2",
+        "email": "sigma@spstrutnov.cz",
+        "score": 3
     },
     "figma": {
         "heslo": "$2a$10$AKtJY9Ck9rixz4zPgG6uduTW1.WlK.z0Tl0HbLKCQdmK5GuNG0Q.m",
