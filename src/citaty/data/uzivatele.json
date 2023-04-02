@@ -21,5 +21,9 @@
         "heslo": "$2a$10$AKtJY9Ck9rixz4zPgG6uduTW1.WlK.z0Tl0HbLKCQdmK5GuNG0Q.m",
         "email": "sigma@spstrutnov.cz",
         "score": 23
+    },
+    "LIGMUS": {
+        "heslo": "$2a$10$DXNR8mo/3MtwZSfXuLci/.IWNLfyDk6uItbizEJ2rHkQgoi4bWMGu",
+        "email": "sigmus@spstrutnov.cz"
     }
 }
