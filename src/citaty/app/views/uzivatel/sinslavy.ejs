@@ -1,8 +1,12 @@
 <%- include('../_layout/header') %>
-<p>Sin slávy</p>
 
-<% for (let i = 0; i < users.length; i++) { %>
-    <p><%= users[i] %>, <%= scores[i] %></p>
-    
-<%} %>
+<div class="container" style="min-height: 79vh; margin: 5vh auto 1vh auto">
+
+    <h2 class="nadpis-left">Síň Slávy</h2>
+    <% for (let i = 0; i < users.length; i++) { %>
+        <p><%= users[i] %>, <%= scores[i] %></p>
+        
+    <%} %>
+</div>
+
 <%- include('../_layout/footer') %>
