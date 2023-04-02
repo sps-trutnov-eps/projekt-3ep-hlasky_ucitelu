@@ -7,14 +7,23 @@
     --bg: #161b22; 
     --bg2: #252c35;
     --bg3: #cccccc;
-    --primary: #8b5cb4;
-    --secondary: #9d6f9b;
-    --tertiary: #4a8992;
+    --primary: #b45cb0;
+    --secondary: #8d5e8b;
+    --tertiary: #634a92;
     --hvr: #bbbbbb;
     font-family: 'Roboto', sans-serif;
 
     // font-family: 'Roboto Slab', serif;
     color: white;
+}
+
+h2{ // yes
+    font-size: 1.7em;
+}
+
+.nadpis-left{
+    text-align: left;
+    margin-bottom: 3vh;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -39,6 +48,7 @@ body{
     header{
         width: 100%;
         height: 48px;
+        overflow: hidden;
 
         #nav{
             background-color: var(--bg2);

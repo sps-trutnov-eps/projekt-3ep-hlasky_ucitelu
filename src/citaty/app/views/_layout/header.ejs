@@ -14,14 +14,12 @@
                 <div id="nav_center">
                   <a href="/">Domů</a>
                   <a href="/uzivatel/sinslavy">Síň slávy</a>
-                  <a href="/hlasky/random?new=true">Kvíz náhlé smrti</a>
-                  <a href="/hlasky/uspesnost">Bodovaný kvíz</a>
                 </div>
                 
                 <div id="profil">
                     <% if(jmeno == undefined){ %>
                         <a href="/uzivatel/prihlasit">Přihlásit se</a>
-                        <% } else{ %>
+                        <% } else { %>
                             <a href="/uzivatel/profil"><%= jmeno %></a>
                             <% } %>
                 </div>

@@ -1,10 +1,14 @@
 <%- include('../_layout/header') %>
-    <p>Vítejte na svém profilu, <b><%= jmeno %>!</b></p>
-    <a href="/uzivatel/odhlasit">Odhlásit</a>
-    <p>Vaše nejvyšší score: <%= highScore %></p>
+    <div class="container" style="min-height: 79vh; margin: 5vh auto 1vh auto">
+        <p>Vítejte na svém profilu, <b><%= jmeno %>!</b></p>
+        <a href="/uzivatel/odhlasit">Odhlásit</a>
+        <p>Vaše nejvyšší score: <%= highScore %></p>
+        
+        <p>Vaše oblíbené hlášky</p>
+        <% hlasky.forEach(hlaska => { %>
+            <b><%= hlaska %></b> <br>
+        <% }); %>
+    </div>
     
-    <p>Vaše oblíbené hlášky</p>
-    <% hlasky.forEach(hlaska => { %>
-        <b><%= hlaska %></b> <br>
-    <% }); %>
 <%- include('../_layout/footer') %>
+
