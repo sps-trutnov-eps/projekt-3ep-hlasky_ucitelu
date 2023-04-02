@@ -89,6 +89,7 @@
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
 }
 .lb-wrapper .lb .lb-body div div h2 {
   text-align: center;

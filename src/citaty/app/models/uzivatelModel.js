@@ -141,7 +141,7 @@ exports.getOblibenyHlasky = (jmeno) => {
     let hlasky;
 
     if (data.oblibeneHlasky == undefined){
-        hlasky = ["Nemáte uloženné žádné hlášky!"];
+        hlasky = ["Nic Tady Není!"];
     }
     else{
         hlasky = data.oblibeneHlasky;
