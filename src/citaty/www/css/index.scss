@@ -2,11 +2,22 @@
     margin: 0px 0px 5vh 0px;
 }
 
+.index-wrapper{
+    height: 58dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 .game-init{
     height: fit-content;
     background-color: var(--bg2);
     border-radius: .7vw;
     padding: 1vh 1vw 2vh 1vw;
+
+    h2{
+        margin-bottom: 3dvh;
+    }
 }
 
 .btn-wrapper{
@@ -19,17 +30,17 @@
     .btn{
         padding: 3dvh .5vw 3dvh .5vw;
         width: 43%;
-        border-radius: 10px;
+        border-radius: 1vw;
         color: white;
         font-weight: 600;
-        font-size: 1.1em;
+        font-size: 1.2em;
         background: linear-gradient( 90deg,
             var(--primary) 0%,
             var(--secondary) 100%
         );
         text-decoration: none;
         text-align: center;
-        border: solid 2px white;
+        border: solid .2vw white;
 
         &:hover{
             opacity: .9;
@@ -70,7 +81,7 @@
         }
 
         .lb-head{
-            margin-bottom: 2vh;
+            margin-bottom: 3vh;
             text-transform: capitalize;
         }
 
@@ -85,12 +96,14 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                overflow: hidden;
 
                 div{
                     display: block;
                     width: 100%;
-                    height: fit-content;
-
+                    height: 100%;
+                    display: flex;
+                    
                     h2{
                         text-align: center;
                     }
