@@ -88,6 +88,7 @@ exports.ulozitHighScore = (jmeno, score) => {
         db.set(jmeno, data);
     }
 }
+
 exports.getHighScore = (jmeno) => {
     if (jmeno==undefined){
     console.log("nedostatek argumentů.");} // chybová hláška
@@ -99,6 +100,34 @@ exports.getHighScore = (jmeno) => {
     }
     
     return data.score;
+}
+
+exports.getTopScore = (top = 3) => {
+    let data = db.JSON();
+    const uzivatele = Object.keys(data);
+
+    let uzivatelScore = [];
+
+    for(let i = 0; i <= uzivatele.length - 1; i++){
+        if (data[uzivatele[i]].score == undefined){
+            uzivatelScore.push([0, uzivatele[i]]);
+        }
+        else{
+            uzivatelScore.push([data[uzivatele[i]].score, uzivatele[i]]);
+        }
+    }
+
+    let sorted = uzivatelScore.sort( (a, b) => {
+        return b[0] - a[0]
+    })
+
+    let topPlayers = sorted.slice(0, top);
+
+    // returne top počet hráču s nejlepším score. (např:. top 3 hráčy s nejlepším score)
+    // list vypadá takhle: [ [ 30, 'ligma' ], [ 23, 'figma' ], [ 2, 'tektek' ] ]
+    // [[score, jmeno]]
+    return topPlayers;
+
 }
 
 exports.getAllHighScore = () => {
