@@ -1,6 +1,5 @@
 <%- include('../_layout/header') %>
 <div class="container">
-    <p>Uhodněte kdo řekl tuto hlášku:</p>
     <p class="hlaska"><%= hlaska %></p>
     <form method="post" script="/hlasky/uspesnost" >
         <% odpovedi.forEach(ucitel => { %>
