@@ -16,7 +16,12 @@
         "heslo": "$2a$10$XS1xm41k2okI5G6SIDrZxOsyZoWR8PDl7ZVakmCfjFP568XEoW2g2",
         "email": "sigma@spstrutnov.cz",
         "score": 3,
-        "oblibeneHlasky": []
+        "oblibeneHlasky": [
+            "'Ty jsi si ten válec ale nějak zamiloval, půjč si ho domů a vyřádi se na něm tam.'",
+            "'Saláti.'",
+            "'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'",
+            "'Jsi největší blbec na zeměkouli, ve třídě!'"
+        ]
     },
     "LIGMUS": {
         "heslo": "$2a$10$DXNR8mo/3MtwZSfXuLci/.IWNLfyDk6uItbizEJ2rHkQgoi4bWMGu",
@@ -25,5 +30,13 @@
     "pigma": {
         "heslo": "$2a$10$0FkbtYKbyV.jqyBH1RFEI.3F.THToGo1bfy5yPpT7lJPDQCSU/RFK",
         "email": "lmao@spstrutnov.cz"
+    },
+    "<h1> Ligma </h1> balls": {
+        "heslo": "$2a$10$ly26ULCmkmHyHrR2DtwDIuVBgJXh3QgxavMKURSyEi9z9n8LiqGbq",
+        "email": "Kasdasd@spstrutnov.cz",
+        "oblibeneHlasky": [
+            "'Pan Nymš mi říká PraSe, což znamená pracující senior'"
+        ],
+        "score": 3
     }
 }

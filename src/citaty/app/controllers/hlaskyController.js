@@ -103,7 +103,7 @@ exports.uspesnost = (req, res) => {
         hlaska: req.session.randomSeznamUcitelu[0],
         odpovedi: req.session.randomSeznamUcitelu[1],
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
-        zodpovezeno: 0,
+        zodpovezeno: req.session.zodpovezeno || 0,
     });
 }
 
