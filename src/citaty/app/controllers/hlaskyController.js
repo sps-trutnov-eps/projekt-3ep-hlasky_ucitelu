@@ -80,7 +80,6 @@ exports.uspesnost = (req, res) => {
     if (req.session.prihlasenyUzivatel == undefined){
         return res.redirect('/uzivatel/prihlasit');
     }
-
     
     if(req.query.like){
         let hlaska = req.session.randomSeznamUcitelu[0];
@@ -104,6 +103,7 @@ exports.uspesnost = (req, res) => {
         hlaska: req.session.randomSeznamUcitelu[0],
         odpovedi: req.session.randomSeznamUcitelu[1],
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
+        zodpovezeno: 0,
     });
 }
 
@@ -144,6 +144,7 @@ exports.procentaUspesnosti = (req, res) => {
         hlaska: req.session.randomSeznamUcitelu[0],
         odpovedi: req.session.randomSeznamUcitelu[1],
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
+        zodpovezeno: req.session.zodpovezeno,
     });
 }
 
