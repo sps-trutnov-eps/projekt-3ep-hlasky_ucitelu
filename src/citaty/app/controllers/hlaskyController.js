@@ -31,7 +31,6 @@ exports.randomKviz = (req, res) => {
         odpovedi: req.session.randomSeznamUcitelu[1],
         score: req.session.score,
     });
-     
 }
 
 exports.odpovedNaRandomKviz = (req, res) => {

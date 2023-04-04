@@ -1,7 +1,7 @@
 <%- include('../_layout/header') %>
     <p>Vítejte na svém profilu, <b><%= jmeno %>!</b></p>
     <p>Vaše nejvyšší score: <%= highScore %></p>
-
+    <a href="/uzivatel/confirmSmazani" style="color: red; text-decoration: none;">Smazat účet!</a> <br>
     <a href="/uzivatel/odhlasit" style="color: red; text-decoration: none;">Odhlásit</a> <br>
     <% if (hlasky[0] != "Nic Tady Není!"){ %>
         <p>Vaše Oblíbené hlášky:</p>

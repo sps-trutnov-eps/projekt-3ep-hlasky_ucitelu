@@ -136,18 +136,13 @@ exports.registrovat = (req, response) => {
     setTimeout(function(){
         if (req.session.prihlasenyUzivatel == undefined){
             req.session.destroy();
-            console.log("KÓD DESTROYED 1");
         }
         else{
             if (req.session.prihlasenyUzivatel != req.session.uzivatel[0]){
                 req.session.destroy();
-                console.log("KÓD DESTROYED 2");
             }
         }
-        
-        console.log("KÓD EXPIRED");
-    
-    }, 1 * 60000); // za jak dlouho vyprší kód. (v minutách)
+    }, 3 * 60000); // za jak dlouho vyprší kód. (v minutách) (pokuď to nezadá uživatel správně)
 
     return response.redirect('/uzivatel/overeni');
 }
@@ -237,4 +232,51 @@ exports.sinslavy = (req, res) => {
         error: undefined,
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
     })
+}
+
+exports.confirmSmazani = (req, res) => {
+
+    // tohle by se nikdy nemělo stát.
+    if (req.session.prihlasenyUzivatel == undefined || req.session.prihlasenyUzivatel == ""){
+        return res.redirect("/uzivatel/prihlasit");
+    }
+
+    return res.render("uzivatel/confirmSmazani", {
+        jmeno: req.session.prihlasenyUzivatel,
+        error: undefined,
+    })
+}
+
+exports.smazatUzivatele = (req, res) => {
+    // tohle by se nikdy nemělo stát.
+    if (req.session.prihlasenyUzivatel == undefined || req.session.prihlasenyUzivatel == ""){
+        return res.redirect("/uzivatel/prihlasit");
+    }
+
+    const jmeno = req.session.prihlasenyUzivatel;
+    const heslo = req.body.heslo.trim();
+
+    if(!model.spravneHeslo(jmeno, heslo)) {
+        return res.render('uzivatel/confirmSmazani', {
+            error: 'Chybné heslo!',
+            jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
+        });
+    }
+
+    if (model.smazatUzivatele(jmeno, heslo) != false){ // všchno v pohodě (smatat uživatele)
+        req.session.destroy();
+        return res.redirect("/uzivatel/prihlasit");
+    }
+    else{
+        return res.render('uzivatel/confirmSmazani', {
+            error: 'Došlo k chybě při ověřování hesla!',
+            jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
+        });
+    }
+
+    
+    
+
+    
+    
 }

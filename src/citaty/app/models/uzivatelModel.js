@@ -189,3 +189,11 @@ exports.odebratOblibenouHlasku = (jmeno, hlaska) => {
     hlaskyUzivatele.oblibeneHlasky = hlaskyUzivatele.oblibeneHlasky.filter(v => v !== hlaska); 
     db.set(jmeno, hlaskyUzivatele);
 }
+
+exports.smazatUzivatele = (jmeno, heslo) => {
+    if (!exports.spravneHeslo(jmeno, heslo)){
+        return false;
+    } else{
+        db.delete(jmeno);
+    }
+}
