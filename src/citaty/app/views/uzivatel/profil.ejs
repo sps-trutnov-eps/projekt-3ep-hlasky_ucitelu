@@ -8,6 +8,9 @@
 
     <% } %>
     <% hlasky.forEach(hlaska => { %>
-        <b><%= hlaska %></b> <br>
+        <b><%= hlaska %></b>
+        <% if (hlaska != "Nic Tady Není!") { %>
+        <a href="/uzivatel/profil?hlaska=<%= hlaska %>" style="color: red; text-decoration: none;"> smazat hlášku. </a> <br>
+        <% } %>
     <% }); %>
 <%- include('../_layout/footer') %>

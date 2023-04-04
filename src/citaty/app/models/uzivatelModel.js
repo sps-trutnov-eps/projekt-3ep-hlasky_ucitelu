@@ -169,7 +169,7 @@ exports.getOblibenyHlasky = (jmeno) => {
     let data = db.JSON()[jmeno];
     let hlasky;
 
-    if (data.oblibeneHlasky == undefined){
+    if (data.oblibeneHlasky == undefined || data.oblibeneHlasky.length <= 0){
         hlasky = ["Nic Tady Není!"];
     }
     else{
@@ -177,4 +177,15 @@ exports.getOblibenyHlasky = (jmeno) => {
     }
 
     return hlasky;
+}
+
+exports.odebratOblibenouHlasku = (jmeno, hlaska) => {
+    let hlaskyUzivatele = db.JSON()[jmeno];
+
+    if (hlaskyUzivatele.oblibeneHlasky == undefined){
+        return false;
+    }
+
+    hlaskyUzivatele.oblibeneHlasky = hlaskyUzivatele.oblibeneHlasky.filter(v => v !== hlaska); 
+    db.set(jmeno, hlaskyUzivatele);
 }

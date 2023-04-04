@@ -210,6 +210,10 @@ exports.profil = (req, response) => {
         return response.redirect('/uzivatel/prihlasit');
     }
     
+    if (req.query.hlaska != undefined){
+        model.odebratOblibenouHlasku(req.session.prihlasenyUzivatel, req.query.hlaska);
+    }
+
     response.render('uzivatel/profil', {
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         hlasky: model.getOblibenyHlasky(req.session.prihlasenyUzivatel),
