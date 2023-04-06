@@ -58,7 +58,6 @@ exports.randomUcitel = (seznamProslychHlasek = []) => {
             spravnaHlaska = hlasky[spravnyUcitel]["hlasky"][Math.round(Math.random() * (hlasky[spravnyUcitel]["hlasky"].length - 1))];
         }
     }
-
     console.log(spravnaHlaska);
     
 
@@ -66,6 +65,10 @@ exports.randomUcitel = (seznamProslychHlasek = []) => {
 
     for (let i = 0; i < 3;i++){
         let spatnyUcitel = Object.keys(hlasky)[Math.round(Math.random() * length)];
+
+        while (hlasky[spatnyUcitel]["gender"] != hlasky[spravnyUcitel]["gender"]){
+            spatnyUcitel = Object.keys(hlasky)[Math.round(Math.random() * length)];
+        }
 
         while(spatnyUcitel.includes(spravnyUcitel) || spatneUcitele.includes(spatnyUcitel)){
             spatnyUcitel = Object.keys(hlasky)[Math.round(Math.random() * length)];
