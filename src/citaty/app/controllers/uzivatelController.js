@@ -223,12 +223,11 @@ exports.odhlasit = (req, response) => {
 
 exports.sinslavy = (req, res) => {
     const userData = model.getAllHighScore();
-    const scores = userData[0];
-    const users = userData[1];
+
+    console.log(userData);
 
     return res.render('uzivatel/sinslavy', {
-        scores: scores,
-        users: users,
+        data: userData,
         error: undefined,
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
     })

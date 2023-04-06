@@ -131,20 +131,25 @@ exports.getTopScore = (top = 3) => {
 }
 
 exports.getAllHighScore = () => {
-    const data = db.JSON();
+    let data = db.JSON();
     const uzivatele = Object.keys(data);
 
-    let scores = [];
-    let users = [];
+    let uzivatelScore = [];
 
     for(let i = 0; i <= uzivatele.length - 1; i++){
-        if (data[uzivatele[i]].score != undefined){
-            scores.push(data[uzivatele[i]].score);
-            users.push(uzivatele[i]);
+        if (data[uzivatele[i]].score == undefined){
+            uzivatelScore.push([0, uzivatele[i]]);
+        }
+        else{
+            uzivatelScore.push([data[uzivatele[i]].score, uzivatele[i]]);
         }
     }
 
-    return [scores, users];
+    const sorted = uzivatelScore.sort( (a, b) => {
+        return b[0] - a[0]
+    })
+
+    return sorted;
 
 }
 
