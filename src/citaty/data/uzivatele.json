@@ -1,8 +1,8 @@
 {
-    "tektek": {
+    "Tektek": {
         "heslo": "$2a$10$IluwpueVcjMMAdydpcEL2eZhFp7uEVvazuIIkjZN47rAKrN7YKBGG",
         "email": "hula@spstrutnov.cz",
-        "score": 2
+        "score": 200
     },
     "ligma": {
         "heslo": "$2a$10$XS1xm41k2okI5G6SIDrZxOsyZoWR8PDl7ZVakmCfjFP568XEoW2g2",
@@ -42,5 +42,8 @@
             "'Pan Nymš mi říká PraSe, což znamená pracující senior'"
         ],
         "score": 3
+    "KySsIsT": {
+        "heslo": "$2a$10$9wg373XsJE7F8LoXNQwQv.vkbwRsUezlKsZs7nZMVFtQfxqhT.G76",
+        "email": "piss@spstrutnov.cz"
     }
 }
