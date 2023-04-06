@@ -1,0 +1,34 @@
+<%- include('../_layout/header') %>
+    <div class="wrapper">
+        <div class="bg">
+            <div class="grad"></div>
+            <img class="bg_img" src="/data_web/bg.png" alt="">
+        </div>
+    
+        <div class="container" style="display: flex; align-items: center; justify-content: center;">
+            <div class="login-cont">
+                <div class="login-nadpis">
+                    <h3 style="color: red;" >Potvrdit smazáí uživatele</h3>
+                </div>
+                
+                <div class="login-form-cont">
+                    <form method="post" script="/uzivatel/smazatUzivatele">
+
+                        <div class="login-input">
+                            <input type="password" name="heslo" placeholder="Heslo" /><br />
+                        </div>
+                    
+                    <% if(error) { %>
+                        <div class="err">
+                            <p><%= error %></p>
+                            <p>!</p>
+                        </div>
+                        <% } %>
+
+                    <input class="btn" type="submit" value="Přihlásit se" />
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('../_layout/footer') %>

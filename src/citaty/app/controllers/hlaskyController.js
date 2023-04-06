@@ -31,7 +31,6 @@ exports.randomKviz = (req, res) => {
         odpovedi: req.session.randomSeznamUcitelu[1],
         score: req.session.score,
     });
-     
 }
 
 exports.odpovedNaRandomKviz = (req, res) => {
@@ -81,25 +80,30 @@ exports.uspesnost = (req, res) => {
     if (req.session.prihlasenyUzivatel == undefined){
         return res.redirect('/uzivatel/prihlasit');
     }
-
-    req.session.zodpovezeno = 0;
-    req.session.scoreuspesnosti = 0;
-
-    let randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
-    req.session.randomSeznamUcitelu = randomSeznamUcitelu;
-
-    if (req.session.seznamProslychHlasek == undefined){
-        req.session.seznamProslychHlasek = [];
-    }
-    if (req.session.seznamProslychHlasek.length > 10){
-        req.session.seznamProslychHlasek = req.session.seznamProslychHlasek.slice(-10);
+    
+    if(req.query.like){
+        let hlaska = req.session.randomSeznamUcitelu[0];
+        uzivatelModel.ulozitOblibenouHlasku(req.session.prihlasenyUzivatel, hlaska);
+    }else{
+        req.session.randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
+        req.session.zodpovezeno = 0;
+        req.session.scoreuspesnosti = 0;
+        
+        if (req.session.seznamProslychHlasek == undefined){
+            req.session.seznamProslychHlasek = [];
+        }
+        if (req.session.seznamProslychHlasek.length > 10){
+            req.session.seznamProslychHlasek = req.session.seznamProslychHlasek.slice(-10);
+        }
     }
     req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
+    
 
     return res.render("hlasky/uspesnost",{
-        hlaska: randomSeznamUcitelu[0],
-        odpovedi: randomSeznamUcitelu[1],
+        hlaska: req.session.randomSeznamUcitelu[0],
+        odpovedi: req.session.randomSeznamUcitelu[1],
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
+        zodpovezeno: req.session.zodpovezeno || 0,
     });
 }
 
@@ -140,6 +144,7 @@ exports.procentaUspesnosti = (req, res) => {
         hlaska: req.session.randomSeznamUcitelu[0],
         odpovedi: req.session.randomSeznamUcitelu[1],
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
+        zodpovezeno: req.session.zodpovezeno,
     });
 }
 

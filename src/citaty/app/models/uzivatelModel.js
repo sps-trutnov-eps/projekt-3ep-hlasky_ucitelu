@@ -131,20 +131,25 @@ exports.getTopScore = (top = 3) => {
 }
 
 exports.getAllHighScore = () => {
-    const data = db.JSON();
+    let data = db.JSON();
     const uzivatele = Object.keys(data);
 
-    let scores = [];
-    let users = [];
+    let uzivatelScore = [];
 
     for(let i = 0; i <= uzivatele.length - 1; i++){
-        if (data[uzivatele[i]].score != undefined){
-            scores.push(data[uzivatele[i]].score);
-            users.push(uzivatele[i]);
+        if (data[uzivatele[i]].score == undefined){
+            uzivatelScore.push([0, uzivatele[i]]);
+        }
+        else{
+            uzivatelScore.push([data[uzivatele[i]].score, uzivatele[i]]);
         }
     }
 
-    return [scores, users];
+    const sorted = uzivatelScore.sort( (a, b) => {
+        return b[0] - a[0]
+    })
+
+    return sorted;
 
 }
 
@@ -169,7 +174,7 @@ exports.getOblibenyHlasky = (jmeno) => {
     let data = db.JSON()[jmeno];
     let hlasky;
 
-    if (data.oblibeneHlasky == undefined){
+    if (data.oblibeneHlasky == undefined || data.oblibeneHlasky.length <= 0){
         hlasky = ["Nic Tady Není!"];
     }
     else{
@@ -177,4 +182,23 @@ exports.getOblibenyHlasky = (jmeno) => {
     }
 
     return hlasky;
+}
+
+exports.odebratOblibenouHlasku = (jmeno, hlaska) => {
+    let hlaskyUzivatele = db.JSON()[jmeno];
+
+    if (hlaskyUzivatele.oblibeneHlasky == undefined){
+        return false;
+    }
+
+    hlaskyUzivatele.oblibeneHlasky = hlaskyUzivatele.oblibeneHlasky.filter(v => v !== hlaska); 
+    db.set(jmeno, hlaskyUzivatele);
+}
+
+exports.smazatUzivatele = (jmeno, heslo) => {
+    if (!exports.spravneHeslo(jmeno, heslo)){
+        return false;
+    } else{
+        db.delete(jmeno);
+    }
 }

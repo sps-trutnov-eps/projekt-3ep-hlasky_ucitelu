@@ -3,8 +3,8 @@
 <div class="container" style="min-height: 79vh; margin: 5vh auto 1vh auto">
 
     <h2 class="nadpis-left">Síň Slávy</h2>
-    <% for (let i = 0; i < users.length; i++) { %>
-        <p><%= users[i] %>, <%= scores[i] %></p>
+    <% for (let i = 0; i < data.length; i++) { %>
+        <p><%= data[i][0] %>, <%= data[i][1] %></p>
         
     <%} %>
 </div>
