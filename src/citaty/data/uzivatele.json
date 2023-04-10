@@ -15,5 +15,48 @@
             "'Tady máte baloný, hrajte si.'",
             "'Luboši jak to je, ja už nevím.'"
         ]
+        "score": 200
+    },
+    "ligma": {
+        "heslo": "$2a$10$XS1xm41k2okI5G6SIDrZxOsyZoWR8PDl7ZVakmCfjFP568XEoW2g2",
+        "email": "joucker@spstrutnov.cz",
+        "score": 30,
+        "oblibeneHlasky": [
+            "'Yea i love deez how about you?'"
+        ]
+    },
+    "honza": {
+        "heslo": "$2a$10$XS1xm41k2okI5G6SIDrZxOsyZoWR8PDl7ZVakmCfjFP568XEoW2g2",
+        "email": "sigma@spstrutnov.cz",
+        "score": 3,
+        "oblibeneHlasky": [
+            "'Ty jsi si ten válec ale nějak zamiloval, půjč si ho domů a vyřádi se na něm tam.'",
+            "'Saláti.'",
+            "'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'",
+            "'Jsi největší blbec na zeměkouli, ve třídě!'",
+            "'Já to vidím jinak, ale to je tvoje volba'",
+            "'Moment... teď se tady zlobím.'",
+            "'TO JÓ! (byla to poznámka k chytré dpovědi v testu)'",
+            "'Co známená kárání? To si nedokážete představit.'"
+        ]
+    },
+    "LIGMUS": {
+        "heslo": "$2a$10$DXNR8mo/3MtwZSfXuLci/.IWNLfyDk6uItbizEJ2rHkQgoi4bWMGu",
+        "email": "sigmus@spstrutnov.cz"
+    },
+    "pigma": {
+        "heslo": "$2a$10$0FkbtYKbyV.jqyBH1RFEI.3F.THToGo1bfy5yPpT7lJPDQCSU/RFK",
+        "email": "lmao@spstrutnov.cz"
+    },
+    "<h1> Ligma </h1> balls": {
+        "heslo": "$2a$10$ly26ULCmkmHyHrR2DtwDIuVBgJXh3QgxavMKURSyEi9z9n8LiqGbq",
+        "email": "Kasdasd@spstrutnov.cz",
+        "oblibeneHlasky": [
+            "'Pan Nymš mi říká PraSe, což znamená pracující senior'"
+        ],
+        "score": 3
+    "KySsIsT": {
+        "heslo": "$2a$10$9wg373XsJE7F8LoXNQwQv.vkbwRsUezlKsZs7nZMVFtQfxqhT.G76",
+        "email": "piss@spstrutnov.cz"
     }
 }

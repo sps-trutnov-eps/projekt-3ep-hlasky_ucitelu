@@ -1,101 +1,50 @@
 <%- include('../_layout/header') %>
-    <div class="container">
-        <% if(jmeno != undefined){ %>
+    <div class="container" style="min-height: 79vh; margin: 5vh auto 1vh auto">
+        <% if(jmeno != "Přihlásit se"){ %>
             <h2 class="welcome-text">Vítej, <%= jmeno %></h2>
 
-            <div class="lb-wrapper">
-                <div class="lb"> <!-- T1 -->
-                    <p class="lb-nadpis">TOP 5 hračů - náhlá smrt</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>
-                                    Uživatelské jméno
-                                </th>
-    
-                                <th>
-                                    Skóre
-                                </th>
-                            </tr>
-                        </thead>
+            <div class="index-wrapper">
+                <div class="game-init">
+                    <h2>Zvol Herní Režim</h2>
+                    <div class="btn-wrapper" style="flex-direction: row;">
+                        <a href="/hlasky/uspesnost" class="btn">Bodovaný Kvíz</a>
+                        <a href="/hlasky/random?new=true" class="btn">Náhlá Smrt</a>
+                    </div>
 
-
-
-                        <tbody>
-                            <tr>
-                                <td>a1</td>
-                                <td>b1</td>
-                            </tr>
-    
-                            <tr>
-                                <td>a1</td>
-                                <td>b1</td>
-                            </tr>
-                            
-                            <tr>
-                                <td>a1</td>
-                                <td>b1</td>
-                            </tr>
-                            
-                            <tr>
-                                <td>a1</td>
-                                <td>b1</td>
-                            </tr>
-    
-                            <tr>
-                                <td>a1</td>
-                                <td>b1</td>
-                            </tr>
-                        </tbody>
-                        
-                    </table>
                 </div>
-
-                <div class="lb"> <!-- T2 -->
-                    <p class="lb-nadpis">TOP 5 hračů - classic</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>
-                                    Uživatelské jméno
-                                </th>
     
-                                <th>
-                                    Skóre
-                                </th>
-                            </tr>
-                        </thead>
-
-
-
-                        <tbody>
-                            <tr>
-                                <td>a1</td>
-                                <td>b1</td>
-                            </tr>
+                <div class="lb-wrapper">
+                    <div class="lb"> <!-- T1 -->
+                        <div class="lb-head">
+                            <h2>Nejlepší hráči v režimu classic</h2>
+                        </div>
     
-                            <tr>
-                                <td>a1</td>
-                                <td>b1</td>
-                            </tr>
-                            
-                            <tr>
-                                <td>a1</td>
-                                <td>b1</td>
-                            </tr>
-                            
-                            <tr>
-                                <td>a1</td>
-                                <td>b1</td>
-                            </tr>
+                        <div class="lb-body">
+                            <div>
+                                <h2>2</h2>
+                                <div>
+                                    <p><%= top[1][1] %></p>
+                                    <p><%= top[1][0] %></p>
+                                </div>
+                            </div>
     
-                            <tr>
-                                <td>a1</td>
-                                <td>b1</td>
-                            </tr>
-                        </tbody>
-                        
-                    </table>
+                            <div>
+                                <h2>1</h2>
+                                <div>
+                                    <p><%= top[0][1] %></p>
+                                    <p><%= top[0][0] %></p>
+                                </div>
+                            </div>
+    
+                            <div>
+                                <h2>3</h2>
+                                <div>
+                                    <p><%= top[2][1] %></p>
+                                    <p><%= top[2][0] %></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

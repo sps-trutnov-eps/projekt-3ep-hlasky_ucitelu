@@ -1,0 +1,132 @@
+.welcome-text{
+    margin: 0px 0px 5vh 0px;
+}
+
+.index-wrapper{
+    height: 58dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.game-init{
+    height: fit-content;
+    background-color: var(--bg2);
+    border-radius: .7vw;
+    padding: 2dvh 1vw 3dvh 1vw;
+
+    h2{
+        margin-bottom: 3dvh;
+    }
+}
+
+.btn-wrapper{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+
+
+    .btn{
+        padding: 3dvh .5vw 3dvh .5vw;
+        width: 43%;
+        border-radius: 1vw;
+        color: white;
+        font-weight: 600;
+        font-size: 1.2em;
+        background: linear-gradient( 90deg,
+            var(--primary) 0%,
+            var(--secondary) 100%
+        );
+        text-decoration: none;
+        text-align: center;
+        border: solid .2vw white;
+
+        &:hover{
+            opacity: .9;
+        }
+    }
+
+    .btn:last-child{
+        background: linear-gradient( 90deg,
+            var(--secondary) 0%,
+            var(--tertiary) 100%
+        );
+    }
+}
+
+.lb-wrapper{
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    
+    .lb{
+        width: 100%;
+        background-color: var(--bg2);
+        padding: 2dvh 1vw 2dvh 1vw;
+        border-radius: .7vw;
+        position: relative;
+
+        .btn{
+            background-color: aqua;
+            padding: 1vh 1vw;
+            
+
+            &:hover{
+                background-color: var(--bg);
+            }
+        }
+
+        .lb-head{
+            margin-bottom: 3vh;
+            text-transform: capitalize;
+        }
+
+        .lb-body{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            div{ // bg
+                width: 30%;
+                padding: 0 1vw 0 1vw;
+                border-radius: .5vw;
+                overflow: hidden;
+                box-shadow: 0 0 .5vw var(--bg);
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                flex-direction: column;
+                font-size: 3dvh;
+
+                h2{
+                    text-shadow: 0px 0px .3vw;
+                    line-height: 4vh;
+                }
+
+                div{
+                    box-shadow: none;
+                    font-size: 2dvh;
+                    background-color: var(--bg);
+                    width: fit-content;
+                    padding: .1vh .5vw .1vh .5vw;
+                }
+            }
+
+            div:not(:first-of-type):not(:last-of-type){
+                background-color: gold;
+                height: 15vh;
+            }
+
+            div:first-of-type:not(:last-of-type){
+                height: 12.5vh;
+                background-color: silver;
+            }
+
+            div:not(:first-of-type):last-of-type{
+                height: 11vh;
+                background-color: saddlebrown;
+            }
+        }
+    }
+}

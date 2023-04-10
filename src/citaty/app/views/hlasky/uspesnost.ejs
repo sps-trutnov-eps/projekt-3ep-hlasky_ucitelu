@@ -1,5 +1,6 @@
 <%- include('../_layout/header') %>
 <div class="container">
+    <p><%= zodpovezeno %>/10</p>
     <p>Uhodněte kdo řekl tuto hlášku:</p>
     <p class="hlaska"><%= hlaska %></p>
     <form method="post" script="/hlasky/uspesnost" >
@@ -7,6 +8,6 @@
             <div class="tlacitko"><input class="odpoved" type="submit" name="ucitel" value="<%= ucitel %>" /><br></div>
         <% }); %>
     </form>
-    <a class="oblibene" href="/hlasky/random?like=true">Přidat do oblíbených.</a>
+    <a href="/hlasky/uspesnost?like=true">Přidat do oblíbených.</a>
 </div>
 <%- include('../_layout/footer') %>

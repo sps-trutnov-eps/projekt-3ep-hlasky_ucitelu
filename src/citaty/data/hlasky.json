@@ -1,5 +1,6 @@
 {
     "Pavel Bárta":{
+        "gender": "male",
         "hlasky":["'Mějte se jak chcete.'",
         "'O třináctce si ještě něco řekneme příště.'",
         "'Kdo by nechtěl 1800 tmpéček jen za 1800kč. Si je můžete dát třeba ke snídani místo cereálií.'",
@@ -12,6 +13,7 @@
 
 
     "Šárka Fibikarová":{
+        "gender": "female",
         "hlasky":["'Odložte ty mobilní telefony!'",
         "'Honzo, nestříkejte na toho Martina! On se ráno určitě myl.'",
         "'Jeden se tu obléká jako kočička.'",
@@ -23,14 +25,16 @@
 
 
     "Milan Jandera":{
-        "hlasky":["'Odpoledne si budu muset koupit něco tvrdšího...'",
-        "'On se mě tak lekl, až se mu vlasy postavily.'"
+        "gender": "male",
+        "hlasky":["'Odpoledne si budu must koupit něco tvrdšího...'",
+        "'On se mě tak lekl, že se mu vlasy postavily.'"
     ]
     },
 
 
     "Miloslava Jonová":{
-        "hlasky":["'To už jdeme ale opravdu do vážna.'",
+        "gender": "female",
+        "hlasky":["'To už jdeme opravdu do vážna.'",
         "'Satanismus.. v dobrém slova smyslu.'",
         "'Vy jste nějací osplí, že já na vás pošlu okna!'",
         "'Moment... teď se tady zlobím.'",
@@ -46,6 +50,7 @@
 
 
     "Martin Kádrle":{
+        "gender": "male",
         "hlasky":[
         "'Tady máte baloný, hrajte si.'",
         "'Ty máš asi doopravdy rád nějakou formu prdelního tríznění co?'",
@@ -55,6 +60,7 @@
 
 
     "Petr Košátko":{
+        "gender": "male",
         "hlasky":["'Moje angličtina být špatná, jak se říka.'",
         "'Neoprávněné reklamace testu se hodnotí stupněm dolů, děkuji za pochopení'"
     ]
@@ -62,6 +68,7 @@
 
 
     "Libor Kotek":{
+        "gender": "male",
         "hlasky":["'Saláti.'",
         "'Pat a Mat znělka.'",
         "'Černé kafe z automatu, to je moje.'",
@@ -71,6 +78,7 @@
 
 
     "Jakub Lattenberg":{
+        "gender": "male",
         "hlasky":["'Dnes je 12.11. 2022 a chleba...'",
         "'To je jako kdyby jsi si chtěl koupit jednu tyčinku buena, ale stejně musíš koupit balení, ve kterém jsou 2.'",
         "'Není to koláčový graf, protože tam nevidím povidla, mák, marmeládu a 3 rozinky chybí.'",
@@ -81,6 +89,7 @@
 
 
     "Jan Nymš":{
+        "gender": "male",
         "hlasky":["'No nazdar...'",
         "'Pézetka...'",
         "'Tohle dělá Košťátko.'",
@@ -124,6 +133,7 @@
 
 
     "Blanka Pallová":{
+        "gender": "female",
         "hlasky":[
         "'Já tady rostu.'",
         "'Projev je ekonomika jazyka.'",
@@ -140,6 +150,7 @@
 
 
     "Nikola Šandová":{
+        "gender": "female",
         "hlasky":["'To si ze mě děláš humor?'",
         "'Jak by jsi chtě létat na ptákovi Marku?!'",
         "'Říkám vypněte si ty reproduktory! (myslel/a mikrofony)'",
@@ -172,6 +183,7 @@
 
 
     "Jakub Šenkyr":{
+        "gender": "male",
         "hlasky":["'Udělejte to tak, aby to fungovalo!'",
         "'Uživatelé jsou to největší zlo.'",
         "'Dneska je to jedna píčovina vedle druhý...'",
@@ -188,6 +200,7 @@
     },
 
     "Jitka Šenkýřová":{
+        "gender": "female",
         "hlasky":["'Kapacitu obchoďáku určuje pokladna.'",
         "'Třeba dítě když si hraje s telefonem a stahuje tam internety.'",
         "'My už budem končit, tak já zhasnu'",
@@ -197,10 +210,13 @@
         "'Teď si představte, taková Šenkýřová potřebuje bílej perník?'"
     ]
     },
-
-
- 
+    "Marek Šváb":{
+        "gender": "male",
+        "hlasky":["'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'"
+    ]
+    },
     "Kamil Žďárský":{
+        "gender": "male",
         "hlasky":["'Pánové tam v zadu, nechtějte abych někoho z vás musel pokárat.'",
         "'Co známená kárání? To si nedokážete představit.'",
         "'Pánové pokud nejste in the middle of something, dejte si přestávku.'",
@@ -224,6 +240,7 @@
 
 
     "Jaroslav Beran":{
+        "gender": "male",
         "hlasky":["'Tak se pozdravíme.'",
         "'Já věděl, že to auto tam venku je vaše!'",
         "'Nemáš talent...'"
@@ -231,17 +248,36 @@
     },
 
 
+    "Vladimír Beránek":{
+        "gender": "male",
+        "hlasky":["'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'",
+        "''",
+        "''"
+    ]
+    },
 
+
+    "Ondřej Michalička":{
+        "gender": "male",
+        "hlasky":["'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'",
+        "''",
+        "''"
+    ]
+    },
 
 
     "Simona Jindová":{
-        "hlasky":["'Nepozdravila jsem a šla jsem na kobereček před ředitele.'"
+        "gender": "female",
+        "hlasky":["'Nepozdravila jsem a šla jsem na kobereček před ředitele.'",
+        "''",
+        "''"
     ]
     },
 
 
 
     "Andrea Lukáčková":{
+        "gender": "female",
         "hlasky":["'Luboši jak to je, ja už nevím.'",
         "'Já jsem si na VŠ studentský život moc neužíval/a. S tím jsem začal/a až teď.'",
         "'Čeština- s tou se u nás nepočítá.'"
@@ -250,12 +286,16 @@
 
 
     "Jaroslav Mareš":{
-        "hlasky":["'tev Nivi'"
+        "gender": "male",
+        "hlasky":["'tev Nivi'",
+        "''",
+        "''"
     ]
     },
 
 
     "Jan Šimeček":{
+        "gender": "male",
         "hlasky":["'Cívka je jak dívka, nejdříve napětí, poté proud.'",
         "'Debil, blbeček, debil, blbeček, akorát támhle v zadu je jediná výjimka, sedí dva blbečci vedle sebe!'"
     ]
@@ -263,6 +303,7 @@
 
 
     "Tomáš Vaněk":{
+        "gender": "male",
         "hlasky":["'Chlapi jsou špatné matky.'",
         "'Nejhorší úlohy na vizualizaci jsou ty geometrické.'"
     ]
@@ -270,6 +311,7 @@
 
 
     "Martin Marcinčín":{
+        "gender": "male",
         "hlasky":["'Fyzika- to je vlastně takovej reverse engineering.'",
         "'Pokud z toho budete hodně ve stresu, napište mi dám vám kontakt na dobrého psychiatra.'"
     ]
@@ -277,6 +319,7 @@
 
 
     "Jakub Klázar":{
+        "gender": "male",
         "hlasky":["'To je furt nějakej den... každej den.'",
         "'Historie je minulost.'"
     ]
@@ -284,6 +327,7 @@
 
 
     "Dagmar Čurdová":{
+        "gender": "female",
         "hlasky":["'Tos tam napsal teda fakt chcípáka'",
         "'Pan Nymš mi říká PraSe, což znamená pracující senior'",
         "'A oni si to nedoplní, SMRADI!'",
@@ -295,6 +339,22 @@
         "'Já jsem zamilovaná celej rok kromě Valentýna'",
         "'Já se některých z vás zbavím až na konci roku, to je na tom to nejhorší.'",
         "'Jaké zvíře má službu? VÁCLAVE KMITEJ!'"
+    ]
+    },
+
+    "Milan Fink":{
+        "gender": "male",
+        "hlasky":["'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'",
+        "''",
+        "''"
+    ]
+    },
+
+    "Luděk Dušek":{
+        "gender": "male",
+        "hlasky":["'Pusťíme sem zimu!'",
+        "''",
+        "''"
     ]
     }
 }
