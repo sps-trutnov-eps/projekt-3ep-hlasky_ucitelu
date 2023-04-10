@@ -2,13 +2,12 @@
     "Pavel Bárta":{
         "gender": "male",
         "hlasky":["'Mějte se jak chcete.'",
-        "'O třináctce si ještě něco řekneme příště.' (myslel číslo pinu)'",
-        "'Kdo by nechtěl 1800 tmpéček jen za 1800kč. Si je můžete dat třeba ke snídani místo cereálií'",
-        "'Barta: Buďte ready na to jako.'",
+        "'O třináctce si ještě něco řekneme příště.'",
+        "'Kdo by nechtěl 1800 tmpéček jen za 1800kč. Si je můžete dát třeba ke snídani místo cereálií.'",
+        "'Buďte ready na to jako.'",
         "'Asi si pojedu nechat opravit brzdy.'",
-        "'Mylím tím jíst sami sebe, neb souseda... ale svačinu!'",
-        "'Jrslti mi řeknete, že jsme to už dělali, tak se půjdu vyfotit.'"
-        
+        "'Nemyslím tím jíst sami sebe, nebo souseda ,ale svačinu!'",
+        "'Jeatli mi řeknete, že jsme to už dělali, tak se půjdu vyfotit.'"
     ]
     },
 
@@ -16,10 +15,11 @@
     "Šárka Fibikarová":{
         "gender": "female",
         "hlasky":["'Odložte ty mobilní telefony!'",
-        "'Honzo nestříkejte na toho Martina! On se ráno určitě myl.'",
-        "'Jeden se tu obléká jako kočička'",
+        "'Honzo, nestříkejte na toho Martina! On se ráno určitě myl.'",
+        "'Jeden se tu obléká jako kočička.'",
         "'Je tu někdo normální?'",
-        "'Když jste chytrej jak rádio, pojďte mi to spočítat'"
+        "'Když jste chytrej jak rádio, pojďte mi to spočítat.'",
+        "'Dane, co děláte?' 'Dýchám.' 'Proč?'"
     ]
     },
 
@@ -36,14 +36,14 @@
         "gender": "female",
         "hlasky":["'To už jdeme opravdu do vážna.'",
         "'Satanismus.. v dobrém slova smyslu.'",
-        "'Vy jste nějací osplí, že já na vás pošlu okna.'",
+        "'Vy jste nějací osplí, že já na vás pošlu okna!'",
         "'Moment... teď se tady zlobím.'",
-        "'Očima myslíš.'",
+        "'Očima myslíš!'",
         "'Sochy nic neříkají.'",
         "'Čárka na větě.'",
         "'Tady Honza je sfinga.'",
         "'Říká se, že náš pan prezident má údajně rád becherovku. Poroto asi v minulosti dostal kalašníkova se zásobníkem právě tohoto alkoholu.'",
-        "Já mám ráda symetrii",
+        "Já mám ráda symetrii.",
         "'Bylo to úplně trošku jinak.'"
     ]
     },
@@ -82,7 +82,8 @@
         "hlasky":["'Dnes je 12.11. 2022 a chleba...'",
         "'To je jako kdyby jsi si chtěl koupit jednu tyčinku buena, ale stejně musíš koupit balení, ve kterém jsou 2.'",
         "'Není to koláčový graf, protože tam nevidím povidla, mák, marmeládu a 3 rozinky chybí.'",
-        "'Pátek Podmáj, sobota Podmáj, jste unavení chápu.'"
+        "'Pátek Podmáj, sobota Podmáj, jste unavení chápu.'",
+        "'Nevím jak funguje záporná rychlost větru.'"
     ]
     },
 
@@ -121,7 +122,11 @@
         "'Víš jaký je rozdíl mezi učitelem a pedofilem? Pedofil má ty děti fakt rád'",
         "'Kde nic není ani smrt nebere.'",
         "'Nás jako děti hrozně fascinovalo v pavilonu slonů, když se potřeboval slon vymočit.To bylo snad 10 minut, minimálně půl kubíku.'",
-        "'Pátek Podmáj, sobota Podmáj, jste unavení chápu.'"
+        "'Doufám, že neděláš autoškolu... Stejně to nedáš.'",
+        "'Nejlepší je trefit hlavu, ale vím je to těžké...'",
+        "'Já to nemyslím jako adresně, ale ty, ty, ty....'",
+        "'Je v tom ROMKA.' 'Romka?' 'Já myslím paměť ROM, né příslušníci romského původu.'"
+
 
     ]
     },
@@ -138,7 +143,7 @@
         "'Dejvídééé, co jsi nám tu teď dělal?'",
         "'Američtina...'",
         "'Co mi vyprávěla dlažební kostka.",
-        "'Musíš se to naučit, nebo to nebudeš umět'",
+        "'Musíš se to naučit, nebo to nebudeš umět.'",
         "'U Slavíků asi mají otevírání dveří na kameru...'"
     ]
     },
@@ -169,8 +174,10 @@
         "'Neuč orla chodit na střeše.'",
         "'Hroda, zatlač ten banán!'",
         "'Fišera, ty mas mlčet ne? Přeci jsi naštvaný!'",
-        "'FOLTÝNE!' 'co?' 'BOBEK!'"
-
+        "'FOLTÝNE!' 'co?' 'BOBEK!'",
+        "'Já chci někdy umřít.'",
+        "'Ananas na pizze je k zblití.'",
+        "'Martine, Jendo nechcete si to jít dělat někam jinam?'"
     ]
     },
 
@@ -186,8 +193,9 @@
         "'Tomu říkám dělba práce! Nebudeš dělat nic!'",
         "'Sakra... Jak se jmenuje ten sráč?'",
         "'Části, co nejsou v PITCHI, jsou v PIČI'",
-        "'Řadiče co řádí…'"
-
+        "'Řadiče co řádí…'",
+        "'Můžete poměřit svého hada s jejích soutěžním hadem.'",
+        "'Očividně. Očí-vidně. Víte jak se jezdí do Vídně na výlety ne?'"
     ]
     },
 
@@ -202,16 +210,11 @@
         "'Teď si představte, taková Šenkýřová potřebuje bílej perník?'"
     ]
     },
-
-
     "Marek Šváb":{
         "gender": "male",
         "hlasky":["'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'"
     ]
     },
-
-
-
     "Kamil Žďárský":{
         "gender": "male",
         "hlasky":["'Pánové tam v zadu, nechtějte abych někoho z vás musel pokárat.'",
@@ -227,10 +230,12 @@
         "'Hele ty, v jakém časovém pásmu bydlíš?'",
         "'Když tam pustíme proud 50 HZ.'",
         "'Zapni mi prosimtě neoptar.'",
-        "'Když se přidá transformátor do toho železa.'"
-
-
-    ]
+        "'Když se přidá transformátor do toho železa.'",
+        "'Já k té elektrice nemám odpor.'",
+        "'Pánové, tak asi bude zákázáno jedení.'",
+        "'Ještě chvíli a dostsneš kázeňské opatření!'",
+        "'Takže to by bylo tak k vodivosti žvýkačky...'"
+    ] 
     },
 
 
@@ -292,8 +297,7 @@
     "Jan Šimeček":{
         "gender": "male",
         "hlasky":["'Cívka je jak dívka, nejdříve napětí, poté proud.'",
-        "'Debil, blbeček, debil, blbeček, akorát támhle v zadu je jediná výjimka, sedí dva blbečci vedle sebe!'",
-        "''"
+        "'Debil, blbeček, debil, blbeček, akorát támhle v zadu je jediná výjimka, sedí dva blbečci vedle sebe!'"
     ]
     },
 
@@ -301,8 +305,7 @@
     "Tomáš Vaněk":{
         "gender": "male",
         "hlasky":["'Chlapi jsou špatné matky.'",
-        "'Nejhorší úlohy na vizualizaci jsou ty geometrické.'",
-        "'Já to vidím jinak, ale to je tvoje volba'"
+        "'Nejhorší úlohy na vizualizaci jsou ty geometrické.'"
     ]
     },
 
@@ -310,8 +313,7 @@
     "Martin Marcinčín":{
         "gender": "male",
         "hlasky":["'Fyzika- to je vlastně takovej reverse engineering.'",
-        "''",
-        "''"
+        "'Pokud z toho budete hodně ve stresu, napište mi dám vám kontakt na dobrého psychiatra.'"
     ]
     },
 
@@ -319,8 +321,7 @@
     "Jakub Klázar":{
         "gender": "male",
         "hlasky":["'To je furt nějakej den... každej den.'",
-        "'Historie je minulost.'",
-        "''"
+        "'Historie je minulost.'"
     ]
     },
 
@@ -338,7 +339,6 @@
         "'Já jsem zamilovaná celej rok kromě Valentýna'",
         "'Já se některých z vás zbavím až na konci roku, to je na tom to nejhorší.'",
         "'Jaké zvíře má službu? VÁCLAVE KMITEJ!'"
-
     ]
     },
 

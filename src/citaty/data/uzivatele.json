@@ -2,6 +2,19 @@
     "Tektek": {
         "heslo": "$2a$10$IluwpueVcjMMAdydpcEL2eZhFp7uEVvazuIIkjZN47rAKrN7YKBGG",
         "email": "hula@spstrutnov.cz",
+        "score": 10,
+        "oblibeneHlasky": [
+            "'Saláti.'",
+            "'Části, co nejsou v PITCHI, jsou v PIČI'",
+            "'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'",
+            "'Ty jsi si ten válec ale nějak zamiloval, půjč si ho domů a vyřádi se na něm tam.'",
+            "'Fyzika- to je vlastně takovej reverse engineering.'",
+            "'On se mě tak lekl, že se mu vlasy postavily.'",
+            "'Honzo, nestříkejte na toho Martina! On se ráno určitě myl.'",
+            "'Ekonomické statistiky praví.'",
+            "'Tady máte baloný, hrajte si.'",
+            "'Luboši jak to je, ja už nevím.'"
+        ]
         "score": 200
     },
     "ligma": {

@@ -5,9 +5,9 @@
     <p class="hlaska"><%= hlaska %></p>
     <form method="post" script="/hlasky/random" >
         <% odpovedi.forEach(ucitel => { %>
-            <div class="efekt tlacitko"><input class="odpoved" type="submit" name="ucitel" value="<%= ucitel %>" /><br></div>
+            <div class="tlacitko"><input class="odpoved" type="submit" name="ucitel" value="<%= ucitel %>" /><br></div>
         <% }); %>
     </form>
-    <a href="/hlasky/random?like=true">Přidat do oblíbených.</a>
+    <a class="oblibene" href="/hlasky/random?like=true">Přidat do oblíbených.</a>
 </div>
 <%- include('../_layout/footer') %>
