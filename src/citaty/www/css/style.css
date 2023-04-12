@@ -119,7 +119,7 @@
   height: fit-content;
   background-color: var(--bg2);
   border-radius: 0.7vw;
-  padding: 1vh 1vw 2vh 1vw;
+  padding: 2dvh 1vw 3dvh 1vw;
 }
 .game-init h2 {
   margin-bottom: 3dvh;
@@ -158,12 +158,9 @@
 .lb-wrapper .lb {
   width: 100%;
   background-color: var(--bg2);
-  padding: 1vh 1vw 2vh 1vw;
+  padding: 2dvh 1vw 2dvh 1vw;
   border-radius: 0.7vw;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  transition: 0.2s;
 }
 .lb-wrapper .lb .btn {
   background-color: aqua;
@@ -182,36 +179,39 @@
   align-items: flex-end;
 }
 .lb-wrapper .lb .lb-body div {
-  width: 33%;
+  width: 30%;
+  padding: 0 1vw 0 1vw;
   border-radius: 0.5vw;
+  overflow: hidden;
+  box-shadow: 0 0 0.5vw var(--bg);
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  justify-content: space-evenly;
+  flex-direction: column;
+  font-size: 3dvh;
+}
+.lb-wrapper .lb .lb-body div h2 {
+  text-shadow: 0px 0px 0.3vw;
+  line-height: 4vh;
 }
 .lb-wrapper .lb .lb-body div div {
-  display: block;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.lb-wrapper .lb .lb-body div div h2 {
-  text-align: center;
-}
-.lb-wrapper .lb .lb-body div div p {
-  text-align: center;
+  box-shadow: none;
+  font-size: 2dvh;
+  background-color: var(--bg);
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.1vh 0.5vw 0.1vh 0.5vw;
 }
 .lb-wrapper .lb .lb-body div:not(:first-of-type):not(:last-of-type) {
   background-color: gold;
   height: 15vh;
 }
 .lb-wrapper .lb .lb-body div:first-of-type:not(:last-of-type) {
-  height: 12vh;
+  height: 12.5vh;
   background-color: silver;
 }
 .lb-wrapper .lb .lb-body div:not(:first-of-type):last-of-type {
-  height: 10vh;
+  height: 11vh;
   background-color: saddlebrown;
 }
 
@@ -405,4 +405,44 @@ body footer {
   font-size: 2.5vw;
   font-weight: 600;
   color: white;
-}/*# sourceMappingURL=style.css.map */
+=======
+
+.tlacitko {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 1em;
+}
+
+.oblibene {
+  width: 12em;
+  text-align: center;
+  font-size: 1vw;
+  background-color: #8b5cb4;
+  margin: 4em;
+  border: 2px solid white;
+  border-radius: 3px;
+  color: white;
+  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  position: absolute;
+  top: 10px;
+  right: 0px;
+}
+
+.divvysledneSkore {
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.divvysledneSkore .vysledneSkore {
+  color: white;
+  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.7);
+  background-color: #9d6f9b;
+  border: 2px solid white;
+  margin: 2em;
+  border-radius: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 2vw;

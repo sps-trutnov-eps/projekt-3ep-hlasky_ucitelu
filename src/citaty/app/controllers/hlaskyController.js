@@ -13,17 +13,24 @@ exports.randomKviz = (req, res) => {
     }
     else{
         req.session.score = 0;
-        req.session.randomSeznamUcitelu = model.randomUcitel();
+        req.session.randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
+
+        if (req.session.seznamProslychHlasek == undefined){
+            req.session.seznamProslychHlasek = [];
+        }
+        if (req.session.seznamProslychHlasek.length > 10){
+            req.session.seznamProslychHlasek = req.session.seznamProslychHlasek.slice(-10);
+        }
+        req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
     }
 
     return res.render('hlasky/random', {
         // spravnaHlaska, listOdpovedi
-        jmeno: req.session.prihlasenyUzivatel || undefined,
+        jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         hlaska: req.session.randomSeznamUcitelu[0],
         odpovedi: req.session.randomSeznamUcitelu[1],
         score: req.session.score,
     });
-     
 }
 
 exports.odpovedNaRandomKviz = (req, res) => {
@@ -47,14 +54,22 @@ exports.odpovedNaRandomKviz = (req, res) => {
     }
     uzivatelModel.ulozitHighScore(req.session.prihlasenyUzivatel, req.session.score);
 
-    randomSeznamUcitelu = model.randomUcitel();
+    randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
+    
+    if (req.session.seznamProslychHlasek == undefined){
+        req.session.seznamProslychHlasek = [];
+    }
+    if (req.session.seznamProslychHlasek.length > 10){
+        req.session.seznamProslychHlasek = req.session.seznamProslychHlasek.slice(-10);
+    }
+    req.session.seznamProslychHlasek.push(randomSeznamUcitelu[0]);
     req.session.randomSeznamUcitelu = randomSeznamUcitelu;
 
     return res.render('hlasky/random', {
-        // spravnaHlaska, listOdpovedi
+        // spravnaHlaska, listOdpovedi 
         hlaska: randomSeznamUcitelu[0],
         odpovedi: randomSeznamUcitelu[1],
-        jmeno: req.session.prihlasenyUzivatel || undefined,
+        jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         score: req.session.score,
     });
 }
@@ -65,17 +80,30 @@ exports.uspesnost = (req, res) => {
     if (req.session.prihlasenyUzivatel == undefined){
         return res.redirect('/uzivatel/prihlasit');
     }
-
-    req.session.zodpovezeno = 0;
-    req.session.scoreuspesnosti = 0;
-
-    let randomSeznamUcitelu = model.randomUcitel();
-    req.session.randomSeznamUcitelu = randomSeznamUcitelu;
+    
+    if(req.query.like){
+        let hlaska = req.session.randomSeznamUcitelu[0];
+        uzivatelModel.ulozitOblibenouHlasku(req.session.prihlasenyUzivatel, hlaska);
+    }else{
+        req.session.randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
+        req.session.zodpovezeno = 0;
+        req.session.scoreuspesnosti = 0;
+        
+        if (req.session.seznamProslychHlasek == undefined){
+            req.session.seznamProslychHlasek = [];
+        }
+        if (req.session.seznamProslychHlasek.length > 10){
+            req.session.seznamProslychHlasek = req.session.seznamProslychHlasek.slice(-10);
+        }
+    }
+    req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
+    
 
     return res.render("hlasky/uspesnost",{
-        hlaska: randomSeznamUcitelu[0],
-        odpovedi: randomSeznamUcitelu[1],
-        jmeno: req.session.prihlasenyUzivatel || undefined,
+        hlaska: req.session.randomSeznamUcitelu[0],
+        odpovedi: req.session.randomSeznamUcitelu[1],
+        jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
+        zodpovezeno: req.session.zodpovezeno || 0,
     });
 }
 
@@ -101,11 +129,22 @@ exports.procentaUspesnosti = (req, res) => {
         return res.redirect("/hlasky/vysledneSkore")
     }
 
-    req.session.randomSeznamUcitelu = model.randomUcitel();
+    req.session.randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
+
+    if (req.session.seznamProslychHlasek == undefined){
+        req.session.seznamProslychHlasek = [];
+    }
+    if (req.session.seznamProslychHlasek.length > 10){
+        req.session.seznamProslychHlasek = req.session.seznamProslychHlasek.slice(-10);
+    }
+    req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
+
+
     return res.render("hlasky/uspesnost",{
         hlaska: req.session.randomSeznamUcitelu[0],
         odpovedi: req.session.randomSeznamUcitelu[1],
-        jmeno: req.session.prihlasenyUzivatel || undefined,
+        jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
+        zodpovezeno: req.session.zodpovezeno,
     });
 }
 
@@ -117,7 +156,7 @@ exports.vysledneSkore = (req, res) => {
 
     return res.render("hlasky/vysledneSkore",{
         vyslednaPorcenta: vysledek,
-        jmeno: req.session.prihlasenyUzivatel || undefined,
+        jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
     });
 }
 

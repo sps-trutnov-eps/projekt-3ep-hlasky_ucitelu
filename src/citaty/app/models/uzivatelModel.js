@@ -88,6 +88,7 @@ exports.ulozitHighScore = (jmeno, score) => {
         db.set(jmeno, data);
     }
 }
+
 exports.getHighScore = (jmeno) => {
     if (jmeno==undefined){
     console.log("nedostatek argumentů.");} // chybová hláška
@@ -101,21 +102,54 @@ exports.getHighScore = (jmeno) => {
     return data.score;
 }
 
-exports.getAllHighScore = () => {
-    const data = db.JSON();
+exports.getTopScore = (top = 3) => {
+    let data = db.JSON();
     const uzivatele = Object.keys(data);
 
-    let scores = [];
-    let users = [];
+    let uzivatelScore = [];
 
     for(let i = 0; i <= uzivatele.length - 1; i++){
-        if (data[uzivatele[i]].score != undefined){
-            scores.push(data[uzivatele[i]].score);
-            users.push(uzivatele[i]);
+        if (data[uzivatele[i]].score == undefined){
+            uzivatelScore.push([0, uzivatele[i]]);
+        }
+        else{
+            uzivatelScore.push([data[uzivatele[i]].score, uzivatele[i]]);
         }
     }
 
-    return [scores, users];
+    let sorted = uzivatelScore.sort( (a, b) => {
+        return b[0] - a[0]
+    })
+
+    let topPlayers = sorted.slice(0, top);
+
+    // returne top počet hráču s nejlepším score. (např:. top 3 hráčy s nejlepším score)
+    // list vypadá takhle: [ [ 30, 'ligma' ], [ 23, 'figma' ], [ 2, 'tektek' ] ]
+    // [[score, jmeno]]
+    return topPlayers;
+
+}
+
+exports.getAllHighScore = () => {
+    let data = db.JSON();
+    const uzivatele = Object.keys(data);
+
+    let uzivatelScore = [];
+
+    for(let i = 0; i <= uzivatele.length - 1; i++){
+        if (data[uzivatele[i]].score == undefined){
+            uzivatelScore.push([0, uzivatele[i]]);
+        }
+        else{
+            uzivatelScore.push([data[uzivatele[i]].score, uzivatele[i]]);
+        }
+    }
+
+    const sorted = uzivatelScore.sort( (a, b) => {
+        return b[0] - a[0]
+    })
+
+    return sorted;
 
 }
 
@@ -140,7 +174,7 @@ exports.getOblibenyHlasky = (jmeno) => {
     let data = db.JSON()[jmeno];
     let hlasky;
 
-    if (data.oblibeneHlasky == undefined){
+    if (data.oblibeneHlasky == undefined || data.oblibeneHlasky.length <= 0){
         hlasky = ["Nic Tady Není!"];
     }
     else{
@@ -148,4 +182,23 @@ exports.getOblibenyHlasky = (jmeno) => {
     }
 
     return hlasky;
+}
+
+exports.odebratOblibenouHlasku = (jmeno, hlaska) => {
+    let hlaskyUzivatele = db.JSON()[jmeno];
+
+    if (hlaskyUzivatele.oblibeneHlasky == undefined){
+        return false;
+    }
+
+    hlaskyUzivatele.oblibeneHlasky = hlaskyUzivatele.oblibeneHlasky.filter(v => v !== hlaska); 
+    db.set(jmeno, hlaskyUzivatele);
+}
+
+exports.smazatUzivatele = (jmeno, heslo) => {
+    if (!exports.spravneHeslo(jmeno, heslo)){
+        return false;
+    } else{
+        db.delete(jmeno);
+    }
 }
