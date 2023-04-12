@@ -147,30 +147,27 @@ body {
 .quiz-wrapper {
     background-color: var(--bg2);
     border-radius: 1vw;
-    padding: 2dvh 1vw;
+    padding: .5dvh 2vw;
+    aspect-ratio: 16 / 9;
+    display: grid;
+    grid-template-rows: 10fr auto 5fr;
 
-    .hlaska-wrapper {
-        position: relative;
-        grid-template-columns: 20fr 1fr;
+    .hlaska {
+        font-size: 1.5em;
+        color: white;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin-bottom: 1vh;
+        min-height: 13dvh;
+    }
+    
+    .quiz-buttonwrapper{
         display: grid;
-        text-align: center;
-        margin-bottom: 3vh;
-
-        .hlaska {
-            font-size: 1.5em;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 41.5px;
-        }
-
-        .score {
-            font-size: 2em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 1vw;
+        height: 100%;
     }
 
     .tlacitko {
@@ -182,12 +179,13 @@ body {
             // btn
             font-weight: 600;
             color: white;
+            width: 100%;
+            height: 100%;
             text-align: center;
             font-size: 1.3vw;
             text-shadow: 0px 0px .2vw rgba(255, 255, 255, .4);
             border: solid 2px white;
             border-radius: .5vw;
-            width: 50%;
             padding: 2vh 1vw;
             background: linear-gradient( 90deg,
                 var(--primary) 0%,
@@ -201,7 +199,24 @@ body {
         }
     }
 
-    .tlacitko:not(:last-of-type) {
-        margin-bottom: 2vh;
+    .quiz-footer{
+        margin: 1dvh 0;
+        display: flex;
+        justify-content: space-between;
+        user-select: none;
+        align-items: center;
+
+        a{
+            font-size: 2.5vw;
+            text-decoration: none;
+            font-weight: 600;
+            color: white;
+        }
+
+        p{
+            font-size: 2.5vw;
+            font-weight: 600;
+            color: white;
+        }
     }
 }

@@ -1,25 +1,23 @@
 <%- include('../_layout/header') %>
-    <div class="container" style="display:flex; flex-direction: column; justify-content: center;width: 60%;">
+    <div class="container" style="display:flex; flex-direction: column; justify-content: center; width: 40%; min-height: 75vh; margin: 5vh auto;">
         <div class="quiz-wrapper">
-            <div class="hlaska-wrapper">
-                <p class="hlaska">
-                    <%= hlaska %>
-                </p>
-
-                <p class="score">
-                    <%= score %>
-                </p>
-            </div>
-
+            <p class="hlaska">
+                <%= hlaska %>
+            </p>
+            
             <form method="post" script="/hlasky/random">
-                <% odpovedi.forEach(ucitel=> { %>
-                    <div class="tlacitko"><input class="odpoved" type="submit" name="ucitel"
-                            value="<%= ucitel %>" /></div>
-                    <% }); %>
+                <div class="quiz-buttonwrapper">
+                    <% odpovedi.forEach(ucitel=> { %>
+                        <div class="tlacitko"><input class="odpoved" type="submit" name="ucitel"
+                                value="<%= ucitel %>" /></div>
+                        <% }); %>
+                </div>
             </form>
 
-            <a href="/hlasky/random?like=true">Přidat do oblíbených.</a>
-
+            <div class="quiz-footer">
+                <a href="/hlasky/random?like=true">☆</a>
+                <p><%= score %></p>
+            </div>
         </div>
     </div>
     <%- include('../_layout/footer') %>

@@ -38,7 +38,7 @@
         "'Sochy nic neříkají.'",
         "'Čárka na větě.'",
         "'Tady Honza je sfinga.'",
-        "'Říká se, že náš pan prezident má údajně rád becherovku. Poroto asi v minulosti dostal kalašníkova se zásobníkem právě tohoto alkoholu.'",
+        "'Říká se, že náš pan prezident má údajně rád becherovku. Proto asi v minulosti dostal kalašníkova se zásobníkem právě tohoto alkoholu.'",
         "Já mám ráda symetrii",
         "'Bylo to úplně trošku jinak.'"
     ]
@@ -49,7 +49,7 @@
         "hlasky":[
         "'Tady máte balóny, hrajte si.'",
         "'Ty máš asi doopravdy rád nějakou formu prdelního tríznění co?'",
-        "'Ty jsi si ten válec ale nějak zamiloval, půjč si ho domů a vyřádi se na něm tam.'"
+        "'Ty jsi si ten válec ale nějak zamiloval, půjč si ho domů a vyřádi se na něm.'"
     ]
     },
 
@@ -63,7 +63,6 @@
 
     "Libor Kotek":{
         "hlasky":["'Saláti.'",
-        "'Pat a Mat znělka.'",
         "'Černé kafe z automatu, to je moje.'",
         "'Řízkové jedni!'"
     ]
@@ -211,7 +210,7 @@
         "'Těžce to chápu...'",
         "'Hele ty, v jakém časovém pásmu bydlíš?'",
         "'Když tam pustíme proud 50 HZ.'",
-        "'Zapni mi prosimtě neoptar.'",
+        "'Zapni mi prosímtě neoptar.'",
         "'Když se přidá transformátor do toho železa.'"
 
 
@@ -221,7 +220,7 @@
 
     "Jaroslav Beran":{
         "hlasky":["'Tak se pozdravíme.'",
-        "'Já věděl, že to auto tam venku je vaše!'",
+        "'Já věděl, že to auto venku je vaše!'",
         "'Nemáš talent...'"
     ]
     },
@@ -254,7 +253,7 @@
 
     "Andrea Lukáčková":{
         "hlasky":["'Luboši jak to je, ja už nevím.'",
-        "'Já jsem si na VŠ studentský život moc neužíval/a. S tím jsem začal/a až teď.'",
+        "'Já jsem si na VŠ studentský život moc neužívala. S tím jsem začala až teď.'",
         "'Čeština- s tou se u nás nepočítá.'"
     ]
     },
@@ -269,7 +268,7 @@
 
 
     "Jan Šimeček":{
-        "hlasky":["'Cívka je jak dívka, nejdříve napětí, poté proud.'",
+        "hlasky":["'S cívkou jako s dívkou, nejdříve napětí, poté proud.'",
         "'Debil, blbeček, debil, blbeček, akorát támhle v zadu je jediná výjimka, sedí dva blbečci vedle sebe!'",
         "''"
     ]
@@ -278,7 +277,6 @@
 
     "Tomáš Vaněk":{
         "hlasky":["'Chlapi jsou špatné matky.'",
-        "'Nejhorší úlohy na vizualizaci jsou ty geometrické.'",
         "'Já to vidím jinak, ale to je tvoje volba'"
     ]
     },

@@ -2,6 +2,11 @@
     "Tektek": {
         "heslo": "$2a$10$IluwpueVcjMMAdydpcEL2eZhFp7uEVvazuIIkjZN47rAKrN7YKBGG",
         "email": "hula@spstrutnov.cz",
-        "score": 15
+        "score": 15,
+        "oblibeneHlasky": [
+            "'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'",
+            "'Debil, blbeček, debil, blbeček, akorát támhle v zadu je jediná výjimka, sedí dva blbečci vedle sebe!'",
+            "'Já to vidím jinak, ale to je tvoje volba'"
+        ]
     }
 }
