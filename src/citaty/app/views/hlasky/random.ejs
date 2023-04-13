@@ -8,6 +8,6 @@
             <div class="efekt tlacitko"><input class="odpoved" type="submit" name="ucitel" value="<%= ucitel %>" /><br></div>
         <% }); %>
     </form>
-    <a href="/hlasky/random?like=true">Přidat do oblíbených.</a>
+    <a href="/hlasky/random?like=true">Přidat do oblíbených. <%= liked %></a>
 </div>
 <%- include('../_layout/footer') %>

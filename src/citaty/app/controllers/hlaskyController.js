@@ -98,6 +98,11 @@ exports.uspesnost = (req, res) => {
     }
     req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
     
+    let liked = "☆";
+
+    if (exports.jeOblibenaHlaska(req.session.prihlasenyUzivatel, hlaska)){ // ptá se jestli je hláška oblíbenná
+        liked = "★";
+    }
 
     return res.render("hlasky/uspesnost",{
         hlaska: req.session.randomSeznamUcitelu[0],
@@ -105,6 +110,7 @@ exports.uspesnost = (req, res) => {
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         zodpovezeno: req.session.zodpovezeno || 0,
         vysledneSkore: undefined,
+        liked: liked,
     });
 }
 
@@ -143,6 +149,11 @@ exports.procentaUspesnosti = (req, res) => {
     }
     req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
 
+    let liked = "☆";
+
+    if (exports.jeOblibenaHlaska(req.session.prihlasenyUzivatel, hlaska)){ // ptá se jestli je hláška oblíbenná
+        liked = "★";
+    }
 
     return res.render("hlasky/uspesnost",{
         hlaska: req.session.randomSeznamUcitelu[0],
@@ -150,6 +161,7 @@ exports.procentaUspesnosti = (req, res) => {
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         zodpovezeno: req.session.zodpovezeno,
         vysledneSkore: vysledek,
+        liked: liked,
     });
 }
 
