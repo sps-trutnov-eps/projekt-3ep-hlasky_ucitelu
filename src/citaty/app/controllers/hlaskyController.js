@@ -24,9 +24,8 @@ exports.randomKviz = (req, res) => {
         req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
     }
 
-    let hlaska = req.session.randomSeznamUcitelu[0];
     let liked = "☆";
-    if (uzivatelModel.jeOblibenaHlaska(req.session.prihlasenyUzivatel, hlaska)){ // ptá se jestli je hláška oblíbenná
+    if (uzivatelModel.jeOblibenaHlaska(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0])){ // ptá se jestli je hláška oblíbenná
         liked = "★";
     }
 
@@ -73,7 +72,7 @@ exports.odpovedNaRandomKviz = (req, res) => {
     req.session.randomSeznamUcitelu = randomSeznamUcitelu;
 
     let liked = "☆";
-    if (uzivatelModel.jeOblibenaHlaska(req.session.prihlasenyUzivatel, hlaska)){ // ptá se jestli je hláška oblíbenná
+    if (uzivatelModel.jeOblibenaHlaska(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0])){ // ptá se jestli je hláška oblíbenná
         liked = "★";
     }
 
@@ -112,9 +111,8 @@ exports.uspesnost = (req, res) => {
     req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
     
     let liked = "☆";
-    let hlaska = req.session.randomSeznamUcitelu[0];
 
-    if (uzivatelModel.jeOblibenaHlaska(req.session.prihlasenyUzivatel, hlaska)){ // ptá se jestli je hláška oblíbenná
+    if (uzivatelModel.jeOblibenaHlaska(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0])){ // ptá se jestli je hláška oblíbenná
         liked = "★";
     }
 
@@ -165,7 +163,7 @@ exports.procentaUspesnosti = (req, res) => {
 
     let liked = "☆";
 
-    if (uzivatelModel.jeOblibenaHlaska(req.session.prihlasenyUzivatel, hlaska)){ // ptá se jestli je hláška oblíbenná
+    if (uzivatelModel.jeOblibenaHlaska(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0])){ // ptá se jestli je hláška oblíbenná
         liked = "★";
     }
 
