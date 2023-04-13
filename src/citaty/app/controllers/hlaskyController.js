@@ -24,12 +24,19 @@ exports.randomKviz = (req, res) => {
         req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
     }
 
+    let hlaska = req.session.randomSeznamUcitelu[0];
+    let liked = "☆";
+    if (uzivatelModel.jeOblibenaHlaska(req.session.prihlasenyUzivatel, hlaska)){ // ptá se jestli je hláška oblíbenná
+        liked = "★";
+    }
+
     return res.render('hlasky/random', {
         // spravnaHlaska, listOdpovedi
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         hlaska: req.session.randomSeznamUcitelu[0],
         odpovedi: req.session.randomSeznamUcitelu[1],
         score: req.session.score,
+        liked: liked,
     });
 }
 
@@ -65,12 +72,18 @@ exports.odpovedNaRandomKviz = (req, res) => {
     req.session.seznamProslychHlasek.push(randomSeznamUcitelu[0]);
     req.session.randomSeznamUcitelu = randomSeznamUcitelu;
 
+    let liked = "☆";
+    if (uzivatelModel.jeOblibenaHlaska(req.session.prihlasenyUzivatel, hlaska)){ // ptá se jestli je hláška oblíbenná
+        liked = "★";
+    }
+
     return res.render('hlasky/random', {
         // spravnaHlaska, listOdpovedi 
         hlaska: randomSeznamUcitelu[0],
         odpovedi: randomSeznamUcitelu[1],
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         score: req.session.score,
+        liked: liked,
     });
 }
 
@@ -99,8 +112,9 @@ exports.uspesnost = (req, res) => {
     req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
     
     let liked = "☆";
+    let hlaska = req.session.randomSeznamUcitelu[0];
 
-    if (exports.jeOblibenaHlaska(req.session.prihlasenyUzivatel, hlaska)){ // ptá se jestli je hláška oblíbenná
+    if (uzivatelModel.jeOblibenaHlaska(req.session.prihlasenyUzivatel, hlaska)){ // ptá se jestli je hláška oblíbenná
         liked = "★";
     }
 
@@ -151,7 +165,7 @@ exports.procentaUspesnosti = (req, res) => {
 
     let liked = "☆";
 
-    if (exports.jeOblibenaHlaska(req.session.prihlasenyUzivatel, hlaska)){ // ptá se jestli je hláška oblíbenná
+    if (uzivatelModel.jeOblibenaHlaska(req.session.prihlasenyUzivatel, hlaska)){ // ptá se jestli je hláška oblíbenná
         liked = "★";
     }
 
