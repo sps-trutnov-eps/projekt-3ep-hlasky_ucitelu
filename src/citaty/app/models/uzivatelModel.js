@@ -170,6 +170,21 @@ exports.ulozitOblibenouHlasku = (jmeno, hlaska) => {
 
 }
 
+exports.jeOblibenaHlaska = (jmeno, hlaska) => {
+    if (jmeno==undefined||hlaska==undefined){
+        console.log("nedostatek argumentů.");} // chybová hláška
+    
+        let data = db.JSON()[jmeno];
+    
+        if (data.oblibeneHlasky == undefined){
+            data.oblibeneHlasky = [];
+        }
+        if (!data.oblibeneHlasky.includes(hlaska)){
+            return true;
+        }
+        return false;
+}
+
 exports.getOblibenyHlasky = (jmeno) => {
     let data = db.JSON()[jmeno];
     let hlasky;

@@ -2,5 +2,47 @@
     "Tektek": {
         "heslo": "$2a$10$IluwpueVcjMMAdydpcEL2eZhFp7uEVvazuIIkjZN47rAKrN7YKBGG",
         "email": "hula@spstrutnov.cz",
+        "score": 200
+    },
+    "ligma": {
+        "heslo": "$2a$10$XS1xm41k2okI5G6SIDrZxOsyZoWR8PDl7ZVakmCfjFP568XEoW2g2",
+        "email": "joucker@spstrutnov.cz",
+        "score": 30,
+        "oblibeneHlasky": [
+            "'Yea i love deez how about you?'"
+        ]
+    },
+    "honza": {
+        "heslo": "$2a$10$XS1xm41k2okI5G6SIDrZxOsyZoWR8PDl7ZVakmCfjFP568XEoW2g2",
+        "email": "sigma@spstrutnov.cz",
+        "score": 5,
+        "oblibeneHlasky": [
+            "'Chlapi jsou špatné matky.'",
+            "'Čárka na větě.'",
+            "'Moje angličtina být špatná, jak se říka.'",
+            "'Cívka je jak dívka, nejdříve napětí, poté proud.'",
+            "'Pat a Mat znělka.'",
+            "'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'",
+            "'Chceš čůrat? A máš povolení od rodičů, že můžeš chodit o hodině?'",
+            "'Debil, blbeček, debil, blbeček, akorát támhle v zadu je jediná výjimka, sedí dva blbečci vedle sebe!'",
+            "'Oficiálně se bude pít jen Birell.'",
+            "'Fakt na to pořád čekat nebudu.'",
+            "'Historie je minulost.'",
+            "'Odpoledne si budu must koupit něco tvrdšího...'",
+            "'To je jako kdyby jsi si chtěl koupit jednu tyčinku buena, ale stejně musíš koupit balení, ve kterém jsou 2.'",
+            "'Pusťíme sem zimu!'",
+            "'Já věděl, že to auto tam venku je vaše!'",
+            "'Neoprávněné reklamace testu se hodnotí stupněm dolů, děkuji za pochopení'",
+            "'Černé kafe z automatu, to je moje.'",
+            "'Moment... teď se tady zlobím.'"
+        ]
+    },
+    "LIGMUS": {
+        "heslo": "$2a$10$DXNR8mo/3MtwZSfXuLci/.IWNLfyDk6uItbizEJ2rHkQgoi4bWMGu",
+        "email": "sigmus@spstrutnov.cz"
+    },
+    "pigma": {
+        "heslo": "$2a$10$0FkbtYKbyV.jqyBH1RFEI.3F.THToGo1bfy5yPpT7lJPDQCSU/RFK",
+        "email": "lmao@spstrutnov.cz"
     }
 }

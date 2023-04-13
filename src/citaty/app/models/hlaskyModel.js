@@ -66,13 +66,13 @@ exports.randomUcitel = (seznamProslychHlasek = []) => {
     for (let i = 0; i < 3;i++){
         let spatnyUcitel = Object.keys(hlasky)[Math.round(Math.random() * length)];
 
-        while (hlasky[spatnyUcitel]["gender"] != hlasky[spravnyUcitel]["gender"]){
+        while ((hlasky[spatnyUcitel]["gender"] != hlasky[spravnyUcitel]["gender"]) || (spatnyUcitel.includes(spravnyUcitel) || spatneUcitele.includes(spatnyUcitel))){
             spatnyUcitel = Object.keys(hlasky)[Math.round(Math.random() * length)];
         }
 
-        while(spatnyUcitel.includes(spravnyUcitel) || spatneUcitele.includes(spatnyUcitel)){
-            spatnyUcitel = Object.keys(hlasky)[Math.round(Math.random() * length)];
-        }
+        // while(spatnyUcitel.includes(spravnyUcitel) || spatneUcitele.includes(spatnyUcitel)){
+        //     spatnyUcitel = Object.keys(hlasky)[Math.round(Math.random() * length)];
+        // }
 
         spatneUcitele.push(spatnyUcitel);
         
@@ -86,6 +86,18 @@ exports.randomUcitel = (seznamProslychHlasek = []) => {
 
     listOdpovedi.push(spravnyUcitel);
     console.log(spravnyUcitel); // pro debugování
+
+    //test:
+    // let firstTest = "";
+    // listOdpovedi.forEach(ucitel => {
+    //     if (firstTest != ""){
+    //         if (hlasky[ucitel]["gender"] != firstTest){
+    //             console.log("WRONG")
+    //         }
+    //     }
+    //     //console.log(hlasky[ucitel]["gender"]);
+    //     firstTest = hlasky[ucitel]["gender"];
+    // });
 
 
     listOdpovedi = shuffle_(listOdpovedi);
