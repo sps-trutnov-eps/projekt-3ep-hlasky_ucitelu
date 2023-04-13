@@ -1,16 +1,30 @@
 <%- include('../_layout/header') %>
     <p>Vítejte na svém profilu, <b><%= jmeno %>!</b></p>
     <p>Vaše nejvyšší score: <%= highScore %></p>
-    <a href="/uzivatel/confirmSmazani" style="color: red; text-decoration: none;">Smazat účet!</a> <br>
-    <a href="/uzivatel/odhlasit" style="color: red; text-decoration: none;">Odhlásit</a> <br>
-    <% if (hlasky[0] != "Nic Tady Není!"){ %>
-        <p>Vaše Oblíbené hlášky:</p>
+    
+    <div class="lb-wrapper">
+        <div style="margin: 0 auto;" class="lb"> <!-- T1 -->
+            <p class="lb-nadpis">Tvé oblíbené uložené hlášky.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <%= jmeno %>
+                        </th>
+                    </tr>
+                </thead>
 
-    <% } %>
-    <% hlasky.forEach(hlaska => { %>
-        <b><%= hlaska %></b>
-        <% if (hlaska != "Nic Tady Není!") { %>
-        <a href="/uzivatel/profil?hlaska=<%= hlaska %>" style="color: red; text-decoration: none;"> smazat hlášku. </a> <br>
-        <% } %>
-    <% }); %>
+                <tbody>
+                    <tr>
+                        <td style="text-align: center;">
+                            <% hlasky.forEach(hlaska => { %>
+                                <b><%= hlaska %></b> <br>
+                            <% }); %>
+                        </td>
+                    </tr>
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
 <%- include('../_layout/footer') %>

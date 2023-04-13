@@ -1,55 +1,52 @@
 <%- include('../_layout/header') %>
     <div class="container" style="min-height: 79vh; margin: 5vh auto 1vh auto">
-        <% if(jmeno != "Přihlásit se"){ %>
-            <h2 class="welcome-text">Vítej, <%= jmeno %></h2>
-
-            <div class="index-wrapper">
-                <div class="game-init">
-                    <h2>Zvol Herní Režim</h2>
-                    <div class="btn-wrapper" style="flex-direction: row;">
+        <h2 class="welcome-text">Vítej, <%= jmeno %></h2>
+        <div class="index-wrapper">
+            <div class="game-init">
+                <h2>Zvol Herní Režim</h2>
+                <div class="btn-wrapper" style="flex-direction: row;">
+                    <% if(jmeno == undefined) { %>
+                        <p>Pro hraní kvízů se musíte <a href="/uzivatel/prihlasit">přihlásit</a></p>
+                    <% } else { %>
                         <a href="/hlasky/uspesnost" class="btn">Bodovaný Kvíz</a>
-                        <a href="/hlasky/random" class="btn">Náhlá Smrt</a>
+                        <a href="/hlasky/random?new=true" class="btn">Náhlá Smrt</a>
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="lb-wrapper">
+                <div class="lb"> <!-- T1 -->
+                    <div class="lb-head">
+                        <h2>Nejlepší hráči v režimu classic</h2>
                     </div>
 
-                </div>
-    
-                <div class="lb-wrapper">
-                    <div class="lb"> <!-- T1 -->
-                        <div class="lb-head">
-                            <h2>Nejlepší hráči v režimu classic</h2>
+                    <div class="lb-body">
+                        <div>
+                            <div>
+                                <h2>2.</h2>
+                                <p>Uživ. jméno</p>
+                                <p>body</p>
+                            </div>
                         </div>
-    
-                        <div class="lb-body">
+
+                        <div>
                             <div>
-                                <h2>2</h2>
-                                <div>
-                                    <p><%= top[1][1] %></p>
-                                    <p><%= top[1][0] %></p>
-                                </div>
+                                <h2>1.</h2>
+                                <p>Uživ. jméno</p>
+                                <p>body</p>
                             </div>
-    
+                        </div>
+
+                        <div>
                             <div>
-                                <h2>1</h2>
-                                <div>
-                                    <p><%= top[0][1] %></p>
-                                    <p><%= top[0][0] %></p>
-                                </div>
-                            </div>
-    
-                            <div>
-                                <h2>3</h2>
-                                <div>
-                                    <p><%= top[2][1] %></p>
-                                    <p><%= top[2][0] %></p>
-                                </div>
+                                <h2>3.</h2>
+                                <p>Uživ. jméno</p>
+                                <p>body</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-        <% } else { %>
-            <p>kys</p>
-        <% } %>
+        </div>
     </div>
-<%- include('../_layout/footer') %>
+    <%- include('../_layout/footer') %>
