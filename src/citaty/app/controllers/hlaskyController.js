@@ -83,7 +83,7 @@ exports.odpovedNaRandomKviz = (req, res) => {
 
     req.session.randomSeznamUcitelu = randomSeznamUcitelu;
 
-    let liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
+    const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
 
     return res.render('hlasky/random', {
         // spravnaHlaska, listOdpovedi 
@@ -126,7 +126,7 @@ exports.uspesnost = (req, res) => {
     }
 
     
-    let liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
+    const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
 
     return res.render("hlasky/uspesnost",{
         hlaska: req.session.randomSeznamUcitelu[0],
@@ -173,7 +173,7 @@ exports.procentaUspesnosti = (req, res) => {
     }
     req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
 
-    let liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
+    const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
 
     return res.render("hlasky/uspesnost",{
         hlaska: req.session.randomSeznamUcitelu[0],
