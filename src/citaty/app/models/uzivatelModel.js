@@ -178,7 +178,6 @@ exports.jeOblibenaHlaska = (jmeno, hlaska) => {
     
         if (data.oblibeneHlasky == undefined){
             data.oblibeneHlasky = [];
-            db.set(jmeno, data);
         }
         if (!data.oblibeneHlasky.includes(hlaska)){
             return true;

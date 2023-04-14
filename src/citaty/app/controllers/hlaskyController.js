@@ -1,15 +1,30 @@
 const model = require('../models/hlaskyModel');
 const uzivatelModel = require('../models/uzivatelModel');
 
+
+function likeStar(jmeno, hlaska){
+    let liked = "☆";
+    if (!uzivatelModel.jeOblibenaHlaska(jmeno, hlaska)){ // ptá se jestli je hláška oblíbenná
+        liked = "★";
+    }
+    return liked;
+}
+
 exports.randomKviz = (req, res) => {
 
     if (req.session.prihlasenyUzivatel == undefined){
         return res.redirect('/uzivatel/prihlasit');
     }
 
+
     if(req.query.like){
-        let hlaska = req.session.randomSeznamUcitelu[0];
-        uzivatelModel.ulozitOblibenouHlasku(req.session.prihlasenyUzivatel, hlaska);
+        const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
+        if (liked == "★"){
+            uzivatelModel.odebratOblibenouHlasku(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
+        }
+        else{
+            uzivatelModel.ulozitOblibenouHlasku(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
+        }
     }
     else{
         req.session.score = 0;
@@ -24,10 +39,7 @@ exports.randomKviz = (req, res) => {
         req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
     }
 
-    let liked = "☆";
-    if (uzivatelModel.jeOblibenaHlaska(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0])){ // ptá se jestli je hláška oblíbenná
-        liked = "★";
-    }
+    const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
 
     return res.render('hlasky/random', {
         // spravnaHlaska, listOdpovedi
@@ -68,13 +80,10 @@ exports.odpovedNaRandomKviz = (req, res) => {
     if (req.session.seznamProslychHlasek.length > 10){
         req.session.seznamProslychHlasek = req.session.seznamProslychHlasek.slice(-10);
     }
-    req.session.seznamProslychHlasek.push(randomSeznamUcitelu[0]);
+
     req.session.randomSeznamUcitelu = randomSeznamUcitelu;
 
-    let liked = "☆";
-    if (uzivatelModel.jeOblibenaHlaska(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0])){ // ptá se jestli je hláška oblíbenná
-        liked = "★";
-    }
+    let liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
 
     return res.render('hlasky/random', {
         // spravnaHlaska, listOdpovedi 
@@ -94,9 +103,15 @@ exports.uspesnost = (req, res) => {
     }
     
     if(req.query.like){
-        let hlaska = req.session.randomSeznamUcitelu[0];
-        uzivatelModel.ulozitOblibenouHlasku(req.session.prihlasenyUzivatel, hlaska);
-    }else{
+        const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
+        if (liked == "★"){
+            uzivatelModel.odebratOblibenouHlasku(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
+        }
+        else{
+            uzivatelModel.ulozitOblibenouHlasku(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
+        }
+    }
+    else{
         req.session.randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
         req.session.zodpovezeno = 0;
         req.session.scoreuspesnosti = 0;
@@ -107,14 +122,11 @@ exports.uspesnost = (req, res) => {
         if (req.session.seznamProslychHlasek.length > 10){
             req.session.seznamProslychHlasek = req.session.seznamProslychHlasek.slice(-10);
         }
+        req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
     }
-    req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
-    
-    let liked = "☆";
 
-    if (uzivatelModel.jeOblibenaHlaska(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0])){ // ptá se jestli je hláška oblíbenná
-        liked = "★";
-    }
+    
+    let liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
 
     return res.render("hlasky/uspesnost",{
         hlaska: req.session.randomSeznamUcitelu[0],
@@ -161,11 +173,7 @@ exports.procentaUspesnosti = (req, res) => {
     }
     req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
 
-    let liked = "☆";
-
-    if (uzivatelModel.jeOblibenaHlaska(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0])){ // ptá se jestli je hláška oblíbenná
-        liked = "★";
-    }
+    let liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
 
     return res.render("hlasky/uspesnost",{
         hlaska: req.session.randomSeznamUcitelu[0],

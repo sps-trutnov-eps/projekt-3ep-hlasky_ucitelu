@@ -3,11 +3,11 @@ const nodemailer = require("nodemailer");
 const bcrypt = require('bcryptjs');
 
 const randBetween = (min, max) => {
-	return Math.round(Math.random() * (max - min)) + min;
+    return Math.round(Math.random() * (max - min)) + min;
 }
 
 function addMinutes(date, minutes) {
-    return new Date(date + minutes*60000);
+    return new Date(date + minutes * 60000);
 }
 
 exports.registrace = (req, response) => {
@@ -26,7 +26,7 @@ exports.prihlaseni = (req, response) => {
 }
 
 exports.overeni = (req, res) => {
-    if (req.session.kod == undefined || req.session.uzivatel == "Přihlásit se"){
+    if (req.session.kod == undefined || req.session.uzivatel == "Přihlásit se") {
         return res.redirect('/web/error');
     }
 
@@ -43,48 +43,48 @@ exports.registrovat = (req, response) => {
     const heslo = req.body.heslo.trim();
     const hesloZnovu = req.body.hesloZnovu.trim();
 
-    if (email.length == 0){
+    if (email.length == 0) {
         return response.render('uzivatel/registrace', {
             error: 'Email není vyplněný!',
             jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         });
     }
 
-    if(jmeno.length == 0) {
+    if (jmeno.length == 0) {
         return response.render('uzivatel/registrace', {
             error: 'Jméno není vyplněné!',
             jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         });
     }
-    if(heslo.length == 0) {
+    if (heslo.length == 0) {
         return response.render('uzivatel/registrace', {
             error: 'Heslo není vyplněné!',
             jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         });
     }
 
-    if(heslo != hesloZnovu) {
+    if (heslo != hesloZnovu) {
         return response.render('uzivatel/registrace', {
             error: 'Hesla se neshodují!',
             jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         });
     }
 
-    if (!email.endsWith("@spstrutnov.cz")){
+    if (!email.endsWith("@spstrutnov.cz")) {
         return response.render('uzivatel/registrace', {
             error: 'Email není školní email!',
             jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         });
     }
 
-    if (model.existujeEmail(email)){
+    if (model.existujeEmail(email)) {
         return response.render('uzivatel/registrace', {
             error: 'Email už někdo používá!',
             jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         });
     }
 
-    if(model.existujeUzivatel(jmeno)) {
+    if (model.existujeUzivatel(jmeno)) {
         return response.render('uzivatel/registrace', {
             error: 'Uživatel již existuje!',
             jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
@@ -94,33 +94,35 @@ exports.registrovat = (req, response) => {
     //kód pro posílání emailů:
 
     const kod = randBetween(1000000, 9999999); //7-digit code pro ověření
-    
+
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-           user: "hlaskyspstrutnov@gmail.com",
-           pass: "fkmavpsvlubwpuxu"
+            user: "hlaskyspstrutnov@gmail.com",
+            pass: "fkmavpsvlubwpuxu"
         },
-        tls:{rejectUnauthorized: false}
-     });
-     
-     const mailOptions = {
+        tls: {
+            rejectUnauthorized: false
+        }
+    });
+
+    const mailOptions = {
         from: "hlaskyspstrutnov@gmail.com",
         to: email,
         subject: "Ověřovací kód",
         text: "Váš ověřovací kód je: " + kod
-     };
-     
-     transporter.sendMail(mailOptions, function(error, info){
-        if(error){
-           console.log(error);
+    };
 
-           return response.render('uzivatel/registrace', {
-            error: 'Email neexistuje!',
-            jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
+    transporter.sendMail(mailOptions, function(error, info) {
+        if (error) {
+            console.log(error);
+
+            return response.render('uzivatel/registrace', {
+                error: 'Email neexistuje!',
+                jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
             });
-        }else{
-           console.log("Email sent: " + info.response);
+        } else {
+            console.log("Email sent: " + info.response);
         }
     });
 
@@ -133,12 +135,11 @@ exports.registrovat = (req, response) => {
     console.log(req.session.uzivatel[3]);
     console.log(addMinutes(Date.now(), 1));
 
-    setTimeout(function(){
-        if (req.session.prihlasenyUzivatel == undefined){
+    setTimeout(function() {
+        if (req.session.prihlasenyUzivatel == undefined) {
             req.session.destroy();
-        }
-        else{
-            if (req.session.prihlasenyUzivatel != req.session.uzivatel[0]){
+        } else {
+            if (req.session.prihlasenyUzivatel != req.session.uzivatel[0]) {
                 req.session.destroy();
             }
         }
@@ -150,7 +151,7 @@ exports.registrovat = (req, response) => {
 exports.overit = (req, response) => {
     const kod = req.body.kod;
 
-    if (req.session.uzivatel == undefined || req.session.kod == undefined){
+    if (req.session.uzivatel == undefined || req.session.kod == undefined) {
         return response.render("uzivatel/overeni", {
             error: "Kód vypršel!",
             jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
@@ -160,7 +161,7 @@ exports.overit = (req, response) => {
     console.log("Overit kod: " + req.session.kod);
 
 
-    if (req.session.kod != kod){
+    if (req.session.kod != kod) {
         return response.render("uzivatel/overeni", {
             error: "Špatný kód!",
             jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
@@ -181,14 +182,14 @@ exports.prihlasit = (req, response) => {
     const jmeno = req.body.jmeno.trim().toLocaleLowerCase();
     const heslo = req.body.heslo.trim();
 
-    if(!model.existujeUzivatel(jmeno)) {
+    if (!model.existujeUzivatel(jmeno)) {
         return response.render('uzivatel/prihlaseni', {
             error: 'Uživatel neexistuje!',
             jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         });
     }
 
-    if(!model.spravneHeslo(jmeno, heslo)) {
+    if (!model.spravneHeslo(jmeno, heslo)) {
         return response.render('uzivatel/prihlaseni', {
             error: 'Chybné heslo!',
             jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
@@ -201,11 +202,11 @@ exports.prihlasit = (req, response) => {
 }
 
 exports.profil = (req, response) => {
-    if(!req.session.prihlasenyUzivatel) {
+    if (!req.session.prihlasenyUzivatel) {
         return response.redirect('/uzivatel/prihlasit');
     }
-    
-    if (req.query.hlaska != undefined){
+
+    if (req.query.hlaska != undefined) {
         model.odebratOblibenouHlasku(req.session.prihlasenyUzivatel, req.query.hlaska);
     }
 
@@ -236,7 +237,7 @@ exports.sinslavy = (req, res) => {
 exports.confirmSmazani = (req, res) => {
 
     // tohle by se nikdy nemělo stát.
-    if (req.session.prihlasenyUzivatel == undefined || req.session.prihlasenyUzivatel == ""){
+    if (req.session.prihlasenyUzivatel == undefined || req.session.prihlasenyUzivatel == "") {
         return res.redirect("/uzivatel/prihlasit");
     }
 
@@ -248,34 +249,33 @@ exports.confirmSmazani = (req, res) => {
 
 exports.smazatUzivatele = (req, res) => {
     // tohle by se nikdy nemělo stát.
-    if (req.session.prihlasenyUzivatel == undefined || req.session.prihlasenyUzivatel == ""){
+    if (req.session.prihlasenyUzivatel == undefined || req.session.prihlasenyUzivatel == "") {
         return res.redirect("/uzivatel/prihlasit");
     }
 
     const jmeno = req.session.prihlasenyUzivatel;
     const heslo = req.body.heslo.trim();
 
-    if(!model.spravneHeslo(jmeno, heslo)) {
+    if (!model.spravneHeslo(jmeno, heslo)) {
         return res.render('uzivatel/confirmSmazani', {
             error: 'Chybné heslo!',
             jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         });
     }
 
-    if (model.smazatUzivatele(jmeno, heslo) != false){ // všchno v pohodě (smatat uživatele)
+    if (model.smazatUzivatele(jmeno, heslo) != false) { // všchno v pohodě (smatat uživatele)
         req.session.destroy();
         return res.redirect("/uzivatel/prihlasit");
-    }
-    else{
+    } else {
         return res.render('uzivatel/confirmSmazani', {
             error: 'Došlo k chybě při ověřování hesla!',
             jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         });
     }
 
-    
-    
 
-    
-    
+
+
+
+
 }
