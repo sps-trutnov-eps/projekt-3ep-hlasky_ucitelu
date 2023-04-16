@@ -236,7 +236,12 @@ h2 {
   margin-bottom: 3vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 
@@ -244,7 +249,8 @@ p {
   margin: 0;
 }
 
-body, html {
+body,
+html {
   min-height: 100vh;
   margin: 0;
   position: relative;
@@ -308,14 +314,6 @@ body footer {
   background-color: var(--bg2);
 }
 
-.score {
-  top: 50px;
-  right: 10px;
-  position: absolute;
-  font-size: 2.5vw;
-  font-weight: bolder;
-}
-
 .bg {
   width: 100%;
   height: 100%;
@@ -342,29 +340,72 @@ body footer {
   background-color: rgba(22, 27, 34, 0.25);
 }
 
-.hlaska {
-  color: white;
-  font-weight: bolder;
-  text-align: center;
-  font-size: 1.5vw;
+.quiz-wrapper {
+  background-color: var(--bg2);
+  border-radius: 1vw;
+  padding: 0.5dvh 2vw;
+  aspect-ratio: 16/9;
+  display: grid;
+  grid-template-rows: 10fr auto 5fr;
 }
-
-.odpoved {
-  font-weight: 500;
+.quiz-wrapper .hlaska {
+  font-size: 1.5em;
   color: white;
-  text-align: center;
-  border-radius: 3px;
-  font-size: 1vw;
-  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.7);
-  background-color: transparent;
-  border: none;
-  padding: 2em;
-  width: 15.55vw;
-  margin-bottom: 2em;
-  background-color: var(--primary);
-  border: 3px solid var(--glow);
-  border-radius: 5px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1vh;
+  min-height: 13dvh;
 }
+.quiz-wrapper .quiz-buttonwrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1vw;
+  height: 100%;
+}
+.quiz-wrapper .tlacitko {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quiz-wrapper .tlacitko .odpoved {
+  font-weight: 600;
+  color: white;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 1.3vw;
+  text-shadow: 0px 0px 0.2vw rgba(255, 255, 255, 0.4);
+  border: solid 2px white;
+  border-radius: 0.5vw;
+  padding: 2vh 1vw;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--tertiary) 100%);
+}
+.quiz-wrapper .tlacitko .odpoved:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 0.3vw;
+}
+.quiz-wrapper .quiz-footer {
+  margin: 1dvh 0;
+  display: flex;
+  justify-content: space-between;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  align-items: center;
+}
+.quiz-wrapper .quiz-footer a {
+  font-size: 2.5vw;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+}
+.quiz-wrapper .quiz-footer p {
+  font-size: 2.5vw;
+  font-weight: 600;
+  color: white;
+=======
 
 .tlacitko {
   text-align: center;
@@ -405,4 +446,3 @@ body footer {
   width: -moz-fit-content;
   width: fit-content;
   font-size: 2vw;
-}/*# sourceMappingURL=style.css.map */
