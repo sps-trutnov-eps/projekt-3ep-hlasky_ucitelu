@@ -125,6 +125,13 @@
   margin-bottom: 4dvh;
 }
 
+.profile-stats {
+  margin-bottom: 2dvh;
+}
+.profile-stats p {
+  margin-bottom: 0.5dvh;
+}
+
 .btn-wrapper {
   width: 100%;
   display: inline-flex;

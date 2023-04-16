@@ -1,30 +1,23 @@
 <%- include('../_layout/header') %>
-    <p>Vítejte na svém profilu, <b><%= jmeno %>!</b></p>
-    <p>Vaše nejvyšší score: <%= highScore %></p>
-    
-    <div class="lb-wrapper">
-        <div style="margin: 0 auto;" class="lb"> <!-- T1 -->
-            <p class="lb-nadpis">Tvé oblíbené uložené hlášky.</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>
-                            <%= jmeno %>
-                        </th>
-                    </tr>
-                </thead>
+    <div class="container" style="min-height: 79vh; margin: 5vh auto 1vh auto">
+        <h2 class="welcome-text">Vítej na svém profilu, <%= jmeno %>!</h2>
+        <div class="profile-stats">
+            <p>Nejvyšší Skóre V Náhlé Smrti: <%= highScore %></p>
+            <a href="/uzivatel/odhlasit" style="color:red; font-weight: 600;text-decoration: none;">Odhlásit se</a>
+            <p>^^^ tohle je provizorní, vypadá to jank, já vím</p>
+        </div>
 
-                <tbody>
-                    <tr>
-                        <td style="text-align: center;">
-                            <% hlasky.forEach(hlaska => { %>
-                                <b><%= hlaska %></b> <br>
-                            <% }); %>
-                        </td>
-                    </tr>
-                </tbody>
-                
-            </table>
+        <div class="lb-wrapper">
+            <div style="margin: 0 auto;" class="lb"> <!-- T1 -->
+                <p class="lb-nadpis">Tvé oblíbené uložené hlášky.</p>
+
+                <% hlasky.forEach(hlaska=> { %>
+                    <b>
+                        <%= hlaska %>
+                    </b> <br>
+                    <% }); %>
+
+            </div>
         </div>
     </div>
-<%- include('../_layout/footer') %>
+    <%- include('../_layout/footer') %>
