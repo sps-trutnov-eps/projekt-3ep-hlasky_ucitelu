@@ -108,7 +108,7 @@
 }
 
 .index-wrapper {
-  height: 58dvh;
+  height: 65dvh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -119,10 +119,17 @@
   height: fit-content;
   background-color: var(--bg2);
   border-radius: 0.7vw;
-  padding: 2dvh 1vw 3dvh 1vw;
+  padding: 2dvh 1vw 6dvh 1vw;
 }
 .game-init h2 {
-  margin-bottom: 3dvh;
+  margin-bottom: 4dvh;
+}
+
+.profile-stats {
+  margin-bottom: 2dvh;
+}
+.profile-stats p {
+  margin-bottom: 0.5dvh;
 }
 
 .btn-wrapper {
@@ -130,6 +137,14 @@
   display: inline-flex;
   justify-content: space-around;
   align-items: center;
+}
+.btn-wrapper p {
+  font-size: 1.2em;
+  text-transform: capitalize;
+}
+.btn-wrapper p a {
+  color: white;
+  font-weight: 600;
 }
 .btn-wrapper .btn {
   padding: 3dvh 0.5vw 3dvh 0.5vw;
@@ -162,15 +177,8 @@
   border-radius: 0.7vw;
   position: relative;
 }
-.lb-wrapper .lb .btn {
-  background-color: aqua;
-  padding: 1vh 1vw;
-}
-.lb-wrapper .lb .btn:hover {
-  background-color: var(--bg);
-}
 .lb-wrapper .lb .lb-head {
-  margin-bottom: 3vh;
+  margin-bottom: 4vh;
   text-transform: capitalize;
 }
 .lb-wrapper .lb .lb-body {
@@ -193,25 +201,26 @@
 .lb-wrapper .lb .lb-body div h2 {
   text-shadow: 0px 0px 0.3vw;
   line-height: 4vh;
+  font-size: 2em;
 }
 .lb-wrapper .lb .lb-body div div {
   box-shadow: none;
   font-size: 2dvh;
-  background-color: var(--bg);
   width: -moz-fit-content;
   width: fit-content;
-  padding: 0.1vh 0.5vw 0.1vh 0.5vw;
+  padding: 0.5dvh 0.5vw 0.5dvh 0.5vw;
+  background-color: var(--bg2);
 }
 .lb-wrapper .lb .lb-body div:not(:first-of-type):not(:last-of-type) {
-  background-color: gold;
-  height: 15vh;
+  background-color: rgb(218, 185, 0);
+  height: 22dvh;
 }
 .lb-wrapper .lb .lb-body div:first-of-type:not(:last-of-type) {
-  height: 12.5vh;
+  height: 19.5dvh;
   background-color: silver;
 }
 .lb-wrapper .lb .lb-body div:not(:first-of-type):last-of-type {
-  height: 11vh;
+  height: 17dvh;
   background-color: saddlebrown;
 }
 
@@ -405,44 +414,4 @@ body footer {
   font-size: 2.5vw;
   font-weight: 600;
   color: white;
-=======
-
-.tlacitko {
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 1em;
-}
-
-.oblibene {
-  width: 12em;
-  text-align: center;
-  font-size: 1vw;
-  background-color: #8b5cb4;
-  margin: 4em;
-  border: 2px solid white;
-  border-radius: 3px;
-  color: white;
-  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.7);
-  text-decoration: none;
-  position: absolute;
-  top: 10px;
-  right: 0px;
-}
-
-.divvysledneSkore {
-  display: flex;
-  justify-content: center;
-  vertical-align: middle;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.divvysledneSkore .vysledneSkore {
-  color: white;
-  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.7);
-  background-color: #9d6f9b;
-  border: 2px solid white;
-  margin: 2em;
-  border-radius: 10px;
-  width: -moz-fit-content;
-  width: fit-content;
-  font-size: 2vw;
+}/*# sourceMappingURL=style.css.map */
