@@ -294,10 +294,11 @@
 
 
     "Jan Šimeček":{
+        "gender": "male",
         "hlasky":["'S cívkou jako s dívkou, nejdříve napětí, poté proud.'",
         "'Debil, blbeček, debil, blbeček, akorát támhle v zadu je jediná výjimka, sedí dva blbečci vedle sebe!'",
         "''"
-        "gender": "male",
+        
     ]
     },
 
