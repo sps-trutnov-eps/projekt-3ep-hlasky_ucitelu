@@ -355,7 +355,7 @@ body footer {
   padding: 0.5dvh 2vw;
   aspect-ratio: 16/9;
   display: grid;
-  grid-template-rows: 10fr auto 5fr;
+  grid-template-rows: 10fr auto 8fr;
 }
 .quiz-wrapper .hlaska {
   font-size: 1.5em;
@@ -409,6 +409,9 @@ body footer {
   text-decoration: none;
   font-weight: 600;
   color: white;
+}
+.quiz-wrapper .quiz-footer .liked {
+  color: rgb(218, 185, 0);
 }
 .quiz-wrapper .quiz-footer p {
   font-size: 2.5vw;
