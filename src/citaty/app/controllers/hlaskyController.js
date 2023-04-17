@@ -160,8 +160,8 @@ exports.procentaUspesnosti = (req, res) => {
     if(req.session.zodpovezeno >= 10){
         req.session.zodpovezeno = 0;
         //req.session.scoreuspesnosti = 0;
-        vysledek = (pocetDobrych/plnypocet)*100;
-        //return res.redirect("/hlasky/vysledneSkore")
+        //vysledek = (pocetDobrych/plnypocet)*100;
+        return res.redirect("/hlasky/vysledneSkore")
     }
 
     req.session.randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);

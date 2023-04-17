@@ -2,14 +2,15 @@
     "Tektek": {
         "heslo": "$2a$10$IluwpueVcjMMAdydpcEL2eZhFp7uEVvazuIIkjZN47rAKrN7YKBGG",
         "email": "hula@spstrutnov.cz",
-        "score": 200,
+        "score": 200000000,
         "oblibeneHlasky": [
             "'Pátek Podmáj, sobota Podmáj, jste unavení chápu.'",
             "'Debil, blbeček, debil, blbeček, akorát támhle v zadu je jediná výjimka, sedí dva blbečci vedle sebe!'",
             "'Řízkové jedni!'",
             "'Ty jsi si ten válec ale nějak zamiloval, půjč si ho domů a vyřádi se na něm.'",
-            "'To je furt nějakej den... každej den.'",
-            "'Moment... teď se tady zlobím.'"
+            "'Moment... teď se tady zlobím.'",
+            "'Moje angličtina být špatná, jak se říka.'",
+            "'To je furt nějakej den... každej den.'"
         ]
     },
     "ligma": {
