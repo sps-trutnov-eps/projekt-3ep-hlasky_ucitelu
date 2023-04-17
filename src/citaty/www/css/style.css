@@ -149,10 +149,11 @@
 .btn-wrapper .btn {
   padding: 3dvh 0.5vw 3dvh 0.5vw;
   width: 43%;
+  font-size: 1.4em;
   border-radius: 1vw;
+  text-shadow: 0px 0px 0.2vw rgba(255, 255, 255, 0.4);
   color: white;
   font-weight: 600;
-  font-size: 1.2em;
   background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
   text-decoration: none;
   text-align: center;
@@ -160,6 +161,7 @@
 }
 .btn-wrapper .btn:hover {
   opacity: 0.9;
+  box-shadow: 0 0 0.3vw;
 }
 .btn-wrapper .btn:last-child {
   background: linear-gradient(90deg, var(--secondary) 0%, var(--tertiary) 100%);
@@ -237,6 +239,23 @@
   color: white;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 1vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary);
+}
+
 h2 {
   font-size: 1.7em;
 }
@@ -264,6 +283,11 @@ html {
   min-height: 100vh;
   margin: 0;
   position: relative;
+}
+
+.odpovedi {
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -350,6 +374,10 @@ body footer {
   background-color: rgba(22, 27, 34, 0.25);
 }
 
+.scroll-y {
+  overflow-y: scroll;
+}
+
 .quiz-wrapper {
   background-color: var(--bg2);
   border-radius: 1vw;
@@ -357,6 +385,7 @@ body footer {
   aspect-ratio: 16/9;
   display: grid;
   grid-template-rows: 10fr auto 8fr;
+  height: 43vh;
 }
 .quiz-wrapper .hlaska {
   font-size: 1.5em;
@@ -378,6 +407,9 @@ body footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .quiz-wrapper .tlacitko .odpoved {
   font-weight: 600;
@@ -387,7 +419,7 @@ body footer {
   text-align: center;
   font-size: 1.3vw;
   text-shadow: 0px 0px 0.2vw rgba(255, 255, 255, 0.4);
-  border: solid 2px white;
+  border: solid 0.2vw white;
   border-radius: 0.5vw;
   padding: 2vh 1vw;
   background: linear-gradient(90deg, var(--primary) 0%, var(--tertiary) 100%);

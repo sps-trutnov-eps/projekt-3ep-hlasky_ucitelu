@@ -16,6 +16,23 @@
     color: white;
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 1vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--secondary);
+}
+
 h2 {
     // yes
     font-size: 1.7em;
@@ -44,6 +61,11 @@ html {
     min-height: 100vh;
     margin: 0;
     position: relative;
+}
+
+.odpovedi{
+    display: flex;
+    flex-direction: column;
 }
 
 body {
@@ -143,6 +165,10 @@ body {
     }
 }
 
+.scroll-y{
+    overflow-y: scroll;
+}
+
 .quiz-wrapper {
     background-color: var(--bg2);
     border-radius: 1vw;
@@ -150,6 +176,7 @@ body {
     aspect-ratio: 16 / 9;
     display: grid;
     grid-template-rows: 10fr auto 8fr;
+    height: 43vh;
 
     .hlaska {
         font-size: 1.5em;
@@ -173,6 +200,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        user-select: none;
 
         .odpoved {
             // btn
@@ -183,7 +211,7 @@ body {
             text-align: center;
             font-size: 1.3vw;
             text-shadow: 0px 0px .2vw rgba(255, 255, 255, .4);
-            border: solid 2px white;
+            border: solid .2vw white;
             border-radius: .5vw;
             padding: 2vh 1vw;
             background: linear-gradient( 90deg,
