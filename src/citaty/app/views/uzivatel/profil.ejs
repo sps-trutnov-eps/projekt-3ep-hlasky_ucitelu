@@ -14,9 +14,9 @@
                 <% hlasky.forEach(hlaska=> { %>
                     <b>
                         <%= hlaska %>
+                        <a href="/uzivatel/profil?hlaska=<%= hlaska %>" style="color:red; font-weight: 600;text-decoration: none;float: right;">Odebrat hlášku!</a>
                     </b> <br>
                     <% }); %>
-
             </div>
         </div>
     </div>
