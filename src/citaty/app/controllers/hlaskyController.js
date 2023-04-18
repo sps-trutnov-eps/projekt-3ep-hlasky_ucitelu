@@ -64,6 +64,7 @@ exports.randomKviz = (req, res) => { // GET ASI?
         odpovedi: req.session.randomSeznamUcitelu[1],
         score: req.session.score,
         liked: liked,
+        spatneOdpovedi: req.session.spatneOdpovedi,
     });
 }
 
@@ -120,6 +121,7 @@ exports.odpovedNaRandomKviz = (req, res) => { // POST??
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         score: req.session.score,
         liked: liked,
+        spatneOdpovedi: req.session.spatneOdpovedi,
     });
 }
 
@@ -159,6 +161,7 @@ exports.uspesnost = (req, res) => { // GET
                 quizDokoncen: false,
                 vysledneSkore: undefined,
                 liked: liked,
+                spatneOdpovedi: req.session.spatneOdpovedi,
             });
         } else {
 
@@ -209,6 +212,7 @@ exports.uspesnost = (req, res) => { // GET
             quizDokoncen: false,
             vysledneSkore: undefined,
             liked: liked,
+            spatneOdpovedi: req.session.spatneOdpovedi,
         });
     }
 }
