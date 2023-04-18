@@ -57,9 +57,7 @@ exports.randomUcitel = (seznamProslychHlasek = []) => {
         while (spravnaHlaska == "''"){
             spravnaHlaska = hlasky[spravnyUcitel]["hlasky"][Math.round(Math.random() * (hlasky[spravnyUcitel]["hlasky"].length - 1))];
         }
-    }
-    console.log(spravnaHlaska);
-    
+    } 
 
     let spatneUcitele = [];
 
@@ -86,19 +84,6 @@ exports.randomUcitel = (seznamProslychHlasek = []) => {
 
     listOdpovedi.push(spravnyUcitel);
     console.log(spravnyUcitel); // pro debugování
-
-    //test:
-    // let firstTest = "";
-    // listOdpovedi.forEach(ucitel => {
-    //     if (firstTest != ""){
-    //         if (hlasky[ucitel]["gender"] != firstTest){
-    //             console.log("WRONG")
-    //         }
-    //     }
-    //     //console.log(hlasky[ucitel]["gender"]);
-    //     firstTest = hlasky[ucitel]["gender"];
-    // });
-
 
     listOdpovedi = shuffle_(listOdpovedi);
 
