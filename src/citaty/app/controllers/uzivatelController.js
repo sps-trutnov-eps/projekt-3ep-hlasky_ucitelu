@@ -225,8 +225,6 @@ exports.odhlasit = (req, response) => {
 exports.sinslavy = (req, res) => {
     const userData = model.getAllHighScore();
 
-    console.log(userData);
-
     return res.render('uzivatel/sinslavy', {
         data: userData,
         error: undefined,

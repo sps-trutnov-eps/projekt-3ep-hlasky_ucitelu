@@ -230,8 +230,6 @@ exports.vysledneSkore = (req, res) => {
     const pocetDobrych = req.session.scoreuspesnosti;
     const vysledek = (pocetDobrych/10)*100;
 
-    console.log(pocetDobrych);
-
     return res.render("hlasky/vysledneSkore",{
         vyslednaPorcenta: vysledek,
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
