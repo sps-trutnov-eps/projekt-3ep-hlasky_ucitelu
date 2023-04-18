@@ -103,16 +103,34 @@ exports.uspesnost = (req, res) => {
         req.session.quizDokoncen = false;
     } 
 
-
     if(req.session.quizDokoncen == true){
-        return res.render("hlasky/uspesnost",{
-            vysledneSkore: req.session.vysledneSkore || "kys",
-            plnyPocet: req.session.plnyPocet,
-            jmeno: req.session.jmeno,
-            zodpovezeno: req.session.zodpovezeno || 0,
-            plnyPocet: req.session.plnyPocet || 10,
-            quizDokoncen: true,
-        })
+
+        if(req.query.restart == "true"){
+            req.session.zodpovezeno = 0;
+            req.session.vysledek = 0;
+            req.session.quizDokoncen = false;
+
+            const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
+            return res.render("hlasky/uspesnost", {
+                hlaska: req.session.randomSeznamUcitelu[0],
+                odpovedi: req.session.randomSeznamUcitelu[1],
+                jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
+                zodpovezeno: req.session.zodpovezeno,
+                plnyPocet: req.session.plnyPocet || 10,
+                quizDokoncen: false,
+                vysledneSkore: undefined,
+                liked: liked,
+            });
+        } else {
+
+            return res.render("hlasky/uspesnost",{
+                plnyPocet: req.session.plnyPocet || 10,
+                zodpovezeno: req.session.zodpovezeno || 0,
+                vysledneSkore: req.session.vysledek || "kys",
+                jmeno: req.session.prihlasenyUzivatel,
+                quizDokoncen: true,
+            });
+        }
 
     } else {
 

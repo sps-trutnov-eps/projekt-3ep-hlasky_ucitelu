@@ -260,11 +260,6 @@ h2 {
   font-size: 1.7em;
 }
 
-.nadpis-left {
-  text-align: left;
-  margin-bottom: 3vh;
-}
-
 h1,
 h2,
 h3,
@@ -297,7 +292,7 @@ body {
 }
 body header {
   width: 100%;
-  height: 48px;
+  height: 45px;
   overflow: hidden;
 }
 body header #nav {
