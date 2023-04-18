@@ -19,7 +19,7 @@
     "honza": {
         "heslo": "$2a$10$XS1xm41k2okI5G6SIDrZxOsyZoWR8PDl7ZVakmCfjFP568XEoW2g2",
         "email": "sigma@spstrutnov.cz",
-        "score": 5,
+        "score": 11,
         "oblibeneHlasky": [
             "'Cívka je jak dívka, nejdříve napětí, poté proud.'",
             "'Pat a Mat znělka.'",
@@ -35,7 +35,8 @@
             "'Já věděl, že to auto tam venku je vaše!'",
             "'Neoprávněné reklamace testu se hodnotí stupněm dolů, děkuji za pochopení'",
             "'Černé kafe z automatu, to je moje.'",
-            "'Moment... teď se tady zlobím.'"
+            "'Moment... teď se tady zlobím.'",
+            "Já to vidím jinak, ale to je tvoje volba"
         ]
     },
     "LIGMUS": {

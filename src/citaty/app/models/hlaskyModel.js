@@ -95,8 +95,16 @@ exports.checkOdpoved = (ucitel, hlaska) => {
     const hlasky = db.JSON();
     const length = Object.keys(hlasky).length - 1;
 
-    return hlasky[ucitel]["hlasky"].includes(hlaska);
+    let vysledek = false;
 
+    try {
+        vysledek = hlasky[ucitel]["hlasky"].includes(hlaska);
+      }
+      catch(err) {
+        vysledek = false;
+      }
+
+      return vysledek;
 }
 
 exports.getSpravnaOdpoved = (hlaska) => {

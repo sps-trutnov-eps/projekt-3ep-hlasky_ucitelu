@@ -16,6 +16,27 @@ exports.randomKviz = (req, res) => { // GET
         return res.redirect('/uzivatel/prihlasit');
     }
 
+    if (req.session.randQuizDokoncen == undefined){
+        req.session.randQuizDokoncen = false;
+    }
+
+    if (req.session.randQuizDokoncen){
+
+
+        // return res.render("hlasky/uspesnost", {
+        //     hlaska: req.session.randomSeznamUcitelu[0],
+        //     odpovedi: req.session.randomSeznamUcitelu[1],
+        //     jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
+        //     zodpovezeno: req.session.zodpovezeno,
+        //     plnyPocet: req.session.plnyPocet || 10,
+        //     quizDokoncen: false,
+        //     vysledneSkore: undefined,
+        //     liked: liked,
+        //     spatneOdpovedi: req.session.spatneOdpovedi,
+        // });
+    }
+
+
 
     if(req.query.like){
         const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
@@ -29,7 +50,6 @@ exports.randomKviz = (req, res) => { // GET
     
     else{
         // mazání listu špatě zodpovězenných hlášek.
-        req.session.spatneOdpovedi = undefined;
         req.session.score = 0;
         req.session.randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
 
@@ -81,7 +101,10 @@ exports.odpovedNaRandomKviz = (req, res) => { // POST
             req.session.spatneOdpovedi = [];
         }
         // [[hláška, správný učitel, co jste zvolily vy]]
-        req.session.spatneOdpovedi.push([req.session.randomSeznamUcitelu[0], model.getSpravnaOdpoved(req.session.randomSeznamUcitelu[0]), ucitel]);
+        if (req.session.quizDokoncen == false){
+            // [[hláška, správný učitel, co jste zvolily vy]]
+            req.session.spatneOdpovedi.push([req.session.randomSeznamUcitelu[0], model.getSpravnaOdpoved(req.session.randomSeznamUcitelu[0]), ucitel]);
+        }
     }
     
 
@@ -231,8 +254,10 @@ exports.procentaUspesnosti = (req, res) => { //POST funkce pro bodovaný kvíz
         if (req.session.spatneOdpovedi == undefined){
             req.session.spatneOdpovedi = [];
         }
-        // [[hláška, správný učitel, co jste zvolily vy]]
-        req.session.spatneOdpovedi.push([req.session.randomSeznamUcitelu[0], model.getSpravnaOdpoved(req.session.randomSeznamUcitelu[0]), ucitel]);
+        if (req.session.quizDokoncen == false){
+            // [[hláška, správný učitel, co jste zvolily vy]]
+            req.session.spatneOdpovedi.push([req.session.randomSeznamUcitelu[0], model.getSpravnaOdpoved(req.session.randomSeznamUcitelu[0]), ucitel]);
+        }
     }
     console.log(req.session.spatneOdpovedi);
     const pocetDobrych = req.session.scoreuspesnosti;
