@@ -38,6 +38,10 @@ h2 {
     font-size: 1.7em;
 }
 
+.fixed-size{
+    grid-template-rows: 10fr 10fr 10fr!important;
+}
+
 h1,
 h2,
 h3,
@@ -171,7 +175,7 @@ body {
     aspect-ratio: 16 / 9;
     display: grid;
     grid-template-rows: 10fr auto 8fr;
-    height: 43vh;
+    height: 50vh;
 
     .hlaska {
         font-size: 1.5em;
@@ -213,6 +217,35 @@ body {
                 var(--primary) 0%,
                 var(--tertiary) 100%
             );
+
+            &:hover{
+                opacity: .9;
+                box-shadow: 0 0 .3vw;
+            }
+        }
+    }
+
+    .quiz-footer-button{
+        display: flex;
+        justify-content: space-around;
+        user-select: none;
+        align-items: center;
+
+        a{
+            font-weight: 600;
+            color: white;
+            font-size: 1vw;
+            text-shadow: 0px 0px .2vw rgba(255, 255, 255, .4);
+            border: solid .2vw white;
+            border-radius: .5vw;
+            padding: 2vh 1vw;
+            background: linear-gradient( 90deg,
+                var(--primary) 0%,
+                var(--tertiary) 100%
+            );
+            text-decoration: none;
+            width: 30%;
+            text-align: center;
 
             &:hover{
                 opacity: .9;
