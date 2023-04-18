@@ -12,11 +12,16 @@
 
             <% if(quizDokoncen == true) { %>
                 <div class="quiz-buttonwrapper scroll-y">
-                    <div class="tlacitko odpovedi">
-                        <p>otázka</p>
-                        <p>stupid odpověď</p>
-                        <p>nice odpověď</p>
-                    </div>
+                    <% spatneOdpovedi.forEach(spatnaOdpoved => { %>
+                        
+                        <div class="tlacitko odpovedi">
+                            <p> <%= spatnaOdpoved[0] %></p>
+                            <p style="color: lightgreen;" > <%= spatnaOdpoved[1] %> </p>
+                            <p style="color: red;"> <%= spatnaOdpoved[2] %> </p>
+                        </div>
+                        
+                    <% }); %>
+
 
                 </div>
             <% } else{ %>

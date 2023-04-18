@@ -86,6 +86,15 @@ exports.odpovedNaRandomKviz = (req, res) => { // POST??
     else{
         req.session.score = 0;
     }
+    if (!model.checkOdpoved(ucitel, req.session.randomSeznamUcitelu[0])){
+        if (req.session.spatneOdpovedi == undefined){
+            req.session.spatneOdpovedi = [];
+        }
+        // [[hláška, správný učitel, co jste zvolily vy]]
+        req.session.spatneOdpovedi.push([req.session.randomSeznamUcitelu[0], model.getSpravnaOdpoved(req.session.randomSeznamUcitelu[0]), ucitel]);
+        //req.session.spatneOdpovedi = pridatSptneOdpovedi("req.session.randomSeznamUcitelu[0]", req.session.spatneOdpovedi);
+    }
+    
 
     uzivatelModel.ulozitHighScore(req.session.prihlasenyUzivatel, req.session.score);
 
@@ -102,13 +111,7 @@ exports.odpovedNaRandomKviz = (req, res) => { // POST??
 
     const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
 
-    if (!model.checkOdpoved(ucitel, req.session.randomSeznamUcitelu[0])){
-        if (req.session.spatneOdpovedi == undefined){
-            req.session.spatneOdpovedi = [];
-        }
-        req.session.spatneOdpovedi.push(req.session.randomSeznamUcitelu[0]);
-        //req.session.spatneOdpovedi = pridatSptneOdpovedi("req.session.randomSeznamUcitelu[0]", req.session.spatneOdpovedi);
-    }
+
     
     return res.render('hlasky/random', {
         // spravnaHlaska, listOdpovedi 
@@ -162,9 +165,10 @@ exports.uspesnost = (req, res) => { // GET
             return res.render("hlasky/uspesnost",{
                 plnyPocet: req.session.plnyPocet || 10,
                 zodpovezeno: req.session.zodpovezeno || 0,
-                vysledneSkore: req.session.vysledneSkore || "kys",
+                vysledneSkore: req.session.vysledneSkore || "0", // Defaultně dostane 0%
                 jmeno: req.session.prihlasenyUzivatel,
                 quizDokoncen: true,
+                spatneOdpovedi: req.session.spatneOdpovedi,
             });
         }
 
@@ -227,7 +231,17 @@ exports.procentaUspesnosti = (req, res) => { //POST funkce pro bodovaný kvíz
     if (model.checkOdpoved(ucitel, hlaska)){
         req.session.scoreuspesnosti += 1;
     }
+    if (!model.checkOdpoved(ucitel, req.session.randomSeznamUcitelu[0])){
+        if (req.session.spatneOdpovedi == undefined){
+            req.session.spatneOdpovedi = [];
+        }
+        // [[hláška, správný učitel, co jste zvolily vy]]
+        req.session.spatneOdpovedi.push([req.session.randomSeznamUcitelu[0], model.getSpravnaOdpoved(req.session.randomSeznamUcitelu[0]), ucitel]);
+        //req.session.spatneOdpovedi = pridatSptneOdpovedi("req.session.randomSeznamUcitelu[0]", req.session.spatneOdpovedi);
+    }
+    console.log(req.session.spatneOdpovedi);
     const pocetDobrych = req.session.scoreuspesnosti;
+    //console.log(model.getSpravnaOdpoved(req.session.randomSeznamUcitelu[0]));
 
     req.session.zodpovezeno +=1;
     req.session.plnypocet = plnypocet;
@@ -250,14 +264,6 @@ exports.procentaUspesnosti = (req, res) => { //POST funkce pro bodovaný kvíz
 
     const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
 
-    if (!model.checkOdpoved(ucitel, req.session.randomSeznamUcitelu[0])){
-        if (req.session.spatneOdpovedi == undefined){
-            req.session.spatneOdpovedi = [];
-        }
-        req.session.spatneOdpovedi.push(req.session.randomSeznamUcitelu[0]);
-        //req.session.spatneOdpovedi = pridatSptneOdpovedi("req.session.randomSeznamUcitelu[0]", req.session.spatneOdpovedi);
-    }
-
     return res.render("hlasky/uspesnost",{
         hlaska: req.session.randomSeznamUcitelu[0],
         odpovedi: req.session.randomSeznamUcitelu[1],
@@ -267,12 +273,15 @@ exports.procentaUspesnosti = (req, res) => { //POST funkce pro bodovaný kvíz
         plnyPocet: plnypocet,
         vysledneSkore: req.session.vysledneSkore,
         liked: liked,
+        spatneOdpovedi: req.session.spatneOdpovedi,
     });
 }
 
 exports.vysledneSkore = (req, res) => { // ZOBRAZENÍ SKÓRE
     const pocetDobrych = req.session.scoreuspesnosti;
     const vysledek = (pocetDobrych/10)*100;
+
+
 
     return res.render("hlasky/vysledneSkore",{
         vyslednaPorcenta: vysledek,
