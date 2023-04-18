@@ -1,11 +1,12 @@
 <%- include('../_layout/header') %>
     <div class="container" style="display:flex; flex-direction: column; justify-content: center; width: 40%; min-height: 75vh; margin: 5vh auto;">
-        <div class="quiz-wrapper">
-            <% if(quizDokoncen == true) { %>
-                <p class="hlaska">Úspěšnost: <%= vysledneSkore %>%</p>
+        <% if(quizDokoncen == true) { %>
+            <div class="quiz-wrapper fixed-size">
+                <p class="hlaska">Dosáhli Jste Úspěšnosti <%= vysledneSkore %>%</p>
             <% } else{ %>
+            <div class="quiz-wrapper">
                 <p class="hlaska">
-                    <%= hlaska %>
+                    „<%= hlaska %>“
                 </p>
             <% } %>
 
@@ -54,7 +55,10 @@
             <% } %>
 
             <% if(quizDokoncen == true) { %>
-                <a href="/hlasky/uspesnost?restart=true">restart</a>
+                <div class="quiz-footer-button">
+                    <a href="/hlasky/uspesnost?restart=true">Hrát Znovu</a>
+                    <a href="/web/index">Domů</a>
+                </div>
             <% } else{ %>
                 <div class="quiz-footer">
                     <% if(liked == "★") { %>

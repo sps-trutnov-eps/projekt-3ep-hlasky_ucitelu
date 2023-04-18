@@ -25,6 +25,7 @@ exports.randomKviz = (req, res) => { // GET ASI?
             uzivatelModel.ulozitOblibenouHlasku(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
         }
     }
+    
     else{
         req.session.score = 0;
         req.session.randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
@@ -233,7 +234,6 @@ exports.procentaUspesnosti = (req, res) => { //POST funkce pro bodovaný kvíz
     });
 }
 
-
 exports.vysledneSkore = (req, res) => { // ZOBRAZENÍ SKÓRE
     const pocetDobrych = req.session.scoreuspesnosti;
     const vysledek = (pocetDobrych/10)*100;
@@ -243,5 +243,3 @@ exports.vysledneSkore = (req, res) => { // ZOBRAZENÍ SKÓRE
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
     });
 }
-
-
