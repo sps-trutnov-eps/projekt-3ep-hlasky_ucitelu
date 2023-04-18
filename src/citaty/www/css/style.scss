@@ -194,7 +194,6 @@ body {
     
     .quiz-buttonwrapper{
         display: grid;
-        grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         gap: 1vw;
         height: 100%;
@@ -298,7 +297,6 @@ body {
     }
 }
 
-
 .sinslavy {
     background-color: var(--bg2);
     border-radius: 20px;
@@ -312,3 +310,15 @@ body {
         padding: .3vh 1vw;
     }
 }
+
+@media only screen and (max-width: 1650px){ //když je šířka obrazovky menší než 1650px
+    .quiz-buttonwrapper{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (min-width: 1651px){ //když je šířka obrazovky větší než 1650px
+    .quiz-buttonwrapper {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
