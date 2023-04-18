@@ -9,6 +9,21 @@ function likeStar(jmeno, hlaska){
     return liked;
 }
 
+function pridatSptneOdpovedi(hlaska, spatneOdpovedi){
+
+    console.log(spatneOdpovedi);
+
+    if (spatneOdpovedi == undefined){
+        spatneOdpovedi = [];
+    }
+
+    return spatneOdpovedi.push(hlaska);
+}
+
+function mazatSpatneOdpovedi() {
+    return spatneOdpovedi = undefined;
+}
+
 exports.randomKviz = (req, res) => { // GET ASI?
 
     if (req.session.prihlasenyUzivatel == undefined){
@@ -26,6 +41,7 @@ exports.randomKviz = (req, res) => { // GET ASI?
         }
     }
     else{
+        req.session.spatneOdpovedi = undefined;
         req.session.score = 0;
         req.session.randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
 
@@ -69,6 +85,7 @@ exports.odpovedNaRandomKviz = (req, res) => { // POST??
     else{
         req.session.score = 0;
     }
+
     uzivatelModel.ulozitHighScore(req.session.prihlasenyUzivatel, req.session.score);
 
     randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
@@ -84,6 +101,14 @@ exports.odpovedNaRandomKviz = (req, res) => { // POST??
 
     const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
 
+    if (!model.checkOdpoved(ucitel, req.session.randomSeznamUcitelu[0])){
+        if (req.session.spatneOdpovedi == undefined){
+            req.session.spatneOdpovedi = [];
+        }
+        req.session.spatneOdpovedi.push(req.session.randomSeznamUcitelu[0]);
+        //req.session.spatneOdpovedi = pridatSptneOdpovedi("req.session.randomSeznamUcitelu[0]", req.session.spatneOdpovedi);
+    }
+    
     return res.render('hlasky/random', {
         // spravnaHlaska, listOdpovedi 
         hlaska: randomSeznamUcitelu[0],
@@ -117,6 +142,7 @@ exports.uspesnost = (req, res) => { // GET
             req.session.zodpovezeno = 0;
             req.session.quizDokoncen = false;
             req.session.scoreuspesnosti = 0;
+            req.session.spatneOdpovedi = undefined;
 
             const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
 
@@ -154,6 +180,7 @@ exports.uspesnost = (req, res) => { // GET
         }
         else{
             req.session.randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
+            req.session.spatneOdpovedi = undefined;
             req.session.zodpovezeno = 0;
             req.session.scoreuspesnosti = 0;
             
@@ -183,6 +210,7 @@ exports.uspesnost = (req, res) => { // GET
 
 exports.procentaUspesnosti = (req, res) => { //POST funkce pro bodovaný kvíz
     const plnypocet = 10;
+
 
     if (req.session.quizDokoncen == undefined){
      req.session.quizDokoncen = false;
@@ -220,6 +248,14 @@ exports.procentaUspesnosti = (req, res) => { //POST funkce pro bodovaný kvíz
     req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
 
     const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
+
+    if (!model.checkOdpoved(ucitel, req.session.randomSeznamUcitelu[0])){
+        if (req.session.spatneOdpovedi == undefined){
+            req.session.spatneOdpovedi = [];
+        }
+        req.session.spatneOdpovedi.push(req.session.randomSeznamUcitelu[0]);
+        //req.session.spatneOdpovedi = pridatSptneOdpovedi("req.session.randomSeznamUcitelu[0]", req.session.spatneOdpovedi);
+    }
 
     return res.render("hlasky/uspesnost",{
         hlaska: req.session.randomSeznamUcitelu[0],
