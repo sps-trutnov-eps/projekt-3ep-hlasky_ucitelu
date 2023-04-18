@@ -197,9 +197,8 @@ exports.procentaUspesnosti = (req, res) => { //post funkce pro bodovaný kvíz
     
     if(req.session.zodpovezeno >= plnypocet){
         req.session.zodpovezeno = 0;
-        vysledek = (pocetDobrych/plnypocet)*100;
+        req.session.vysledneSkore = (pocetDobrych/plnypocet)*100;
         req.session.quizDokoncen = true;
-        req.session.vysledek = vysledek;
     }
 
     req.session.randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
@@ -221,7 +220,7 @@ exports.procentaUspesnosti = (req, res) => { //post funkce pro bodovaný kvíz
         zodpovezeno: req.session.zodpovezeno,
         quizDokoncen: req.session.quizDokoncen,
         plnyPocet: plnypocet,
-        vysledneSkore: vysledek,
+        vysledneSkore: req.session.vysledneSkore,
         liked: liked,
     });
 }
