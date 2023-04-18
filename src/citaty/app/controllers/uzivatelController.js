@@ -1,6 +1,7 @@
 const model = require('../models/uzivatelModel');
 const nodemailer = require("nodemailer");
 const bcrypt = require('bcryptjs');
+const mailApiHeslo = require('../../conf').mailApiHeslo;
 
 const randBetween = (min, max) => {
     return Math.round(Math.random() * (max - min)) + min;
@@ -38,6 +39,7 @@ exports.overeni = (req, res) => {
 }
 
 exports.registrovat = (req, response) => {
+    console.log(mailApiHeslo);
     const jmeno = req.body.jmeno.trim();
     const email = req.body.email.trim();
     const heslo = req.body.heslo.trim();
@@ -99,7 +101,7 @@ exports.registrovat = (req, response) => {
         service: "gmail",
         auth: {
             user: "hlaskyspstrutnov@gmail.com",
-            pass: "fkmavpsvlubwpuxu"
+            pass: mailApiHeslo,
         },
         tls: {
             rejectUnauthorized: false
