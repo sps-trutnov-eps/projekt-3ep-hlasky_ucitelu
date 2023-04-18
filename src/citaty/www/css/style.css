@@ -261,7 +261,7 @@ h2 {
 }
 
 .fixed-size {
-  grid-template-rows: 10fr 10fr 10fr !important;
+  grid-template-rows: 5fr 21fr 10fr !important;
 }
 
 h1,
@@ -287,6 +287,11 @@ html {
 .odpovedi {
   display: flex;
   flex-direction: column;
+  min-height: 11.5vh;
+  padding: 0.5dvh 0.5vw;
+  margin: 0vh 0.5vw;
+  background-color: var(--bg);
+  border-radius: 1vh;
 }
 
 body {
@@ -393,7 +398,7 @@ body footer {
   display: flex;
   align-items: center;
   margin-bottom: 1vh;
-  min-height: 13dvh;
+  min-height: 8dvh;
 }
 .quiz-wrapper .quiz-buttonwrapper {
   display: grid;
@@ -409,6 +414,7 @@ body footer {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  text-align: center;
 }
 .quiz-wrapper .tlacitko .odpoved {
   font-weight: 600;

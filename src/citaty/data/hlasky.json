@@ -7,7 +7,7 @@
         "Buďte ready na to jako.",
         "Asi si pojedu nechat opravit brzdy.",
         "Nemyslím tím jíst sami sebe, nebo souseda ,ale svačinu!",
-        "Jeatli mi řeknete, že jsme to už dělali, tak se půjdu vyfotit."
+        "Jestli mi řeknete, že jsme to už dělali, tak se půjdu vyfotit."
     ]
     },
 
@@ -53,7 +53,7 @@
         "gender": "male",
         "hlasky":[
         "Tady máte balóny, hrajte si.",
-        "Ty máš asi doopravdy rád nějakou formu prdelního tríznění co?",
+        "Ty máš asi doopravdy rád nějakou formu prdelního tríznění, co?",
         "Ty jsi si ten válec ale nějak zamiloval, půjč si ho domů a vyřádi se na něm."
     ]
     },
@@ -71,7 +71,8 @@
         "gender": "male",
         "hlasky":["Saláti.",
         "Černé kafe z automatu, to je moje.",
-        "Řízkové jedni!"
+        "Řízkové jedni!",
+        "Karle, ukaž zelený závěsy!"
     ]
     },
 
@@ -80,9 +81,9 @@
         "gender": "male",
         "hlasky":["Dnes je 12.11. 2022 a chleba...",
         "To je jako kdyby jsi si chtěl koupit jednu tyčinku buena, ale stejně musíš koupit balení, ve kterém jsou 2.",
-        "Není to koláčový graf, protože tam nevidím povidla, mák, marmeládu a 3 rozinky chybí.",
+        "Není to koláčový graf, protože tam nevidím povidla, mák, marmeládu a 3 rozinky chybí!",
         "Pátek Podmáj, sobota Podmáj, jste unavení chápu.",
-        "Nevím jak funguje záporná rychlost větru."
+        "Nevím, jak funguje záporná rychlost větru."
     ]
     },
 
@@ -151,32 +152,32 @@
     "Nikola Šandová":{
         "gender": "female",
         "hlasky":["To si ze mě děláš humor?",
-        "Jak by jsi chtě létat na ptákovi Marku?!",
-        "Říkám vypněte si ty reproduktory! (myslel/a mikrofony)",
+        "Jak by jsi chtěl létat na ptákovi Marku?!",
+        "Říkám vypněte si ty reproduktory!",
         "Vypadám jako někdo, kdo si něco nepamatuje?",
         "Oficiálně se bude pít jen Birell.",
-        "Kde se svíťí tady?!",
+        "Kde se svítí tady?!",
         "Tak seš magor?",
         "I am šůůr.",
         "Nedělal jsi nic? Tak to musíme náležitě oznámkovat.",
         "David má červený oči, určitě byl včera na pívu.",
-        "Ne ze se dneska ozerete a zítra pak nepřijede.",
+        "Ne že se dneska ožerete a zítra pak nepříjdete.",
         "To jste vykradli mateřskou školku? Nebo co jako?",
         "Chceš čůrat? A máš povolení od rodičů, že můžeš chodit o hodině?",
         "Chceš mi říct, že jsi za leden 3x zaspal?! Už se fakt začni klidnit!",
         "Nefunguje to, tak to přečteme očima a pusou.",
         "Davide, zamysli se a něco ze sebe vydav!",
-        "How many many (many money) you have?",
+        "How many many... many money you have?",
         "Udělejte světlo!",
         "On mě tady naschvál mistifikuje.",
         "Foltýne, můžeš si laskavě ten telefon strčit do prdele?",
         "Neuč orla chodit na střeše.",
-        "Hroda, zatlač ten banán!",
-        "Fišera, ty mas mlčet ne? Přeci jsi naštvaný!",
+        "Hrouda! Zatlač ten banán!",
+        "Fišera, ty máš mlčet, ne? Přeci jsi naštvaný!",
         "FOLTÝNE! co? BOBEK!",
         "Já chci někdy umřít.",
-        "Ananas na pizze je k zblití.",
-        "Martine, Jendo nechcete si to jít dělat někam jinam?"
+        "Ananas na pizze je ke zblití.",
+        "Martine, Jendo, nechcete si to jít dělat někam jinam?"
     ]
     },
 
@@ -191,8 +192,8 @@
         "Tři minuty! Celý kurva den!",
         "Tomu říkám dělba práce! Nebudeš dělat nic!",
         "Sakra... Jak se jmenuje ten sráč?",
-        "Části, co nejsou v PITCHI, jsou v PIČI",
-        "Řadiče co řádí…",
+        "Části, co nejsou v PITCHI, jsou v PIČI!",
+        "Řadiče co řádí...",
         "Můžete poměřit svého hada s jejích soutěžním hadem.",
         "Očividně. Očí-vidně. Víte jak se jezdí do Vídně na výlety ne?"
     ]
@@ -215,10 +216,10 @@
         "hlasky":["Pánové tam v zadu, nechtějte abych někoho z vás musel pokárat.",
         "Co známená kárání? To si nedokážete představit.",
         "Pánové pokud nejste in the middle of something, dejte si přestávku.",
-        "Kubo, prosím blankni mi to. (freeze projektoru)",
+        "Kubo, prosím blankni mi to.",
         "Přijít později než já!? No to je vrchol hulvátství…",
         "Který je Jan, a který je Jaroslav? Ale joo nějaký rozdíl tam vidím.",
-        "TO JÓ! (byla to poznámka k chytré dpovědi v testu)",
+        "TO JÓ!",
         "Ták děti musím vás pochaválit, že jste si to nakreslili.",
         "Doplňte si k té zenerově diodě toho Capouška, taková ta tyčka...",
         "Těžce to chápu...",
@@ -308,7 +309,7 @@
         "Pan Nymš mi říká PraSe, což znamená pracující senior",
         "A oni si to nedoplní, SMRADI!",
         "Vy jste fakt IQ bublající bahno.",
-        "Miláčku, v boolově algebře mínus neexustuje.",
+        "Miláčku, v boolově algebře mínus neexistuje.",
         "Nemám čas na to být naštvaná.",
         "Co se dá dělat, dětma nezatopíš.",
         "To nebylo na tebe, to tenhle neandrtálec.",
@@ -321,7 +322,7 @@
 
     "Luděk Dušek":{
         "gender": "male",
-        "hlasky":["Pusťíme sem zimu!"
+        "hlasky":["Pustíme sem zimu!"
     ]
     }
 }

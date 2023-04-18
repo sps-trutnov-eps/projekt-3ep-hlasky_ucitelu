@@ -39,7 +39,7 @@ h2 {
 }
 
 .fixed-size{
-    grid-template-rows: 10fr 10fr 10fr!important;
+    grid-template-rows: 5fr 21fr 10fr!important;
 }
 
 h1,
@@ -65,6 +65,11 @@ html {
 .odpovedi{
     display: flex;
     flex-direction: column;
+    min-height: 11.5vh;
+    padding: .5dvh .5vw;
+    margin: 0vh .5vw;
+    background-color: var(--bg);
+    border-radius: 1vh;
 }
 
 body {
@@ -184,7 +189,7 @@ body {
         display: flex;
         align-items: center;
         margin-bottom: 1vh;
-        min-height: 13dvh;
+        min-height: 8dvh;
     }
     
     .quiz-buttonwrapper{
@@ -200,6 +205,7 @@ body {
         align-items: center;
         justify-content: center;
         user-select: none;
+        text-align: center;
 
         .odpoved {
             // btn
