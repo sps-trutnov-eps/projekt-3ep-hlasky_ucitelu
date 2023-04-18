@@ -15,7 +15,12 @@
             </form>
 
             <div class="quiz-footer">
-                <a href="/hlasky/random?like=true">☆</a>
+                <% if(liked == "★") { %>
+                    <a class="liked" href="/hlasky/random?like=true"><%= liked %></a>
+                <% } else{ %>
+                    <a href="/hlasky/random?like=true"><%= liked %></a>
+                <% } %> 
+                
                 <p><%= score %></p>
             </div>
         </div>
