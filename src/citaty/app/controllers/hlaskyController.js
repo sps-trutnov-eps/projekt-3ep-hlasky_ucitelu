@@ -16,6 +16,27 @@ exports.randomKviz = (req, res) => { // GET
         return res.redirect('/uzivatel/prihlasit');
     }
 
+    if (req.session.randQuizDokoncen == undefined){
+        req.session.randQuizDokoncen = false;
+    }
+
+    if (req.session.randQuizDokoncen){
+
+
+        // return res.render("hlasky/uspesnost", {
+        //     hlaska: req.session.randomSeznamUcitelu[0],
+        //     odpovedi: req.session.randomSeznamUcitelu[1],
+        //     jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
+        //     zodpovezeno: req.session.zodpovezeno,
+        //     plnyPocet: req.session.plnyPocet || 10,
+        //     quizDokoncen: false,
+        //     vysledneSkore: undefined,
+        //     liked: liked,
+        //     spatneOdpovedi: req.session.spatneOdpovedi,
+        // });
+    }
+
+
 
     if(req.query.like){
         const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
