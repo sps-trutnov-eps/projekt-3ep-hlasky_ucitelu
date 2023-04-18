@@ -98,3 +98,19 @@ exports.checkOdpoved = (ucitel, hlaska) => {
     return hlasky[ucitel]["hlasky"].includes(hlaska);
 
 }
+
+exports.getSpravnaOdpoved = (hlaska) => {
+    const hlasky = db.JSON();
+
+    let vysledek = "piss";
+
+    Object.keys(hlasky).forEach(ucitel => {
+        if (hlasky[ucitel]["hlasky"].includes(hlaska)){
+            vysledek = ucitel;
+        }
+        
+    });
+
+    return vysledek
+
+}

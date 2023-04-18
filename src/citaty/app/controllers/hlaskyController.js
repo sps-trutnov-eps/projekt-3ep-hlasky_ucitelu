@@ -9,7 +9,8 @@ function likeStar(jmeno, hlaska){
     return liked;
 }
 
-exports.randomKviz = (req, res) => { // GET ASI?
+
+exports.randomKviz = (req, res) => { // GET
 
     if (req.session.prihlasenyUzivatel == undefined){
         return res.redirect('/uzivatel/prihlasit');
@@ -25,7 +26,10 @@ exports.randomKviz = (req, res) => { // GET ASI?
             uzivatelModel.ulozitOblibenouHlasku(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
         }
     }
+    
     else{
+        // mazání listu špatě zodpovězenných hlášek.
+        req.session.spatneOdpovedi = undefined;
         req.session.score = 0;
         req.session.randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
 
@@ -47,10 +51,11 @@ exports.randomKviz = (req, res) => { // GET ASI?
         odpovedi: req.session.randomSeznamUcitelu[1],
         score: req.session.score,
         liked: liked,
+        spatneOdpovedi: req.session.spatneOdpovedi,
     });
 }
 
-exports.odpovedNaRandomKviz = (req, res) => { // POST??
+exports.odpovedNaRandomKviz = (req, res) => { // POST
     if (req.session.prihlasenyUzivatel == undefined){
         return res.redirect('/uzivatel/prihlasit');
     }
@@ -69,6 +74,17 @@ exports.odpovedNaRandomKviz = (req, res) => { // POST??
     else{
         req.session.score = 0;
     }
+
+    // zapisování špatně zodpovězených hlášek do listu
+    if (!model.checkOdpoved(ucitel, req.session.randomSeznamUcitelu[0])){
+        if (req.session.spatneOdpovedi == undefined){
+            req.session.spatneOdpovedi = [];
+        }
+        // [[hláška, správný učitel, co jste zvolily vy]]
+        req.session.spatneOdpovedi.push([req.session.randomSeznamUcitelu[0], model.getSpravnaOdpoved(req.session.randomSeznamUcitelu[0]), ucitel]);
+    }
+    
+
     uzivatelModel.ulozitHighScore(req.session.prihlasenyUzivatel, req.session.score);
 
     randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
@@ -84,6 +100,8 @@ exports.odpovedNaRandomKviz = (req, res) => { // POST??
 
     const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
 
+
+    
     return res.render('hlasky/random', {
         // spravnaHlaska, listOdpovedi 
         hlaska: randomSeznamUcitelu[0],
@@ -91,6 +109,7 @@ exports.odpovedNaRandomKviz = (req, res) => { // POST??
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         score: req.session.score,
         liked: liked,
+        spatneOdpovedi: req.session.spatneOdpovedi,
     });
 }
 
@@ -117,6 +136,8 @@ exports.uspesnost = (req, res) => { // GET
             req.session.zodpovezeno = 0;
             req.session.quizDokoncen = false;
             req.session.scoreuspesnosti = 0;
+            // mazání listu špatě zodpovězenných hlášek.
+            req.session.spatneOdpovedi = undefined;
 
             const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
 
@@ -129,15 +150,17 @@ exports.uspesnost = (req, res) => { // GET
                 quizDokoncen: false,
                 vysledneSkore: undefined,
                 liked: liked,
+                spatneOdpovedi: req.session.spatneOdpovedi,
             });
         } else {
 
             return res.render("hlasky/uspesnost",{
                 plnyPocet: req.session.plnyPocet || 10,
                 zodpovezeno: req.session.zodpovezeno || 0,
-                vysledneSkore: req.session.vysledneSkore || "kys",
+                vysledneSkore: req.session.vysledneSkore || "0", // Defaultně dostane 0%
                 jmeno: req.session.prihlasenyUzivatel,
                 quizDokoncen: true,
+                spatneOdpovedi: req.session.spatneOdpovedi,
             });
         }
 
@@ -154,6 +177,8 @@ exports.uspesnost = (req, res) => { // GET
         }
         else{
             req.session.randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
+            // mazání listu špatě zodpovězenných hlášek.
+            req.session.spatneOdpovedi = undefined;
             req.session.zodpovezeno = 0;
             req.session.scoreuspesnosti = 0;
             
@@ -177,12 +202,14 @@ exports.uspesnost = (req, res) => { // GET
             quizDokoncen: false,
             vysledneSkore: undefined,
             liked: liked,
+            spatneOdpovedi: req.session.spatneOdpovedi,
         });
     }
 }
 
 exports.procentaUspesnosti = (req, res) => { //POST funkce pro bodovaný kvíz
     const plnypocet = 10;
+
 
     if (req.session.quizDokoncen == undefined){
      req.session.quizDokoncen = false;
@@ -198,7 +225,18 @@ exports.procentaUspesnosti = (req, res) => { //POST funkce pro bodovaný kvíz
     if (model.checkOdpoved(ucitel, hlaska)){
         req.session.scoreuspesnosti += 1;
     }
+
+    // zapisování špatně zodpovězených hlášek do listu
+    if (!model.checkOdpoved(ucitel, req.session.randomSeznamUcitelu[0])){
+        if (req.session.spatneOdpovedi == undefined){
+            req.session.spatneOdpovedi = [];
+        }
+        // [[hláška, správný učitel, co jste zvolily vy]]
+        req.session.spatneOdpovedi.push([req.session.randomSeznamUcitelu[0], model.getSpravnaOdpoved(req.session.randomSeznamUcitelu[0]), ucitel]);
+    }
+    console.log(req.session.spatneOdpovedi);
     const pocetDobrych = req.session.scoreuspesnosti;
+    //console.log(model.getSpravnaOdpoved(req.session.randomSeznamUcitelu[0]));
 
     req.session.zodpovezeno +=1;
     req.session.plnypocet = plnypocet;
@@ -230,18 +268,17 @@ exports.procentaUspesnosti = (req, res) => { //POST funkce pro bodovaný kvíz
         plnyPocet: plnypocet,
         vysledneSkore: req.session.vysledneSkore,
         liked: liked,
+        spatneOdpovedi: req.session.spatneOdpovedi,
     });
 }
 
-
-exports.vysledneSkore = (req, res) => { // ZOBRAZENÍ SKÓRE
+exports.vysledneSkore = (req, res) => { // ZOBRAZENÍ SKÓRE // nepoužívá se.
     const pocetDobrych = req.session.scoreuspesnosti;
     const vysledek = (pocetDobrych/10)*100;
+
 
     return res.render("hlasky/vysledneSkore",{
         vyslednaPorcenta: vysledek,
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
     });
 }
-
-
