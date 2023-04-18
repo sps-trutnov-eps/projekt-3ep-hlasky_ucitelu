@@ -9,7 +9,7 @@ function likeStar(jmeno, hlaska){
     return liked;
 }
 
-exports.randomKviz = (req, res) => {
+exports.randomKviz = (req, res) => { // GET ASI?
 
     if (req.session.prihlasenyUzivatel == undefined){
         return res.redirect('/uzivatel/prihlasit');
@@ -50,7 +50,7 @@ exports.randomKviz = (req, res) => {
     });
 }
 
-exports.odpovedNaRandomKviz = (req, res) => {
+exports.odpovedNaRandomKviz = (req, res) => { // POST??
     if (req.session.prihlasenyUzivatel == undefined){
         return res.redirect('/uzivatel/prihlasit');
     }
@@ -94,7 +94,16 @@ exports.odpovedNaRandomKviz = (req, res) => {
     });
 }
 
-exports.uspesnost = (req, res) => {
+// NÁHLÁ SMRT ^^^^
+
+
+
+
+
+
+// BODOVANÝ KVÍZ ˘˘˘˘
+
+exports.uspesnost = (req, res) => { // GET
     if (req.session.prihlasenyUzivatel == undefined){
         return res.redirect('/uzivatel/prihlasit');
     }
@@ -104,13 +113,13 @@ exports.uspesnost = (req, res) => {
     } 
 
     if(req.session.quizDokoncen == true){
-
-        if(req.query.restart == "true"){
+        if(req.query.restart == "true"){ // PŘI RESTARTU
             req.session.zodpovezeno = 0;
-            req.session.vysledek = 0;
             req.session.quizDokoncen = false;
+            req.session.scoreuspesnosti = 0;
 
             const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
+
             return res.render("hlasky/uspesnost", {
                 hlaska: req.session.randomSeznamUcitelu[0],
                 odpovedi: req.session.randomSeznamUcitelu[1],
@@ -126,7 +135,7 @@ exports.uspesnost = (req, res) => {
             return res.render("hlasky/uspesnost",{
                 plnyPocet: req.session.plnyPocet || 10,
                 zodpovezeno: req.session.zodpovezeno || 0,
-                vysledneSkore: req.session.vysledek || "kys",
+                vysledneSkore: req.session.vysledneSkore || "kys",
                 jmeno: req.session.prihlasenyUzivatel,
                 quizDokoncen: true,
             });
@@ -172,9 +181,8 @@ exports.uspesnost = (req, res) => {
     }
 }
 
-exports.procentaUspesnosti = (req, res) => { //post funkce pro bodovaný kvíz
+exports.procentaUspesnosti = (req, res) => { //POST funkce pro bodovaný kvíz
     const plnypocet = 10;
-    let vysledek = req.session.vysledek || undefined;
 
     if (req.session.quizDokoncen == undefined){
      req.session.quizDokoncen = false;
@@ -225,7 +233,8 @@ exports.procentaUspesnosti = (req, res) => { //post funkce pro bodovaný kvíz
     });
 }
 
-exports.vysledneSkore = (req, res) => {
+
+exports.vysledneSkore = (req, res) => { // ZOBRAZENÍ SKÓRE
     const pocetDobrych = req.session.scoreuspesnosti;
     const vysledek = (pocetDobrych/10)*100;
 
