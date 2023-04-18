@@ -9,7 +9,7 @@
                     „<%= hlaska %>“
                 </p>
             <% } %>
-            
+
             <% if(quizDokoncen == true) { %>
                 <div class="quiz-buttonwrapper scroll-y">
                     <% spatneOdpovedi.forEach(spatnaOdpoved => { %>
@@ -33,8 +33,8 @@
 
             <% if(quizDokoncen == true) { %>
                 <div class="quiz-footer-button">
-                    <a href="/hlasky/uspesnost?restart=true">Hrát Znovu</a>
                     <a href="/web/index">Domů</a>
+                    <a href="/hlasky/uspesnost?restart=true">Hrát Znovu</a>
                 </div>
             <% } else{ %>
                 <div class="quiz-footer">

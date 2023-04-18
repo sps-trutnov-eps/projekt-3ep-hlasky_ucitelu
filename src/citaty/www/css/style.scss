@@ -312,9 +312,24 @@ body {
 }
 
 @media only screen and (max-width: 1650px){ //když je šířka obrazovky menší než 1650px
-    .quiz-buttonwrapper{
-        grid-template-columns: 1fr;
+    #main{
+
+        .container{
+            width: 80vw;
+        }
     }
+    
+    
+    .quiz-wrapper{
+        .quiz-buttonwrapper{
+            grid-template-columns: 1fr;
+        }
+    
+        .quiz-footer-button a{
+            font-size: 1.5vw;
+        }
+    }
+    
 }
 
 @media only screen and (min-width: 1651px){ //když je šířka obrazovky větší než 1650px

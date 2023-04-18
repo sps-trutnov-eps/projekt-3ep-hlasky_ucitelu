@@ -507,8 +507,14 @@ body footer {
 }
 
 @media only screen and (max-width: 1650px) {
-  .quiz-buttonwrapper {
+  #main .container {
+    width: 80vw;
+  }
+  .quiz-wrapper .quiz-buttonwrapper {
     grid-template-columns: 1fr;
+  }
+  .quiz-wrapper .quiz-footer-button a {
+    font-size: 1.5vw;
   }
 }
 @media only screen and (min-width: 1651px) {
