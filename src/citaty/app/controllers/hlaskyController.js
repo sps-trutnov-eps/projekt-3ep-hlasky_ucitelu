@@ -81,7 +81,10 @@ exports.odpovedNaRandomKviz = (req, res) => { // POST
             req.session.spatneOdpovedi = [];
         }
         // [[hláška, správný učitel, co jste zvolily vy]]
-        req.session.spatneOdpovedi.push([req.session.randomSeznamUcitelu[0], model.getSpravnaOdpoved(req.session.randomSeznamUcitelu[0]), ucitel]);
+        if (req.session.quizDokoncen == false){
+            // [[hláška, správný učitel, co jste zvolily vy]]
+            req.session.spatneOdpovedi.push([req.session.randomSeznamUcitelu[0], model.getSpravnaOdpoved(req.session.randomSeznamUcitelu[0]), ucitel]);
+        }
     }
     
 
@@ -231,8 +234,10 @@ exports.procentaUspesnosti = (req, res) => { //POST funkce pro bodovaný kvíz
         if (req.session.spatneOdpovedi == undefined){
             req.session.spatneOdpovedi = [];
         }
-        // [[hláška, správný učitel, co jste zvolily vy]]
-        req.session.spatneOdpovedi.push([req.session.randomSeznamUcitelu[0], model.getSpravnaOdpoved(req.session.randomSeznamUcitelu[0]), ucitel]);
+        if (req.session.quizDokoncen == false){
+            // [[hláška, správný učitel, co jste zvolily vy]]
+            req.session.spatneOdpovedi.push([req.session.randomSeznamUcitelu[0], model.getSpravnaOdpoved(req.session.randomSeznamUcitelu[0]), ucitel]);
+        }
     }
     console.log(req.session.spatneOdpovedi);
     const pocetDobrych = req.session.scoreuspesnosti;
