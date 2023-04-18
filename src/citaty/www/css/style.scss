@@ -70,7 +70,7 @@ html {
     margin: 0vh .5vw;
     background-color: var(--bg);
     border-radius: 1vh;
-}
+    }
 
 body {
     background-color: var(--bg);
@@ -206,6 +206,7 @@ body {
         justify-content: center;
         user-select: none;
         text-align: center;
+        user-select: none;
 
         .odpoved {
             // btn
@@ -236,6 +237,7 @@ body {
         justify-content: space-around;
         user-select: none;
         align-items: center;
+        gap: 1vw;
 
         a{
             font-weight: 600;
@@ -250,13 +252,18 @@ body {
                 var(--tertiary) 100%
             );
             text-decoration: none;
-            width: 30%;
+            width: calc(100% - .2vw);
+            margin: 0px .5vw;
             text-align: center;
 
             &:hover{
                 opacity: .9;
                 box-shadow: 0 0 .3vw;
             }
+        }
+
+        a:not(:first-of-type){
+            margin-right: calc(.5vw + 5px);
         }
     }
 
@@ -272,6 +279,11 @@ body {
             text-decoration: none;
             font-weight: 600;
             color: white;
+
+            &:hover{
+                opacity: .9;
+                text-shadow: 0 0 .3vw;
+            }
         }
 
         .liked{

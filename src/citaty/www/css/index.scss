@@ -96,6 +96,7 @@
             justify-content: space-between;
             align-items: flex-end;
             gap: 0.5vw;
+            user-select: none;
 
             div{ // bg
                 width: 30%;

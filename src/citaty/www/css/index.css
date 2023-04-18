@@ -83,6 +83,9 @@
   justify-content: space-between;
   align-items: flex-end;
   gap: 0.5vw;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .lb-wrapper .lb .lb-body div {
   width: 30%;

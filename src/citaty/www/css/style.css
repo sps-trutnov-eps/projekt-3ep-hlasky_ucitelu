@@ -188,6 +188,9 @@
   justify-content: space-between;
   align-items: flex-end;
   gap: 0.5vw;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .lb-wrapper .lb .lb-body div {
   width: 30%;
@@ -415,6 +418,7 @@ body footer {
      -moz-user-select: none;
           user-select: none;
   text-align: center;
+  user-select: none;
 }
 .quiz-wrapper .tlacitko .odpoved {
   font-weight: 600;
@@ -440,6 +444,7 @@ body footer {
      -moz-user-select: none;
           user-select: none;
   align-items: center;
+  gap: 1vw;
 }
 .quiz-wrapper .quiz-footer-button a {
   font-weight: 600;
@@ -451,12 +456,16 @@ body footer {
   padding: 2vh 1vw;
   background: linear-gradient(90deg, var(--primary) 0%, var(--tertiary) 100%);
   text-decoration: none;
-  width: 30%;
+  width: calc(100% - 0.2vw);
+  margin: 0px 0.5vw;
   text-align: center;
 }
 .quiz-wrapper .quiz-footer-button a:hover {
   opacity: 0.9;
   box-shadow: 0 0 0.3vw;
+}
+.quiz-wrapper .quiz-footer-button a:not(:first-of-type) {
+  margin-right: calc(0.5vw + 5px);
 }
 .quiz-wrapper .quiz-footer {
   margin: 1dvh 0;
@@ -472,6 +481,10 @@ body footer {
   text-decoration: none;
   font-weight: 600;
   color: white;
+}
+.quiz-wrapper .quiz-footer a:hover {
+  opacity: 0.9;
+  text-shadow: 0 0 0.3vw;
 }
 .quiz-wrapper .quiz-footer .liked {
   color: rgb(218, 185, 0);
