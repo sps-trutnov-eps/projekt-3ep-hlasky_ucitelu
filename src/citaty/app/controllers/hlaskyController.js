@@ -19,23 +19,30 @@ exports.randomKviz = (req, res) => { // GET
     if (req.session.randQuizDokoncen == undefined){
         req.session.randQuizDokoncen = false;
     }
-
-    if (req.session.randQuizDokoncen){
-
-
-        // return res.render("hlasky/uspesnost", {
-        //     hlaska: req.session.randomSeznamUcitelu[0],
-        //     odpovedi: req.session.randomSeznamUcitelu[1],
-        //     jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
-        //     zodpovezeno: req.session.zodpovezeno,
-        //     plnyPocet: req.session.plnyPocet || 10,
-        //     quizDokoncen: false,
-        //     vysledneSkore: undefined,
-        //     liked: liked,
-        //     spatneOdpovedi: req.session.spatneOdpovedi,
-        // });
+    if (req.session.spatnaOdpoved == undefined){
+        req.session.spatnaOdpoved = ["Nastala", "někde", "chyba"];
     }
 
+    if (req.session.dysplayScore == undefined){
+        req.session.dysplayScore = 0;
+    }
+
+
+    console.log(req.session.randQuizDokoncen);
+    if (req.session.randQuizDokoncen == true){
+
+        return res.render('hlasky/random', {
+            jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
+            hlaska: req.session.randomSeznamUcitelu[0],
+            odpovedi: req.session.randomSeznamUcitelu[1],
+            score: req.session.dysplayScore,
+            quizDokoncen: req.session.randQuizDokoncen,
+            liked: likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]),
+            spatnaOdpoved: req.session.spatnaOdpoved,
+        });
+    }else{
+        req.session.dysplayScore = 0; // tohle tady nemusí být.
+    }
 
 
     if(req.query.like){
@@ -49,7 +56,6 @@ exports.randomKviz = (req, res) => { // GET
     }
     
     else{
-        // mazání listu špatě zodpovězenných hlášek.
         req.session.score = 0;
         req.session.randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
 
@@ -70,8 +76,9 @@ exports.randomKviz = (req, res) => { // GET
         hlaska: req.session.randomSeznamUcitelu[0],
         odpovedi: req.session.randomSeznamUcitelu[1],
         score: req.session.score,
+        quizDokoncen: req.session.randQuizDokoncen,
         liked: liked,
-        spatneOdpovedi: req.session.spatneOdpovedi,
+        spatnaOdpoved: req.session.spatnaOdpoved,
     });
 }
 
@@ -83,34 +90,36 @@ exports.odpovedNaRandomKviz = (req, res) => { // POST
         req.session.score = 0;
     }
 
-    let randomSeznamUcitelu = req.session.randomSeznamUcitelu;
+    if (req.session.spatnaOdpoved == undefined){
+        req.session.spatnaOdpoved = ["Nastala", "někde", "chyba"];
+    }
+
 
     let ucitel = req.body.ucitel;
-    let hlaska = randomSeznamUcitelu[0];
+    let hlaska = req.session.randomSeznamUcitelu[0];
 
     if (model.checkOdpoved(ucitel, hlaska)){
         req.session.score += 1;
     }
     else{
+        req.session.randQuizDokoncen = true;
+        req.session.dysplayScore = req.session.score;
         req.session.score = 0;
+        req.session.spatnaOdpoved = [req.session.randomSeznamUcitelu[0],  model.getSpravnaOdpoved(req.session.randomSeznamUcitelu[0]), ucitel]
     }
 
-    // zapisování špatně zodpovězených hlášek do listu
-    if (!model.checkOdpoved(ucitel, req.session.randomSeznamUcitelu[0])){
-        if (req.session.spatneOdpovedi == undefined){
-            req.session.spatneOdpovedi = [];
-        }
-        // [[hláška, správný učitel, co jste zvolily vy]]
-        if (req.session.quizDokoncen == false){
-            // [[hláška, správný učitel, co jste zvolily vy]]
-            req.session.spatneOdpovedi.push([req.session.randomSeznamUcitelu[0], model.getSpravnaOdpoved(req.session.randomSeznamUcitelu[0]), ucitel]);
-        }
+    if (req.body.restart == "Hrát znovu"){
+        req.session.randQuizDokoncen = false;
+        return res.redirect('/hlasky/random');
     }
-    
+
+    if (req.session.randQuizDokoncen){
+        return res.redirect('/hlasky/random');
+    }
 
     uzivatelModel.ulozitHighScore(req.session.prihlasenyUzivatel, req.session.score);
 
-    randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
+    req.session.randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
     
     if (req.session.seznamProslychHlasek == undefined){
         req.session.seznamProslychHlasek = [];
@@ -119,20 +128,20 @@ exports.odpovedNaRandomKviz = (req, res) => { // POST
         req.session.seznamProslychHlasek = req.session.seznamProslychHlasek.slice(-10);
     }
 
-    req.session.randomSeznamUcitelu = randomSeznamUcitelu;
-
     const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
 
 
     
     return res.render('hlasky/random', {
         // spravnaHlaska, listOdpovedi 
-        hlaska: randomSeznamUcitelu[0],
-        odpovedi: randomSeznamUcitelu[1],
+        hlaska: req.session.randomSeznamUcitelu[0],
+        odpovedi: req.session.randomSeznamUcitelu[1],
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         score: req.session.score,
         liked: liked,
         spatneOdpovedi: req.session.spatneOdpovedi,
+        quizDokoncen: req.session.randQuizDokoncen,
+        spatnaOdpoved: req.session.spatnaOdpoved,
     });
 }
 
