@@ -414,4 +414,16 @@ body footer {
   font-size: 2.5vw;
   font-weight: 600;
   color: white;
+}
+
+.sinslavy {
+  background-color: var(--bg2);
+  border-radius: 20px;
+  font-size: 1.5vw;
+  padding: 3vh 0vw;
+}
+.sinslavy .objekt {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3vh 1vw;
 }/*# sourceMappingURL=style.css.map */

@@ -209,11 +209,7 @@
         "'Teď si představte, taková Šenkýřová potřebuje bílej perník?'"
     ]
     },
-    "Marek Šváb":{
-        "gender": "male",
-        "hlasky":["'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'"
-    ]
-    },
+    
     "Kamil Žďárský":{
         "gender": "male",
         "hlasky":["'Pánové tam v zadu, nechtějte abych někoho z vás musel pokárat.'",
@@ -241,35 +237,17 @@
     "Jaroslav Beran":{
         "gender": "male",
         "hlasky":["'Tak se pozdravíme.'",
-        "'Já věděl, že to auto venku je vaše!'",
-        "'Nemáš talent...'"
+        "'Já věděl, že to auto venku je vaše!'"
     ]
     },
 
 
-    "Vladimír Beránek":{
-        "gender": "male",
-        "hlasky":["'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'",
-        "''",
-        "''"
-    ]
-    },
-
-
-    "Ondřej Michalička":{
-        "gender": "male",
-        "hlasky":["'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'",
-        "''",
-        "''"
-    ]
-    },
+    
 
 
     "Simona Jindová":{
         "gender": "female",
-        "hlasky":["'Nepozdravila jsem a šla jsem na kobereček před ředitele.'",
-        "''",
-        "''"
+        "hlasky":["'Nepozdravila jsem a šla jsem na kobereček před ředitele.'"
     ]
     },
 
@@ -286,9 +264,8 @@
 
     "Jaroslav Mareš":{
         "gender": "male",
-        "hlasky":["'tev Nivi'",
-        "''",
-        "''"
+        "hlasky":["'tev Nivi'"
+        
     ]
     },
 
@@ -296,8 +273,7 @@
     "Jan Šimeček":{
         "gender": "male",
         "hlasky":["'S cívkou jako s dívkou, nejdříve napětí, poté proud.'",
-        "'Debil, blbeček, debil, blbeček, akorát támhle v zadu je jediná výjimka, sedí dva blbečci vedle sebe!'",
-        "''"
+        "'Debil, blbeček, debil, blbeček, akorát támhle v zadu je jediná výjimka, sedí dva blbečci vedle sebe!'"
     ]
     },
 
@@ -342,19 +318,10 @@
     ]
     },
 
-    "Milan Fink":{
-        "gender": "male",
-        "hlasky":["'Zatím nic!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'",
-        "''",
-        "''"
-    ]
-    },
 
     "Luděk Dušek":{
         "gender": "male",
-        "hlasky":["'Pusťíme sem zimu!'",
-        "''",
-        "''"
+        "hlasky":["'Pusťíme sem zimu!'"
     ]
     }
 }

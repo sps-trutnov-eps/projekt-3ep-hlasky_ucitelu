@@ -219,3 +219,18 @@ body {
         }
     }
 }
+
+
+.sinslavy {
+    background-color: var(--bg2);
+    border-radius: 20px;
+    font-size: 1.5vw;
+    padding: 3vh 0vw;
+
+
+    .objekt {
+        display: flex;
+        justify-content: space-between;
+        padding: .3vh 1vw;
+    }
+}
