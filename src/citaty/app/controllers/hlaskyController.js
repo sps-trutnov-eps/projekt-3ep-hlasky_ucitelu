@@ -29,7 +29,6 @@ exports.randomKviz = (req, res) => { // GET
     
     else{
         // mazání listu špatě zodpovězenných hlášek.
-        req.session.spatneOdpovedi = undefined;
         req.session.score = 0;
         req.session.randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
 
