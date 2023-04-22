@@ -27,8 +27,13 @@ exports.randomKviz = (req, res) => { // GET
         req.session.dysplayScore = 0;
     }
 
+    if (req.query.restart == "true"){
+        req.session.score = 0;
+        req.session.randQuizDokoncen = false;
+        console.log("piss");
+    }
 
-    console.log(req.session.randQuizDokoncen);
+
     if (req.session.randQuizDokoncen == true){
 
         return res.render('hlasky/random', {

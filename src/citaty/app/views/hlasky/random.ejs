@@ -1,54 +1,47 @@
 <%- include('../_layout/header') %>
     <div class="container" style="display:flex; flex-direction: column; justify-content: center; width: 40%; min-height: 75vh; margin: 5vh auto;">
-        <% if (quizDokoncen == false){ %>
-        <div class="quiz-wrapper">
-            <p class="hlaska">
-                „<%= hlaska %>“
-            </p>
-            
-            <form method="post" script="/hlasky/random">
-                <div class="quiz-buttonwrapper">
-                    <% odpovedi.forEach(ucitel=> { %>
-                        <div class="tlacitko"><input class="odpoved" type="submit" name="ucitel"
-                                value="<%= ucitel %>" /></div>
-                        <% }); %>
-                </div>
-            </form>
-
-            <div class="quiz-footer">
-                <% if(liked == "★") { %>
-                    <a class="liked" href="/hlasky/random?like=true"><%= liked %></a>
-                <% } else{ %>
-                    <a href="/hlasky/random?like=true"><%= liked %></a>
-                <% } %> 
-                
-                <p><%= score %></p>
-            </div>
-        </div>
-        <% } %>
-
-        <% if (quizDokoncen){ %>
+        <% if(quizDokoncen == true) { %>
+            <div class="quiz-wrapper fixed-size">
+                <p class="hlaska">Dosáhli Jste score <%= score %></p>
+            <% } else{ %>
             <div class="quiz-wrapper">
                 <p class="hlaska">
-                    Prohály jste.
+                    „<%= hlaska %>“
                 </p>
-                
-                <div class="quiz-buttonwrapper scroll-y">
-                    <p>Dosáhly jste score: <%= score %></p>
+            <% } %>
+
+            <% if(quizDokoncen == true) { %>
+                <div class="quiz-buttonwrapper scroll-y" style="grid-template-columns: 1fr;">
                     <div class="tlacitko odpovedi">
                         <p> <%= spatnaOdpoved[0] %></p>
                         <p style="color: red;"> <%= spatnaOdpoved[2] %> ✖</p>
                         <p style="color: lightgreen;" > <%= spatnaOdpoved[1] %> ✔</p>
                     </div>
                 </div>
-                <form method="post" script="/hlasky/uspesnost" >
+            <% } else{ %>
+                <form method="post" script="/hlasky/random" >
                     <div class="quiz-buttonwrapper">
-                            <div class="tlacitko"><input class="odpoved" type="submit" name="restart" value="Hrát znovu" /><br></div> <!-- Tohle value neměnit!! -->
-                            
+                        <% odpovedi.forEach(ucitel => { %>
+                            <div class="tlacitko"><input class="odpoved" type="submit" name="ucitel" value="<%= ucitel %>" /><br></div>
+                        <% }); %>
                     </div>
                 </form>
-            </div>
-        
-        <% } %>
-    </div>
-    <%- include('../_layout/footer') %>
+            <% } %>
+
+            <% if(quizDokoncen == true) { %>
+                <div class="quiz-footer-button">
+                    <a href="/web/index">Domů</a>
+                    <a href="/hlasky/random?restart=true">Hrát Znovu</a>
+                </div>
+            <% } else{ %>
+                <div class="quiz-footer">
+                    <% if(liked == "★") { %>
+                        <a class="liked" href="/hlasky/random?like=true"><%= liked %></a>
+                    <% } else{ %>
+                        <a href="/hlasky/random?like=true"><%= liked %></a>
+                    <% } %> 
+                    <p><%= score%></p>
+                </div>
+            <% } %>
+        </div>
+<%- include('../_layout/footer') %>
