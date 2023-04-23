@@ -322,6 +322,19 @@ body {
         grid-template-columns: auto auto 1fr;
         gap: 1vw;
         align-items: center;
+
+        a{
+            height: 100%;
+
+            img{
+                height: 2.5vh;
+                background-color: black;
+                padding: .2dvh .2vw;
+                border: .05vw solid white;
+                border-radius: 20%;
+            }
+        }
+
     }
 }
 

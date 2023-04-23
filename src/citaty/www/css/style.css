@@ -518,6 +518,16 @@ body footer {
   gap: 1vw;
   align-items: center;
 }
+.hlasky-container .hlasky-subcontainer a {
+  height: 100%;
+}
+.hlasky-container .hlasky-subcontainer a img {
+  height: 2.5vh;
+  background-color: black;
+  padding: 0.2dvh 0.2vw;
+  border: 0.05vw solid white;
+  border-radius: 20%;
+}
 
 @media only screen and (max-width: 1650px) {
   #main .container {

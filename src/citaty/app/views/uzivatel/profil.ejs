@@ -1,5 +1,5 @@
 <%- include('../_layout/header') %>
-    <div class="container" style="min-height: 79vh; margin: 5vh auto 1vh auto">
+    <div class="container" style="min-height: 75vh; margin: 5vh auto 5vh auto">
         <h2 class="welcome-text">Vítej na svém profilu, <%= jmeno %>!</h2>
         <div class="profile-stats">
             <p>Nejvyšší Skóre V Náhlé Smrti: <%= highScore %></p>
@@ -16,7 +16,7 @@
                         <div class="hlasky-subcontainer">
                             <p>„<%= hlaska %>“</p>
                             <p>- Učitel</p>
-                            <div><a href="/uzivatel/profil?hlaska=<%= hlaska %>" style="color:red; font-weight: 600;text-decoration: none;float: right; text-align: right;">DO KOŠE S TÍM!</a></div>
+                            <div style="text-align: right"><a href="/uzivatel/profil?hlaska=<%= hlaska %>"><img src="/data_web/trash.svg"></a></div>
                         </div>
                     <% }); %>
                 </div>
