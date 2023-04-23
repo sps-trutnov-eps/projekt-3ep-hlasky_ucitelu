@@ -2,7 +2,7 @@
     <div class="container" style="display:flex; flex-direction: column; justify-content: center; width: 40%; min-height: 75vh; margin: 5vh auto;">
         <% if(quizDokoncen == true) { %>
             <div class="quiz-wrapper fixed-size">
-                <p class="hlaska">Dosáhli Jste score <%= score %></p>
+                <p class="hlaska">Dosáhli Jste Skóre <%= score %></p>
             <% } else{ %>
             <div class="quiz-wrapper">
                 <p class="hlaska">
@@ -11,9 +11,9 @@
             <% } %>
 
             <% if(quizDokoncen == true) { %>
-                <div class="quiz-buttonwrapper scroll-y" style="grid-template-columns: 1fr;">
-                    <div class="tlacitko odpovedi">
-                        <p> <%= spatnaOdpoved[0] %></p>
+                <div class="quiz-buttonwrapper scroll-y" style="grid-template-columns: 1fr; grid-template-rows: 1fr;">
+                    <div class="tlacitko odpovedi" style="padding: 2dvh 2vw">
+                        <p>„<%= spatnaOdpoved[0] %>“</p>
                         <p style="color: red;"> <%= spatnaOdpoved[2] %> ✖</p>
                         <p style="color: lightgreen;" > <%= spatnaOdpoved[1] %> ✔</p>
                     </div>
