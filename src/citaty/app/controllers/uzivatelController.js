@@ -1,4 +1,5 @@
 const model = require('../models/uzivatelModel');
+const hlaskyModel = require('../models/hlaskyModel');
 const nodemailer = require("nodemailer");
 const bcrypt = require('bcryptjs');
 const mailApiHeslo = require('../../conf').mailApiHeslo;
@@ -212,9 +213,19 @@ exports.profil = (req, response) => {
         model.odebratOblibenouHlasku(req.session.prihlasenyUzivatel, req.query.hlaska);
     }
 
+
+    const oblibeneHlasky = model.getOblibenyHlasky(req.session.prihlasenyUzivatel);
+    let oblibeneUcitele = [];
+
+    oblibeneHlasky.forEach(hlaska => {
+        oblibeneUcitele.push(hlaskyModel.getSpravnaOdpoved(hlaska));
+    });
+    console.log(oblibeneUcitele);
+
     response.render('uzivatel/profil', {
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
-        hlasky: model.getOblibenyHlasky(req.session.prihlasenyUzivatel),
+        hlasky: oblibeneHlasky,
+        ucitele: oblibeneUcitele,
         highScore: model.getHighScore(req.session.prihlasenyUzivatel),
     });
 }

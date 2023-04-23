@@ -11,12 +11,17 @@
             <div style="margin: 0 auto;" class="lb"> <!-- T1 -->
                 <p class="lb-nadpis">Tvé oblíbené uložené hlášky.</p>
 
-                <% hlasky.forEach(hlaska=> { %>
+                <% for(let i = 0; i < hlasky.length; i++){%>
                     <b>
-                        <%= hlaska %>
-                        <a href="/uzivatel/profil?hlaska=<%= hlaska %>" style="color:red; font-weight: 600;text-decoration: none;float: right;">Odebrat hlášku!</a>
+                        <% if (hlasky[i] != "Nic Tady Není!"){ %>
+                            <%= hlasky[i] %> - <%= ucitele[i] %>
+                            <a href="/uzivatel/profil?hlaska=<%= hlasky[i] %>" style="color:red; font-weight: 600;text-decoration: none;float: right;">Odebrat hlášku!</a>
+                        <% } %>
+                        <% if (hlasky[i] == "Nic Tady Není!"){ %>  <!-- else -->
+                            <%= hlasky[i] %>
+                        <% } %>
                     </b> <br>
-                    <% }); %>
+                    <% } %>
             </div>
         </div>
     </div>
