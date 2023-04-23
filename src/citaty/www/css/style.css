@@ -506,6 +506,19 @@ body footer {
   padding: 0.3vh 1vw;
 }
 
+.hlasky-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1dvh;
+}
+.hlasky-container .hlasky-subcontainer {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 1vw;
+  align-items: center;
+}
+
 @media only screen and (max-width: 1650px) {
   #main .container {
     width: 80vw;
