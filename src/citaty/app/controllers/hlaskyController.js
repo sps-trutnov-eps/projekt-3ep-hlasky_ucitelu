@@ -67,10 +67,12 @@ exports.randomKviz = (req, res) => { // GET
         if (req.session.seznamProslychHlasek == undefined){
             req.session.seznamProslychHlasek = [];
         }
+
+        req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
+        
         if (req.session.seznamProslychHlasek.length > 10){
             req.session.seznamProslychHlasek = req.session.seznamProslychHlasek.slice(-10);
         }
-        req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
     }
 
     const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
@@ -129,6 +131,9 @@ exports.odpovedNaRandomKviz = (req, res) => { // POST
     if (req.session.seznamProslychHlasek == undefined){
         req.session.seznamProslychHlasek = [];
     }
+    
+    req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
+
     if (req.session.seznamProslychHlasek.length > 10){
         req.session.seznamProslychHlasek = req.session.seznamProslychHlasek.slice(-10);
     }
@@ -222,10 +227,12 @@ exports.uspesnost = (req, res) => { // GET
             if (req.session.seznamProslychHlasek == undefined){
                 req.session.seznamProslychHlasek = [];
             }
+
+            req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
+
             if (req.session.seznamProslychHlasek.length > 10){
                 req.session.seznamProslychHlasek = req.session.seznamProslychHlasek.slice(-10);
             }
-            req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
         }
 
         const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
@@ -291,10 +298,12 @@ exports.procentaUspesnosti = (req, res) => { //POST funkce pro bodovaný kvíz
     if (req.session.seznamProslychHlasek == undefined){
         req.session.seznamProslychHlasek = [];
     }
+
+    req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
+
     if (req.session.seznamProslychHlasek.length > 10){
         req.session.seznamProslychHlasek = req.session.seznamProslychHlasek.slice(-10);
     }
-    req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
 
     const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
 
