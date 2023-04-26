@@ -69,7 +69,7 @@
 }
 .login-cont .login-form-cont .err {
   background-color: rgba(184, 22, 22, 0.7);
-  border: solid 1px red;
+  border: solid 1px var(--err);
   width: 70%;
   margin: 0 auto;
   padding: 5px 0px 5px 0px;
@@ -181,7 +181,6 @@
 }
 .lb-wrapper .lb .lb-head {
   margin-bottom: 4vh;
-  text-transform: capitalize;
 }
 .lb-wrapper .lb .lb-body {
   display: flex;
@@ -238,6 +237,7 @@
   --secondary: #8d5e8b;
   --tertiary: #634a92;
   --hvr: #bbbbbb;
+  --err: #cf0707;
   font-family: "Roboto", sans-serif;
   color: white;
 }
@@ -265,6 +265,16 @@ h2 {
 
 .fixed-size {
   grid-template-rows: 5fr 21fr 10fr !important;
+}
+
+.odhlasit-se {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1dvh 1vw;
+  background-color: var(--err);
+  border-radius: 1dvh;
+  border: solid white 0.2dvh;
 }
 
 h1,
@@ -325,15 +335,31 @@ body header #nav #nav_center {
   width: fit-content;
   text-align: center;
 }
-body header #nav #profil {
-  float: right;
+body header #nav #nav_center a {
+  padding: 0.5vw;
 }
 body header #nav a {
+  height: -moz-fit-content;
+  height: fit-content;
   color: white;
   text-decoration: none;
   font-weight: 600;
-  margin-top: 10px;
-  padding: 10px;
+}
+body header #nav #profil {
+  float: right;
+}
+body header #nav #profil div {
+  display: flex;
+  align-items: center;
+}
+body header #nav #profil div:last-child {
+  padding: 0px 0.5vw;
+}
+body header #nav #profil .logged-on img {
+  height: 2.5dvh;
+  width: 1vw;
+  margin-top: 0.3dvh;
+  padding: 0dvh 0.5vw 0dvh 0.5vw;
 }
 body main {
   min-height: 85vh;
@@ -525,6 +551,12 @@ body footer {
 }
 .hlasky-container .hlasky-subcontainer a img {
   height: 2.5vh;
+}
+.hlasky-container .hlasky-subcontainer p:nth-child(1) {
+  font-weight: 600;
+}
+.hlasky-container .hlasky-subcontainer p:nth-child(2) {
+  font-size: 0.9em;
 }
 
 @media only screen and (max-width: 1650px) {

@@ -68,7 +68,7 @@
 }
 .login-cont .login-form-cont .err {
   background-color: rgba(184, 22, 22, 0.7);
-  border: solid 1px red;
+  border: solid 1px var(--err);
   width: 70%;
   margin: 0 auto;
   padding: 5px 0px 5px 0px;

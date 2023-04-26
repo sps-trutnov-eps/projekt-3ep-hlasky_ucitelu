@@ -18,9 +18,14 @@
                 
                 <div id="profil">
                     <% if(jmeno == "Přihlásit se"){ %>
-                        <a href="/uzivatel/prihlasit">Přihlásit se</a>
+                        <div>
+                            <a href="/uzivatel/prihlasit">Přihlásit se</a>
+                        </div>
                         <% } else { %>
-                            <a href="/uzivatel/profil"><%= jmeno %></a>
+                            <div class="logged-on">
+                                <a href="/uzivatel/profil"><%= jmeno %></a>
+                                <a href="/uzivatel/odhlasit"><img src="/data_web/door.png"></a>
+                            </div>
                             <% } %>
                 </div>
             </div>

@@ -11,6 +11,7 @@
     --secondary: #8d5e8b;
     --tertiary: #634a92;
     --hvr: #bbbbbb;
+    --err: #cf0707;
     font-family: 'Roboto', sans-serif;
     // font-family: 'Roboto Slab', serif;
     color: white;
@@ -40,6 +41,16 @@ h2 {
 
 .fixed-size{
     grid-template-rows: 5fr 21fr 10fr!important;
+}
+
+.odhlasit-se{
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 1dvh 1vw;
+    background-color: var(--err);
+    border-radius: 1dvh;
+    border: solid white .2dvh;
 }
 
 h1,
@@ -98,18 +109,40 @@ body {
                 transform: translate(-50%, 0%);
                 width: fit-content;
                 text-align: center;
+
+                a{
+                    padding: .5vw;
+                }
+            }
+
+            a {
+                height: fit-content;
+                color: white;
+                text-decoration: none;
+                font-weight: 600;
             }
 
             #profil {
                 float: right;
-            }
 
-            a {
-                color: white;
-                text-decoration: none;
-                font-weight: 600;
-                margin-top: 10px;
-                padding: 10px;
+                div{
+                    display: flex;
+                    align-items: center;
+
+                    &:last-child{
+                        padding: 0px .5vw;
+                    }
+                }
+                
+                .logged-on{
+                    
+                    img{
+                        height: 2.5dvh;
+                        width: 1vw;
+                        margin-top: .3dvh;
+                        padding: 0dvh .5vw 0dvh .5vw;
+                    }
+                }
             }
         }
     }
@@ -333,6 +366,15 @@ body {
             }
         }
 
+        p{
+            &:nth-child(1){
+                font-weight: 600;
+            }
+
+            &:nth-child(2){
+                font-size: .9em;
+            }
+        }
     }
 }
 
