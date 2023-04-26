@@ -6,7 +6,7 @@
     // barvisky
     --bg: #161b22;
     --bg2: #252c35;
-    --bg3: #cccccc;
+    --bg3: #1f242b;
     --primary: #b45cb0;
     --secondary: #8d5e8b;
     --tertiary: #634a92;
@@ -308,6 +308,31 @@ body {
         display: flex;
         justify-content: space-between;
         padding: .3vh 1vw;
+    }
+}
+
+.hlasky-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 1dvh;
+
+    .hlasky-subcontainer{
+        display: grid;
+        grid-template-columns: auto auto 1fr;
+        gap: 1vw;
+        align-items: center;
+        border-bottom: 1px solid white;
+        padding: .3dvh .3dvh;
+
+        a{
+            height: 100%;
+
+            img{
+                height: 2.5vh;
+            }
+        }
+
     }
 }
 

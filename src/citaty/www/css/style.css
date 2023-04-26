@@ -233,7 +233,7 @@
 :root {
   --bg: #161b22;
   --bg2: #252c35;
-  --bg3: #cccccc;
+  --bg3: #1f242b;
   --primary: #b45cb0;
   --secondary: #8d5e8b;
   --tertiary: #634a92;
@@ -504,6 +504,27 @@ body footer {
   display: flex;
   justify-content: space-between;
   padding: 0.3vh 1vw;
+}
+
+.hlasky-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1dvh;
+}
+.hlasky-container .hlasky-subcontainer {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 1vw;
+  align-items: center;
+  border-bottom: 1px solid white;
+  padding: 0.3dvh 0.3dvh;
+}
+.hlasky-container .hlasky-subcontainer a {
+  height: 100%;
+}
+.hlasky-container .hlasky-subcontainer a img {
+  height: 2.5vh;
 }
 
 @media only screen and (max-width: 1650px) {

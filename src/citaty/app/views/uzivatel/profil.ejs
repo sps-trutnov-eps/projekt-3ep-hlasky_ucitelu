@@ -1,27 +1,30 @@
 <%- include('../_layout/header') %>
-    <div class="container" style="min-height: 79vh; margin: 5vh auto 1vh auto">
+    <div class="container" style="min-height: 75vh; margin: 5vh auto 5vh auto">
         <h2 class="welcome-text">Vítej na svém profilu, <%= jmeno %>!</h2>
         <div class="profile-stats">
             <p>Nejvyšší Skóre V Náhlé Smrti: <%= highScore %></p>
+            <p>udělat sem průměrnou přesnost v bodovaném kvízu (10 otázek)?</p>
+            <img style="width: 24vw" src="https://stayhipp.com/wp-content/uploads/2020/03/shu.jpg"><br>
             <a href="/uzivatel/odhlasit" style="color:red; font-weight: 600;text-decoration: none;">Odhlásit se</a>
-            <p>^^^ tohle je provizorní, vypadá to jank, já vím</p>
         </div>
 
         <div class="lb-wrapper">
-            <div style="margin: 0 auto;" class="lb"> <!-- T1 -->
-                <p class="lb-nadpis">Tvé oblíbené uložené hlášky.</p>
-
-                <% for(let i = 0; i < hlasky.length; i++){%>
-                    <b>
+            <div class="lb"> <!-- T1 -->
+                <h2 class="lb-head">Oblíbené Hlášky</h2>
+                <div class="hlasky-container">
+                    <% for(let i = 0; i < hlasky.length; i++){%>
                         <% if (hlasky[i] != "Nic Tady Není!"){ %>
-                            <%= hlasky[i] %> - <%= ucitele[i] %>
-                            <a href="/uzivatel/profil?hlaska=<%= hlasky[i] %>" style="color:red; font-weight: 600;text-decoration: none;float: right;">Odebrat hlášku!</a>
+                            <div class="hlasky-subcontainer">
+                                <p>„<%= hlasky[i] %>“</p>
+                                <p>- <%= ucitele[i] %></p>
+                                <div style="text-align: right"><a href="/uzivatel/profil?hlaska=<%= hlasky[i] %>"><img src="/data_web/trash.svg></a></div>
+                            </div>
                         <% } %>
                         <% if (hlasky[i] == "Nic Tady Není!"){ %>  <!-- else -->
                             <%= hlasky[i] %>
                         <% } %>
-                    </b> <br>
                     <% } %>
+                </div>
             </div>
         </div>
     </div>
