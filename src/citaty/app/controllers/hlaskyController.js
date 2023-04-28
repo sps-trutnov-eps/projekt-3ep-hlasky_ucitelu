@@ -291,6 +291,8 @@ exports.procentaUspesnosti = (req, res) => { //POST funkce pro bodovaný kvíz
         req.session.zodpovezeno = 0;
         req.session.vysledneSkore = (pocetDobrych/plnypocet)*100;
         req.session.quizDokoncen = true;
+
+        uzivatelModel.ulozitUspesnostUzivatele(req.session.prihlasenyUzivatel, pocetDobrych);
     }
 
     req.session.randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
@@ -326,7 +328,7 @@ exports.vysledneSkore = (req, res) => { // ZOBRAZENÍ SKÓRE // nepoužívá se.
 
 
     return res.render("hlasky/vysledneSkore",{
-        vyslednaPorcenta: vysledek,
+        vyslednaPorcenta: vysledek || 10,
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
     });
 }

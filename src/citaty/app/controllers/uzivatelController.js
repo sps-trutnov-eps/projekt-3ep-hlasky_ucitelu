@@ -227,6 +227,7 @@ exports.profil = (req, response) => {
         hlasky: oblibeneHlasky,
         ucitele: oblibeneUcitele,
         highScore: model.getHighScore(req.session.prihlasenyUzivatel),
+        prumernaUspesnost: model.spocitatPrumernouUspesnostUzivatele(req.session.prihlasenyUzivatel),
     });
 }
 

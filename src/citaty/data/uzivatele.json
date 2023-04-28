@@ -26,7 +26,39 @@
         "heslo": "$2a$10$XS1xm41k2okI5G6SIDrZxOsyZoWR8PDl7ZVakmCfjFP568XEoW2g2",
         "email": "sigma@spstrutnov.cz",
         "score": 13,
-        "oblibeneHlasky": []
+        "oblibeneHlasky": [
+            "Nepozdravila jsem a šla jsem na kobereček před ředitele.",
+            "Budeme doufat, že uživatelé co mají rádi počasí, nebudou fašisti.",
+            "Tak se pozdravíme.",
+            "Pokud z toho budete hodně ve stresu, napište mi dám vám kontakt na dobrého psychiatra.",
+            "Já věděl, že to auto venku je vaše!"
+        ],
+        "pocet": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "dobre": [
+            2,
+            1,
+            4,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
     },
     "LIGMUS": {
         "heslo": "$2a$10$DXNR8mo/3MtwZSfXuLci/.IWNLfyDk6uItbizEJ2rHkQgoi4bWMGu",
