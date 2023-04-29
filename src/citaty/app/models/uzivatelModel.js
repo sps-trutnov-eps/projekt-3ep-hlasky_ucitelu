@@ -249,6 +249,20 @@ exports.spocitatPrumernouUspesnostUzivatele = (jmeno) => {
     let prumer = 0;
     let pocet = 0;
 
+    let error = undefined;
+
+    if (hlaskyUzivatele["pocet"] == undefined || hlaskyUzivatele["pocet"] == []){
+        error = "Nehrály jste herní režim o počítání ůspěšnosti.";
+    }
+    if (hlaskyUzivatele["dobre"] == undefined || hlaskyUzivatele["dobre"] == []){
+        error = "Nehrály jste herní režim o počítání ůspěšnosti.";
+    }
+
+
+    if (error != undefined){
+        return error;
+    }
+
     for (let i = 0; i <= 10; i++){
         prumer += hlaskyUzivatele["pocet"][i] * hlaskyUzivatele["dobre"][i];
         pocet += hlaskyUzivatele["dobre"][i];

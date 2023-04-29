@@ -48,14 +48,14 @@
         ],
         "dobre": [
             0,
-            1,
+            0,
+            2,
             0,
             0,
             0,
             0,
             0,
             0,
-            1,
             0,
             0
         ]
@@ -67,5 +67,36 @@
     "pigma": {
         "heslo": "$2a$10$0FkbtYKbyV.jqyBH1RFEI.3F.THToGo1bfy5yPpT7lJPDQCSU/RFK",
         "email": "lmao@spstrutnov.cz"
+    },
+    "poo": {
+        "heslo": "$2a$10$a0cRF221IomnJQCdPj3DWOTXcX6scBmjGWHVSL6BxpRhFC76XELg.",
+        "email": "mail@spstrutnov.cz",
+        "pocet": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "dobre": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "score": 1
     }
 }
