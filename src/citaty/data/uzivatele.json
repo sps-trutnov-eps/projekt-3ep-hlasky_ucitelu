@@ -12,6 +12,32 @@
             "Moje angličtina být špatná, jak se říka.",
             "Pustíme sem zimu!",
             "Pokud je vztah žák / učitel vzájemný, tak co tu tedy dnes děláme? Já si tu připadám úplně zbytečně..."
+        ],
+        "pocet": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "dobre": [
+            1,
+            2,
+            3,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            2,
+            6
         ]
     },
     "ligma": {
