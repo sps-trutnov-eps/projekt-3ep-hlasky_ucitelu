@@ -2,19 +2,17 @@
     <div class="container" style="min-height: 75vh; margin: 5vh auto 5vh auto">
         <h2 class="welcome-text">Vítej na svém profilu, <%= jmeno %>!</h2>
         <div class="profile-stats">
-            <p>Nejvyšší skóre v náhlé smrti: <%= highScore %></p>
+            <p>Nejvyšší skóre v náhlé smrti: <b><%= highScore %></b></p>
             <% if (typeof prumernaUspesnost == "string"){ %>
                 <!-- Error hláška když nemáš žádný průměr -->
             <% } %>
 
             <% if (typeof prumernaUspesnost != "string"){ %>
-                <p>Vaše průměrné score v bodovaném kvizu je <%= prumernaUspesnost * 10 %>%</p>
+                <p>Průměrné skóre v bodovaném kvízu: <b><%= Math.round(prumernaUspesnost*100)/10%>%</b></p>
             <% } %>
 
-            <a href="/uzivatel/confirmSmazani" style="color: red; text-decoration: none;">Smazat ůčet!</a> <br>
-            <img style="width: 24vw" src="https://stayhipp.com/wp-content/uploads/2020/03/shu.jpg"><br>
         </div>
-
+        
         <div class="lb-wrapper">
             <div class="lb"> <!-- T1 -->
                 <h2 class="lb-head">Oblíbené hlášky</h2>
@@ -26,15 +24,16 @@
                                 <p>- <%= ucitele[i] %></p>
                                 <div style="text-align: right"><a href="/uzivatel/profil?hlaska=<%= hlasky[i] %>"><img src="/data_web/trash.svg"></a></div>
                             </div>
-                        <% } %>
-
-                        <% if (hlasky[i] == "Nic Tady Není!"){ %>  <!-- else -->
-                            <%= hlasky[i] %>
-                        <% } %>
-                    <% } %>
-
+                            <% } %>
+                            
+                            <% if (hlasky[i] == "Nic Tady Není!"){ %>  <!-- else -->
+                                <%= hlasky[i] %>
+                                <% } %>
+                                <% } %>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/uzivatel/confirmSmazani" style="color: red; text-decoration: none; position: absolute; bottom: 12vh; right: 1vw;">Smazat ůčet!</a>
                 </div>
-            </div>
-        </div>
-    </div>
-    <%- include('../_layout/footer') %>
+                <%- include('../_layout/footer') %>
