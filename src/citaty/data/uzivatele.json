@@ -94,7 +94,34 @@
         ]
     },
     "tektek": {
-        "heslo": "$2a$10$tRwLfCWXOiCZ6BbFg7F4juYgJPfb18mr5uU1ElIbn5V.e/bI4sK6a",
-        "email": "hula@spstrutnov.cz"
+        "heslo": "$2a$10$AytvwRUnR5RlXJnLlDaaluVmUXJrpSxl76p7x1mXJEPLPyiiLQdYa",
+        "email": "hula@spstrutnov.cz",
+        "pocet": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "dobre": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "score": 4
     }
 }

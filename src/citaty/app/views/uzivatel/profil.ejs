@@ -2,15 +2,13 @@
     <div class="container" style="min-height: 75vh; margin: 5vh auto 5vh auto">
         <h2 class="welcome-text">Vítej na svém profilu, <%= jmeno %>!</h2>
         <div class="profile-stats">
-            <p>Nejvyšší skóre v náhlé smrti: <b><%= highScore %></b></p>
-            <% if (typeof prumernaUspesnost == "string"){ %>
-                <!-- Error hláška když nemáš žádný průměr -->
+            <% if(highScore >= 1) { %>
+                <p>Nejvyšší skóre v náhlé smrti: <b><%= highScore %></b></p>
             <% } %>
 
             <% if (typeof prumernaUspesnost != "string"){ %>
                 <p>Průměrné skóre v bodovaném kvízu: <b><%= Math.round(prumernaUspesnost*100)/10%>%</b></p>
             <% } %>
-
         </div>
         
         <div class="lb-wrapper">
@@ -30,7 +28,6 @@
                                 <%= hlasky[i] %>
                                 <% } %>
                                 <% } %>
-                                
                             </div>
                         </div>
                     </div>
