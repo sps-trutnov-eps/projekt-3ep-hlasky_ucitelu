@@ -4,6 +4,8 @@ const nodemailer = require("nodemailer");
 const bcrypt = require('bcryptjs');
 const mailApiHeslo = require('../../conf').mailApiHeslo;
 
+const casVyprseniKodu = require('../../conf').casVyprseniKodu;
+
 const randBetween = (min, max) => {
     return Math.round(Math.random() * (max - min)) + min;
 }
@@ -134,9 +136,9 @@ exports.registrovat = (req, response) => {
     //req.session.kod = bcrypt.hashSync(kod.toString(), 10); // doubble encryption
     req.session.kod = kod;
 
-    req.session.uzivatel = [jmeno, email, bcrypt.hashSync(heslo, 10), addMinutes(Date.now(), 1).toTimeString("HH:MM:SS")];
+    req.session.uzivatel = [jmeno, email, bcrypt.hashSync(heslo, 10), addMinutes(Date.now(), casVyprseniKodu).toTimeString("HH:MM:SS")];
     console.log(req.session.uzivatel[3]);
-    console.log(addMinutes(Date.now(), 1));
+    console.log(addMinutes(Date.now(), casVyprseniKodu));
 
     setTimeout(function() {
         if (req.session.prihlasenyUzivatel == undefined) {
@@ -146,7 +148,7 @@ exports.registrovat = (req, response) => {
                 req.session.destroy();
             }
         }
-    }, 3 * 60000); // za jak dlouho vyprší kód. (v minutách) (pokuď to nezadá uživatel správně)
+    }, casVyprseniKodu * 60000); // za jak dlouho vyprší kód. (v minutách) (pokuď to nezadá uživatel správně)
 
     return response.redirect('/uzivatel/overeni');
 }
@@ -158,7 +160,7 @@ exports.overit = (req, response) => {
         return response.render("uzivatel/overeni", {
             error: "Kód vypršel!",
             jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
-            time: Date.now(), // zbývá 0 sekund.
+            time: 0, // zbývá 0 sekund.
         });
     }
     console.log("Overit kod: " + req.session.kod);

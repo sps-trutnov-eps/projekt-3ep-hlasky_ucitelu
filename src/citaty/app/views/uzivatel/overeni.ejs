@@ -5,8 +5,9 @@
 <p id="demo"></p>
 
 <!-- Bruh -->
-<p style="color: crimson;" id="time">V: <%= time %> Vám vyprší kód.</p>
-
+<% if (time !== 0){ %>
+    <p style="color: crimson;" id="time">V: <%= time %> Vám vyprší kód.</p>
+<% } %>
 
     <form method="post" script="/uzivatel/prihlasit">
         <input type="text" name="kod" placeholder="Kód..." /><br />
