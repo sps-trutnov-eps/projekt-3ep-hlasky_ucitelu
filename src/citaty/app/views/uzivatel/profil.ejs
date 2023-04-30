@@ -3,7 +3,15 @@
         <h2 class="welcome-text">Vítej na svém profilu, <%= jmeno %>!</h2>
         <div class="profile-stats">
             <p>Nejvyšší skóre v náhlé smrti: <%= highScore %></p>
-            <p>udělat sem průměrnou přesnost v bodovaném kvízu (10 otázek)?</p>
+            <% if (typeof prumernaUspesnost == "string"){ %>
+                <!-- Error hláška když nemáš žádný průměr -->
+            <% } %>
+
+            <% if (typeof prumernaUspesnost != "string"){ %>
+                <p>Vaše průměrné score v bodovaném kvizu je <%= prumernaUspesnost * 10 %>%</p>
+            <% } %>
+
+            <a href="/uzivatel/confirmSmazani" style="color: red; text-decoration: none;">Smazat ůčet!</a> <br>
             <img style="width: 24vw" src="https://stayhipp.com/wp-content/uploads/2020/03/shu.jpg"><br>
         </div>
 

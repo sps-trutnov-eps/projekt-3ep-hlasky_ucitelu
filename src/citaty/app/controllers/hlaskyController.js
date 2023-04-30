@@ -67,10 +67,12 @@ exports.randomKviz = (req, res) => { // GET
         if (req.session.seznamProslychHlasek == undefined){
             req.session.seznamProslychHlasek = [];
         }
+
+        req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
+        
         if (req.session.seznamProslychHlasek.length > 10){
             req.session.seznamProslychHlasek = req.session.seznamProslychHlasek.slice(-10);
         }
-        req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
     }
 
     const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
@@ -129,6 +131,9 @@ exports.odpovedNaRandomKviz = (req, res) => { // POST
     if (req.session.seznamProslychHlasek == undefined){
         req.session.seznamProslychHlasek = [];
     }
+    
+    req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
+
     if (req.session.seznamProslychHlasek.length > 10){
         req.session.seznamProslychHlasek = req.session.seznamProslychHlasek.slice(-10);
     }
@@ -222,10 +227,12 @@ exports.uspesnost = (req, res) => { // GET
             if (req.session.seznamProslychHlasek == undefined){
                 req.session.seznamProslychHlasek = [];
             }
+
+            req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
+
             if (req.session.seznamProslychHlasek.length > 10){
                 req.session.seznamProslychHlasek = req.session.seznamProslychHlasek.slice(-10);
             }
-            req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
         }
 
         const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
@@ -284,6 +291,8 @@ exports.procentaUspesnosti = (req, res) => { //POST funkce pro bodovaný kvíz
         req.session.zodpovezeno = 0;
         req.session.vysledneSkore = (pocetDobrych/plnypocet)*100;
         req.session.quizDokoncen = true;
+
+        uzivatelModel.ulozitUspesnostUzivatele(req.session.prihlasenyUzivatel, pocetDobrych);
     }
 
     req.session.randomSeznamUcitelu = model.randomUcitel(req.session.seznamProslychHlasek);
@@ -291,10 +300,12 @@ exports.procentaUspesnosti = (req, res) => { //POST funkce pro bodovaný kvíz
     if (req.session.seznamProslychHlasek == undefined){
         req.session.seznamProslychHlasek = [];
     }
+
+    req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
+
     if (req.session.seznamProslychHlasek.length > 10){
         req.session.seznamProslychHlasek = req.session.seznamProslychHlasek.slice(-10);
     }
-    req.session.seznamProslychHlasek.push(req.session.randomSeznamUcitelu[0]);
 
     const liked = likeStar(req.session.prihlasenyUzivatel, req.session.randomSeznamUcitelu[0]);
 
@@ -317,7 +328,7 @@ exports.vysledneSkore = (req, res) => { // ZOBRAZENÍ SKÓRE // nepoužívá se.
 
 
     return res.render("hlasky/vysledneSkore",{
-        vyslednaPorcenta: vysledek,
+        vyslednaPorcenta: vysledek || 10,
         jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
     });
 }

@@ -29,6 +29,8 @@ exports.randomUcitel = (seznamProslychHlasek = []) => {
         }
     }
     
+    console.log(seznamProslychHlasek);
+
     const hlasky = db.JSON();
     const length = Object.keys(hlasky).length - 1;
 

@@ -25,8 +25,40 @@
     "honza": {
         "heslo": "$2a$10$XS1xm41k2okI5G6SIDrZxOsyZoWR8PDl7ZVakmCfjFP568XEoW2g2",
         "email": "sigma@spstrutnov.cz",
-        "score": 11,
-        "oblibeneHlasky": []
+        "score": 13,
+        "oblibeneHlasky": [
+            "Nepozdravila jsem a šla jsem na kobereček před ředitele.",
+            "Budeme doufat, že uživatelé co mají rádi počasí, nebudou fašisti.",
+            "Tak se pozdravíme.",
+            "Pokud z toho budete hodně ve stresu, napište mi dám vám kontakt na dobrého psychiatra.",
+            "Já věděl, že to auto venku je vaše!"
+        ],
+        "pocet": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "dobre": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
     },
     "LIGMUS": {
         "heslo": "$2a$10$DXNR8mo/3MtwZSfXuLci/.IWNLfyDk6uItbizEJ2rHkQgoi4bWMGu",
@@ -35,5 +67,45 @@
     "pigma": {
         "heslo": "$2a$10$0FkbtYKbyV.jqyBH1RFEI.3F.THToGo1bfy5yPpT7lJPDQCSU/RFK",
         "email": "lmao@spstrutnov.cz"
+    },
+    "Brian": {
+        "heslo": "$2a$10$SRJlckbkpiFGbdASgxGuxuEt6m84jiEYDfg2ZZRcBmaN4FETjq/fW",
+        "email": "furlong@spstrutnov.cz",
+        "score": 3,
+        "pocet": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "dobre": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "oblibeneHlasky": [
+            "Nepozdravila jsem a šla jsem na kobereček před ředitele.",
+            "Já tady rostu.",
+            "Hrouda! Zatlač ten banán!",
+            "Pátek Podmáj, sobota Podmáj, jste unavení chápu.",
+            "Fyzika - to je vlastně takovej reverse engineering.",
+            "To je furt nějakej den... každej den.",
+            "Řadiče co řádí..."
+        ]
     }
 }

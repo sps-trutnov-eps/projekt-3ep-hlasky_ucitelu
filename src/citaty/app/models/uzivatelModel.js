@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 const { request } = require('express');
 const jsondb = require('simple-json-db');
 const { use } = require('../routers/uzivatelRouter');
+const { uspesnost } = require('../controllers/hlaskyController');
 const db = new jsondb('./data/uzivatele.json');
 
 exports.pridatUzivatele = (jmeno, email, hashleHeslo) => {
@@ -216,4 +217,61 @@ exports.smazatUzivatele = (jmeno, heslo) => {
     } else{
         db.delete(jmeno);
     }
+}
+
+exports.ulozitUspesnostUzivatele = (jmeno, uspesnost) => {
+    let hlaskyUzivatele = db.JSON()[jmeno];
+
+    if (hlaskyUzivatele["pocet"] == undefined || hlaskyUzivatele["pocet"] == []){
+        let cisla = [];
+        for (let i = 0; i <= 10; i++){
+            cisla.push(i);
+        }
+        hlaskyUzivatele["pocet"] = cisla;
+    }
+
+    if (hlaskyUzivatele["dobre"] == undefined){
+        let cisla = [];
+        for (let i = 0; i <= 10; i++){
+            cisla.push(0);
+        }
+        hlaskyUzivatele["dobre"] = cisla;
+    }
+
+    hlaskyUzivatele["dobre"][uspesnost] = hlaskyUzivatele["dobre"][uspesnost] + 1;
+
+    db.set(jmeno, hlaskyUzivatele);
+
+}
+
+exports.spocitatPrumernouUspesnostUzivatele = (jmeno) => {
+    let hlaskyUzivatele = db.JSON()[jmeno];
+    let prumer = 0;
+    let pocet = 0;
+
+    let error = undefined;
+
+    if (hlaskyUzivatele["pocet"] == undefined || hlaskyUzivatele["pocet"] == []){
+        error = "Nehrály jste herní režim o počítání ůspěšnosti.";
+    }
+    if (hlaskyUzivatele["dobre"] == undefined || hlaskyUzivatele["dobre"] == []){
+        error = "Nehrály jste herní režim o počítání ůspěšnosti.";
+    }
+
+
+    if (error != undefined){
+        return error;
+    }
+
+    for (let i = 0; i <= 10; i++){
+        prumer += hlaskyUzivatele["pocet"][i] * hlaskyUzivatele["dobre"][i];
+        pocet += hlaskyUzivatele["dobre"][i];
+
+    }
+
+    prumer = prumer / pocet;
+
+    return prumer;
+
+
 }
