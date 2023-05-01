@@ -136,8 +136,8 @@ exports.getTopScore = (top = 3) => {
     const backupList = [["-", "nikdo :("], ["-", "nikdo :("], ["-", "nikdo :("]];
     const topPlayersLength = topPlayers.length;
 
-    if (topPlayers.length < 3 || topPlayers == undefined){
-        for (let i = 0; i < Math.abs(topPlayersLength - 3); i++){
+    if (topPlayers.length < top || topPlayers == undefined){
+        for (let i = 0; i < Math.abs(topPlayersLength - top); i++){
             topPlayers.push(backupList[i]);
         }
     }

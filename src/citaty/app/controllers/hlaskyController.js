@@ -101,6 +101,10 @@ exports.odpovedNaRandomKviz = (req, res) => { // POST
         req.session.spatnaOdpoved = ["Nastala", "někde", "chyba"];
     }
 
+    if (req.session.randQuizDokoncen){
+        return res.redirect('/hlasky/random');
+    }
+
 
     let ucitel = req.body.ucitel;
     let hlaska = req.session.randomSeznamUcitelu[0];

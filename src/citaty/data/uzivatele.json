@@ -3,5 +3,67 @@
         "heslo": "$2a$10$9caHwhKT3NbrUh0CI2yVY.aCMTzBu4B4oaMYchRQ.ffKR4VXaIYn.",
         "email": "hula@spstrutnov.cz",
         "score": 7
+    },
+    "pepa": {
+        "heslo": "$2a$10$nivnspLYKbsB3BmtE4YNNujNhX/f53O.zUrcGkAHKsc45HyA77FKO",
+        "email": "idk@spstrutnov.cz",
+        "pocet": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "dobre": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "score": 3
+    },
+    "ligma": {
+        "heslo": "$2a$10$YODvBJ1Yyus7Pbi4YX6jgeoDXFt1jdA7S0pa5tWUrwuE9CjyIUQpW",
+        "email": "idk2@spstrutnov.cz",
+        "pocet": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "dobre": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "score": 7
     }
 }
