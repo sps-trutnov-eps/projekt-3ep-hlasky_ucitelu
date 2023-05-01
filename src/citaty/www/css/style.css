@@ -408,6 +408,11 @@ body footer {
   background-color: rgba(22, 27, 34, 0.25);
 }
 
+.user {
+  font-weight: 600;
+  text-shadow: 0px 0px 0.2vh;
+}
+
 .scroll-y {
   overflow-y: scroll;
 }
@@ -521,16 +526,26 @@ body footer {
   color: white;
 }
 
-.sinslavy {
+.sinslavy-wrapper {
+  padding: 2vh 1vw;
   background-color: var(--bg2);
-  border-radius: 20px;
-  font-size: 1.5vw;
-  padding: 3vh 0vw;
+  border-radius: 1vw;
 }
-.sinslavy .objekt {
+.sinslavy-wrapper .sinslavy {
+  font-size: 1.5em;
+  max-height: 60vh;
+  padding: 2vh 1vw;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+.sinslavy-wrapper .sinslavy .objekt {
   display: flex;
   justify-content: space-between;
-  padding: 0.3vh 1vw;
+  padding: 1vh 0.5vw;
+}
+.sinslavy-wrapper .sinslavy .objekt:not(:last-of-type) {
+  border-bottom: 1px solid white;
 }
 
 .hlasky-container {

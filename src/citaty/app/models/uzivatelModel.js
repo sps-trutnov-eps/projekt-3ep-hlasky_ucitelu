@@ -110,15 +110,20 @@ exports.getTopScore = (top = 3) => {
     let uzivatelScore = [];
 
     for(let i = 0; i <= uzivatele.length - 1; i++){
-        if (data[uzivatele[i]].score == undefined){
-            uzivatelScore.push([0, uzivatele[i]]);
-        }
-        else{
-            uzivatelScore.push([data[uzivatele[i]].score, uzivatele[i]]);
+        if (data[uzivatele[i]].score == undefined || data[uzivatele[i]].score == 0) {
+            uzivatelScore.push([0, uzivatele[i], ""]);
+        } else {
+            if(data[uzivatele[i]].score < 2){
+                uzivatelScore.push([data[uzivatele[i]].score, uzivatele[i], "bod"]);
+            } else if(data[uzivatele[i]].score < 5 && data[uzivatele[i]].score > 1) {
+                uzivatelScore.push([data[uzivatele[i]].score, uzivatele[i], "body"]);
+            } else if(data[uzivatele[i]].score > 4) {
+                uzivatelScore.push([data[uzivatele[i]].score, uzivatele[i], "bodů"]);
+            }
         }
     }
 
-    let sorted = uzivatelScore.sort( (a, b) => {
+    let sorted = uzivatelScore.sort((a, b) => {
         return b[0] - a[0]
     })
 
@@ -128,7 +133,7 @@ exports.getTopScore = (top = 3) => {
     // list vypadá takhle: [ [ 30, 'ligma' ], [ 23, 'figma' ], [ 2, 'tektek' ] ]
     // [[score, jmeno]]
 
-    const backupList = [[1, "uzivatel1"], [2, "uzivatel2"], [3, "uzivatel3"]];
+    const backupList = [["-", "nikdo :("], ["-", "nikdo :("], ["-", "nikdo :("]];
     const topPlayersLength = topPlayers.length;
 
     if (topPlayers.length < 3 || topPlayers == undefined){

@@ -202,6 +202,11 @@ body {
     }
 }
 
+.user{
+    font-weight: 600;
+    text-shadow: 0px 0px .2vh;
+}
+
 .scroll-y{
     overflow-y: scroll;
 }
@@ -330,17 +335,29 @@ body {
     }
 }
 
-.sinslavy {
+.sinslavy-wrapper{
+    padding: 2vh 1vw;
     background-color: var(--bg2);
-    border-radius: 20px;
-    font-size: 1.5vw;
-    padding: 3vh 0vw;
+    border-radius: 1vw;
 
-
-    .objekt {
+    .sinslavy {
+        font-size: 1.5em;
+        max-height: 60vh;
+        padding: 2vh 1vw;
         display: flex;
-        justify-content: space-between;
-        padding: .3vh 1vw;
+        flex-direction: column;
+        overflow-y: scroll;
+    
+    
+        .objekt {
+            display: flex;
+            justify-content: space-between;
+            padding: 1vh .5vw;
+        }
+        
+        .objekt:not(:last-of-type){
+            border-bottom: 1px solid white;
+        }
     }
 }
 

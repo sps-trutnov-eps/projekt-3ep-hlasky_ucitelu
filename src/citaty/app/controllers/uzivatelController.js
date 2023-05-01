@@ -239,7 +239,18 @@ exports.odhlasit = (req, response) => {
 }
 
 exports.sinslavy = (req, res) => {
-    const userData = model.getAllHighScore();
+    const allUserData = model.getAllHighScore();
+    let userData = [];
+
+    for(i in allUserData) {
+        if(allUserData[i][0] > 0){
+            userData.push(allUserData[i]);
+        }
+    }
+
+    if(userData.length == 0) {
+        userData.push(["", "Nikdo tady ještě není :("])
+    }
 
     return res.render('uzivatel/sinslavy', {
         data: userData,

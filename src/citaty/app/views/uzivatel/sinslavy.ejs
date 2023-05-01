@@ -1,16 +1,23 @@
 <%- include('../_layout/header') %>
 
-<div class="container" style="min-height: 79vh; margin: 5vh auto 1vh auto">
+<div class="container" style="min-height: 79vh; margin: 5vh auto 1vh auto; width: 45vw;">
 
     <h2 class="welcome-text">Síň slávy</h2>
 
-    <div class="sinslavy">
-        <% for (let i = 0; i < data.length; i++) { %>
-            <div class="objekt">
-                <p class="objekt"><%= data[i][1] %></p>
-                <p class="objekt"><%= data[i][0] %></p>
-            </div>
-        <%} %>
+    <div class="sinslavy-wrapper">
+        <div class="sinslavy">
+            <% for (let i = 0; i < data.length; i++) { %>
+                <div class="objekt">
+                    <% if(data[i][1] == jmeno) { %>
+                        <p class="user"><%= data[i][1] %></p>
+                        <p class="user"><%= data[i][0] %></p>
+                    <% } else { %>
+                        <p><%= data[i][1] %></p>
+                        <p><%= data[i][0] %></p>
+                    <% } %>
+                </div>
+            <%} %>
+        </div>
     </div>
 </div>
 
