@@ -27,63 +27,6 @@
 .login-cont .login-nadpis h3 {
   padding: 5% 0%;
 }
-.login-cont .login-form-cont {
-  height: 65%;
-}
-.login-cont .login-form-cont form input:not(.btn) {
-  border: none;
-  outline: none;
-  border-bottom: white solid 2px;
-  background-color: transparent;
-  width: 70%;
-  padding: 10px 0px 10px 0px;
-  margin-bottom: 2.5%;
-  color: white;
-  border-bottom: 2px solid var(--hvr);
-  transition: all 0.2s ease-in-out;
-}
-.login-cont .login-form-cont form input:not(.btn):focus {
-  outline: none;
-  border-color: #666;
-}
-.login-cont .login-form-cont form input:not(.btn):first-of-type {
-  margin-top: 10%;
-}
-.login-cont .login-form-cont form input:not(.btn):focus {
-  outline: none;
-}
-.login-cont .login-form-cont form .btn:hover {
-  opacity: 0.9;
-}
-.login-cont .login-form-cont .btn {
-  width: 70%;
-  padding: 20px 0px 20px 0px;
-  border-radius: 10px;
-  margin-top: 2.5%;
-  border-color: white;
-  color: white;
-  font-weight: 600;
-  font-size: 1.1em;
-  background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
-}
-.login-cont .login-form-cont .err {
-  background-color: rgba(184, 22, 22, 0.7);
-  border: solid 1px var(--err);
-  width: 70%;
-  margin: 0 auto;
-  padding: 5px 0px 5px 0px;
-  border-radius: 10px;
-  position: relative;
-  margin-top: 0%;
-}
-.login-cont .login-form-cont .err p:not(:first-of-type) {
-  position: absolute;
-  top: 20%;
-  left: 5%;
-  font-weight: 1000;
-  border-right: solid 1px white;
-  padding-right: 10px;
-}
 .login-cont h3 {
   font-size: 2em;
   margin: 0 auto;
@@ -100,4 +43,62 @@
 }
 .login-cont .reg-text a:hover {
   color: var(--hvr);
+}
+
+.login-form-cont {
+  height: 65%;
+}
+.login-form-cont form input:not(.btn) {
+  border: none;
+  outline: none;
+  border-bottom: white solid 2px;
+  background-color: transparent;
+  width: 70%;
+  padding: 10px 0px 10px 0px;
+  margin-bottom: 2.5%;
+  color: white;
+  border-bottom: 2px solid var(--hvr);
+  transition: all 0.2s ease-in-out;
+}
+.login-form-cont form input:not(.btn):focus {
+  outline: none;
+  border-color: #666;
+}
+.login-form-cont form input:not(.btn):first-of-type {
+  margin-top: 10%;
+}
+.login-form-cont form input:not(.btn):focus {
+  outline: none;
+}
+.login-form-cont form .btn:hover {
+  opacity: 0.9;
+}
+.login-form-cont .btn {
+  width: 70%;
+  padding: 20px 0px 20px 0px;
+  border-radius: 10px;
+  margin-top: 2.5%;
+  border-color: white;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1em;
+  background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
+}
+.login-form-cont .err {
+  background-color: rgba(184, 22, 22, 0.7);
+  border: solid 1px var(--err);
+  width: 70%;
+  margin: 0 auto;
+  padding: 5px 0px 5px 0px;
+  border-radius: 10px;
+  position: relative;
+  margin-top: 0%;
+}
+.login-form-cont .err p:not(:first-of-type) {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  font-weight: 1000;
+  border-right: solid 1px white;
+  padding-right: 10px;
 }/*# sourceMappingURL=login.css.map */

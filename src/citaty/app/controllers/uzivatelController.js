@@ -84,7 +84,7 @@ exports.registrovat = (req, response) => {
 
     if (model.existujeEmail(email)) {
         return response.render('uzivatel/registrace', {
-            error: 'Email už někdo používá!',
+            error: 'Tento email už někdo používá!',
             jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
         });
     }
@@ -158,7 +158,7 @@ exports.overit = (req, response) => {
 
     if (req.session.uzivatel == undefined || req.session.kod == undefined) {
         return response.render("uzivatel/overeni", {
-            error: "Kód vypršel!",
+            error: "Platnost kódu vypršela. Zkuste se zaregistrovat znovu.",
             jmeno: req.session.prihlasenyUzivatel || "Přihlásit se",
             time: 0, // zbývá 0 sekund.
         });

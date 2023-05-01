@@ -11,17 +11,24 @@
             <% } %>
 
             <% if(quizDokoncen == true) { %>
-                <div class="quiz-buttonwrapper scroll-y">
-                    <% spatneOdpovedi.forEach(spatnaOdpoved => { %>
+                <% if(vysledneSkore == 100){ %>
+                    <div class="quiz-buttonwrapper scroll-y" style="grid-template-columns: 1fr; grid-template-rows: 1fr;">
                         <div class="tlacitko odpovedi">
-                            <p>„<%= spatnaOdpoved[0] %>“</p>
-                            <p style="color: red;"> <%= spatnaOdpoved[2] %> ✖</p>
-                            <p style="color: lightgreen;" > <%= spatnaOdpoved[1] %> ✔</p>
+                            <p>Žádné špatné odpovědi :)</p>
                         </div>
-                        
-                    <% }); %>
-                </div>
-            <% } else{ %>
+                    </div>
+                <% } else { %>
+                    <div class="quiz-buttonwrapper scroll-y">
+                        <% spatneOdpovedi.forEach(spatnaOdpoved => { %>
+                            <div class="tlacitko odpovedi">
+                                <p>„<%= spatnaOdpoved[0] %>“</p>
+                                <p style="color: red;"> <%= spatnaOdpoved[2] %> ✖</p>
+                                <p style="color: lightgreen;" > <%= spatnaOdpoved[1] %> ✔</p>
+                            </div>
+                        <% }); %>
+                    </div>
+                <% } %>
+            <% } else { %>
                 <form method="post" script="/hlasky/uspesnost" >
                     <div class="quiz-buttonwrapper">
                         <% odpovedi.forEach(ucitel => { %>
