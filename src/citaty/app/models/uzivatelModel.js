@@ -134,7 +134,6 @@ exports.getTopScore = (top = 3) => {
     if (topPlayers.length < 3 || topPlayers == undefined){
         for (let i = 0; i < Math.abs(topPlayersLength - 3); i++){
             topPlayers.push(backupList[i]);
-            console.log(topPlayers);
         }
     }
 
