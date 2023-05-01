@@ -127,6 +127,11 @@ exports.getTopScore = (top = 3) => {
     // returne top počet hráču s nejlepším score. (např:. top 3 hráčy s nejlepším score)
     // list vypadá takhle: [ [ 30, 'ligma' ], [ 23, 'figma' ], [ 2, 'tektek' ] ]
     // [[score, jmeno]]
+
+    if (topPlayers.length <= 3 || topPlayers == undefined){
+        topPlayers = [[1, "uzivatel1"], [2, "uzivatel2"], [3, "uzivatel3"]];
+    }
+
     return topPlayers;
 
 }
