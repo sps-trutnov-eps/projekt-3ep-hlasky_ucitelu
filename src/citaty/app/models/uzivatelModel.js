@@ -128,8 +128,14 @@ exports.getTopScore = (top = 3) => {
     // list vypadá takhle: [ [ 30, 'ligma' ], [ 23, 'figma' ], [ 2, 'tektek' ] ]
     // [[score, jmeno]]
 
-    if (topPlayers.length <= 3 || topPlayers == undefined){
-        topPlayers = [[1, "uzivatel1"], [2, "uzivatel2"], [3, "uzivatel3"]];
+    const backupList = [[1, "uzivatel1"], [2, "uzivatel2"], [3, "uzivatel3"]];
+    const topPlayersLength = topPlayers.length;
+
+    if (topPlayers.length < 3 || topPlayers == undefined){
+        for (let i = 0; i < Math.abs(topPlayersLength - 3); i++){
+            topPlayers.push(backupList[i]);
+            console.log(topPlayers);
+        }
     }
 
     return topPlayers;
