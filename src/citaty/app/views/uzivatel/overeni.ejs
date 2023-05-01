@@ -1,17 +1,26 @@
 <%- include('../_layout/header') %>
-    <p>Prosím ověřte kód který vám přišel na Email který jste zadali.</p>
-    <b>TIP: Koukněte do spamu.</b>
-<!-- Display the countdown timer in an element -->
-<p id="demo"></p>
+    <div class="container" style="min-height: 79vh; margin: 5vh auto 1vh auto">
+        <h2 class="welcome-text">Ověření emailu</h2>
+        
+        <% if (time !== 0){ %>
+            <p>Na email jsme Vám poslali ověřovací kód!</p>
+            <p>Kód vyprší v <%= time %></p>
+            <div class="login-form-cont" style="width: 32vw">
+                <form method="post" script="/uzivatel/prihlasit">
+                    <div class="login-input">
+                        <input style="margin-top: 5%;" type="text" name="kod" placeholder="Kód..." /><br />
+                    </div>
+                    
+                    <b style="color: red;"><%= error %></b><br>
+                    <input class="btn" type="submit" value="Ověřit kód" />
+                </form>
+            </div>
+        <% } else { %>
+            <p>Platnost kódu vypršela.</p> <br>
+            <p>Zkuste se <a style="color: white; font-weight: 600;" href="/uzivatel/registrovat">zaregistrovat</a> znovu!</p>
+        <% }%>
+    
 
-<!-- Bruh -->
-<% if (time !== 0){ %>
-    <p style="color: crimson;" id="time">V: <%= time %> Vám vyprší kód.</p>
-<% } %>
 
-    <form method="post" script="/uzivatel/prihlasit">
-        <input type="text" name="kod" placeholder="Kód..." /><br />
-        <input type="submit" value="Odeslat" />
-    </form>
-    <b style="color: red;"><%= error %></b>
+    </div>
 <%- include('../_layout/footer') %>
