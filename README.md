@@ -1,3 +1,5 @@
+> Žákovský projekt třídy 3.EP, školní rok 2022/23, SPŠ Trutnov. Projekt se už neudržuje.
+
 # Učitelské hlášky SPŠ Trutnov
 - Cílem kvízu je otestovat Vaší znalost učitelů na SPŠ Trutnov a jejich hlášek.
 - Projekt obsahuje dva kvízy
